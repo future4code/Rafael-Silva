@@ -1,0 +1,3 @@
+# Aprendizados da semana
+
+Bom, nessa semana **aprendi** muitas coisas que eu queria aprender, como por exemplo, o fluxo de trabalho com o git, você sempre cria uma branch nova a partir da branch master(branch principal), e isso é muito importante porque eu aprendi errado, eu sempre trabalhei na branch master e sempre fazia um git push na própria branch master o que é totalmente errado, então eu gostei muito dessas aulas de terminal e git, me ajudam muito.
