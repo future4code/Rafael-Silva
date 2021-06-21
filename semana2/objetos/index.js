@@ -111,5 +111,54 @@ undefined pois a propriedade foi criada mas não possui nenhum valor
 // //d)
 // console.log(carrinho)
 
+//DESAFIOS
+
+//1
+
+// const user = function (){
+//     const nome = prompt("Digite seu nome:")
+//     const idade = prompt("Digite sua idade:")
+//     const profissao = prompt("Digite a sua profissão:")
+//
+//     const people = {
+//         nome: nome,
+//         idade: idade,
+//         profissao: profissao
+//     }
+//
+//     console.log(people)
+//     console.log(typeof people)
+// }
+//
+// user()
+
+//2
+
+// const movie = function (yearMovieFirst, yearMovieSecond){
+//     console.log("O primeiro filme foi lançado antes do segundo?", yearMovieFirst < yearMovieSecond)
+//     console.log("O primeiro filme foi lançado no mesmo ano do segundo?", yearMovieFirst === yearMovieSecond)
+// }
+//
+// const guardianOfGalaxy = {
+//     name: "Guardiões da Galaxia",
+//     year: 2014
+// }
+//
+// const districtNine = {
+//     name: "Distrito 9",
+//     year: 2009
+// }
+//
+// movie(guardianOfGalaxy.year, districtNine.year)
+
+//3
+
+// const stock = function (fruit){
+//     return !fruit.disponibilidade
+// }
+//
+// console.log(stock(mamao))
+
+
 
 
