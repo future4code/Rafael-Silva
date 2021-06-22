@@ -93,7 +93,6 @@ declarada dentro do escopo do if
 // turn(period)
 
 
-
 //4
 
 // const movie = prompt("Qual gênero de filme que vamos assistir?")
@@ -110,4 +109,250 @@ declarada dentro do escopo do if
 //
 // console.log(watchMovie(movie, ticket))
 
+//DESAFIOS
+
+//1
+
+// const movie = prompt("Qual gênero de filme que vamos assistir?")
+// const ticket = Number(prompt("Qual o valor do ingresso?"))
+// const food = prompt("Qual lanchinho você vai comprar?")
+//
+// const watchMovie = (movie, ticket, food) => {
+//     if (movie.toLowerCase() === "fantasia" && ticket < 15) {
+//         console.log("Bom filme!")
+//         console.log(`Aproveite o/a ${food}`)
+//     } else {
+//         console.log("Escolha outro filme :(")
+//     }
+// }
+//
+// watchMovie(movie, ticket, food)
+
+const name = prompt("Digite seu nome completo:")
+const typeGame = prompt("Qual o tipo de jogo? Digite NA para nacional ou IN para internacional.")
+const lapGame = prompt("Qual a etapa do jogo? Digite SF para semi-final, DT para decisão de terceiro lugar ou FI para final.")
+const categorie = Number(prompt("Digite a categoria de 1 a 4:"))
+const tickets = Number(prompt("Digite a quantidade de ingressos:"))
+
+const game = (name, typeGame, lapGame, categories, tickets) => {
+    if (typeGame === "NA") {
+        console.log("--- DADOS DA COMPRA ---")
+        console.log("Nome do cliente:", name)
+        console.log("Tipo do jogo: Nacional")
+
+        if (lapGame === "SF") {
+            console.log("Etapa do jogo: Semifinais")
+        } else if (lapGame === "DT") {
+            console.log("Etapa do jogo: Decisão do 3º Lugar")
+        } else {
+            console.log("Etapa do jogo: Final")
+        }
+
+        console.log("Categoria:", categories)
+        console.log("Quantidade de Ingressos:", tickets)
+
+        console.log("--- VALORES ---")
+
+        let ticketValue
+
+        if (categories === 1) {
+            switch (lapGame) {
+                case "SF":
+                    ticketValue = 1320
+                    console.log("Valor do ingresso: R$", ticketValue)
+                    console.log("Valor Total: R$", ticketValue * tickets)
+                    break
+                case "DT":
+                    ticketValue = 660
+                    console.log("Valor do ingresso: R$", ticketValue)
+                    console.log("Valor Total: R$", ticketValue * tickets)
+                    break
+                case "FI":
+                    ticketValue = 1980
+                    console.log("Valor do ingresso: R$", ticketValue)
+                    console.log("Valor Total: R$", ticketValue * tickets)
+                    break
+                default:
+                    console.log("Oops! Ocorreu um erro, tente novamente.")
+                    break
+            }
+        } else if (categories === 2) {
+            switch (lapGame) {
+                case "SF":
+                    ticketValue = 880
+                    console.log("Valor do ingresso: R$", ticketValue)
+                    console.log("Valor Total: R$", ticketValue * tickets)
+                    break
+                case "DT":
+                    ticketValue = 440
+                    console.log("Valor do ingresso: R$", ticketValue)
+                    console.log("Valor Total: R$", ticketValue * tickets)
+                    break
+                case "FI":
+                    ticketValue = 1320
+                    console.log("Valor do ingresso: R$", ticketValue)
+                    console.log("Valor Total: R$", ticketValue * tickets)
+                    break
+                default:
+                    console.log("Oops! Ocorreu um erro, tente novamente.")
+                    break
+            }
+        } else if (categories === 3) {
+            switch (lapGame) {
+                case "SF":
+                    ticketValue = 550
+                    console.log("Valor do ingresso: R$", ticketValue)
+                    console.log("Valor Total: R$", ticketValue * tickets)
+                    break
+                case "DT":
+                    ticketValue = 330
+                    console.log("Valor do ingresso: R$", ticketValue)
+                    console.log("Valor Total: R$", ticketValue * tickets)
+                    break
+                case "FI":
+                    ticketValue = 880
+                    console.log("Valor do ingresso: R$", ticketValue)
+                    console.log("Valor Total: R$", ticketValue * tickets)
+                    break
+                default:
+                    console.log("Oops! Ocorreu um erro, tente novamente.")
+                    break
+            }
+        } else if (categories === 4){
+            switch (lapGame) {
+                case "SF":
+                    ticketValue = 220
+                    console.log("Valor do ingresso: R$", ticketValue)
+                    console.log("Valor Total: R$", ticketValue * tickets)
+                    break
+                case "DT":
+                    ticketValue = 170
+                    console.log("Valor do ingresso: R$", ticketValue)
+                    console.log("Valor Total: R$", ticketValue * tickets)
+                    break
+                case "FI":
+                    ticketValue = 330
+                    console.log("Valor do ingresso: R$", ticketValue)
+                    console.log("Valor Total: R$", ticketValue * tickets)
+                    break
+                default:
+                    console.log("Oops! Ocorreu um erro, tente novamente.")
+                    break
+            }
+        } else {
+            console.log("Oops! Ocorreu um erro, tente novamente.")
+        }
+    } else if (typeGame === "IN") {
+        console.log("--- DADOS DA COMPRA ---")
+        console.log("Nome do cliente:", name)
+        console.log("Tipo do jogo: Internacional")
+
+        if (lapGame === "SF") {
+            console.log("Etapa do jogo: Semifinais")
+        } else if (lapGame === "DT") {
+            console.log("Etapa do jogo: Decisão do 3º Lugar")
+        } else {
+            console.log("Etapa do jogo: Final")
+        }
+
+        console.log("Categoria:", categories)
+        console.log("Quantidade de Ingressos:", tickets)
+
+        console.log("--- VALORES ---")
+
+        let ticketValue
+
+        if (categories === 1) {
+            switch (lapGame) {
+                case "SF":
+                    ticketValue = 1320 * 4.1
+                    console.log("Valor do ingresso: U$", ticketValue)
+                    console.log("Valor Total: U$", ticketValue * tickets)
+                    break
+                case "DT":
+                    ticketValue = 660 * 4.1
+                    console.log("Valor do ingresso: U$", ticketValue)
+                    console.log("Valor Total: U$", ticketValue * tickets)
+                    break
+                case "FI":
+                    ticketValue = 1980 * 4.1
+                    console.log("Valor do ingresso: U$", ticketValue)
+                    console.log("Valor Total: U$", ticketValue * tickets)
+                    break
+                default:
+                    console.log("Oops! Ocorreu um erro, tente novamente.")
+                    break
+            }
+        } else if (categories === 2) {
+            switch (lapGame) {
+                case "SF":
+                    ticketValue = 880 * 4.1
+                    console.log("Valor do ingresso: U$", ticketValue)
+                    console.log("Valor Total: U$", ticketValue * tickets)
+                    break
+                case "DT":
+                    ticketValue = 440 * 4.1
+                    console.log("Valor do ingresso: U$", ticketValue)
+                    console.log("Valor Total: U$", ticketValue * tickets)
+                    break
+                case "FI":
+                    ticketValue = 1320 * 4.1
+                    console.log("Valor do ingresso: U$", ticketValue)
+                    console.log("Valor Total: U$", ticketValue * tickets)
+                    break
+                default:
+                    console.log("Oops! Ocorreu um erro, tente novamente.")
+                    break
+            }
+        } else if (categories === 3) {
+            switch (lapGame) {
+                case "SF":
+                    ticketValue = 550 * 4.1
+                    console.log("Valor do ingresso: U$", ticketValue)
+                    console.log("Valor Total: U$", ticketValue * tickets)
+                    break
+                case "DT":
+                    ticketValue = 330 * 4.1
+                    console.log("Valor do ingresso: U$", ticketValue)
+                    console.log("Valor Total: U$", ticketValue * tickets)
+                    break
+                case "FI":
+                    ticketValue = 880 * 4.1
+                    console.log("Valor do ingresso: U$", ticketValue)
+                    console.log("Valor Total: U$", ticketValue * tickets)
+                    break
+                default:
+                    console.log("Oops! Ocorreu um erro, tente novamente.")
+                    break
+            }
+        } else if (categories === 4){
+            switch (lapGame) {
+                case "SF":
+                    ticketValue = 220 * 4.1
+                    console.log("Valor do ingresso: U$", ticketValue)
+                    console.log("Valor Total: U$", ticketValue * tickets)
+                    break
+                case "DT":
+                    ticketValue = 170 * 4.1
+                    console.log("Valor do ingresso: U$", ticketValue)
+                    console.log("Valor Total: U$", ticketValue * tickets)
+                    break
+                case "FI":
+                    ticketValue = 330 * 4.1
+                    console.log("Valor do ingresso: U$", ticketValue)
+                    console.log("Valor Total: U$", ticketValue * tickets)
+                    break
+                default:
+                    console.log("Oops! Ocorreu um erro, tente novamente.")
+                    break
+            }
+        } else {
+            console.log("Oops! Ocorreu um erro, tente novamente.")
+        }
+    } else {
+        console.log("Oops! Ocorreu um erro, tente novamente.")
+    }
+}
+
+game(name, typeGame, lapGame, categorie, tickets)
 
