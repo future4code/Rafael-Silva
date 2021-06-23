@@ -44,7 +44,7 @@ Será impresso no console: *, **, *** e ****
 //2
 
 //a)
-// const arrayOriginal = [22, 44, 55, 15, 56, 75, 45, 24, 85, 92]
+const arrayOriginal = [22, 44, 55, 15, 56, 75, 45, 24, 85, 92, 37, 88]
 
 // const arrayValue = (array) => {
 //    for (let index of array){
@@ -98,6 +98,7 @@ Será impresso no console: *, **, *** e ****
 
 
 //e
+
 // const arrayMaxAndMin = (array) => {
 //     let minValue = array[0]
 //     let maxValue = array.pop()
@@ -117,3 +118,50 @@ Será impresso no console: *, **, *** e ****
 //
 // arrayMaxAndMin(arrayOriginal)
 
+//DESAFIOS
+
+//1
+
+// const game = (playerOne, playerTwo) => {
+//     let times = 0
+//
+//     while (playerOne !== playerTwo) {
+//         if (playerTwo < playerOne) {
+//             console.log("----")
+//             console.log("O número chutado foi:", playerTwo)
+//             console.log("Errrrrrrrou, é maior")
+//             console.log("----")
+//             console.log('Digite "sair" se quiser sair do jogo')
+//
+//             playerTwo = Number(prompt("Escolha um número:"))
+//         } else if (playerTwo > playerOne) {
+//             console.log("----")
+//             console.log("O número chutado foi:", playerTwo)
+//             console.log("Errrrrrrrou, é menor")
+//             console.log("----")
+//             console.log('Digite "sair" se quiser sair do jogo')
+//
+//             playerTwo = Number(prompt("Escolha um número:"))
+//         } else {
+//             break
+//         }
+//
+//         times++;
+//     }
+//
+//     if (playerTwo === playerOne) {
+//         console.log("***********")
+//         console.log("O número chutado foi:", playerTwo)
+//         console.log("Acertou!!")
+//         console.log("O número de tentativas foi:", times)
+//         console.log("***********")
+//     } else {
+//         console.log("Você saiu :(")
+//     }
+// }
+//
+// const firstPlayer = Number(prompt("Escolha um número:"))
+// console.log("Vamos Jogar!")
+// let secondPlayer = Number(prompt("Escolha um número:"))
+//
+// game(firstPlayer, secondPlayer)
