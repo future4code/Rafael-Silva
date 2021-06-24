@@ -135,3 +135,54 @@ const produtos = [
 //
 // console.log(productString)
 
+//DESAFIO
+
+//1
+
+const pokemons = [
+    {nome: "Bulbasaur", tipo: "grama"},
+    {nome: "Bellsprout", tipo: "grama"},
+    {nome: "Charmander", tipo: "fogo"},
+    {nome: "Vulpix", tipo: "fogo"},
+    {nome: "Squirtle", tipo: "água"},
+    {nome: "Psyduck", tipo: "água"},
+]
+
+//a)
+// const alphabetical = pokemons.map((pokemon) => {
+//     return pokemon.nome
+// }).sort()
+//
+// console.log(alphabetical)
+
+//b)
+
+// const waterPokemons = pokemons.filter((pokemon) => {
+//     return pokemon.tipo === "água"
+// }).map((pokemon) => {
+//     return pokemon.tipo
+// })
+//
+// const firePokemons = pokemons.filter((pokemon) => {
+//     return pokemon.tipo === "fogo"
+// }).map((pokemon) => {
+//     return pokemon.tipo
+// })
+//
+// const grassPokemons = pokemons.filter((pokemon) => {
+//     return pokemon.tipo === "grama"
+// }).map((pokemon) => {
+//     return pokemon.tipo
+// })
+//
+// const separatedPokemons = (water, fire, grass) => {
+//     return [water[0], fire[0], grass[0]]
+// }
+//
+// console.log(separatedPokemons(waterPokemons, firePokemons, grassPokemons))
+
+// const separatedPokemons = pokemons.filter((pokemon, index) => {
+//     return pokemons.indexOf(pokemon.tipo) === index
+// })
+//
+// console.log(separatedPokemons)
