@@ -34,14 +34,6 @@ const firstCards = () => {
     }
 }
 
-// const buyedCardPc = (pointsPc, pointsUser) => {
-//     let result = 0
-//     while (pointsUser <= pointsPc) {
-//         let buyedCard
-//     }
-// }
-
-
 if (confirm("Boas vindas ao jogo de Blackjack!" + "\n" + "Quer iniciar uma nova rodada?")) {
     firstCards()
 
@@ -78,49 +70,104 @@ if (confirm("Boas vindas ao jogo de Blackjack!" + "\n" + "Quer iniciar uma nova 
                     `As cartas do computador são ${pcCard[0].texto}️ ${pcCard[1].texto}️ . A pontuação do computador é ${pointsPc}.\n` +
                     "O computador ganhou!"
                 )
+            } else if (confirm(
+                `Suas cartas são ${userCard[0].texto}️ ${userCard[1].texto}️${userCard[2].texto}️ ${userCard[3].texto}️ . A carta revelada do computador é ${pcCard[0].texto}️.` +
+                "\n" +  // \n faz pular a linha
+                "Deseja comprar mais uma carta?"
+            )) {
+                if (pointsUser > 21) {
+                    alert(
+                        `Suas cartas são ${userCard[0].texto}️ ${userCard[1].texto}️ ${userCard[2].texto}️ ${userCard[3].texto}️ . Sua pontuação é ${pointsUser}.\n` +
+                        `As cartas do computador são ${pcCard[0].texto}️ ${pcCard[1].texto}️ . A pontuação do computador é ${pointsPc}.\n` +
+                        "O computador ganhou!"
+                    )
+                }
+            } else{
+                let buyedCardPc
+
+                if (pointsUser <= 21) {
+                    while (pointsPc <= pointsUser) {
+                        buyedCardPc = comprarCarta();
+                        pcCard.push(buyedCardPc)
+                        pointsPc += buyedCardPc.valor
+                    }
+
+                    if (pointsUser > 21) {
+                        alert(
+                            `Suas cartas são ${userCard[0].texto}️ ${userCard[1].texto}️ ${userCard[2].texto}️ . Sua pontuação é ${pointsUser}.\n` +
+                            `As cartas do computador são ${pcCard[0].texto}️ ${pcCard[1].texto}️ ${pcCard[2].texto}️ ${pcCard[3].texto}. A pontuação do computador é ${pointsPc}.\n` +
+                            "O computador ganhou!"
+                        )
+                    } else if (pointsPc > 21 || pointsUser <= 21) {
+                        alert(
+                            `Suas cartas são ${userCard[0].texto}️ ${userCard[1].texto}️ ${userCard[2].texto}️ . Sua pontuação é ${pointsUser}.\n` +
+                            `As cartas do computador são ${pcCard[0].texto}️ ${pcCard[1].texto} ️ ${pcCard[2].texto}️ . A pontuação do computador é ${pointsPc}.\n` +
+                            "O usuário ganhou!"
+                        )
+                    }
+
+                    if (pointsPc === pointsUser) {
+                        alert(
+                            `Suas cartas são ${userCard[0].texto}️ ${userCard[1].texto}️ ${userCard[2].texto}️ . Sua pontuação é ${pointsUser}.\n` +
+                            `As cartas do computador são ${pcCard[0].texto}️ ${pcCard[1].texto}️ ${pcCard[2].texto}️ ️ ${pcCard[3].texto}. A pontuação do computador é ${pointsPc}.\n` +
+                            "Empate!"
+                        )
+                    }
+                }
             }
         } else {
-            if (pointsUser <= pointsPc) {
-                for (i = 0; pointsPc >= pointsUser; i++) {
-                    let buyedCardPc = comprarCarta();
+            let buyedCardPc
+
+            if (pointsUser <= 21) {
+                while (pointsPc <= pointsUser) {
+                    buyedCardPc = comprarCarta();
                     pcCard.push(buyedCardPc)
                     pointsPc += buyedCardPc.valor
                 }
 
-                if (pointsPc > 21) {
+                if (pointsUser > 21) {
                     alert(
-                        `Suas cartas são ${userCard[0].texto}️ ${userCard[1].texto}️ ${userCard[2].texto}. Sua pontuação é ${pointsUser}.\n` +
-                        `As cartas do computador são ${pcCard[0].texto}️ ${pcCard[1].texto}️ ${pcCard[2].texto}. A pontuação do computador é ${pointsPc}.\n` +
+                        `Suas cartas são ${userCard[0].texto}️ ${userCard[1].texto}️ ${userCard[2].texto}️ . Sua pontuação é ${pointsUser}.\n` +
+                        `As cartas do computador são ${pcCard[0].texto}️ ${pcCard[1].texto}️ ${pcCard[2].texto}️ ${pcCard[3].texto}. A pontuação do computador é ${pointsPc}.\n` +
+                        "O computador ganhou!"
+                    )
+                } else if (pointsPc > 21 || pointsUser <= 21) {
+                    alert(
+                        `Suas cartas são ${userCard[0].texto}️ ${userCard[1].texto}️ ${userCard[2].texto}️ . Sua pontuação é ${pointsUser}.\n` +
+                        `As cartas do computador são ${pcCard[0].texto}️ ${pcCard[1].texto} ️ ${pcCard[2].texto}️ . A pontuação do computador é ${pointsPc}.\n` +
                         "O usuário ganhou!"
                     )
                 }
 
                 if (pointsPc === pointsUser) {
                     alert(
-                        `Suas cartas são ${userCard[0].texto}️ ${userCard[1].texto}️ ${userCard[2].texto}. Sua pontuação é ${pointsUser}.\n` +
-                        `As cartas do computador são ${pcCard[0].texto}️ ${pcCard[1].texto}️ ${pcCard[2].texto}. A pontuação do computador é ${pointsPc}.\n` +
+                        `Suas cartas são ${userCard[0].texto}️ ${userCard[1].texto}️ ${userCard[2].texto}️ . Sua pontuação é ${pointsUser}.\n` +
+                        `As cartas do computador são ${pcCard[0].texto}️ ${pcCard[1].texto}️ ${pcCard[2].texto}️ ️ ${pcCard[3].texto}. A pontuação do computador é ${pointsPc}.\n` +
                         "Empate!"
                     )
                 }
             }
         }
     } else {
-        while (pointsPc <= pointsUser) {
-            let buyedCardPc = comprarCarta();
+        let buyedCardPc
 
-            pcCard.push(buyedCardPc)
-            pointsPc += buyedCardPc.valor
+        if (pointsUser <= 21) {
+            while (pointsPc <= pointsUser) {
+                buyedCardPc = comprarCarta();
+                pcCard.push(buyedCardPc)
+                pointsPc += buyedCardPc.valor
+            }
 
-            if (pointsPc > 21) {
+            if (pointsUser > 21) {
                 alert(
                     `Suas cartas são ${userCard[0].texto}️ ${userCard[1].texto}️ . Sua pontuação é ${pointsUser}.\n` +
-                    `As cartas do computador são ${pcCard[0].texto}️ ${pcCard[1].texto} ️ ${pcCard[2].texto}. A pontuação do computador é ${pointsPc}.\n` +
-                    "O usuário ganhou!"
+                    `As cartas do computador são ${pcCard[0].texto}️ ${pcCard[1].texto}️ ${pcCard[2].texto}️ ${pcCard[3].texto}. A pontuação do computador é ${pointsPc}.\n` +
+                    "O computador ganhou!"
                 )
-            } else {
+            } else if (pointsPc > 21 || pointsUser <= 21) {
                 alert(
                     `Suas cartas são ${userCard[0].texto}️ ${userCard[1].texto}️ . Sua pontuação é ${pointsUser}.\n` +
-                    `As cartas do computador são ${pcCard[0].texto}️ ${pcCard[1].texto} ️ ${pcCard[2].texto}. A pontuação do computador é ${pointsPc}.\n` +
+                    `As cartas do computador são ${pcCard[0].texto}️ ${pcCard[1].texto} ️ ${pcCard[2].texto}️ . A pontuação do computador é ${pointsPc}.\n` +
                     "O usuário ganhou!"
                 )
             }
@@ -128,7 +175,7 @@ if (confirm("Boas vindas ao jogo de Blackjack!" + "\n" + "Quer iniciar uma nova 
             if (pointsPc === pointsUser) {
                 alert(
                     `Suas cartas são ${userCard[0].texto}️ ${userCard[1].texto}️ . Sua pontuação é ${pointsUser}.\n` +
-                    `As cartas do computador são ${pcCard[0].texto}️ ${pcCard[1].texto}️ . A pontuação do computador é ${pointsPc}.\n` +
+                    `As cartas do computador são ${pcCard[0].texto}️ ${pcCard[1].texto}️ ${pcCard[2].texto}️ ️ ${pcCard[3].texto}. A pontuação do computador é ${pointsPc}.\n` +
                     "Empate!"
                 )
             }
