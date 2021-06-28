@@ -34,7 +34,20 @@ function retornaNumerosPares(array) {
 
 // EXERCÍCIO 04
 function retornaMaiorNumero(array) {
+    let minValue = array[0]
+    let maxValue = array.pop()
 
+    for (let index of array) {
+        if (maxValue <= index) {
+            maxValue = index
+        }
+
+        if (minValue >= index) {
+            minValue = index
+        }
+    }
+
+    return maxValue
 }
 
 // EXERCÍCIO 05
