@@ -150,7 +150,7 @@ function comparaDoisNumeros(num1, num2) {
 
 // EXERCÍCIO 10
 function segundoMaiorEMenor(array) {
-    if (array.length > 2){
+    if (array.length > 2) {
         let firstMinValue = Math.min(...array)
         let firstMaxValue = Math.max(...array)
 
@@ -174,7 +174,19 @@ function segundoMaiorEMenor(array) {
 
 // EXERCÍCIO 11
 function ordenaArray(array) {
+    let aux = 0
 
+    for (let i = 0; i < array.length; i++) {
+        for (let j = 0; j < array.length; j++) {
+            if (array[j] > array[j + 1]) {
+                aux = array[j]
+                array[j] = array[j + 1]
+                array[j + 1] = aux
+            }
+        }
+    }
+
+    return array
 }
 
 // EXERCÍCIO 12
