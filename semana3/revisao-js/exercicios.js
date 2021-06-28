@@ -313,7 +313,20 @@ function retornaPessoasNaoAutorizadas(pessoas) {
 
 // EXERCÍCIO 19A
 function ordenaPorNome(consultasNome) {
+    consultasNome.sort((a, b) => {
+        let fa = a.nome.toLowerCase()
+        let fb = b.nome.toLowerCase()
 
+        if (fa < fb) {
+            return -1
+        } else if (fa > fb) {
+            return 1
+        } else {
+            return 0
+        }
+    })
+
+    return consultasNome
 }
 
 // EXERCÍCIO 19B
