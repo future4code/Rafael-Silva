@@ -2,7 +2,7 @@
 function inverteArray(array) {
     const newArray = []
     const length = array.length
-    for (i = 0; i < length; i++){
+    for (let i = 0; i < length; i++){
         newArray.push(array.pop())
     }
     return newArray
@@ -22,7 +22,14 @@ function retornaNumerosParesElevadosADois(array) {
 
 // EXERCÍCIO 03
 function retornaNumerosPares(array) {
+    const newArray = []
+    for (let index of array){
+        if (index % 2 === 0){
+            newArray.push(index)
+        }
+    }
 
+    return newArray
 }
 
 // EXERCÍCIO 04
