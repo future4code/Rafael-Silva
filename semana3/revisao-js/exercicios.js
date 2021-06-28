@@ -229,7 +229,12 @@ function criaRetangulo(lado1, lado2) {
 
 // EXERCÍCIO 15
 function anonimizaPessoa(pessoa) {
+    const novaPessoa = {
+        ...pessoa,
+        nome: "ANÔNIMO"
+    }
 
+    return novaPessoa
 }
 
 // EXERCÍCIO 16A
