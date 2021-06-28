@@ -101,6 +101,14 @@ function checaTriangulo(a, b, c) {
     // return 'Escaleno'
     // return 'Equilátero'
     // return 'Isósceles'
+
+    if (a === b && a === c && c === b){
+        return "Equilátero"
+    } else if (a === b || a === c || c === b){
+        return "Isósceles"
+    } else {
+        return "Escaleno"
+    }
 }
 
 // EXERCÍCIO 09
