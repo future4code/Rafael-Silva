@@ -75,7 +75,25 @@ function retornaExpressoesBooleanas() {
 
 // EXERCÍCIO 07
 function retornaNNumerosPares(n) {
+    const array = []
+    let length = n[0] + 1
+    if (length < 10){
+        for (let i = 0; i <= length; i++) {
+            if (i % 2 === 0){
+                array.push(i)
+            }
+        }
+    }else {
+        length = n[0] + 12
+        for (let i = 0; i <= length; i++) {
+            if (i % 2 === 0){
+                array.push(i)
+            }
+        }
+    }
 
+
+    return array
 }
 
 // EXERCÍCIO 08
