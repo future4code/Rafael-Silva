@@ -239,17 +239,25 @@ function anonimizaPessoa(pessoa) {
 
 // EXERCÍCIO 16A
 function maioresDe18(arrayDePessoas) {
+    const newArray = arrayDePessoas.filter((e)=>{
+        return e.idade >= 18
+    })
 
+    return newArray
 }
 
 // EXERCÍCIO 16B
 function menoresDe18(arrayDePessoas) {
+    const newArray = arrayDePessoas.filter((e)=>{
+        return e.idade < 18
+    })
 
+    return newArray
 }
 
 // EXERCÍCIO 17A
 function multiplicaArrayPor2(array) {
-
+    
 }
 
 // EXERCÍCIO 17B
