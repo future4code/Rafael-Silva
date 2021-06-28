@@ -276,7 +276,7 @@ function multiplicaArrayPor2S(array) {
 // EXERCÍCIO 17C
 function verificaParidade(array) {
     for (let i = 0; i < array.length; i++) {
-        if (array[i] % 2 === 0){
+        if (array[i] % 2 === 0) {
             array[i] = `${array[i]} é par`
         } else {
             array[i] = `${array[i]} é ímpar`
@@ -288,12 +288,27 @@ function verificaParidade(array) {
 
 // EXERCÍCIO 18A
 function retornaPessoasAutorizadas(pessoas) {
+    const allowed = pessoas.filter((e) => {
+        if (e.idade > 14 && e.idade < 60 && e.altura > 1.5) {
+            return e
+        }
+    })
+
+    return allowed
 
 }
 
 // EXERCÍCIO 18B
 function retornaPessoasNaoAutorizadas(pessoas) {
+    const notAllowed = pessoas.filter((e) => {
+        if (e.idade > 14 && e.idade < 60 && e.altura > 1.5) {
+            let allowed = e
+        } else {
+            return e
+        }
+    })
 
+    return notAllowed
 }
 
 // EXERCÍCIO 19A
