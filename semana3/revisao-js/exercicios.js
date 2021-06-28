@@ -77,16 +77,16 @@ function retornaExpressoesBooleanas() {
 function retornaNNumerosPares(n) {
     const array = []
     let length = n[0] + 1
-    if (length < 10){
+    if (length < 10) {
         for (let i = 0; i <= length; i++) {
-            if (i % 2 === 0){
+            if (i % 2 === 0) {
                 array.push(i)
             }
         }
-    }else {
+    } else {
         length = n[0] + 12
         for (let i = 0; i <= length; i++) {
-            if (i % 2 === 0){
+            if (i % 2 === 0) {
                 array.push(i)
             }
         }
@@ -102,9 +102,9 @@ function checaTriangulo(a, b, c) {
     // return 'Equilátero'
     // return 'Isósceles'
 
-    if (a === b && a === c && c === b){
+    if (a === b && a === c && c === b) {
         return "Equilátero"
-    } else if (a === b || a === c || c === b){
+    } else if (a === b || a === c || c === b) {
         return "Isósceles"
     } else {
         return "Escaleno"
@@ -119,6 +119,33 @@ function comparaDoisNumeros(num1, num2) {
     //   maiorDivisivelPorMenor: Y,
     //   diferenca: Z
     // }
+
+    let larger = 0
+    let less = 0
+    let divide = true
+    let diff = Math.abs(num1 - num2)
+
+    if (num1 > num2) {
+        larger = num1
+        less = num2
+    } else {
+        larger = num2
+        less = num1
+    }
+
+    if (larger % less === 0) {
+        divide = true;
+    } else {
+        divide = false
+    }
+
+    const obj = {
+        maiorNumero: larger,
+        maiorDivisivelPorMenor: divide,
+        diferenca: diff
+    }
+
+    return obj
 }
 
 // EXERCÍCIO 10
