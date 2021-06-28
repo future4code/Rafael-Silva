@@ -1,17 +1,23 @@
 // EXERCÍCIO 01
 function inverteArray(array) {
-    let newArray = []
-    const  tam = array.length
-    for (i = 0; i < tam; i++){
+    const newArray = []
+    const length = array.length
+    for (i = 0; i < length; i++){
         newArray.push(array.pop())
     }
     return newArray
 }
 
-
 // EXERCÍCIO 02
 function retornaNumerosParesElevadosADois(array) {
+    const newArray = []
+    for (let index of array){
+        if (index % 2 === 0){
+            newArray.push((index * index))
+        }
+    }
 
+    return newArray
 }
 
 // EXERCÍCIO 03
