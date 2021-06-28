@@ -239,7 +239,7 @@ function anonimizaPessoa(pessoa) {
 
 // EXERCÍCIO 16A
 function maioresDe18(arrayDePessoas) {
-    const newArray = arrayDePessoas.filter((e)=>{
+    const newArray = arrayDePessoas.filter((e) => {
         return e.idade >= 18
     })
 
@@ -248,7 +248,7 @@ function maioresDe18(arrayDePessoas) {
 
 // EXERCÍCIO 16B
 function menoresDe18(arrayDePessoas) {
-    const newArray = arrayDePessoas.filter((e)=>{
+    const newArray = arrayDePessoas.filter((e) => {
         return e.idade < 18
     })
 
@@ -257,17 +257,33 @@ function menoresDe18(arrayDePessoas) {
 
 // EXERCÍCIO 17A
 function multiplicaArrayPor2(array) {
-    
+    for (let i = 0; i < array.length; i++) {
+        array[i] = array[i] * 2
+    }
+
+    return array
 }
 
 // EXERCÍCIO 17B
 function multiplicaArrayPor2S(array) {
+    for (let i = 0; i < array.length; i++) {
+        array[i] = array[i] * 2 + ''
+    }
 
+    return array
 }
 
 // EXERCÍCIO 17C
 function verificaParidade(array) {
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] % 2 === 0){
+            array[i] = `${array[i]} é par`
+        } else {
+            array[i] = `${array[i]} é ímpar`
+        }
+    }
 
+    return array
 }
 
 // EXERCÍCIO 18A
