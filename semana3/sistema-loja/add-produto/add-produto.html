@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="add-produto.css">
+
+    <title>Adicionar Produto</title>
+</head>
+<body>
+<header class="main_header">
+    <div class="main_header_logo">
+        <img src="../img/logo.jpg" alt="Logo">
+    </div>
+
+    <div class="main_header_nav">
+        <a href="../index.html">Página Inicial</a>
+        <a href="../ctrl-estoque/ctrl-estoque.html">Controle de Estoque</a>
+        <a href="../add-produto/add-produto.html">Adicionar Produto</a>
+        <a href="../funcionarios/funcionarios.html">Funcionários</a>
+    </div>
+</header>
+
+
+<main>
+    <div class="main_form_title">
+        <h2>Adicionar Produtos:</h2>
+    </div>
+
+    <div class="main_form">
+        <form action="">
+            <div>
+                <label for="link-foto">Link para foto: </label>
+                <input type="url" id="link-foto" name="link-foto">
+            </div>
+
+            <div>
+                <label for="descricao">Descrição do produto: </label>
+                <!-- Adicione o id apropriado para o input abaixo -->
+                <input type="text" id="descricao" name="descrição">
+            </div>
+
+            <div>
+                <label for="preco">Preço (em R$): </label>
+                <!-- Adicione o id apropriado e o type para receber números abaixo -->
+                <input type="number" id="preco" name="preço">
+            </div>
+
+            <div>
+                <!-- Preencha as propriedades necessárias para os elementos abaixo -->
+                <label for="quantidade">Quantidade disponível: </label>
+                <input type="number" id="quantidade" name="quantidade">
+            </div>
+
+            <div class="form-add">
+                <!-- Adicione ao type do botão abaixo o valor para que ele submeta o formulário -->
+                <button type="submit">Adicionar</button>
+            </div>
+
+        </form>
+    </div>
+</main>
+
+</body>
+</html>

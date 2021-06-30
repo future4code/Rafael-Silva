@@ -1,0 +1,46 @@
+/* HEADER */
+
+.main_header {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+}
+
+.main_header .main_header_logo img {
+    width: 150px;
+    margin: 10px;
+}
+
+.main_header .main_header_nav a {
+    font-family: "Verdana", sans-serif;
+    font-size: 20px;
+    text-decoration: none;
+    margin-right: 4px;
+    color: #60605f;
+    background-color: #99b1dd;
+    padding: 7px;
+    border-radius: 4px;
+}
+
+
+
+/*FUNCIONARIOS*/
+
+.main_content{
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.main_content h2{
+    font-family: "Verdana", sans-serif;
+    font-size: 30px;
+    font-weight: 300;
+}
+
+.main_content ul{
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+}
