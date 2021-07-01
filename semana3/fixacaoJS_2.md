@@ -7,5 +7,3 @@ function calculaPrecoTotal(quantidade) {
     return quantidade * 1.30
   }
 }
-
-```
