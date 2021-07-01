@@ -9,6 +9,8 @@
     padding: 0;
     text-decoration: none;
     box-sizing: border-box;
+    outline: none;
+
 }
 
 h2 {
@@ -21,6 +23,8 @@ h2 {
 input {
     height: 20px;
     width: 500px;
+    border-style: none;
+    border-bottom: 2px solid black;
 }
 
 button:focus {
@@ -151,4 +155,10 @@ td img {
 
 #back-button:active{
     color: white;
+}
+
+div a {
+    text-align: center;
+    margin: 0 auto;
+
 }
