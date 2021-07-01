@@ -104,6 +104,9 @@ div:last-child {
 
 table {
     width: 60%;
+    margin: 0 auto;
+    text-align: center;
+    padding-bottom: 120px;
 }
 
 td button {
