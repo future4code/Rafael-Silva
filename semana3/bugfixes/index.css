@@ -137,6 +137,9 @@ td img {
     height: 100px;
 }
 
+.table-space {
+    padding-left: 50px;
+}
 
 #back-button {
     background-color: white;
@@ -155,10 +158,4 @@ td img {
 
 #back-button:active{
     color: white;
-}
-
-div a {
-    text-align: center;
-    margin: 0 auto;
-
 }
