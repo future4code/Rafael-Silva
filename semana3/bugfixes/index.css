@@ -87,6 +87,14 @@ div>p:first-child {
     font-size: 60px;
 }
 
+a button:hover{
+    cursor: pointer;
+
+}
+
+a button:active{
+    color: white;
+}
 
 
 /**
@@ -139,4 +147,8 @@ td img {
 #back-button:hover {
     background-color: #635a3d;
     cursor: pointer;
+}
+
+#back-button:active{
+    color: white;
 }
