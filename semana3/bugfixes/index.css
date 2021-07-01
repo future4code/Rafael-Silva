@@ -8,6 +8,7 @@
     margin: 0;
     padding: 0;
     text-decoration: none;
+    box-sizing: border-box;
 }
 
 h2 {
@@ -70,6 +71,7 @@ div img {
 #container-de-descricao {
     background-color: #2274a5;
     color: white;
+    padding-top: 120px;
 }
 
 #container-de-descricao>ol {
@@ -86,6 +88,7 @@ div img {
     padding: 100px 0;
     font-size: 60px;
 }
+
 
 
 /**
