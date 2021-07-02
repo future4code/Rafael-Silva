@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+}
+
+html {
+    font-family: "Open Sans", sans-serif;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+
+/*CONTAINER*/
+.content,
+.container {
+    display: block;
+    width: 1200px;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.content {
+    padding: 60px 0;
+}
+
+
+.radius{
+    border-radius: 5px;
+}
