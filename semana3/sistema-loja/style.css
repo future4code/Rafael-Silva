@@ -1,0 +1,94 @@
+/* HEADER */
+
+.main_header {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+}
+
+.main_header .main_header_logo img {
+    width: 150px;
+    margin: 10px;
+}
+
+.main_header .main_header_nav a {
+    font-family: "Verdana", sans-serif;
+    font-size: 20px;
+    text-decoration: none;
+    margin-right: 4px;
+    color: #60605f;
+    background-color: #99b1dd;
+    padding: 7px;
+    border-radius: 4px;
+}
+
+
+/* BOAS VINDAS */
+
+.main_cta {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+}
+
+.main_cta .main_cta_title {
+    font-family: "Verdana", sans-serif;
+    font-size: 40px;
+    font-style: italic;
+    color: #a9b78d;
+}
+
+.main_cta .main_cta_subtitle {
+    font-family: "Verdana", sans-serif;
+    font-size: 20px;
+}
+
+/*CONTEUDO*/
+
+.main_content {
+    max-width: 1300px;
+    text-align: center;
+    margin: 30px auto;
+}
+
+.main_content header h2 {
+    color: #423b39;
+    margin-bottom: 30px;
+}
+
+.main_content main_product_card {
+    display: flex;
+}
+
+.main_content .main_content_product h2 {
+    color: #a9b78d;
+}
+
+.main_content article .main_content_price {
+    color: #b2290a;
+}
+
+
+/*RODAPE*/
+
+.main_footer {
+    display: block;
+    text-align: right;
+    margin: 40px;
+    padding: 20px;
+}
+
+.main_footer div p{
+    font-family: Verdana, sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+}
+
+
+
+
+
+
+

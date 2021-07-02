@@ -1,0 +1,74 @@
+/* HEADER */
+
+.main_header {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+}
+
+.main_header .main_header_logo img {
+    width: 150px;
+    margin: 10px;
+}
+
+.main_header .main_header_nav a {
+    font-family: "Verdana", sans-serif;
+    font-size: 20px;
+    text-decoration: none;
+    margin-right: 4px;
+    color: #60605f;
+    background-color: #99b1dd;
+    padding: 7px;
+    border-radius: 4px;
+}
+
+
+/*PRODUTOS*/
+
+.main_content {
+    max-width: 1300px;
+    display: block;
+    text-align: center;
+    margin: 40px auto;
+}
+
+.main_content .main_content_title {
+    font-size: 20px;
+    font-family: "Verdana", sans-serif;
+    color: #99b1dd;
+}
+
+.main_content .main_content_table {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.main_content .main_content_table table tr {
+    background-color: #CCC;
+    color: black;
+}
+
+.main_content .main_content_table table tr th {
+    background-color: #CCC;
+    color: black;
+    margin-bottom: 10px;
+    padding: 20px;
+
+}
+
+.main_content .main_content_table table tr td {
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.main_content .main_content_table td {
+    padding-bottom: 10px;
+    padding-right: 10px;
+}
+
+.ds_none {
+    display: none;
+}
+
