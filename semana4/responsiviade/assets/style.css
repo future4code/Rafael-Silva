@@ -91,14 +91,12 @@
 .main_footer {
     background-color: #60605f;
     padding:  20px;
-    margin: 0 auto;
 }
 
 .main_footer_header {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-wrap: wrap;
 }
 
 .main_footer_header a{
@@ -236,14 +234,6 @@
     .main_footer_header h2 {
         padding-bottom: 10px;
     }
-
-    /*.main_video {*/
-    /*    background-color: #E3E3E3;*/
-    /*    display: flex;*/
-    /*    flex-direction: column;*/
-    /*    justify-content: center;*/
-    /*    align-items: center;*/
-    /*}*/
 
 }
 
