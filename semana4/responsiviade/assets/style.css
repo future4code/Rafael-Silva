@@ -184,19 +184,27 @@
 
 /* 1024px */
 @media (max-width: 64em){
+    body{
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+    }
+
     .main_video {
         background-color: #E3E3E3;
-        display: grid;
-        grid-template-columns: 1fr
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
     .main_video_header video {
-        width: 50%;
+        width: 60%;
     }
 
     .main_comment {
         background: rgba(0, 0, 0, 0.1);
-        width: 50%;
+        width: 60%;
     }
 }
 
@@ -263,12 +271,12 @@
     }
 
     .main_video_header video {
-        width: 40%;
+        width: 50%;
     }
 
     .main_comment {
         background: rgba(0, 0, 0, 0.1);
-        width: 40%;
+        width: 50%;
     }
 }
 
@@ -285,12 +293,12 @@
     }
 
     .main_video_header video {
-        width: 30%;
+        width: 40%;
     }
 
     .main_comment {
         background: rgba(0, 0, 0, 0.1);
-        width: 30%;
+        width: 40%;
     }
 }
 
