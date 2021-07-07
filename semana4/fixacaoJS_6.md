@@ -27,5 +27,3 @@ function filtraTarefas() {
     
     return taskDone
 }
-
-console.log(filtraTarefas())
