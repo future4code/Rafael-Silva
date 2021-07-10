@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Verdana", sans-serif;
+    outline: none;
+    text-decoration: none;
+}
+
+body{
+    display: grid;
+    height: 100vh;
+}
+
+/*CONTAINER*/
+.content,
+.container {
+    display: block;
+    width: 1200px;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.content {
+    padding: 60px 0;
+}
+
+
+.radius{
+    border-radius: 5px;
+}
