@@ -1,4 +1,6 @@
 // import logo from './logo.svg';
+import logo192 from "./img/logo192.png";
+import pesquisar from "./img/pesquisar.png";
 import './App.css';
 
 function App() {
@@ -14,7 +16,11 @@ function App() {
             <div className="telaInteira">
                 <header>
                     <h1>Lab Tube</h1>
-                    <input type="text" placeholder="Busca" id="campoDeBusca"/>
+                    <div className="pesquisar">
+                    <input type="text" placeholder="Pesquisar" id="campoDeBusca"/>
+                        <img  src={pesquisar} alt=""/>
+                    </div>
+                    <img src={logo192} alt=""/>
                 </header>
 
                 <main>
