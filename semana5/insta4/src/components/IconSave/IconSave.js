@@ -1,20 +1,10 @@
 import React from "react";
-import styled from "styled-components";
-
-
-const IconContainer = styled.div`
-	display: flex;
-`
-
-const IconImage = styled.img`
-	margin-right: 5px;
-	cursor: pointer;
-`
+import * as all from "./IconSave.styles";
 
 export function IconSave (props) {
     return (
-        <IconContainer>
-            <IconImage alt={"icone"} src={props.icone} onClick={props.onClickSave}/>
-        </IconContainer>
+        <all.IconContainer>
+            <all.IconImage alt={"icone"} src={props.icone} onClick={props.onClickSave}/>
+        </all.IconContainer>
     )
 }
