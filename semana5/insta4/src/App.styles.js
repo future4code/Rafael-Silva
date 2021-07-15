@@ -2,24 +2,24 @@ import styled from "styled-components"
 
 
 export const MainContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  
   margin-top: 20px;
   font-family: "Verdana", sans-serif;
+
 `
 
 export const ContainerPosts = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  
+  overflow: auto;
+
 `
 
 export const Form = styled.div`
   display: flex;
   flex-direction: column;
   margin: auto 60px;
-
+  
   label {
     margin-bottom: 10px;
     font-weight: 500;

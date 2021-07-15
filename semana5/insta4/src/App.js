@@ -35,7 +35,7 @@ class App extends React.Component {
             userPost: `https://picsum.photos/id/${this.state.valueUserPost}/200/150`
         }
 
-        const newPost = [userPost, ...this.state.post ]
+        const newPost = [userPost, ...this.state.post]
 
         this.setState({
             post: newPost,
@@ -77,6 +77,7 @@ class App extends React.Component {
 
         return (
             <All.MainContainer>
+                <div>
                     <All.Form>
                         <h2>Adicionar Post</h2>
                         <label htmlFor="name">Nome do Usuário:</label>
@@ -105,13 +106,16 @@ class App extends React.Component {
                         />
 
                         <span>
-                        <button onClick={this.addPost}>Postar</button>
-                    </span>
+                            <button onClick={this.addPost}>Postar</button>
+                        </span>
                     </All.Form>
+                </div>
+
 
                 <All.ContainerPosts>
                     {listPost}
                 </All.ContainerPosts>
+
             </All.MainContainer>
         );
     }
