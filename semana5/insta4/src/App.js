@@ -77,7 +77,7 @@ class App extends React.Component {
 
         return (
             <All.MainContainer>
-                <div>
+                <All.i1>
                     <All.Form>
                         <h2>Adicionar Post</h2>
                         <label htmlFor="name">Nome do Usuário:</label>
@@ -109,12 +109,11 @@ class App extends React.Component {
                             <button onClick={this.addPost}>Postar</button>
                         </span>
                     </All.Form>
-                </div>
+                </All.i1>
 
-
-                <All.ContainerPosts>
+                <All.i2>
                     {listPost}
-                </All.ContainerPosts>
+                </All.i2>
 
             </All.MainContainer>
         );
