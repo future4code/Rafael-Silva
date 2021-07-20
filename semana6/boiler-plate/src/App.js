@@ -76,7 +76,7 @@ class App extends React.Component {
         const task = {
             id: Date.now(),
             texto: this.state.inputValue,
-            completa: true
+            completa: false
         }
 
         const newTasks = [...this.state.tarefas, task]
@@ -118,9 +118,15 @@ class App extends React.Component {
         }
     }
 
-    // removeTask = (id) => {
-    //     if ()
-    // }
+    removeTask = (id) => {
+        const newTasks = this.state.tarefas.filter((task) => {
+            return task.id !== id
+        })
+
+        this.setState({
+            tarefas: newTasks
+        })
+    }
 
     render() {
         const listaFiltrada = this.state.tarefas.filter(tarefa => {
@@ -162,9 +168,9 @@ class App extends React.Component {
                                 </Tarefa>
 
 
-                                {/*<span onClick={() => this.removeTask(tarefa.id)}>*/}
-                                {/*    <img src={remove} alt="remover"/>*/}
-                                {/*</span>*/}
+                                <span onClick={() => this.removeTask(tarefa.id)}>
+                                    <img src={remove} alt="remover"/>
+                                </span>
                             </ContainerTasks>
                         )
                     })}
