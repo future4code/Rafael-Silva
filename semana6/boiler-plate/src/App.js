@@ -14,7 +14,7 @@ const ContainerTasks = styled.div`
   align-items: center;
   justify-content: space-between;
 
-  img{
+  img {
     cursor: pointer;
   }
 `
@@ -118,6 +118,25 @@ class App extends React.Component {
         }
     }
 
+    checkTask = (id) => {
+        const newTasksList = this.state.tarefas.map((task) => {
+            if (task.id === id) {
+                const taskDone = {
+                    ...task,
+                    completa: !task.completa
+                }
+
+                return taskDone
+            } else {
+                return task
+            }
+        })
+
+        this.setState({
+            tarefas: newTasksList
+        })
+    }
+
     removeTask = (id) => {
         const newTasks = this.state.tarefas.filter((task) => {
             return task.id !== id
@@ -128,8 +147,14 @@ class App extends React.Component {
         })
     }
 
+    removeAllTasks = (length) => {
+        this.setState({
+            tarefas: []
+        })
+    }
+
     render() {
-        const listaFiltrada = this.state.tarefas.filter(tarefa => {
+        const listaFiltrada = this.state.tarefas.filter((tarefa) => {
             switch (this.state.filtro) {
                 case 'pendentes':
                     return !tarefa.completa
@@ -160,6 +185,10 @@ class App extends React.Component {
                     {listaFiltrada.map((tarefa, index) => {
                         return (
                             <ContainerTasks key={index}>
+                                <span onClick={() => this.checkTask(tarefa.id)}>
+                                    <img src={done} alt="resolvido"/>
+                                </span>
+
                                 <Tarefa
                                     completa={tarefa.completa}
                                     onClick={() => this.selectTarefa(tarefa.id)}
@@ -171,10 +200,12 @@ class App extends React.Component {
                                 <span onClick={() => this.removeTask(tarefa.id)}>
                                     <img src={remove} alt="remover"/>
                                 </span>
+
                             </ContainerTasks>
                         )
                     })}
 
+                    <button onClick={() => this.removeAllTasks(listaFiltrada.length)}>Remover Todos</button>
                 </TarefaList>
             </div>
         )
