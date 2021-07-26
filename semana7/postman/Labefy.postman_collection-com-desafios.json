@@ -63,7 +63,7 @@
 					}
 				],
 				"url": {
-					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/search?name=Give Me Summer",
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/search?name=bananinha",
 					"protocol": "https",
 					"host": [
 						"us-central1-labenu-apis",
@@ -78,7 +78,7 @@
 					"query": [
 						{
 							"key": "name",
-							"value": "Give Me Summer"
+							"value": "bananinha"
 						}
 					]
 				}
@@ -120,7 +120,7 @@
 					"variable": [
 						{
 							"key": "playlistId",
-							"value": "01d6161b-534d-4977-b8bb-52d6ca052715"
+							"value": "12346513"
 						}
 					]
 				}
@@ -140,7 +140,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"Eletrônica 2\"\r\n}",
+					"raw": "{\r\n    \"name\": \"\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -176,7 +176,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"Eleven\", \r\n    \"artist\": \"Christian Löffler & Mohna\",\r\n    \"url\": \"https://open.spotify.com/track/0WPX6mCPa4AWA83kanPze5?si=21fd05ef5d384c18\"\r\n}",
+					"raw": "{\r\n    \"name\": \"Dance With Me\", \r\n    \"artist\": \"Ehrling\",\r\n    \"url\": \"https://open.spotify.com/track/4lWuo3yJLHjMdJL1Q0Z3JO?si=0177ea5b928e46af\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -234,7 +234,7 @@
 					"variable": [
 						{
 							"key": "playlistId",
-							"value": "6cc59dc2-6d0b-4d7b-bba5-6b7501818ff9"
+							"value": "9da111a8-c5b4-48ac-8686-cd660b8232e5"
 						}
 					]
 				}
@@ -270,11 +270,11 @@
 					"variable": [
 						{
 							"key": "playlistId",
-							"value": "01d6161b-534d-4977-b8bb-52d6ca052715"
+							"value": "9da111a8-c5b4-48ac-8686-cd660b8232e5"
 						},
 						{
 							"key": "trackId",
-							"value": "1ee44aab-bccb-47fb-88b8-0c0381df75e4"
+							"value": ""
 						}
 					]
 				}
