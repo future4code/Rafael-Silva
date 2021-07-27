@@ -39,27 +39,15 @@ const Inputs = styled.input`
 `
 
 export default class Register extends React.Component {
-    state = {
-        inputName: "",
-        inputEmail: ""
-    }
-
-    onChangeName = (e) => {
-        this.setState({inputName: e.target.value})
-    }
-
-    onChangeEmail = (e) => {
-        this.setState({inputEmail: e.target.value})
-    }
-
-    render() {
+     render() {
         return (
             <ContainerInputs>
                 <div>
                     <h3>Nome:</h3>
                     <Inputs
-                        value={this.state.inputName}
-                        onChange={this.onChangeName}
+                        type={"text"}
+                        value={this.props.inputName}
+                        onChange={this.props.onChangeName}
                         placeholder={"Insira seu nome"}
                     />
                 </div>
@@ -67,8 +55,9 @@ export default class Register extends React.Component {
                 <div>
                     <h3>Email:</h3>
                     <Inputs
-                        value={this.state.inputEmail}
-                        onChange={this.onChangeEmail}
+                        type={"email"}
+                        value={this.props.inputEmail}
+                        onChange={this.props.onChangeEmail}
                         placeholder={"Insira seu e-mail"}
                     />
                 </div>

@@ -19,6 +19,7 @@ const CenterRegister = styled.div`
 
 const CenterListUsers = styled.div`
   margin: 20px auto;
+  width: 50%;
 `
 
 const ButtonContainer = styled.div`
@@ -38,17 +39,92 @@ const ButtonContainer = styled.div`
   }
 `
 
+//Global Variables:
+
+//Headers
+const headers = {
+    headers: {
+        Authorization: "rafael-nascimento-silva"
+    }
+}
+
 class App extends React.Component {
     state = {
-        clickListUsers: false
+        clickListUsers: false,
+        inputName: "",
+        inputEmail: "",
+        users: []
     }
 
     componentDidMount() {
+        this.getAllUsers()
     }
 
 
-    registerUser = () => {
+    getAllUsers = () => {
+        const url = "https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users"
 
+        axios.get(url, headers)
+            .then((response) => {
+                this.setState({
+                    users: response.data
+                })
+            }).catch((exception) => {
+            alert(`Ooops! Ocorreu um erro. \n${exception.response.data.message}`)
+        })
+    }
+
+    createUser = () => {
+        const url = "https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users"
+
+        const body = {
+            name: this.state.inputName,
+            email: this.state.inputEmail
+        }
+
+        axios.post(url, body, headers)
+            .then((response) => {
+                const newUsers = [...this.state.users, response.data]
+
+                alert("Cadastro realizado com sucesso!!")
+                this.setState({
+                    users: newUsers,
+                    clickListUsers: !this.state.clickListUsers,
+                    inputName: "",
+                    inputEmail: ""
+                })
+
+                this.getAllUsers()
+            }).catch((exception) => {
+            alert(`Ooops! Ocorreu um erro. \n${exception.response.data.message}`)
+        })
+    }
+
+    removeUser = (userId) => {
+        const url = `https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users/${userId}`
+
+        axios.delete(url, headers)
+            .then((response) => {
+                const reloadUsers = [...this.state.users, response.data]
+
+                alert("Usuário removido com sucesso!!")
+
+                this.setState({
+                    users: reloadUsers
+                })
+
+                this.getAllUsers()
+            }).catch((exception) => {
+            alert(`Ooops! Ocorreu um erro. \n${exception.response.data.message}`)
+        })
+    }
+
+    onChangeName = (e) => {
+        this.setState({inputName: e.target.value})
+    }
+
+    onChangeEmail = (e) => {
+        this.setState({inputEmail: e.target.value})
     }
 
     render() {
@@ -59,7 +135,11 @@ class App extends React.Component {
                         <CenterRegister>
 
                             <Register
-                                Register={this.registerUser}
+                                Register={this.createUser}
+                                onChangeName={this.onChangeName}
+                                onChangeEmail={this.onChangeEmail}
+                                inputName={this.state.inputName}
+                                inputEmail={this.state.inputEmail}
                             />
 
                             <ButtonContainer>
@@ -84,7 +164,8 @@ class App extends React.Component {
 
 
                             <ListUsers
-
+                                UserName={this.state.users}
+                                RemoveUser={this.removeUser}
                             />
 
                         </CenterListUsers>

@@ -9,12 +9,11 @@ const ContainerUsers = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  border: 1px solid #2D4051;
   padding: 20px;
+  
 `
 
 const List = styled.div`
-  border: 1px solid #2D4051;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -32,10 +31,16 @@ export default class ListUsers extends React.Component {
                 <h2>Lista de Usuários</h2>
 
                 <List>
-                    <ListUsersItem
-                        UserName={"Teste"}
-                        RemoveUser={() => alert("Teste")}
-                    />
+                    {this.props.UserName.map((user) => {
+                        return (
+                            <ListUsersItem
+                                key={user.id}
+                                UserName={user.name}
+                                RemoveUser={() => this.props.RemoveUser(user.id)}
+                            />
+                        )
+                    })}
+
                 </List>
             </ContainerUsers>
         )
