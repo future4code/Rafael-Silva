@@ -103,20 +103,22 @@ class App extends React.Component {
     removeUser = (userId) => {
         const url = `https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users/${userId}`
 
-        axios.delete(url, headers)
-            .then((response) => {
-                const reloadUsers = [...this.state.users, response.data]
+        if (window.confirm("Tem certeza de que deseja deletar?\n")){
+            axios.delete(url, headers)
+                .then((response) => {
+                    const reloadUsers = [...this.state.users, response.data]
 
-                alert("Usuário removido com sucesso!!")
+                    alert("Usuário removido com sucesso!!")
 
-                this.setState({
-                    users: reloadUsers
-                })
+                    this.setState({
+                        users: reloadUsers
+                    })
 
-                this.getAllUsers()
-            }).catch((exception) => {
-            alert(`Ooops! Ocorreu um erro. \n${exception.response.data.message}`)
-        })
+                    this.getAllUsers()
+                }).catch((exception) => {
+                alert(`Ooops! Ocorreu um erro. \n${exception.response.data.message}`)
+            })
+        }
     }
 
     onChangeName = (e) => {
