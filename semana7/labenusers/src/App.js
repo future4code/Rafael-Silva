@@ -3,8 +3,8 @@ import styled from "styled-components";
 import axios from "axios";
 
 //Components
-import Register from "./components/Register";
-import ListUsers from "./components/ListUsers";
+import Register from "./components/Register/Register";
+import ListUsers from "./components/ListUsers/ListUsers";
 
 const Container = styled.div`
   display: flex;
@@ -47,7 +47,7 @@ class App extends React.Component {
     }
 
 
-    registerUser = (e) => {
+    registerUser = () => {
 
     }
 
@@ -57,36 +57,36 @@ class App extends React.Component {
                 {this.state.clickListUsers === false
                     ? (
                         <CenterRegister>
-                            <div>
-                                <Register
-                                    Register={this.registerUser}
-                                />
 
-                                <ButtonContainer>
-                                    <button
-                                        onClick={() => this.setState({clickListUsers: !this.state.clickListUsers})}>Ir
-                                        Para Lista de Usuários
-                                    </button>
-                                </ButtonContainer>
-                            </div>
+                            <Register
+                                Register={this.registerUser}
+                            />
+
+                            <ButtonContainer>
+                                <button
+                                    onClick={() => this.setState({clickListUsers: !this.state.clickListUsers})}>Ir
+                                    Para Lista de Usuários
+                                </button>
+                            </ButtonContainer>
+
                         </CenterRegister>
 
                     )
                     : (
                         <CenterListUsers>
-                            <div>
-                                <ButtonContainer>
-                                    <button
-                                        onClick={() => this.setState({clickListUsers: !this.state.clickListUsers})}>Ir
-                                        Para Cadastro de Usuários
-                                    </button>
-                                </ButtonContainer>
+
+                            <ButtonContainer>
+                                <button
+                                    onClick={() => this.setState({clickListUsers: !this.state.clickListUsers})}>Ir
+                                    Para Cadastro de Usuários
+                                </button>
+                            </ButtonContainer>
 
 
-                                <ListUsers
+                            <ListUsers
 
-                                />
-                            </div>
+                            />
+
                         </CenterListUsers>
                     )
                 }
