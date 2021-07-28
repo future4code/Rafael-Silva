@@ -69,7 +69,7 @@ const Search = styled.div`
   align-items: center;
   justify-content: flex-start;
   margin: 10px;
-  border: 1px solid #2D4051;
+  //border: 1px solid #2D4051;
   width: 100%;
   padding: 10px;
 
