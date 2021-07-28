@@ -12,15 +12,15 @@ const ContainerDetails = styled.div`
 
 const Details = styled.div`
   margin: 20px;
-  border: 1px solid #1D2025;
+  //border: 1px solid #1D2025;
   display: flex;
   align-items: center;
   padding: 10px;
-  
-  div{
+
+  div {
     text-align: center;
   }
-  
+
   input {
     padding: 5px;
     margin: 10px;
@@ -40,7 +40,7 @@ export default class UpdateUserConfig extends React.Component {
 
                     <input type="text"
                            value={this.props.UserName}
-                        // onChange={}
+                           onChange={this.props.onChangeUpdateName}
                     />
                 </Details>
 
@@ -50,7 +50,8 @@ export default class UpdateUserConfig extends React.Component {
                     </div>
 
                     <input type="email"
-                           // value={this.props.email}
+                           value={this.props.UserEmail}
+                           onChange={this.props.onChangeUpdateEmail}
                     />
                 </Details>
             </ContainerDetails>

@@ -5,6 +5,10 @@ import styled from "styled-components";
 import ListUsersItem from "./ListUsersItem";
 import UpdateUser from "../UpdateUser/UpdateUser";
 
+//RESQUESTs
+import {headers} from "../../App";
+import axios from "axios";
+
 const ContainerUsers = styled.div`
   display: flex;
   align-items: center;
@@ -24,7 +28,7 @@ const List = styled.div`
   width: 100%;
   height: 100%;
   padding: 5px;
-  
+
   //h2 {
   //  margin-top: 0;
   //  padding-top: 0;
@@ -63,15 +67,26 @@ const ButtonContainer = styled.div`
 export default class ListUsers extends React.Component {
     state = {
         clickConfigUser: false,
-        user: []
+        user: [],
     }
 
-    ConfigUser = (user) => {
-        this.setState({
-            clickConfigUser: !this.state.clickConfigUser,
-            user: user
-        })
+
+    getUserById = async (userId) => {
+        const url = `https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users/${userId}`
+
+        try {
+            const response = await axios.get(url, headers)
+
+            this.setState({
+                clickConfigUser: !this.state.clickConfigUser,
+                user: [response.data]
+            })
+        } catch (e) {
+            alert(`Ooops! Ocorreu um erro. \n${e.response.data.message}`)
+        }
     }
+
+
 
     render() {
         return (
@@ -95,7 +110,7 @@ export default class ListUsers extends React.Component {
                                         key={index}
                                         UserName={user.name}
                                         RemoveUser={() => this.props.RemoveUser(user.id)}
-                                        ConfigUser={() => this.ConfigUser(user)}
+                                        ConfigUser={() => this.getUserById(user.id)}
                                     />
                                 )
                             })}
@@ -112,9 +127,7 @@ export default class ListUsers extends React.Component {
 
                             <h2>Detalhes do Usuário</h2>
 
-                            {this.props.UserName.filter((user) =>{
-                                return user.id === this.state.user.id
-                            }).map((user, index) =>{
+                            {this.state.user.map((user, index) => {
                                 return (
                                     <UpdateUser
                                         key={index}

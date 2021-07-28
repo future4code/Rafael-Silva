@@ -12,7 +12,7 @@ const ContainerUpdate = styled.div`
   align-items: center;
   margin: 10px auto;
   padding: 20px;
-  border: 1px solid #2D4051;
+  //border: 1px solid #2D4051;
   width: 100%;
 
   div {
@@ -20,45 +20,102 @@ const ContainerUpdate = styled.div`
   }
 `
 
-const ButtonContainer = styled.div`
+const ButtonsContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  margin: 10px auto;
+  border: 1px solid #2D4051;
+`
 
-  button {
-    padding: 10px;
-    border-radius: 5px;
-    background-color: red;
-    color: #000;
+const DeleteButton = styled.button`
+  
+  margin: 10px;
 
-    :hover {
-      cursor: pointer;
-      color: #FFF;
-    }
+  padding: 10px;
+  border-radius: 5px;
+  background-color: red;
+  color: #000;
+
+  :hover {
+    cursor: pointer;
+    color: #FFF;
   }
+
+`
+
+const UpdateButton = styled.button`
+  margin: 10px;
+
+  padding: 10px;
+  border-radius: 5px;
+
+  :hover {
+    cursor: pointer;
+    color: #D36833;
+  }
+
 `
 
 export default class UpdateUser extends React.Component {
     state = {
-        backToList: false
+        backToList: false,
+        updateName: this.props.UserConfig.name,
+        updateEmail: this.props.UserConfig.email,
+        showButtonEdit: false
+    }
+
+    UpdateUser = () => {
+
+    }
+
+    onChangeUpdateName = (e) => {
+        this.setState({
+            updateName: e.target.value,
+            showButtonEdit: !this.state.showButtonEdit
+        })
+    }
+
+    onChangeUpdateEmail = (e) => {
+        this.setState({
+            updateEmail: e.target.value,
+            showButtonEdit: !this.state.showButtonEdit
+        })
     }
 
     render() {
         return (
             <ContainerUpdate>
                 {this.state.backToList === false
-                    ? (<div>
+                    ? (
+                        <div>
                             <div>
                                 <UpdateUserConfig
-                                    UserName={this.props.UserConfig.name}
+                                    UserName={this.state.updateName}
+                                    UserEmail={this.state.updateEmail}
+                                    onChangeUpdateName={this.onChangeUpdateName}
+                                    onChangeUpdateEmail={this.onChangeUpdateEmail}
                                 />
                             </div>
 
+                            <div>
+                                <ButtonsContainer>
 
-                            <ButtonContainer>
-                                <button onClick={this.props.RemoveUser}>Excluir</button>
-                            </ButtonContainer>
+                                    {this.state.showButtonEdit === true
+                                        ? (
+
+                                            <UpdateButton onClick={this.UpdateUser}>Editar</UpdateButton>
+
+                                        )
+                                        : (
+                                            ""
+                                        )}
+
+
+                                    <DeleteButton onClick={this.props.RemoveUser}>Excluir</DeleteButton>
+
+                                </ButtonsContainer>
+
+                            </div>
                         </div>
                     )
                     : (
