@@ -1,10 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import {getAllUsers} from "../../App";
-import {removeUser} from "../../App";
 
 //Components
 import UpdateUserConfig from "./UpdateUserConfig";
+
 
 const ContainerUpdate = styled.div`
   display: flex;
@@ -15,7 +14,7 @@ const ContainerUpdate = styled.div`
   padding: 20px;
   border: 1px solid #2D4051;
   width: 100%;
-  
+
   div {
     width: 100%;
   }
@@ -27,12 +26,12 @@ const ButtonContainer = styled.div`
   justify-content: flex-end;
   margin: 10px auto;
 
-  a {
+  button {
     padding: 10px;
     border-radius: 5px;
     background-color: red;
     color: #000;
-    
+
     :hover {
       cursor: pointer;
       color: #FFF;
@@ -41,21 +40,33 @@ const ButtonContainer = styled.div`
 `
 
 export default class UpdateUser extends React.Component {
+    state = {
+        backToList: false
+    }
 
     render() {
         return (
             <ContainerUpdate>
-                <div>
-                    <UpdateUserConfig
-                        UserName={this.props.UserConfig.name}
-                    />
-                </div>
+                {this.state.backToList === false
+                    ? (<div>
+                            <div>
+                                <UpdateUserConfig
+                                    UserName={this.props.UserConfig.name}
+                                />
+                            </div>
 
 
-                <ButtonContainer>
-                    <a onClick={() => this.removeUser(this.props.UserConfig.id)}>Excluir</a>
-                </ButtonContainer>
-
+                            <ButtonContainer>
+                                <button onClick={this.props.RemoveUser}>Excluir</button>
+                            </ButtonContainer>
+                        </div>
+                    )
+                    : (
+                        <div>
+                            <h3>Usuário excluido com sucesso!</h3>
+                        </div>
+                    )
+                }
             </ContainerUpdate>
         )
     }

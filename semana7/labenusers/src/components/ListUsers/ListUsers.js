@@ -82,7 +82,7 @@ export default class ListUsers extends React.Component {
                         <List>
                             <ButtonContainer>
                                 <button
-                                    onClick={this.props.BackRegister}>
+                                    onClick={this.props.BackToRegister}>
                                     Voltar Para Cadastro de Usuários
                                 </button>
                             </ButtonContainer>
@@ -119,6 +119,8 @@ export default class ListUsers extends React.Component {
                                     <UpdateUser
                                         key={index}
                                         UserConfig={user}
+                                        RemoveUser={() => this.props.RemoveUser(user.id)}
+                                        // BackToList={() => this.setState({clickConfigUser: !this.state.clickConfigUser})}
                                     />
                                 )
                             })}
