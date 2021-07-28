@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import close from "../../img/close_black_24dp.svg"
+import remove from "../../img/close_black_24dp.svg"
+import config from "../../img/settings_black_24dp.svg"
 
 const ContainerItem = styled.div`
   display: flex;
@@ -13,6 +14,7 @@ const ContainerItem = styled.div`
 
   img {
     cursor: pointer;
+    margin-left: 10px;
   }
 `
 
@@ -23,7 +25,11 @@ export default class ListUsersItem extends React.Component {
                 <li>{this.props.UserName}</li>
 
                 <div>
-                    <img src={close} alt={"Remover Usuário"}
+                    <img src={config} alt={"Remover Usuário"}
+                         onClick={this.props.ConfigUser}
+                    />
+
+                    <img src={remove} alt={"Remover Usuário"}
                          onClick={this.props.RemoveUser}
                     />
                 </div>

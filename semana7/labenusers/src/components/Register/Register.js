@@ -45,7 +45,7 @@ export default class Register extends React.Component {
                 <div>
                     <h3>Nome:</h3>
                     <Inputs
-                        type={"text"}
+                        type='text'
                         value={this.props.inputName}
                         onChange={this.props.onChangeName}
                         placeholder={"Insira seu nome"}
@@ -55,7 +55,7 @@ export default class Register extends React.Component {
                 <div>
                     <h3>Email:</h3>
                     <Inputs
-                        type={"email"}
+                        type="email"
                         value={this.props.inputEmail}
                         onChange={this.props.onChangeEmail}
                         placeholder={"Insira seu e-mail"}
