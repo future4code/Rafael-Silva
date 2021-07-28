@@ -4,6 +4,9 @@ import styled from "styled-components";
 //Components
 import UpdateUserConfig from "./UpdateUserConfig";
 
+//REQUESTS
+import {headers} from "../../App";
+import axios from "axios";
 
 const ContainerUpdate = styled.div`
   display: flex;
@@ -28,7 +31,7 @@ const ButtonsContainer = styled.div`
 `
 
 const DeleteButton = styled.button`
-  
+
   margin: 10px;
 
   padding: 10px;
@@ -64,21 +67,38 @@ export default class UpdateUser extends React.Component {
         showButtonEdit: false
     }
 
-    UpdateUser = () => {
+    UpdateUser = async (userId) => {
+        const url = `https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users/${userId}`
+        const body = {
+            name: this.state.updateName,
+            email: this.state.updateEmail
+        }
 
+        try {
+            await axios.put(url, body, headers)
+
+            alert("Usuário atualizado com sucesso!")
+
+            this.setState({
+                showButtonEdit: false
+            })
+            this.props.ReloadList()
+        } catch (e) {
+            alert(`Ooops! Ocorreu um erro. \n${e.response.data.message}`)
+        }
     }
 
     onChangeUpdateName = (e) => {
         this.setState({
             updateName: e.target.value,
-            showButtonEdit: !this.state.showButtonEdit
+            showButtonEdit: true
         })
     }
 
     onChangeUpdateEmail = (e) => {
         this.setState({
             updateEmail: e.target.value,
-            showButtonEdit: !this.state.showButtonEdit
+            showButtonEdit: true
         })
     }
 
@@ -102,13 +122,10 @@ export default class UpdateUser extends React.Component {
 
                                     {this.state.showButtonEdit === true
                                         ? (
-
-                                            <UpdateButton onClick={this.UpdateUser}>Editar</UpdateButton>
-
+                                            <UpdateButton
+                                                onClick={() => this.UpdateUser(this.props.UserConfig.id)}>Salvar</UpdateButton>
                                         )
-                                        : (
-                                            ""
-                                        )}
+                                        : ""}
 
 
                                     <DeleteButton onClick={this.props.RemoveUser}>Excluir</DeleteButton>

@@ -22,7 +22,7 @@ class App extends React.Component {
     }
 
     componentDidMount() {
-        this.getAllUsers()
+        this.getAllUsers().then()
     }
 
     getAllUsers = async () => {
@@ -151,6 +151,7 @@ class App extends React.Component {
                                 UserName={this.state.users}
                                 RemoveUser={this.removeUser}
                                 BackToRegister={() => this.setState({clickListUsers: !this.state.clickListUsers})}
+                                ReloadList={this.getAllUsers}
                             />
 
                         </All.CenterListUsers>

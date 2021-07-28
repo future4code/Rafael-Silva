@@ -64,10 +64,38 @@ const ButtonContainer = styled.div`
   }
 `
 
+const Search = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 10px;
+  border: 1px solid #2D4051;
+  width: 100%;
+  padding: 10px;
+
+  input {
+    padding: 10px;
+  }
+
+  button {
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+
+    :hover {
+      cursor: pointer;
+      color: #D36833;
+    }
+  }
+`
+
 export default class ListUsers extends React.Component {
     state = {
         clickConfigUser: false,
         user: [],
+        search: false,
+        searchInput: "",
+        searchUser: []
     }
 
 
@@ -86,9 +114,26 @@ export default class ListUsers extends React.Component {
         }
     }
 
+    searchUsers = async (userName) => {
+        const url = `https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users/search?name=${userName}&email=`
+
+        try {
+            const response = await axios.get(url, headers)
+            this.setState({
+                search: true,
+                searchInput: "",
+                // searchUser: [response.data]
+                user: response.data
+
+            })
+        } catch (e) {
+            alert(`Ooops! Ocorreu um erro. \n${e.response.data.message}`)
+        }
+    }
 
 
     render() {
+        console.log(this.state.user)
         return (
             <ContainerUsers>
 
@@ -104,16 +149,44 @@ export default class ListUsers extends React.Component {
 
                             <h2>Lista de Usuários</h2>
 
-                            {this.props.UserName.map((user, index) => {
-                                return (
-                                    <ListUsersItem
-                                        key={index}
-                                        UserName={user.name}
-                                        RemoveUser={() => this.props.RemoveUser(user.id)}
-                                        ConfigUser={() => this.getUserById(user.id)}
-                                    />
+
+                            <Search>
+                                <input type="text"
+                                       value={this.state.searchInput}
+                                       onChange={(e) => this.setState({searchInput: e.target.value})}
+                                       placeholder={"Buscar nome"}
+                                />
+
+                                <button onClick={() => this.searchUsers(this.state.searchInput)}>Buscar</button>
+                            </Search>
+
+                            {this.state.search === true
+                                ? (
+                                    this.state.user.map((user, index) => {
+                                        return (
+                                            <ListUsersItem
+                                                key={index}
+                                                UserName={user.name}
+                                                RemoveUser={() => this.props.RemoveUser(user.id)}
+                                                ConfigUser={() => this.getUserById(user.id)}
+                                            />
+                                        )
+                                    })
                                 )
-                            })}
+                                : (
+                                    this.props.UserName.map((user, index) => {
+                                        return (
+                                            <ListUsersItem
+                                                key={index}
+                                                UserName={user.name}
+                                                RemoveUser={() => this.props.RemoveUser(user.id)}
+                                                ConfigUser={() => this.getUserById(user.id)}
+                                            />
+                                        )
+                                    })
+                                )}
+
+
                         </List>
                     )
                     : (
@@ -133,14 +206,13 @@ export default class ListUsers extends React.Component {
                                         key={index}
                                         UserConfig={user}
                                         RemoveUser={() => this.props.RemoveUser(user.id)}
+                                        ReloadList={this.props.ReloadList}
                                         // BackToList={() => this.setState({clickConfigUser: !this.state.clickConfigUser})}
                                     />
                                 )
                             })}
 
-
                         </UserConfig>
-
                     )
                 }
 
