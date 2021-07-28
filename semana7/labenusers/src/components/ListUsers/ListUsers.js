@@ -133,7 +133,6 @@ export default class ListUsers extends React.Component {
 
 
     render() {
-        console.log(this.state.user)
         return (
             <ContainerUsers>
 
