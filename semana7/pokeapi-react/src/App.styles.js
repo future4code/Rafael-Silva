@@ -97,3 +97,18 @@ export const CardContent = styled.div`
     }
   }
 `
+
+export const Buttons = styled.div`
+  margin: 20px;
+  
+  button {
+    margin-right: 10px;
+    padding: 5px;
+    border-radius: 5px;
+
+    :hover {
+      cursor: pointer;
+      color: #D36833;
+    }
+  }
+`

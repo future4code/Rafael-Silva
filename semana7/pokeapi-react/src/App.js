@@ -6,7 +6,9 @@ class App extends React.Component {
     state = {
         aleatoryPokemon: [],
         picturePokemon: "",
-        pokemon: []
+        pokemon: [],
+        catchPokemon: true,
+        message: ""
     }
 
     componentDidMount() {
@@ -53,6 +55,27 @@ class App extends React.Component {
     showPokemon = () => {
         this.getPokemons().then()
         this.getPicturePokemon().then()
+
+        this.setState({
+            catchPokemon: true,
+        })
+    }
+
+    CatchPokemon = () => {
+        const Messages = ["Não conseguiu capturar.", "Capturou!!", "Pokémon Fugiu!!"]
+
+        const aleatoryMessage = Math.floor(Math.random() * Messages.length)
+
+        this.setState({
+            message: Messages[aleatoryMessage]
+        })
+    }
+
+    pass = () => {
+        this.setState({
+            catchPokemon: false,
+            message: ""
+        })
     }
 
     render() {
@@ -99,7 +122,27 @@ class App extends React.Component {
                 </All.HeaderContainer>
 
                 <All.MainContainer>
-                    {pokemonCard}
+                    {this.state.catchPokemon === true
+                        ? (<>
+                                {this.state.message !== ""
+                                    ? this.state.message
+                                    : pokemonCard
+                                }
+
+
+                                {this.state.pokemon.length !== 0
+                                    ? (
+                                        <All.Buttons>
+                                            <button onClick={this.CatchPokemon}>Capturar</button>
+                                            <button onClick={this.pass}>Passar</button>
+                                        </All.Buttons>
+                                    )
+                                    : ""}
+                            </>
+                        )
+                        : ""}
+
+
                 </All.MainContainer>
             </All.Container>
         )
