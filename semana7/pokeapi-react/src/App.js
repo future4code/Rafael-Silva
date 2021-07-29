@@ -57,55 +57,53 @@ class App extends React.Component {
 
     render() {
         const pokemonCard = this.state.pokemon.map((pokemon) => {
-            return (
-                <All.Card key={pokemon.name}>
-                    {this.state.picturePokemon && <div>
-                        <All.CardCover>
-                            <img src={this.state.picturePokemon} alt="foto do pokemon"/>
-                        </All.CardCover>
+                return (
+                    <All.Card key={pokemon.name}>
+                        {this.state.picturePokemon && <div>
+                            <All.CardCover>
+                                <img src={this.state.picturePokemon} alt="foto do pokemon"/>
+                            </All.CardCover>
 
-                        <All.CardContent>
-                            <div>
-                                <h3>Nome:</h3>
-                                <p>{pokemon.name}</p>
-                            </div>
+                            <All.CardContent>
+                                <div>
+                                    <h3>Nome:</h3>
+                                    <p>{pokemon.name}</p>
+                                </div>
 
-                            <div>
-                                <h3>Tipo:</h3>
-                                {pokemon.types.map((type) =>{
-                                    return (
-                                        <p>{type.name},</p>
-                                    )
-                                })}
-                                {/*<p>{console.log(pokemon.types)},</p>*/}
-                            </div>
-                        </All.CardContent>
-                    </div>
-                    }
-                </All.Card>
-            )
-        }
-    )
-        console.log(this.state.pokemon)
+                                <div>
+                                    <h3>Tipo:</h3>
+                                    {pokemon.types.map((type) => {
+                                        return (
+                                            <p key={type.type.name}>{type.type.name},</p>
+                                        )
+                                    })}
+                                </div>
+                            </All.CardContent>
+                        </div>
+                        }
+                    </All.Card>
+                )
+            }
+        )
 
-    return (
-        <All.Container>
-            <All.HeaderContainer>
-                <All.Titles>
-                    <h2>Jornada no mundo de Pokémon</h2>
-                    <p>Você está explorando no mundo de pokémon, de repente você encontra um pokémon selvagem.</p>
-                    <p>Clique no botão abaixo para saber qual é esse pokémon!</p>
-                </All.Titles>
+        return (
+            <All.Container>
+                <All.HeaderContainer>
+                    <All.Titles>
+                        <h2>Jornada no mundo de Pokémon</h2>
+                        <p>Você está explorando no mundo de pokémon, de repente você encontra um pokémon selvagem.</p>
+                        <p>Clique no botão abaixo para saber qual é esse pokémon!</p>
+                    </All.Titles>
 
-                <button onClick={this.showPokemon}>Qual Pokémon?</button>
-            </All.HeaderContainer>
+                    <button onClick={this.showPokemon}>Qual Pokémon?</button>
+                </All.HeaderContainer>
 
-            <All.MainContainer>
-                {pokemonCard}
-            </All.MainContainer>
-        </All.Container>
-    )
+                <All.MainContainer>
+                    {pokemonCard}
+                </All.MainContainer>
+            </All.Container>
+        )
     }
-    }
+}
 
-    export default App;
+export default App;
