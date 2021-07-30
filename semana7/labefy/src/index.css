@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    text-decoration: none;
+}
+
+html, body {
+    width: 100%;
+    height: 100vh;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Ubuntu', 'Segoe UI', 'Roboto', 'Oxygen',
+    'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    background: #ecf3f3;
+}
+
+
+
