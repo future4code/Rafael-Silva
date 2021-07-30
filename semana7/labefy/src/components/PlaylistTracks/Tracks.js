@@ -5,9 +5,9 @@ export default class Tracks extends React.Component {
     render() {
         return (
             <All.ContainerTracks>
-                
+
                 <All.Tracks>
-                    <p>teste</p>
+                    <h3>teste</h3>
                 </All.Tracks>
 
                 <span></span>

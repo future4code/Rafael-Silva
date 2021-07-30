@@ -15,10 +15,15 @@ export const ContainerTracks = styled.div`
 export const Tracks = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  //justify-content: center;
+  //align-items: center;
   padding: 10px;
   border: 2px solid #B82601;
+  width: 100%;
+
+  h3 {
+    color: #B82601;
+  }
   
 `
 
@@ -29,6 +34,7 @@ export const NewMusic = styled.div`
   align-items: center;
   padding: 10px;
   border: 2px solid #B82601;
+  width: 100%;
 
   button{
     margin-top: 20px;
