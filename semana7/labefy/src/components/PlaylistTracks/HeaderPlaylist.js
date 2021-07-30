@@ -12,7 +12,7 @@ export default class HeaderPlaylist extends React.Component {
 
                 <All.NamePlaylist>
                     <p>Playlist</p>
-                    <h1>{this.props.PlaylistName} teste</h1>
+                    <h1>{this.props.PlaylistName}</h1>
 
                     <div>
                         <p>User - {this.props.QuantityTracks} músicas </p>

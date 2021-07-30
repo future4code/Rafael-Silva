@@ -4,6 +4,7 @@ import * as All from "./ListPlaylist.styles"
 //COMPONENTS
 import ListPlaylistItem from "./ListPlaylistItem";
 import HeaderPlaylist from "../PlaylistTracks/HeaderPlaylist";
+import Tracks from "../PlaylistTracks/Tracks";
 
 //REQUESTS
 import axios from "axios";
@@ -74,6 +75,10 @@ export default class ListPlaylist extends React.Component {
                                     Voltar Para Playlists
                                 </button>
                             </All.ButtonContainer>
+
+                            <Tracks
+
+                            />
                         </div>
                     )
                 }

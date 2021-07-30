@@ -58,7 +58,7 @@ export const ButtonContainer = styled.div`
 
     :hover {
       cursor: pointer;
-      color: #D36833;
+      color: #B82601;
     }
   }
 `
