@@ -35,7 +35,7 @@ class App extends React.Component {
         inputPlaylistName: "",
         playlists: [],
         quantity: 0,
-        playTrack: {},
+        playTrack: [],
         start: false
     }
 
@@ -96,9 +96,9 @@ class App extends React.Component {
 
 
     PlayTrack = (track) => {
-        console.log(track)
+
         this.setState({
-            playTrack: track,
+            playTrack: [track],
             start: !this.state.start
         })
     }
