@@ -5,8 +5,8 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: 100%;
   padding: 20px;
+  
   //border: 1px solid #1D2025;
 
   select{

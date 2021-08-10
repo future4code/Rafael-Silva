@@ -35,7 +35,7 @@ const PokeCard = (props) => {
 
                         <div>
                             <h3>Peso:</h3>
-                            <p>{pokemon.weight}</p>
+                            <p>{pokemon.weight} Kg</p>
                         </div>
 
                         <div>
