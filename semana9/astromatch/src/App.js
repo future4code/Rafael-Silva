@@ -24,12 +24,21 @@ import NewProfile from "./components/NewProfile/NewProfile";
 
 function App() {
     // const [clearprofile, setClearProfile] = useState(false)
+    const [changePage, setChangePage] = useState("home")
 
     const clearProfiles = () => {
         clearProfilesFromApi((data) => alert(data))
         // setClearProfile(!clearprofile)
     }
 
+    const changePages = () => {
+        switch (changePage) {
+            case "Home":
+                <NewProfile
+                />
+
+        }
+    }
 
     return (
         <Container>
@@ -39,15 +48,13 @@ function App() {
                     <Logo src={logo} alt="logo astromatch"/>
 
 
-                    <Right src={right} alt=""/>
+                    <Right onClick={changePage()} src={right} alt="ir para matches"/>
 
                 </CardHeader>
 
 
                 <MainContainer>
 
-                    <NewProfile
-                    />
 
 
                 </MainContainer>
