@@ -1,20 +1,36 @@
+import {useEffect, useState} from "react";
+
 //styles
 import {
-    Card,
     CardContainer,
-    CardContent,
-    CardCover,
     CardHeader,
     Container,
     Logo,
     MainContainer,
-    Right
+    Right,
+    FooterContainer,
+    Buttons,
 } from "./assets/App.styles";
 import logo from "./assets/images/logo.png"
 import left from "./assets/images/left-arrow.png"
 import right from "./assets/images/right-arrow.png"
 
+//Requests
+import {clearProfilesFromApi, getProfileToChoose} from "./services/request";
+
+//Components
+import NewProfile from "./components/NewProfile/NewProfile";
+
+
 function App() {
+    // const [clearprofile, setClearProfile] = useState(false)
+
+    const clearProfiles = () => {
+        clearProfilesFromApi((data) => alert(data))
+        // setClearProfile(!clearprofile)
+    }
+
+
     return (
         <Container>
             <CardContainer>
@@ -29,22 +45,21 @@ function App() {
 
 
                 <MainContainer>
-                    <Card>
-                        <CardCover>
-                            <p>teste</p>
-                            <p>teste</p>
 
-                        </CardCover>
+                    <NewProfile
+                    />
 
-                    </Card>
 
-                    <CardContent>
-                        <p>teste</p>
-
-                    </CardContent>
                 </MainContainer>
 
+
             </CardContainer>
+
+            <FooterContainer>
+                <Buttons>
+                    <button onClick={clearProfiles}>Limpar Perfis</button>
+                </Buttons>
+            </FooterContainer>
         </Container>
     );
 }

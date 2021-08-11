@@ -19,7 +19,7 @@ export const CardContainer = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  border: 1px solid #1D2025;
+  //border: 1px solid #1D2025;
   width: 25%;
   padding: 10px;
 
@@ -53,60 +53,34 @@ export const MainContainer = styled.main`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  border: 1px solid #1D2025;
+  //border: 1px solid #1D2025;
   width: 100%;
   //margin: 10px;
   //padding: 20px;
 `
 
-export const Card = styled.div`
+export const FooterContainer = styled.div`
   display: flex;
-  align-items: flex-start;
-  flex-direction: column;
-  border: 1px solid #1D2025;
-  padding: 20px;
+  justify-content: center;
+  align-items: center;
   width: 100%;
-`
-
-export const CardCover = styled.div`
- 
-  height: 150px;
-  width: 100%;
-  
-
-  div
-  img {
-    width: 200px;
-  }
-`
-
-export const CardContent = styled.div`
-  margin-top: 50px;
-  flex: 1;
+  //border: 1px solid #1D2025;
 
 
-  div {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    p {
-      margin-left: 5px;
-    }
-  }
 `
 
 export const Buttons = styled.div`
-  margin: 20px;
+  margin-top: 20px;
 
   button {
-    margin-right: 10px;
-    padding: 5px;
+    margin: 30px;
+    padding: 20px;
     border-radius: 5px;
+    background-color: #48a498;
 
     :hover {
       cursor: pointer;
-      color: #D36833;
+      color: #762d93;
     }
   }
 `
