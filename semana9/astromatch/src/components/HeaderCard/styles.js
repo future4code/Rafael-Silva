@@ -14,14 +14,26 @@ export const Logo = styled.img`
   width: 35%;
   margin: 0 auto;
   cursor: pointer;
+  transition: 0.2s;
+  :hover {
+    transform: scale(0.9);
+  }
 `
 
 export const Right = styled.img`
   width: 10%;
   cursor: pointer;
+  transition: 0.2s;
+  :hover {
+    transform: scale(0.9);
+  }
 `
 
 export const Left = styled.img`
   width: 10%;
   cursor: pointer;
+  transition: 0.2s;
+  :hover {
+    transform: scale(0.9);
+  }
 `

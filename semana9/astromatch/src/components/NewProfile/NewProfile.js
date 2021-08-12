@@ -1,4 +1,10 @@
-import {Buttons, Card, CardContent, CardCover, PhotoProfile} from "./styles";
+import {
+    OptionButton,
+    PhotoProfile,
+    ButtonsContainer,
+    BackgroudBlur,
+    Profile, InfoProfile
+} from "./styles";
 
 //Requests
 import {choosePerson, getProfileToChoose} from "../../services/request";
@@ -19,10 +25,6 @@ const NewProfile = (props) => {
 
         choosePerson(body, (data) => setIsMatch(data))
 
-        if (isMatch){
-            getProfileToChoose(getNewProfile)
-        }
-
         getProfileToChoose(getNewProfile)
     }
 
@@ -33,32 +35,36 @@ const NewProfile = (props) => {
 
     useEffect(() => {
         getProfileToChoose(getNewProfile)
-    }, [])
+    }, [userChoose])
 
     return (
         <>
             {profile &&
             <>
-                <Card>
-                    <CardCover Background={profile.photo}>
-                        <div>
-                            {profile.photo &&
-                            <>
-                                <h4>{profile.name + ", "}<span>{profile.age}</span></h4>
-                                <p>{profile.bio}</p>
-                            </>
-                            }
-                        </div>
-                    </CardCover>
-                </Card>
+                <Profile>
+                    <BackgroudBlur Background={profile.photo}/>
 
-                <CardContent>
-                    <Buttons>
-                        <button onClick={() => matchPerson(!userChoose)} color={"X"}>X</button>
-                        <button onClick={() => matchPerson(!userChoose)} color={"V"}>V</button>
+                    <PhotoProfile src={profile.photo}/>
 
-                    </Buttons>
-                </CardContent>
+                    <InfoProfile>
+                        {/*{profile.photo &&*/}
+                        {/*<>*/}
+                            <h4>{profile.name + ", "}<span>{profile.age}</span></h4>
+                            <p>{profile.bio}</p>
+                        {/*</>*/}
+                        {/*}*/}
+                    </InfoProfile>
+
+
+                </Profile>
+
+
+                <ButtonsContainer>
+                    <OptionButton onClick={() => matchPerson(false)} color={"like"}>X</OptionButton>
+                    <OptionButton onClick={() => matchPerson(true)} color={"deslike"}>🗸</OptionButton>
+
+                </ButtonsContainer>
+
             </>
             }
         </>

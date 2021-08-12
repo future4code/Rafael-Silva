@@ -20,7 +20,7 @@ export const BoxContainer = styled.div`
   justify-content: flex-start;
   align-items: center;
   width: 100%;
-  margin: 20px;
+  margin: 10px;
   padding: 10px;
 
   //border: 1px solid #1D2025;

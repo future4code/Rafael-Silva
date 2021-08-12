@@ -13,7 +13,7 @@ const ClearMatches = (props) => {
         <>
             <FooterContainer>
                 <Buttons>
-                    <button onClick={clearProfiles}>Limpar Perfis</button>
+                    <button onClick={clearProfiles}>Limpar Metches</button>
                 </Buttons>
             </FooterContainer>
         </>

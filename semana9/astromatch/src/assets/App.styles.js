@@ -13,5 +13,5 @@ export const Container = styled.div`
   align-items: center;
   flex-direction: column;
   padding: 20px;
-  margin: 5% auto;
+  margin: 5% 0;
 `

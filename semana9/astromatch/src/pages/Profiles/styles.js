@@ -23,5 +23,5 @@ export const CardContainer = styled.main`
   //border: 1px solid #1D2025;
   width: 100%;
   //margin: 10px;
-  //padding: 20px;
+  padding: 20px;
 `
