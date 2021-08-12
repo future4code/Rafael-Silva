@@ -1,29 +1,28 @@
-//Styles
-import {CardContainer, MainContainer} from "./styles";
-
-//Components
-import NewProfile from "../../components/NewProfile/NewProfile";
 import HeaderCard from "../../components/HeaderCard/HeaderCard";
+import {CardContainer, MainContainer} from "../Profiles/styles";
 import ClearMatches from "../../components/ClearMatches/ClearMatches";
+import MatchingProfiles from "../../components/MatchingProfiles/MatchingProfiles";
 
-
-const Profiles = (props) => {
+const Matches = (props) => {
     return (
         <>
             <MainContainer>
                 <HeaderCard
-                    CurrentPage={props.CurrentPage}
+                    CurrenPage={props.CurrentPage}
                     SelectPage={props.SelectPage}
                 />
 
                 <CardContainer>
-                    <NewProfile/>
+                    <MatchingProfiles
+
+                    />
                 </CardContainer>
             </MainContainer>
 
             <ClearMatches/>
+
         </>
     )
 }
 
-export default Profiles
+export default Matches

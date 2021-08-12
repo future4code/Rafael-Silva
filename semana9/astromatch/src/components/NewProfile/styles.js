@@ -2,21 +2,30 @@ import styled from "styled-components";
 
 
 export const Card = styled.div`
+  overflow: hidden;
+  transition: 0.5s;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   flex-direction: column;
   padding: 20px;
   width: 100%;
+  height: 430px;
+  position: relative;
+  border-radius: 5%;
 
 `
 
 export const CardCover = styled.div`
-  height: 400px;
+  box-shadow: 0 2px 10px 0 rgba(117, 117, 117, 0.77);
+
+  height: 100%;
   width: 100%;
   background-image: ${(props) => `url(${props.Background})` || "#000"};
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
+  position: absolute;
+
   border-radius: 5%;
 
   div {
@@ -26,12 +35,15 @@ export const CardCover = styled.div`
     align-items: flex-start;
     width: 100%;
     height: 100%;
-    padding: 20px;
+    padding: 40px 20px;
+
     //border: 1px solid #1D2025;
 
 
     h4 {
-      color: #FF5F6D;
+      color: #FFF;
+      font-weight: 900;
+      font-size: 30px;
 
       span {
         font-weight: 400;
@@ -40,8 +52,9 @@ export const CardCover = styled.div`
 
     p {
       margin-top: 5px;
-      color: #FF5F6D;
-      font-weight: 400;
+      color: #FFF;
+      font-weight: 500;
+      font-size: 25px;
     }
 
   }
