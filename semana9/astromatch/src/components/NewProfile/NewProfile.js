@@ -13,9 +13,7 @@ import {useEffect, useState} from "react";
 
 const NewProfile = (props) => {
     const [profile, setProfile] = useState({})
-    const [userChoose, setUserChoose] = useState(false)
     const [isMatch, setIsMatch] = useState(false)
-    // const [currentAnimation, setCurrentAnimation] = useState(null)
 
     const matchPerson = (userChoose) => {
         const body = {
@@ -23,19 +21,15 @@ const NewProfile = (props) => {
             choice: userChoose
         }
 
-        choosePerson(body, (data) => setIsMatch(data))
+        choosePerson(body, (data) => data && alert("MATCH!!"))
 
-        getProfileToChoose(getNewProfile)
+        getProfileToChoose((data) => setProfile(data))
     }
 
-
-    const getNewProfile = (data) => {
-        setProfile(data)
-    }
 
     useEffect(() => {
-        getProfileToChoose(getNewProfile)
-    }, [userChoose])
+        getProfileToChoose((data) => setProfile(data))
+    }, [])
 
     return (
         <>
@@ -47,12 +41,8 @@ const NewProfile = (props) => {
                     <PhotoProfile src={profile.photo}/>
 
                     <InfoProfile>
-                        {/*{profile.photo &&*/}
-                        {/*<>*/}
-                            <h4>{profile.name + ", "}<span>{profile.age}</span></h4>
-                            <p>{profile.bio}</p>
-                        {/*</>*/}
-                        {/*}*/}
+                        <h4>{profile.name + ", "}<span>{profile.age}</span></h4>
+                        <p>{profile.bio}</p>
                     </InfoProfile>
 
 
@@ -64,7 +54,6 @@ const NewProfile = (props) => {
                     <OptionButton onClick={() => matchPerson(true)} color={"deslike"}>🗸</OptionButton>
 
                 </ButtonsContainer>
-
             </>
             }
         </>

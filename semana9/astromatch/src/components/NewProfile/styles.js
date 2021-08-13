@@ -31,9 +31,10 @@ export const BackgroudBlur = styled.div`
 
 export const PhotoProfile = styled.img`
   width: 100%;
-  height: 80%;
+  height: 90%;
   display: block;
   z-index: 1;
+  border-radius: 5px;
 `
 
 export const InfoProfile = styled.div`
@@ -85,15 +86,15 @@ export const OptionButton = styled.button`
   font-size: 40px;
   font-weight: 700;
   position: relative;
-  border: 1px solid ${(props => props.color === "like" ? `#E08D79` : `#B3F2DD`)};
-  color: ${(props => props.color === "like" ? `#E08D79` : `#B3F2DD`)};
+  border: 1px solid ${(props => props.color === "like" ? `#E08D79` : `#48a498`)};
+  color: ${(props => props.color === "like" ? `#E08D79` : `#48a498`)};
 
   :hover {
     cursor: pointer;
     border: none;
     font-size: 50px;
 
-    background-color: ${(props => props.color === "like" ? `#E08D79` : `#B3F2DD`)};
-    color: ${(props => props.color === "like" ? `#B3F2DD` : `#E08D79`)};
+    background-color: ${(props => props.color === "like" ? `#E08D79` : `#48a498`)};
+    color: ${(props => props.color === "like" ? `#48a498` : `#E08D79`)};
   }
 `

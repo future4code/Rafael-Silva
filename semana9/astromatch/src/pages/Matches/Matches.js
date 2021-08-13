@@ -13,9 +13,7 @@ const Matches = (props) => {
                 />
 
                 <CardContainer>
-                    <MatchingProfiles
-
-                    />
+                    <MatchingProfiles/>
                 </CardContainer>
             </MainContainer>
 

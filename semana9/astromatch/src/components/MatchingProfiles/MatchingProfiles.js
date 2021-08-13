@@ -28,7 +28,6 @@ const MatchingProfiles = (props) => {
 
                                         <Photo Image={profile.photo} alt="foto do perfil"/>
 
-
                                         <h3>{profile.name}</h3>
                                     </BoxContainer>
                                 )
@@ -37,7 +36,6 @@ const MatchingProfiles = (props) => {
                     </>
                 )
             }
-
         </>
     )
 }

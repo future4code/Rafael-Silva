@@ -1,4 +1,4 @@
-import {useEffect, useState} from "react";
+import {useState} from "react";
 
 //styles
 import {
@@ -9,7 +9,6 @@ import {
 
 
 //Components
-import ClearMatches from "./components/ClearMatches/ClearMatches";
 import Profiles from "./pages/Profiles/Profiles";
 import Matches from "./pages/Matches/Matches";
 
