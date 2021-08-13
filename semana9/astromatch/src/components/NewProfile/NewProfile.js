@@ -44,15 +44,12 @@ const NewProfile = (props) => {
                         <h4>{profile.name + ", "}<span>{profile.age}</span></h4>
                         <p>{profile.bio}</p>
                     </InfoProfile>
-
-
                 </Profile>
 
 
                 <ButtonsContainer>
                     <OptionButton onClick={() => matchPerson(false)} color={"like"}>X</OptionButton>
                     <OptionButton onClick={() => matchPerson(true)} color={"deslike"}>🗸</OptionButton>
-
                 </ButtonsContainer>
             </>
             }

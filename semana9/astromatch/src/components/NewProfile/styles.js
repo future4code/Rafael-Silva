@@ -51,7 +51,7 @@ export const InfoProfile = styled.div`
 
 
   h4 {
-    color: #FFF;
+    color: #048BA8;
     font-weight: 900;
     font-size: 30px;
 
@@ -62,7 +62,7 @@ export const InfoProfile = styled.div`
 
   p {
     margin: 5px auto;
-    color: #FFF;
+    color: #048BA8;
     font-weight: 500;
     font-size: 25px;
   }
