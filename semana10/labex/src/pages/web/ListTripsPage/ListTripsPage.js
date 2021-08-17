@@ -17,7 +17,7 @@ const ListTripsPage = () => {
     return (
         <Background Background={background2}>
             <Header>
-                <h2>LabeX</h2>
+                <h2 onClick={() => history.push("/")}>LabeX</h2>
             </Header>
 
             <Navigation>
