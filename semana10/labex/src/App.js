@@ -1,13 +1,13 @@
 //Styles
 
 import {BrowserRouter, Route, Switch} from "react-router-dom";
-import HomePage from "./pages/Labex/HomePage/HomePage";
-import ListTripsPage from "./pages/Labex/ListTripsPage/ListTripsPage";
-import ApplicationFormPage from "./pages/Labex/ApplicationFormPage/ApplicationFormPage";
-import LoginPage from "./pages/Labex/LoginPage/LoginPage";
-import AdminHomePage from "./pages/LabexAdmin/AdminHomePage/AdminHomePage";
-import CreateTripPage from "./pages/LabexAdmin/CreateTripPage/CreateTripPage";
-import TripDetailsPage from "./pages/LabexAdmin/TripDetailsPage/TripDetailsPage";
+import HomePage from "./pages/web/HomePage/HomePage";
+import ListTripsPage from "./pages/web/ListTripsPage/ListTripsPage";
+import ApplicationFormPage from "./pages/web/ApplicationFormPage/ApplicationFormPage";
+import LoginPage from "./pages/web/LoginPage/LoginPage";
+import AdminHomePage from "./pages/admin/AdminHomePage/AdminHomePage";
+import CreateTripPage from "./pages/admin/CreateTripPage/CreateTripPage";
+import TripDetailsPage from "./pages/admin/TripDetailsPage/TripDetailsPage";
 
 function App() {
     return (
