@@ -5,7 +5,7 @@ import {Button} from "../../../assets/styles";
 import {Background, ContainerButtons, ContainerHalf, MainContainer, SubTitle, Title} from "./styles";
 import background1 from "../../../assets/images/background-1.png"
 
-const HomePage = (props) => {
+const HomePage = () => {
     const history = useHistory()
 
     return (

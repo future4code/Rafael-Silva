@@ -10,11 +10,10 @@ import ListTrips from "../../../components/ListTrips/ListTrips";
 import useRequestData from "../../../hooks/useRequestData";
 import {CONF_BASE_URL} from "../../../constants/urls";
 
-const ListTripsPage = (props) => {
+const ListTripsPage = () => {
     const history = useHistory()
     const [trips, error, loader] = useRequestData(`${CONF_BASE_URL}/trips`)
 
-    console.log(trips)
     return (
         <Background Background={background2}>
             <Header>

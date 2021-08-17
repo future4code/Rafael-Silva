@@ -8,6 +8,7 @@ import LoginPage from "./pages/web/LoginPage/LoginPage";
 import AdminHomePage from "./pages/admin/AdminHomePage/AdminHomePage";
 import CreateTripPage from "./pages/admin/CreateTripPage/CreateTripPage";
 import TripDetailsPage from "./pages/admin/TripDetailsPage/TripDetailsPage";
+import ErrorPage from "./pages/web/ErrorPage/ErrorPage";
 
 function App() {
     return (
@@ -43,7 +44,7 @@ function App() {
                 </Route>
 
                 <Route>
-                    <p>error</p>
+                    <ErrorPage/>
                 </Route>
 
             </Switch>

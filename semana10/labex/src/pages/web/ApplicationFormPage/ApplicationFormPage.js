@@ -1,7 +1,7 @@
 import {Button} from "../../../assets/styles";
 import {useHistory} from "react-router-dom";
 
-const ApplicationFormPage = (props) => {
+const ApplicationFormPage = () => {
     const history = useHistory()
 
     return (
