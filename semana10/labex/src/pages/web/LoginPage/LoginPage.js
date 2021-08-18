@@ -6,9 +6,11 @@ import {Row, RowCell, Title, SubTitle} from "./styles";
 import Login from "../../../components/Login/Login";
 import {CONF_BASE_URL} from "../../../constants/urls";
 import axios from "axios";
+import useProtectedPage from "../../../hooks/useProtectedPage";
 
 
 const LoginPage = (props) => {
+    useProtectedPage()
     const history = useHistory()
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
@@ -22,30 +24,44 @@ const LoginPage = (props) => {
     }
 
     const onSubmitLogin = async () => {
-        const body = {
-            email: email,
-            password: password
-        }
+        if (email === "") {
+            alert("Ooops! Informe o e-mail entrar")
 
-        try {
-            const response = await axios.post(`${CONF_BASE_URL}/login`, body)
+            setEmail("")
+            setPassword("")
+        } else if (password === "") {
+            alert("Ooops! Informe a senha para entrar")
 
-            localStorage.setItem("token", response.data.token)
-            history.push("/admin/trips/list")
-        } catch (e) {
-            alert(e.response)
-            console.log(e.response)
+            setEmail("")
+            setPassword("")
+        } else {
+            const body = {
+                email: email,
+                password: password
+            }
+
+            try {
+                const response = await axios.post(`${CONF_BASE_URL}/login`, body)
+
+                localStorage.setItem("token", response.data.token)
+                setEmail("")
+                setPassword("")
+                history.push("/admin/trips/list")
+            } catch (e) {
+                alert(e.response.data.message)
+                setEmail("")
+                setPassword("")
+            }
         }
     }
 
     return (
-
         <Row>
             <RowCell>
 
                 <Title>LabeX</Title>
                 <SubTitle>Encontre as melhores viagens espaciais!</SubTitle>
-                <Button style={{padding: `20px 40px`}} onClick={() => history.goBack()}>Voltar</Button>
+                <Button style={{padding: `20px 40px`}} onClick={() => history.push("/")}>Voltar</Button>
 
             </RowCell>
 
@@ -61,7 +77,6 @@ const LoginPage = (props) => {
 
             </RowCell>
         </Row>
-
     )
 }
 
