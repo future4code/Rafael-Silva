@@ -20,7 +20,9 @@ export const Sidebar = styled.div`
 export const Main = styled.div`
   /* Take the remaining width */
   flex: 1;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
   /* Make it scrollable */
   overflow: auto;
   padding: 20px;
@@ -58,7 +60,7 @@ export const UserInfo = styled.div`
     cursor: pointer;
     font-weight: 600;
     font-size: 30px;
-    
+
   }
 `
 
@@ -76,13 +78,23 @@ export const ContainerButtons = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  
+
   margin-top: 30px;
   //border: 1px solid #FF5F6D;
-  
+
   Button {
     margin: 20px auto;
     width: 50%;
     background-color: #895061;
   }
+`
+
+export const ContainerList = styled.div`
+  width: 90%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #895061;
 `

@@ -9,8 +9,6 @@ const useProtectedPage = () => {
 
         if (token === null){
             history.push("/login")
-        } else {
-            history.push("/admin/trips/list")
         }
     }, [])
 }

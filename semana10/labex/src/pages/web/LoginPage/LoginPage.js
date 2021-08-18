@@ -6,14 +6,20 @@ import {Row, RowCell, Title, SubTitle} from "./styles";
 import Login from "../../../components/Login/Login";
 import {CONF_BASE_URL} from "../../../constants/urls";
 import axios from "axios";
-import useProtectedPage from "../../../hooks/useProtectedPage";
 
 
 const LoginPage = (props) => {
-    useProtectedPage()
     const history = useHistory()
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
+
+    const isAuth = () => {
+        const token = localStorage.getItem("token")
+
+        if(token !== null) {
+            history.push("/admin/trips/list")
+        }
+    }
 
     const onChangeEmail = (e) => {
         setEmail(e.target.value)
@@ -58,7 +64,7 @@ const LoginPage = (props) => {
     return (
         <Row>
             <RowCell>
-
+                {isAuth()}
                 <Title>LabeX</Title>
                 <SubTitle>Encontre as melhores viagens espaciais!</SubTitle>
                 <Button style={{padding: `20px 40px`}} onClick={() => history.push("/")}>Voltar</Button>

@@ -7,4 +7,6 @@ export const CONF_BASE_URL = "https://us-central1-labenu-apis.cloudfunctions.net
 
 //HEADER
 
-export const HEADERS = ""
+export const HEADERS = {
+    auth: localStorage.getItem("token")
+}

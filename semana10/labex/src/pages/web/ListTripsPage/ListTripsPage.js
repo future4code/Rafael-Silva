@@ -4,7 +4,7 @@ import {useHistory} from "react-router-dom";
 import {Button} from "../../../assets/styles";
 import {Background, CardHeader, Cards, CardsItem, Header, Navigation} from "./styles";
 import background2 from "../../../assets/images/background-2.png"
-import ListTrips from "../../../components/ListTrips/ListTrips";
+import CardTrip from "../../../components/CardTrips/CardTrip";
 
 //Requests
 import useRequestData from "../../../hooks/useRequestData";
@@ -34,7 +34,7 @@ const ListTripsPage = () => {
                 {trips && trips.trips.map((trip) => {
                     return (
                         <CardsItem key={trip.id}>
-                            <ListTrips
+                            <CardTrip
                                 Trip={trip}
                             />
                         </CardsItem>
