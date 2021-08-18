@@ -53,7 +53,7 @@ const AdminHomePage = (props) => {
 
                     {trips && trips.trips.map((trip) => {
                         return (
-                            <TripName
+                            <TripName key={trip.id}
                                 TripName={trip.name}
                                 TripDetail={() => history.push(`/admin/trips/${trip.id}`)}
                             />

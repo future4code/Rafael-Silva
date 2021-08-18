@@ -1,6 +1,8 @@
-import {Button} from "../../../assets/styles";
 import {useHistory, useParams} from "react-router-dom";
 import useProtectedPage from "../../../hooks/useProtectedPage";
+
+//Styles
+import {Button} from "../../../assets/styles";
 import {
     Container,
     Sidebar,
@@ -12,13 +14,20 @@ import {
     ContainerButtons
 } from "../AdminHomePage/style";
 import avatar from "../../../assets/images/avatar.jpg";
-import {BackButton, ContainerDetails} from "./styles";
+import {BackButton, Cards, ContainerDetails} from "./styles";
+
+//Components
+import TripDetails from "../../../components/TripDetails/TripDetails";
+import useRequestData from "../../../hooks/useRequestData";
+import {CONF_BASE_URL, HEADERS} from "../../../constants/urls";
 
 const TripDetailsPage = (props) => {
     useProtectedPage()
     const history = useHistory()
     const params = useParams()
+    const [trip, error, loader] = useRequestData(`${CONF_BASE_URL}/trip/${params.id}`, HEADERS)
 
+    console.log(trip)
     const logout = () => {
         localStorage.removeItem("token")
         history.push("/login")
@@ -50,8 +59,12 @@ const TripDetailsPage = (props) => {
                 </BackButton>
 
                 <ContainerDetails>
-                    <h1>TripDetailsPage</h1>
+                    <Cards>
+                            <TripDetails
 
+                            />
+
+                    </Cards>
                 </ContainerDetails>
             </Main>
         </Container>

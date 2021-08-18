@@ -64,6 +64,13 @@ export const CardInfos = styled.div`
     //padding: 10px 0;
     font-weight: 500;
   }
+  
+  ul, li {
+    color: #000;
+    font-size: 25px;
+    font-weight: 600;
+    list-style: circle;
+  }
 `
 
 export const Container = styled.div`

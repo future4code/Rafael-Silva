@@ -65,7 +65,7 @@ export const CardHeader = styled.div`
 
 export const Cards = styled.div`
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   width: 100%;
   padding: 30px;
 

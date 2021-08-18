@@ -1,4 +1,4 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {useHistory} from "react-router-dom";
 
 import {Button} from "../../../assets/styles";
@@ -12,14 +12,7 @@ const LoginPage = (props) => {
     const history = useHistory()
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
-
-    const isAuth = () => {
-        const token = localStorage.getItem("token")
-
-        if(token !== null) {
-            history.push("/admin/trips/list")
-        }
-    }
+    const token = localStorage.getItem("token")
 
     const onChangeEmail = (e) => {
         setEmail(e.target.value)
@@ -61,10 +54,16 @@ const LoginPage = (props) => {
         }
     }
 
+    useEffect(() => {
+        if (token !== null){
+            history.push("/admin/trips/list")
+        }
+        
+    }, [token])
+
     return (
         <Row>
             <RowCell>
-                {isAuth()}
                 <Title>LabeX</Title>
                 <SubTitle>Encontre as melhores viagens espaciais!</SubTitle>
                 <Button style={{padding: `20px 40px`}} onClick={() => history.push("/")}>Voltar</Button>
