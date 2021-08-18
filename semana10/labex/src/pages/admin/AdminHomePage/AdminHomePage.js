@@ -1,24 +1,36 @@
 import {Button} from "../../../assets/styles";
 import {useHistory} from "react-router-dom";
 import useProtectedPage from "../../../hooks/useProtectedPage";
-import {Container, Main, Sidebar} from "./style";
+import {Container, Main, Sidebar, ContainerUser, ImageUser, UserInfo, Hr, ContainerButtons} from "./style";
+import avatar from "../../../assets/images/avatar.jpg"
 
 const AdminHomePage = (props) => {
     useProtectedPage()
     const history = useHistory()
 
     const logout = () => {
-        localStorage.clear()
+        localStorage.removeItem("token")
         history.push("/login")
     }
 
     return (
         <Container>
             <Sidebar>
-                <p>teste</p>
-                <Button onClick={() => history.push("/")}>Voltar</Button>
-                <Button onClick={() => history.push("/admin/trips/create")}>Criar Viagem</Button>
-                <Button onClick={logout}>Logout</Button>
+                <ContainerUser>
+                    <ImageUser src={avatar}/>
+
+                    <UserInfo>
+                        <p>Admin Name</p>
+                    </UserInfo>
+                </ContainerUser>
+
+                <Hr/>
+
+                <ContainerButtons>
+                    <Button onClick={() => history.push("/admin/trips/create")}>Criar Viagem</Button>
+                    <Button onClick={() => history.push("/")}>Voltar</Button>
+                    <Button onClick={logout}>Logout</Button>
+                </ContainerButtons>
             </Sidebar>
 
             <Main>
