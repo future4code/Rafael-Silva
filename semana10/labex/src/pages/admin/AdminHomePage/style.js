@@ -82,7 +82,7 @@ export const ContainerButtons = styled.div`
   margin-top: 30px;
   //border: 1px solid #FF5F6D;
 
-  Button {
+  button {
     margin: 20px auto;
     width: 50%;
     background-color: #895061;

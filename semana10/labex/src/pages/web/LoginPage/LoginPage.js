@@ -1,7 +1,6 @@
 import {useEffect, useState} from "react";
 import {useHistory} from "react-router-dom";
 
-import {Button} from "../../../assets/styles";
 import {Row, RowCell, Title, SubTitle} from "./styles";
 import Login from "../../../components/Login/Login";
 import {CONF_BASE_URL} from "../../../constants/urls";
@@ -58,7 +57,7 @@ const LoginPage = (props) => {
         if (token !== null){
             history.push("/admin/trips/list")
         }
-        
+
     }, [token])
 
     return (
@@ -66,7 +65,7 @@ const LoginPage = (props) => {
             <RowCell>
                 <Title>LabeX</Title>
                 <SubTitle>Encontre as melhores viagens espaciais!</SubTitle>
-                <Button style={{padding: `20px 40px`}} onClick={() => history.push("/")}>Voltar</Button>
+                <button style={{padding: `20px 40px`}} onClick={() => history.push("/")}>Voltar</button>
 
             </RowCell>
 
@@ -78,7 +77,7 @@ const LoginPage = (props) => {
                     onChangeEmail={onChangeEmail}
                     onChangePassword={onChangePassword}
                 />
-                <Button style={{padding: `20px 40px`}} onClick={onSubmitLogin}>Entrar</Button>
+                <button style={{padding: `20px 40px`}} onClick={onSubmitLogin}>Entrar</button>
 
             </RowCell>
         </Row>

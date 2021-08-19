@@ -2,7 +2,6 @@ import {useHistory, useParams} from "react-router-dom";
 import useProtectedPage from "../../../hooks/useProtectedPage";
 
 //Styles
-import {Button} from "../../../assets/styles";
 import {
     Container,
     Sidebar,
@@ -47,15 +46,15 @@ const TripDetailsPage = (props) => {
                 <Hr/>
 
                 <ContainerButtons>
-                    <Button onClick={() => history.push("/admin/trips/create")}>Criar Viagem</Button>
-                    <Button onClick={logout}>Logout</Button>
+                    <button onClick={() => history.push("/admin/trips/create")}>Criar Viagem</button>
+                    <button onClick={logout}>Logout</button>
                 </ContainerButtons>
             </Sidebar>
 
 
             <Main style={{flexDirection: `column`, justifyContent: `center`, alignItems: `flex-start`}}>
                 <BackButton>
-                    <Button onClick={() => history.goBack()}>Voltar</Button>
+                    <button onClick={() => history.goBack()}>Voltar</button>
                 </BackButton>
 
                 <ContainerDetails>

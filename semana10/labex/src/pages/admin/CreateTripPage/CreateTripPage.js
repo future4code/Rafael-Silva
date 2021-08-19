@@ -1,4 +1,3 @@
-import {Button} from "../../../assets/styles";
 import {useHistory} from "react-router-dom";
 import useProtectedPage from "../../../hooks/useProtectedPage";
 
@@ -10,8 +9,8 @@ const CreateTripPage = (props) => {
         <>
             <div>
                 <h1>CreateTripPage</h1>
-                <Button onClick={() => history.goBack()}>Voltar</Button>
-                <Button >Criar</Button>
+                <button onClick={() => history.goBack()}>Voltar</button>
+                <button >Criar</button>
             </div>
         </>
     )

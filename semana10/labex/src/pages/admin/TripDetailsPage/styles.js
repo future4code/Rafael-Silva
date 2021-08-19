@@ -6,7 +6,7 @@ export const BackButton = styled.div`
   background-color: #895061;
   text-align: center;
 
-  Button {
+  button {
     margin: 20px auto;
     width: 50%;
     background-color: #2D4159;

@@ -32,3 +32,55 @@ export const Header = styled.header`
     }
   }
 `
+
+export const Container = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  margin: 3% auto;
+  padding: 10px;
+
+  //border: 1px solid #FF5F6D;
+`
+
+export const FormContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 35%;
+  margin: 20px auto;
+  //border: 1px solid #FF5F6D;
+
+  form {
+    //border: 1px solid #FF5F6D;
+    width: 100%;
+    margin: 10px;
+    
+    select {
+      width: 100%;
+      padding: 10px;
+      font-size: 20px;
+      border-radius: 8px;
+      margin-top: 20px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      font-size: 20px;
+      border-radius: 8px;
+      margin-top: 20px;
+    }
+    
+    div {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      width: 100%;
+      margin-top: 20px;
+    }
+  }
+`

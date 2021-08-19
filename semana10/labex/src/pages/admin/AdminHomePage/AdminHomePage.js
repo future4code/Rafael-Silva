@@ -1,5 +1,5 @@
-import {Button} from "../../../assets/styles";
-import {useHistory, useParams} from "react-router-dom";
+
+import {useHistory} from "react-router-dom";
 import useProtectedPage from "../../../hooks/useProtectedPage";
 import {
     Container,
@@ -21,7 +21,7 @@ import {CONF_BASE_URL} from "../../../constants/urls";
 const AdminHomePage = (props) => {
     useProtectedPage()
     const history = useHistory()
-    const [trips, error, loader] = useRequestData(`${CONF_BASE_URL}/trips`)
+    const [trips, error, loader] = useRequestData(`${CONF_BASE_URL}/trips`, {})
 
     const logout = () => {
         localStorage.removeItem("token")
@@ -42,9 +42,9 @@ const AdminHomePage = (props) => {
                 <Hr/>
 
                 <ContainerButtons>
-                    <Button onClick={() => history.push("/admin/trips/create")}>Criar Viagem</Button>
-                    <Button onClick={() => history.push("/")}>Voltar</Button>
-                    <Button onClick={logout}>Logout</Button>
+                    <button onClick={() => history.push("/admin/trips/create")}>Criar Viagem</button>
+                    <button onClick={() => history.push("/")}>Voltar</button>
+                    <button onClick={logout}>Logout</button>
                 </ContainerButtons>
             </Sidebar>
 

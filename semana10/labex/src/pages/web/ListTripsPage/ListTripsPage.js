@@ -1,7 +1,6 @@
 import {useHistory} from "react-router-dom";
 
 //Styles
-import {Button} from "../../../assets/styles";
 import {Background, CardHeader, Cards, CardsItem, Header, Navigation} from "./styles";
 import background2 from "../../../assets/images/background-2.png"
 import CardTrip from "../../../components/CardTrips/CardTrip";
@@ -12,7 +11,7 @@ import {CONF_BASE_URL} from "../../../constants/urls";
 
 const ListTripsPage = () => {
     const history = useHistory()
-    const [trips, error, loader] = useRequestData(`${CONF_BASE_URL}/trips`)
+    const [trips, error, loader] = useRequestData(`${CONF_BASE_URL}/trips`, {})
 
     return (
         <Background Background={background2}>
@@ -21,8 +20,8 @@ const ListTripsPage = () => {
             </Header>
 
             <Navigation>
-                <Button style={{marginRight: `60px`}} onClick={() => history.push("/")}>Voltar</Button>
-                <Button onClick={() => history.push("/trips/application")}>Inscrever-se</Button>
+                <button style={{marginRight: `60px`}} onClick={() => history.push("/")}>Voltar</button>
+                <button onClick={() => history.push("/trips/application")}>Inscrever-se</button>
             </Navigation>
 
             <CardHeader>
