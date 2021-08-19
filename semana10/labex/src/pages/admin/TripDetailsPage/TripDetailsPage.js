@@ -26,7 +26,6 @@ const TripDetailsPage = (props) => {
     const params = useParams()
     const [trip, error, loader] = useRequestData(`${CONF_BASE_URL}/trip/${params.id}`, HEADERS)
 
-    console.log(trip)
     const logout = () => {
         localStorage.removeItem("token")
         history.push("/login")
@@ -52,16 +51,20 @@ const TripDetailsPage = (props) => {
             </Sidebar>
 
 
-            <Main style={{flexDirection: `column`, justifyContent: `center`, alignItems: `flex-start`}}>
+            <Main style={{display: `block`}}>
                 <BackButton>
                     <button onClick={() => history.goBack()}>Voltar</button>
                 </BackButton>
 
                 <ContainerDetails>
-                    <Cards>
-                            <TripDetails
 
-                            />
+                    <Cards>
+                        {trip &&
+                        <TripDetails
+                            Trip={trip.trip}
+                        />
+
+                        }
 
                     </Cards>
                 </ContainerDetails>

@@ -21,7 +21,7 @@ import {CONF_BASE_URL} from "../../../constants/urls";
 const AdminHomePage = (props) => {
     useProtectedPage()
     const history = useHistory()
-    const [trips, error, loader] = useRequestData(`${CONF_BASE_URL}/trips`, {})
+    const [allTrips, error, loader] = useRequestData(`${CONF_BASE_URL}/trips`, {})
 
     const logout = () => {
         localStorage.removeItem("token")
@@ -51,7 +51,7 @@ const AdminHomePage = (props) => {
             <Main>
                 <ContainerList>
 
-                    {trips && trips.trips.map((trip) => {
+                    {allTrips && allTrips.trips.map((trip) => {
                         return (
                             <TripName key={trip.id}
                                 TripName={trip.name}

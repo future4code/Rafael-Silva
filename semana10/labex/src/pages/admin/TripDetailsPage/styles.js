@@ -5,7 +5,7 @@ export const BackButton = styled.div`
   width: 20%;
   background-color: #895061;
   text-align: center;
-
+  
   button {
     margin: 20px auto;
     width: 50%;
@@ -15,7 +15,6 @@ export const BackButton = styled.div`
 
 export const ContainerDetails = styled.div`
   width: 100%;
-  height: 90%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -35,5 +34,5 @@ export const Cards = styled.div`
   flex-wrap: wrap;
   overflow-x: hidden;
 
-  border: 1px solid #FF5F6D;
+  //border: 1px solid #FF5F6D;
 `

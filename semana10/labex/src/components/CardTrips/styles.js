@@ -49,12 +49,11 @@ export const CardInfos = styled.div`
   padding: 10px;
   color: #FFF;
   overflow-x: hidden;
- 
   
   span {
     font-size: 25px;
     font-weight: 600;
-    margin-right: 15px;
+    margin-right: 10px;
     color: #0677A1;
 
   }

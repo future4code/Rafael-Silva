@@ -26,7 +26,6 @@ export const Main = styled.div`
   /* Make it scrollable */
   overflow: auto;
   padding: 20px;
-
 `
 
 export const ContainerUser = styled.div`

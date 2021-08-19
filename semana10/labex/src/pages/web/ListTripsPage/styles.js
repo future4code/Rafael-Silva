@@ -80,7 +80,6 @@ export const Cards = styled.div`
 export const CardsItem = styled.div`
   /* There will be 4 cards per row */
   flex-basis: 30%;
-
   padding-left: 8px;
   padding-right: 8px;
   margin-bottom: 40px;
