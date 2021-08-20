@@ -1,64 +1,46 @@
-import {useEffect, useState} from "react";
 import {useHistory} from "react-router-dom";
+import {useState} from "react";
 
+//Styles
+import {FormContainer} from "./styles";
 import {Row, RowCell, Title, SubTitle} from "./styles";
-import Login from "../../../components/Login/Login";
-import {CONF_BASE_URL} from "../../../constants/urls";
-import axios from "axios";
+import {useStyles} from "../ListTripsPage/ListTripsPage";
+
+//Components
+import useForm from "../../../hooks/useForm";
+
+//Requests
+import {login} from "../../../services/request";
+import useUnprotectedPage from "../../../hooks/useUnprotectedPage";
+import CircularProgress from "@material-ui/core/CircularProgress";
+import Backdrop from "@material-ui/core/Backdrop";
+import {goToAdminPage} from "../../../routes/coordinator";
 
 
 const LoginPage = (props) => {
+    useUnprotectedPage()
     const history = useHistory()
-    const [email, setEmail] = useState("")
-    const [password, setPassword] = useState("")
-    const token = localStorage.getItem("token")
+    const {form, onChangeForm, cleanFields} = useForm({
+        email: "",
+        password: ""
+    })
+    const [loader, setLoader] = useState(false)
+    const classes = useStyles();
 
-    const onChangeEmail = (e) => {
-        setEmail(e.target.value)
+
+    const onSubmitLogin = (e) => {
+        e.preventDefault()
+
+        setLoader(true)
+
+        login(form, (data) => {
+            localStorage.setItem("token", data)
+            cleanFields()
+            setLoader(false)
+            goToAdminPage(history)
+        })
     }
 
-    const onChangePassword = (e) => {
-        setPassword(e.target.value)
-    }
-
-    const onSubmitLogin = async () => {
-        if (email === "") {
-            alert("Ooops! Informe o e-mail entrar")
-
-            setEmail("")
-            setPassword("")
-        } else if (password === "") {
-            alert("Ooops! Informe a senha para entrar")
-
-            setEmail("")
-            setPassword("")
-        } else {
-            const body = {
-                email: email,
-                password: password
-            }
-
-            try {
-                const response = await axios.post(`${CONF_BASE_URL}/login`, body)
-
-                localStorage.setItem("token", response.data.token)
-                setEmail("")
-                setPassword("")
-                history.push("/admin/trips/list")
-            } catch (e) {
-                alert(e.response.data.message)
-                setEmail("")
-                setPassword("")
-            }
-        }
-    }
-
-    useEffect(() => {
-        if (token !== null){
-            history.push("/admin/trips/list")
-        }
-
-    }, [token])
 
     return (
         <Row>
@@ -71,14 +53,44 @@ const LoginPage = (props) => {
 
             <RowCell style={{background: `#895061`, borderRadius: `20px`}}>
                 <h3 style={{color: `#FFF`, marginBottom: `20px`, fontSize: `54px`, fontWeight: `500`}}>Login</h3>
-                <Login
-                    Email={email}
-                    Password={password}
-                    onChangeEmail={onChangeEmail}
-                    onChangePassword={onChangePassword}
-                />
-                <button style={{padding: `20px 40px`}} onClick={onSubmitLogin}>Entrar</button>
 
+                {loader === true
+                    ? (
+                        <Backdrop className={classes.backdrop} open>
+                            <CircularProgress color="secondary"/>
+                        </Backdrop>
+                    )
+                    : (
+                        <form onSubmit={onSubmitLogin}>
+                            <FormContainer>
+                                <p>E-mail: </p>
+
+                                <input
+                                    name={"email"}
+                                    type={"email"}
+                                    value={form.email}
+                                    onChange={onChangeForm}
+                                    placeholder="Informe seu e-mail"
+                                    required
+                                />
+                            </FormContainer>
+
+                            <FormContainer>
+                                <p>Senha: </p>
+
+                                <input
+                                    name={"password"}
+                                    type={"password"}
+                                    value={form.password}
+                                    onChange={onChangeForm}
+                                    placeholder="Informe sua senha"
+                                    required
+                                />
+                            </FormContainer>
+
+                            <button style={{padding: `20px 40px`}} type={"submit"}>Entrar</button>
+                        </form>
+                    )}
             </RowCell>
         </Row>
     )

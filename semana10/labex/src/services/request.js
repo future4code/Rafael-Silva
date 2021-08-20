@@ -14,7 +14,7 @@ export const sendApplication = (body, tripId, clear) => {
         })
 }
 
-export const createTrip  = (body, history, clean) => {
+export const createTrip = (body, history, clean) => {
     axios.post(`${CONF_BASE_URL}/trips`, body, HEADERS)
         .then(() => {
             alert("Viagem criada com sucesso!")
@@ -47,6 +47,16 @@ export const decideCandidate = (tripId, candidateId, decision, getTripDetails) =
         .then(() => {
             alert("Decisão registrada com sucesso!")
             getTripDetails()
+        })
+        .catch((error) => {
+            alert(error.response.data.message)
+        })
+}
+
+export const login = (body, saveData) => {
+    axios.post(`${CONF_BASE_URL}/login`, body)
+        .then((response) => {
+            saveData(response.data.token)
         })
         .catch((error) => {
             alert(error.response.data.message)
