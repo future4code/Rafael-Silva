@@ -1,4 +1,3 @@
-
 import {useHistory} from "react-router-dom";
 import useProtectedPage from "../../../hooks/useProtectedPage";
 import {
@@ -10,12 +9,14 @@ import {
     UserInfo,
     Hr,
     ContainerButtons,
-    ContainerList
+    ContainerList,
+    TripsListContainer
 } from "./style";
 import avatar from "../../../assets/images/avatar.jpg"
-import TripName from "../../../components/CardTrips/TripName";
 import useRequestData from "../../../hooks/useRequestData";
 import {CONF_BASE_URL} from "../../../constants/urls";
+import {deleteTrip} from "../../../services/request";
+import trash from "../../../assets/images/delete_black_24dp.svg";
 
 
 const AdminHomePage = (props) => {
@@ -26,6 +27,12 @@ const AdminHomePage = (props) => {
     const logout = () => {
         localStorage.removeItem("token")
         history.push("/login")
+    }
+
+    const onRemoveTrip = (tripId, tripName) => {
+        if(window.confirm(`Tem certeza que deseja deletar a viagem ${tripName}`)){
+            deleteTrip(tripId, history)
+        }
     }
 
     return (
@@ -53,10 +60,10 @@ const AdminHomePage = (props) => {
 
                     {allTrips && allTrips.trips.map((trip) => {
                         return (
-                            <TripName key={trip.id}
-                                TripName={trip.name}
-                                TripDetail={() => history.push(`/admin/trips/${trip.id}`)}
-                            />
+                            <TripsListContainer key={trip.id} onClick={() => history.push(`/admin/trips/${trip.id}`)}>
+                                <p>{trip.name}</p>
+                                <img onClick={() => onRemoveTrip(trip.id, trip.name)} src={trash} alt="delete"/>
+                            </TripsListContainer>
                         )
                     })}
                 </ContainerList>

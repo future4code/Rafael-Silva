@@ -2,9 +2,21 @@ import {CardHeader} from "../../pages/web/ListTripsPage/styles";
 import {CardInfos} from "../CardTrips/styles";
 import {ButtonsChoice, CardsItem} from "./styles";
 import {Hr} from "../../pages/admin/AdminHomePage/style";
+import {decideCandidate} from "../../services/request";
 
 
 const TripDetails = (props) => {
+
+    const choice = (decision, candidateId) => {
+        decideCandidate(props.Trip.id, candidateId, decision, props.GetTripDetails)
+    }
+
+    const approvedCandidates = props.Trip && props.Trip.approved.map((candidate) => {
+        return (
+            <li key={candidate.id}>{candidate.name}</li>
+        )
+    })
+
     return (
         <>
             <CardsItem style={{flexBasis: `45%`}}>
@@ -48,54 +60,58 @@ const TripDetails = (props) => {
 
                 <CardInfos style={{alignItems: `center`}}>
                     <ul>
-                        <li>teste</li>
+                        {approvedCandidates && approvedCandidates.length > 0
+                            ? approvedCandidates
+                            : <p>Não há candidatos aprovados</p>}
+
                     </ul>
                 </CardInfos>
             </CardsItem>
 
             <Hr/>
 
-            {props.Trip.candidates &&
-            props.Trip.candidates.map((candidate) => {
-                return (
-                    <CardsItem key={candidate.id} style={{marginTop: `30px`, flexBasis: `100%`}}>
-                        <CardHeader>
-                            <h3 style={{color: `#000`, fontSize: `26px`}}>Candidatos Pendentes</h3>
-                        </CardHeader>
+            {props.Trip.candidates && props.Trip.candidates.length > 0
+                ? props.Trip.candidates.map((candidate) => {
+                    return (
+                        <CardsItem key={candidate.id} style={{marginTop: `30px`, flexBasis: `100%`}}>
+                            <CardHeader>
+                                <h3 style={{color: `#000`, fontSize: `26px`}}>Candidatos Pendentes</h3>
+                            </CardHeader>
 
-                        <CardInfos>
-                            <p style={{color: `#000`}}>
-                                <span>Nome:  </span>
-                                {candidate.name}
-                            </p>
+                            <CardInfos>
+                                <p style={{color: `#000`}}>
+                                    <span>Nome:  </span>
+                                    {candidate.name}
+                                </p>
 
-                            <p style={{color: `#000`}}>
-                                <span>Profissão: </span>
-                                {candidate.profession}
-                            </p>
+                                <p style={{color: `#000`}}>
+                                    <span>Profissão: </span>
+                                    {candidate.profession}
+                                </p>
 
-                            <p style={{color: `#000`}}>
-                                <span>Idade: </span>
-                                {candidate.age}
-                            </p>
+                                <p style={{color: `#000`}}>
+                                    <span>Idade: </span>
+                                    {candidate.age}
+                                </p>
 
-                            <p style={{color: `#000`}}>
-                                <span>País:</span>
-                                {candidate.country}
-                            </p>
+                                <p style={{color: `#000`}}>
+                                    <span>País:</span>
+                                    {candidate.country}
+                                </p>
 
-                            <p style={{color: `#000`}}>
-                                <span>Texto de Candidatura:</span>
-                                {candidate.applicationText}
-                            </p>
-                        </CardInfos>
-                        <ButtonsChoice>
-                            <button>Recusar</button>
-                            <button>Aprovar</button>
-                        </ButtonsChoice>
-                    </CardsItem>
-                )
-            })
+                                <p style={{color: `#000`}}>
+                                    <span>Texto de Candidatura:</span>
+                                    {candidate.applicationText}
+                                </p>
+                            </CardInfos>
+                            <ButtonsChoice>
+                                <button onClick={() => choice(false, candidate.id)}>Recusar</button>
+                                <button onClick={() => choice(true, candidate.id)}>Aprovar</button>
+                            </ButtonsChoice>
+                        </CardsItem>
+                    )
+                })
+                : <h3 style={{color: `#FFF`, marginTop: `30px`}}>Não há candidatos pendentes</h3>
             }
         </>
     )

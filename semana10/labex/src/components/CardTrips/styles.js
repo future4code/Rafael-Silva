@@ -71,26 +71,3 @@ export const CardInfos = styled.div`
     list-style: circle;
   }
 `
-
-export const Container = styled.div`
-  background-color: #E3E3E3;
-  padding: 20px;
-  margin: 20px auto;
-  width: 90%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  cursor: pointer;
-  box-shadow: 12px 12px 2px 1px rgba(89, 37, 58, 0.4);
-  
-  img{
-    width: 4.5%;
-    
-    :hover{
-      cursor: pointer;
-      background-color: #CCCCCC;
-      border-radius: 8px;
-      padding: 2px;
-    }
-  }
-`

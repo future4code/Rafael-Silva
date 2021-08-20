@@ -20,16 +20,16 @@ import TripDetails from "../../../components/TripDetails/TripDetails";
 import useRequestData from "../../../hooks/useRequestData";
 import {CONF_BASE_URL, HEADERS} from "../../../constants/urls";
 
+//Requests
+import {logout} from "../../../services/request";
+
 const TripDetailsPage = (props) => {
     useProtectedPage()
     const history = useHistory()
     const params = useParams()
-    const [trip, error, loader] = useRequestData(`${CONF_BASE_URL}/trip/${params.id}`, HEADERS)
+    const [allTrip, error, loader, getTripDetails] = useRequestData(`${CONF_BASE_URL}/trip/${params.id}`, HEADERS)
 
-    const logout = () => {
-        localStorage.removeItem("token")
-        history.push("/login")
-    }
+
 
     return (
         <Container>
@@ -46,7 +46,7 @@ const TripDetailsPage = (props) => {
 
                 <ContainerButtons>
                     <button onClick={() => history.push("/admin/trips/create")}>Criar Viagem</button>
-                    <button onClick={logout}>Logout</button>
+                    <button onClick={() => logout(history)}>Logout</button>
                 </ContainerButtons>
             </Sidebar>
 
@@ -59,9 +59,10 @@ const TripDetailsPage = (props) => {
                 <ContainerDetails>
 
                     <Cards>
-                        {trip &&
+                        {allTrip &&
                         <TripDetails
-                            Trip={trip.trip}
+                            Trip={allTrip.trip}
+                            GetTripDetails={getTripDetails}
                         />
 
                         }

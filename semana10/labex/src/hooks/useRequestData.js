@@ -6,8 +6,7 @@ const useRequestData = (url, headers) => {
     const [error, setError] = useState("")
     const [loader, setLoader] = useState(false)
 
-    useEffect(() => {
-        setLoader(true)
+    const getData = () => {
         axios
             .get(url,headers)
             .then((response) => {
@@ -18,9 +17,14 @@ const useRequestData = (url, headers) => {
                 setError(e.response)
                 setLoader(false)
             })
+    }
+
+    useEffect(() => {
+        setLoader(true)
+        getData()
     }, [url])
 
-    return [data, error, loader]
+    return [data, error, loader, getData]
 }
 
 export default useRequestData
