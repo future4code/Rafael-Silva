@@ -18,17 +18,16 @@ import {BackButton, Cards, ContainerDetails} from "./styles";
 //Components
 import TripDetails from "../../../components/TripDetails/TripDetails";
 import useRequestData from "../../../hooks/useRequestData";
-import {CONF_BASE_URL, HEADERS} from "../../../constants/urls";
 
 //Requests
 import {logout} from "../../../services/request";
+import CircularProgress from "@material-ui/core/CircularProgress";
 
 const TripDetailsPage = (props) => {
     useProtectedPage()
     const history = useHistory()
     const params = useParams()
-    const [allTrip, error, loader, getTripDetails] = useRequestData(`${CONF_BASE_URL}/trip/${params.id}`, HEADERS)
-
+    const [allTrip, getTripDetails] = useRequestData(`/trip/${params.id}`, {})
 
 
     return (
@@ -59,12 +58,15 @@ const TripDetailsPage = (props) => {
                 <ContainerDetails>
 
                     <Cards>
-                        {allTrip &&
-                        <TripDetails
-                            Trip={allTrip.trip}
-                            GetTripDetails={getTripDetails}
-                        />
 
+                        {allTrip && allTrip.trip
+                            ? (
+                                <TripDetails
+                                    Trip={allTrip.trip}
+                                    GetTripDetails={getTripDetails}
+                                />
+                            )
+                            : <CircularProgress color="secondary"/>
                         }
 
                     </Cards>

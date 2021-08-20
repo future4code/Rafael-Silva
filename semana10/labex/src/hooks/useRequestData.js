@@ -1,30 +1,27 @@
 import {useEffect, useState} from "react";
 import axios from "axios";
+import {CONF_BASE_URL, HEADERS} from "../constants/urls";
 
-const useRequestData = (url, headers) => {
-    const [data, setData] = useState(null)
-    const [error, setError] = useState("")
-    const [loader, setLoader] = useState(false)
+
+const useRequestData = (endpoint, initialState) => {
+    const [data, setData] = useState(initialState)
 
     const getData = () => {
         axios
-            .get(url,headers)
+            .get(`${CONF_BASE_URL}${endpoint}`, HEADERS)
             .then((response) => {
                 setData(response.data)
-                setLoader(false)
             })
             .catch((e) => {
-                setError(e.response)
-                setLoader(false)
+                alert(e.response.data.message)
             })
     }
 
     useEffect(() => {
-        setLoader(true)
         getData()
-    }, [url])
+    }, [endpoint])
 
-    return [data, error, loader, getData]
+    return [data, getData]
 }
 
 export default useRequestData

@@ -11,11 +11,10 @@ import {
     UserInfo
 } from "../AdminHomePage/style";
 import avatar from "../../../assets/images/avatar.jpg";
-import {BackButton, Cards, ContainerDetails} from "../TripDetailsPage/styles";
+import {BackButton, ContainerDetails} from "../TripDetailsPage/styles";
 
 //Requests
 import {createTrip, logout} from "../../../services/request";
-import Countrys from "../../../constants/Countrys";
 import {FormContainer} from "../../web/ApplicationFormPage/styles";
 import useForm from "../../../hooks/useForm";
 import {planets} from "../../../constants/planets";

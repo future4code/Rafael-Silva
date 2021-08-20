@@ -1,5 +1,6 @@
 import {useHistory} from "react-router-dom";
-import useProtectedPage from "../../../hooks/useProtectedPage";
+
+//Styles
 import {
     Container,
     Main,
@@ -12,17 +13,21 @@ import {
     ContainerList,
     TripsListContainer
 } from "./style";
-import avatar from "../../../assets/images/avatar.jpg"
-import useRequestData from "../../../hooks/useRequestData";
-import {CONF_BASE_URL} from "../../../constants/urls";
-import {deleteTrip} from "../../../services/request";
 import trash from "../../../assets/images/delete_black_24dp.svg";
+import avatar from "../../../assets/images/avatar.jpg"
+import CircularProgress from "@material-ui/core/CircularProgress";
+
+
+//Requests
+import useProtectedPage from "../../../hooks/useProtectedPage";
+import useRequestData from "../../../hooks/useRequestData";
+import {deleteTrip} from "../../../services/request";
 
 
 const AdminHomePage = (props) => {
     useProtectedPage()
     const history = useHistory()
-    const [allTrips, error, loader] = useRequestData(`${CONF_BASE_URL}/trips`, {})
+    const [allTrips] = useRequestData("/trips", {})
 
     const logout = () => {
         localStorage.removeItem("token")
@@ -30,7 +35,7 @@ const AdminHomePage = (props) => {
     }
 
     const onRemoveTrip = (tripId, tripName) => {
-        if(window.confirm(`Tem certeza que deseja deletar a viagem ${tripName}`)){
+        if (window.confirm(`Tem certeza que deseja deletar a viagem ${tripName}`)) {
             deleteTrip(tripId, history)
         }
     }
@@ -58,14 +63,19 @@ const AdminHomePage = (props) => {
             <Main>
                 <ContainerList>
 
-                    {allTrips && allTrips.trips.map((trip) => {
-                        return (
-                            <TripsListContainer key={trip.id} onClick={() => history.push(`/admin/trips/${trip.id}`)}>
-                                <p>{trip.name}</p>
-                                <img onClick={() => onRemoveTrip(trip.id, trip.name)} src={trash} alt="delete"/>
-                            </TripsListContainer>
-                        )
-                    })}
+                    {allTrips && allTrips.trips
+                        ? allTrips.trips.map((trip) => {
+                            return (
+                                <TripsListContainer key={trip.id}
+                                                    onClick={() => history.push(`/admin/trips/${trip.id}`)}>
+                                    <p>{trip.name}</p>
+                                    <img onClick={() => onRemoveTrip(trip.id, trip.name)} src={trash} alt="delete"/>
+                                </TripsListContainer>
+                            )
+                        })
+                        :
+                        <CircularProgress color="secondary"/>
+                    }
                 </ContainerList>
             </Main>
         </Container>
