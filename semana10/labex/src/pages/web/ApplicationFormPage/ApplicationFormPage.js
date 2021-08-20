@@ -27,7 +27,6 @@ const ApplicationFormPage = () => {
     })
     const [allTrips] = useRequestData("/trips", {})
     const [tripId, setTripId] = useState("")
-    const [loader, setLoader] = useState(false)
     const classes = useStyles();
 
 
@@ -39,9 +38,7 @@ const ApplicationFormPage = () => {
     const onCadidate = (event) => {
         event.preventDefault()
 
-        setTimeout(() => setLoader(true), 1000)
         sendApplication(form, tripId, clear)
-        setLoader(false)
     }
 
     const onChangeTrip = (event) => {
@@ -64,8 +61,6 @@ const ApplicationFormPage = () => {
                 <Container>
                     <h1 style={{color: `#FFF`}}>Inscreva-se para uma viagem</h1>
 
-                    {loader === true
-                        ? (
                             <FormContainer>
                                 <form onSubmit={onCadidate}>
                                     <select
@@ -134,12 +129,6 @@ const ApplicationFormPage = () => {
                                     </div>
                                 </form>
                             </FormContainer>
-                        )
-                        : (
-                            <Backdrop className={classes.backdrop} open>
-                                <CircularProgress color="secondary"/>
-                            </Backdrop>
-                        )}
                 </Container>
                 :
                 <Backdrop className={classes.backdrop} open>
