@@ -61,74 +61,74 @@ const ApplicationFormPage = () => {
                 <Container>
                     <h1 style={{color: `#FFF`}}>Inscreva-se para uma viagem</h1>
 
-                            <FormContainer>
-                                <form onSubmit={onCadidate}>
-                                    <select
-                                        defaultValue=""
-                                        onChange={onChangeTrip}>
-                                        <option value="" selected disabled>Escolha uma viagem</option>
-                                        {optionsTrip}
-                                    </select>
+                    <FormContainer>
+                        <form onSubmit={onCadidate}>
+                            <select
+                                defaultValue=""
+                                onChange={onChangeTrip}>
+                                <option value="" selected disabled>Escolha uma viagem</option>
+                                {optionsTrip}
+                            </select>
 
-                                    <input
-                                        name={"name"}
-                                        value={form.name}
-                                        onChange={onChangeForm}
-                                        type="text"
-                                        placeholder="Informe Seu Nome"
-                                        required
-                                        pattern={"^.{3,}"}
-                                        title={"O nome deve ter no mínimo 3 letras"}
-                                    />
+                            <input
+                                name={"name"}
+                                value={form.name}
+                                onChange={onChangeForm}
+                                type="text"
+                                placeholder="Informe Seu Nome"
+                                required
+                                pattern={"^.{3,}"}
+                                title={"O nome deve ter no mínimo 3 letras"}
+                            />
 
-                                    <input
-                                        name={"age"}
-                                        value={form.age}
-                                        onChange={onChangeForm}
-                                        type="number"
-                                        placeholder="Informe Sua Idade"
-                                        required
-                                        min="18"
-                                    />
+                            <input
+                                name={"age"}
+                                value={form.age}
+                                onChange={onChangeForm}
+                                type="number"
+                                placeholder="Informe Sua Idade"
+                                required
+                                min="18"
+                            />
 
-                                    <input
-                                        name={"applicationText"}
-                                        value={form.applicationText}
-                                        onChange={onChangeForm}
-                                        type="text"
-                                        placeholder="Digite um texto de candidatura"
-                                        pattern={"^.{30,}$"}
-                                        title={"O texto deve ter no mínimo 30 caracteres"}
-                                        required
-                                    />
+                            <input
+                                name={"applicationText"}
+                                value={form.applicationText}
+                                onChange={onChangeForm}
+                                type="text"
+                                placeholder="Digite um texto de candidatura"
+                                pattern={"^.{30,}$"}
+                                title={"O texto deve ter no mínimo 30 caracteres"}
+                                required
+                            />
 
-                                    <input
-                                        name={"profession"}
-                                        value={form.profession}
-                                        onChange={onChangeForm}
-                                        type="text"
-                                        placeholder="Informe Sua Profissão"
-                                        required
-                                        pattern="^.{10,}$"
-                                        title="A profissão deve ter no mínimo 10 caracteres"
-                                    />
+                            <input
+                                name={"profession"}
+                                value={form.profession}
+                                onChange={onChangeForm}
+                                type="text"
+                                placeholder="Informe Sua Profissão"
+                                required
+                                pattern="^.{10,}$"
+                                title="A profissão deve ter no mínimo 10 caracteres"
+                            />
 
-                                    <select
-                                        name={"country"}
-                                        value={form.country}
-                                        onChange={onChangeForm}
-                                        required
-                                    >
-                                        <option value="" selected disabled>Informe seu País</option>
-                                        <Countrys/>
-                                    </select>
+                            <select
+                                name={"country"}
+                                value={form.country}
+                                onChange={onChangeForm}
+                                required
+                            >
+                                <option value="" selected disabled>Informe seu País</option>
+                                <Countrys/>
+                            </select>
 
-                                    <div>
-                                        <button onClick={() => history.goBack()}>Voltar</button>
-                                        <button>Enviar</button>
-                                    </div>
-                                </form>
-                            </FormContainer>
+                            <div>
+                                <button onClick={() => history.goBack()}>Voltar</button>
+                                <button>Enviar</button>
+                            </div>
+                        </form>
+                    </FormContainer>
                 </Container>
                 :
                 <Backdrop className={classes.backdrop} open>
