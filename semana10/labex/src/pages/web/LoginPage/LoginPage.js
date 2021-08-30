@@ -37,6 +37,7 @@ const LoginPage = (props) => {
             localStorage.setItem("token", data)
             cleanFields()
             setLoader(false)
+            window.location.reload()
             goToAdminPage(history)
         })
     }

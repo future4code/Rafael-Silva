@@ -97,7 +97,7 @@ const ApplicationFormPage = () => {
                                 onChange={onChangeForm}
                                 type="text"
                                 placeholder="Digite um texto de candidatura"
-                                pattern={"^.{30,}$"}
+                                pattern={"^.{20,}$"}
                                 title={"O texto deve ter no mínimo 30 caracteres"}
                                 required
                             />
@@ -109,7 +109,7 @@ const ApplicationFormPage = () => {
                                 type="text"
                                 placeholder="Informe Sua Profissão"
                                 required
-                                pattern="^.{10,}$"
+                                pattern="^.{3,}$"
                                 title="A profissão deve ter no mínimo 10 caracteres"
                             />
 

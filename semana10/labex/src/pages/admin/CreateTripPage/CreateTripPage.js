@@ -111,7 +111,7 @@ const CreateTripPage = (props) => {
                                 onChange={onChangeForm}
                                 type="text"
                                 placeholder="Digite um texto de candidatura"
-                                pattern={"^.{30,}$"}
+                                pattern={"^.{20,}$"}
                                 title={"O texto deve ter no mínimo 30 caracteres"}
                                 required
                             />
