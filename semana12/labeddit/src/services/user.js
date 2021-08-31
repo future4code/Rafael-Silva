@@ -1,5 +1,5 @@
 import axios from "axios"
-import { BASE_URL } from "../constants/urls"
+import {BASE_URL, HEADERS} from "../constants/urls"
 import {goToFeedPage} from "../routes/coordinator";
 
 export const login = (body, clear, history, setIsLoading) => {
@@ -13,7 +13,8 @@ export const login = (body, clear, history, setIsLoading) => {
         })
         .catch((err) => {
             setIsLoading(false)
-            alert(err.response.data.message)
+            alert("Ooops! Ocorreu um erro inesperado!")
+            console.log(err.response.data)
         })
 }
 
@@ -28,7 +29,7 @@ export const signUp = (body, clear, history, setIsLoading) => {
         })
         .catch((err) => {
             setIsLoading(false)
-            // alert(err.response.data.message)
-            console.log(err)
+            alert("Ooops! Ocorreu um erro inesperado!")
+            console.log(err.response.data)
         })
 }

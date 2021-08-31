@@ -14,7 +14,12 @@ const SignUpForm = () => {
 
     const onSubmitForm = (event) => {
         event.preventDefault()
-        signUp(form, clear, history, setIsLoading)
+
+        if (form.password.length < 8){
+            alert("Digite uma senha maior que 8 caracteres")
+        } else {
+            signUp(form, clear, history, setIsLoading)
+        }
     }
 
     return (
@@ -53,6 +58,7 @@ const SignUpForm = () => {
                         fullWidth
                         required
                         margin={'normal'}
+                        pattern={"^.{8,}$"}
                     />
                 </InputsContainer>
                 <Button

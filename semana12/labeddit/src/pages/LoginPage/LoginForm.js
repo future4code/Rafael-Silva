@@ -42,6 +42,8 @@ const LoginForm = () => {
                         margin={"normal"}
                         required
                         type={"password"}
+                        title={"Digite uma senha maior que 8 caracteres"}
+                        pattern={"^.{8,}$"}
                     />
                 </InputsContainer>
                 <Button
