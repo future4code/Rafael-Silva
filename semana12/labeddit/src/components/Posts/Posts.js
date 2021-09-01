@@ -19,8 +19,6 @@ const useStyles = makeStyles(() => ({
         margin: "20px",
         textAlign: "center",
         border: "1px solid #000",
-        cursor: "pointer",
-
     },
     cardHeader: {
         borderRadius: "8px",
@@ -49,14 +47,13 @@ const useStyles = makeStyles(() => ({
     }
 }));
 
-const Post = (props) => {
+const Posts = (props) => {
     const classes = useStyles();
     const history = useHistory()
 
     return (
         <>
-            {
-                props.posts.map((post) => {
+            {props.posts.map((post) => {
                     return (
                         <div key={post.id}>
                             <Card className={classes.root} >
@@ -64,8 +61,10 @@ const Post = (props) => {
                                     onClick={() => goToPostPage(history, post.id)}
                                     className={classes.cardHeader}
                                     title={post.username}
+                                    style={{cursor: "pointer"}}
                                 />
                                 <CardContent
+                                    style={{cursor: "pointer"}}
                                     onClick={() => goToPostPage(history, post.id)}
                                 >
                                     <Typography variant="body2" color="textSecondary" component="p">
@@ -111,4 +110,4 @@ const Post = (props) => {
     )
 }
 
-export default Post
+export default Posts

@@ -1,40 +1,30 @@
 import React, {useState} from "react"
-import {FeedFormContainer, InputsContainer} from "./styled"
+import {PostFormContainer, InputsContainer} from "./styled"
 import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
 import useForm from '../../hooks/useForm'
 import {CircularProgress} from "@material-ui/core";
-import {createPost} from "../../services/post";
+import {createComment, createPost} from "../../services/post";
 
-const FeedForm = () => {
+const PostCommentForm = (props) => {
     const [form, onChange, clear] = useForm({title: "", body: ""})
     const [isLoading, setIsLoading] = useState(false)
 
     const onSubmitForm = (event) => {
         event.preventDefault()
-        createPost(form, clear, setIsLoading)
+        createComment(form, props.postId, clear, setIsLoading)
     }
 
     return (
-        <FeedFormContainer>
+        <PostFormContainer>
             <form onSubmit={onSubmitForm}>
                 <InputsContainer>
-                    <TextField
-                        name={"title"}
-                        value={form.title}
-                        onChange={onChange}
-                        label={"Título do Posts"}
-                        variant={"outlined"}
-                        fullWidth
-                        margin={"normal"}
-                        required
-                        type={"text"}
-                    />
+
                     <TextField
                         name={"body"}
                         value={form.body}
                         onChange={onChange}
-                        label={"Conteúdo do Posts"}
+                        label={"Escreva seu comentário"}
                         variant={"outlined"}
                         fullWidth
                         margin={"normal"}
@@ -49,11 +39,11 @@ const FeedForm = () => {
                     variant={"contained"}
                     color={"primary"}
                 >
-                    {isLoading ? <CircularProgress color={"inherit"} size={24}/> : <>Criar Post</>}
+                    {isLoading ? <CircularProgress color={"inherit"} size={24}/> : <>Comentar</>}
                 </Button>
             </form>
-        </FeedFormContainer>
+        </PostFormContainer>
     )
 }
 
-export default FeedForm
+export default PostCommentForm

@@ -1,7 +1,7 @@
 import useProtectedPage from "../../hooks/useProtectedPage";
 import {CardContainer, MainContainer, PostsContainer, RegisterPost} from "./styled";
 import {Grid, Typography} from "@material-ui/core";
-import Post from "../../components/Post/Post";
+import Posts from "../../components/Posts/Posts";
 import React, {useContext} from "react";
 import GlobalContext from "../../global/GlobalContext";
 import FeedForm from "./FeedForm";
@@ -18,7 +18,7 @@ const FeedPage = () => {
             <PostsContainer>
                 <CardContainer>
 
-                    <Post
+                    <Posts
                         posts={posts}
                     />
 
