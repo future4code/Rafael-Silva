@@ -34,3 +34,35 @@ export const createComment = (body, postId, clear, setIsLoading) => {
             console.log(error.data)
         })
 }
+
+export const userPositiveVote = (postId) => {
+    const body = {
+        direction: 1
+    }
+
+    axios.post(`${BASE_URL}/posts/${postId}/votes`, body, HEADERS)
+        .then((response) => {
+            alert("Voto registrado")
+            window.location.reload()
+        })
+        .catch((error) => {
+            alert(error.data.response.message)
+            console.log(error.data)
+        })
+}
+
+export const userNegativeVote = (postId) => {
+    const body = {
+        direction: -1
+    }
+
+    axios.put(`${BASE_URL}/posts/${postId}/votes`, body, HEADERS)
+        .then((response) => {
+            alert("Voto registrado")
+            window.location.reload()
+        })
+        .catch((error) => {
+            alert(error.data.response.message)
+            console.log(error.data)
+        })
+}

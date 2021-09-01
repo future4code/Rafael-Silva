@@ -12,6 +12,7 @@ import ThumbUpAltIcon from '@material-ui/icons/ThumbUpAlt';
 import ThumbDownIcon from '@material-ui/icons/ThumbDown';
 import {goToPostPage} from "../../routes/coordinator";
 import {useHistory} from "react-router-dom";
+import {userNegativeVote, userPositiveVote} from "../../services/post";
 
 const useStyles = makeStyles(() => ({
     root: {
@@ -50,61 +51,79 @@ const useStyles = makeStyles(() => ({
 const Posts = (props) => {
     const classes = useStyles();
     const history = useHistory()
+    // const [postId, setPostId] = useState("")
+    // const [vote, setVote] = useState("")
+
+    const positiveVote = (postId) => {
+
+        userPositiveVote(postId)
+    }
+
+    const negativeVote = (postId) => {
+
+        userNegativeVote(postId)
+    }
+
 
     return (
         <>
-            {props.posts.map((post) => {
-                    return (
-                        <div key={post.id}>
-                            <Card className={classes.root} >
-                                <CardHeader
-                                    onClick={() => goToPostPage(history, post.id)}
-                                    className={classes.cardHeader}
-                                    title={post.username}
-                                    style={{cursor: "pointer"}}
-                                />
-                                <CardContent
-                                    style={{cursor: "pointer"}}
-                                    onClick={() => goToPostPage(history, post.id)}
-                                >
-                                    <Typography variant="body2" color="textSecondary" component="p">
-                                        {post.body}
-                                    </Typography>
-                                </CardContent>
+            {props.posts && props.posts.map((post) => {
+                return (
+                    <div key={post.id}>
+                        <Card className={classes.root}>
+                            <CardHeader
+                                onClick={() => goToPostPage(history, post.id)}
+                                className={classes.cardHeader}
+                                title={post.username}
+                                style={{cursor: "pointer"}}
+                            />
+                            <CardContent
+                                style={{cursor: "pointer"}}
+                                onClick={() => goToPostPage(history, post.id)}
+                            >
+                                <Typography variant="body2" color="textSecondary" component="p">
+                                    {post.body}
+                                </Typography>
+                            </CardContent>
 
-                                <CardActions className={classes.cardFooter} disableSpacing>
-                                    <Box className={classes.actions}>
-                                        <IconButton aria-label="like">
-                                            <ThumbUpAltIcon/>
-                                        </IconButton>
+                            <CardActions className={classes.cardFooter} disableSpacing>
+                                <Box className={classes.actions}>
+                                    <IconButton
+                                        onClick={() => positiveVote(post.id)}
+                                        aria-label="like"
+                                    >
+                                        <ThumbUpAltIcon/>
+                                    </IconButton>
 
-                                        {!post.userSum ? <p className={classes.votes}>0</p> :
-                                            <p className={classes.votes}>{post.userSum}</p>}
+                                    {!post.voteSum ? <p className={classes.votes}>0</p> :
+                                        <p className={classes.votes}>{post.voteSum}</p>}
 
-                                        <IconButton aria-label="deslike">
-                                            <ThumbDownIcon/>
-                                        </IconButton>
+                                    <IconButton
+                                        onClick={() => negativeVote(post.id)}
+                                        aria-label="deslike">
+                                        <ThumbDownIcon/>
+                                    </IconButton>
 
-                                    </Box>
-                                    {!post.commentCount
-                                        ? (
-                                            <>
-                                                <p className={classes.comments}>0</p>
-                                                <p className={classes.comments}>Comentarios</p>
-                                            </>
-                                        ) : (
-                                            <>
-                                                <p className={classes.comments}>{post.commentCount}</p>
-                                                <p className={classes.comments}>Comentarios</p>
-                                            </>
-                                        )}
+                                </Box>
+                                {!post.commentCount
+                                    ? (
+                                        <>
+                                            <p className={classes.comments}>0</p>
+                                            <p className={classes.comments}>Comentarios</p>
+                                        </>
+                                    ) : (
+                                        <>
+                                            <p className={classes.comments}>{post.commentCount}</p>
+                                            <p className={classes.comments}>Comentarios</p>
+                                        </>
+                                    )}
 
 
-                                </CardActions>
-                            </Card>
-                        </div>
-                    )
-                })
+                            </CardActions>
+                        </Card>
+                    </div>
+                )
+            })
             }
         </>
     )

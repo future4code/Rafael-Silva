@@ -1,5 +1,5 @@
 import axios from "axios"
-import {BASE_URL, HEADERS} from "../constants/urls"
+import {BASE_URL} from "../constants/urls"
 import {goToFeedPage} from "../routes/coordinator";
 
 export const login = (body, clear, history, setIsLoading) => {

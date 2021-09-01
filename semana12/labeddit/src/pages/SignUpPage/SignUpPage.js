@@ -1,4 +1,4 @@
-import React, {useState} from "react"
+import React from "react"
 import {Box, Button, Grid, Typography} from "@material-ui/core";
 import useUnprotectedPage from "../../hooks/useUnprotectedPage";
 import {ScreenContainer} from "../LoginPage/styled";

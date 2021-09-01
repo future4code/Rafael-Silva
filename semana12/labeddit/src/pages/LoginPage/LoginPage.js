@@ -1,5 +1,5 @@
-import React, {useState} from "react"
-import {Box, Button, Grid, makeStyles, Typography} from "@material-ui/core";
+import React from "react"
+import {Box, Button, Grid, Typography} from "@material-ui/core";
 import {goToSignUp} from "../../routes/coordinator";
 import {useHistory} from "react-router-dom";
 import useUnprotectedPage from "../../hooks/useUnprotectedPage";
@@ -8,21 +8,9 @@ import {ImageSidebar, ScreenContainer} from "./styled";
 
 import posts from "../../assets/posts.svg"
 
-const useStyles = makeStyles(() => ({
-    root: {
-        margin: "20% auto"
-    },
-    image: {
-        width: "100%",
-        height: "auto"
-    }
-}));
-
-
 const LoginPage = () => {
     useUnprotectedPage()
     const history = useHistory()
-    const classes = useStyles();
 
 
     return (

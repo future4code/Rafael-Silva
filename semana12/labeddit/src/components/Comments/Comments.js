@@ -1,7 +1,6 @@
 import {Box, Card, CardActions, CardContent, CardHeader, IconButton, makeStyles, Typography} from "@material-ui/core";
 import ThumbUpAltIcon from "@material-ui/icons/ThumbUpAlt";
 import ThumbDownIcon from "@material-ui/icons/ThumbDown";
-import {goToPostPage} from "../../routes/coordinator";
 import useRequestData from "../../hooks/useRequestData";
 
 const useStyles = makeStyles(() => ({

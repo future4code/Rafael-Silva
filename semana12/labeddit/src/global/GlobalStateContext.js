@@ -12,7 +12,6 @@ const GlobalStateContext = (props) => {
     }, [data])
 
 
-
     const states = {posts, rightButtonText};
     const setters = {setRightButtonText};
     const requests = {};

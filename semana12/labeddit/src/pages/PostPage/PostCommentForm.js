@@ -4,7 +4,7 @@ import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
 import useForm from '../../hooks/useForm'
 import {CircularProgress} from "@material-ui/core";
-import {createComment, createPost} from "../../services/post";
+import {createComment} from "../../services/post";
 
 const PostCommentForm = (props) => {
     const [form, onChange, clear] = useForm({title: "", body: ""})
