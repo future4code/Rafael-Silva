@@ -13,7 +13,7 @@ export const login = (body, clear, history, setIsLoading) => {
         })
         .catch((err) => {
             setIsLoading(false)
-            alert("Ooops! Ocorreu um erro inesperado!")
+            alert(err.response.data)
             console.log(err.response.data)
         })
 }
@@ -29,7 +29,7 @@ export const signUp = (body, clear, history, setIsLoading) => {
         })
         .catch((err) => {
             setIsLoading(false)
-            alert("Ooops! Ocorreu um erro inesperado!")
+            alert(err.response.data)
             console.log(err.response.data)
         })
 }

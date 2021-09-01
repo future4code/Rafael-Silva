@@ -16,10 +16,11 @@ import {useHistory} from "react-router-dom";
 const useStyles = makeStyles(() => ({
     root: {
         width: "400px",
-        margin: "20px auto",
+        margin: "20px",
         textAlign: "center",
         border: "1px solid #000",
-        cursor: "pointer"
+        cursor: "pointer",
+
     },
     cardHeader: {
         borderRadius: "8px",
@@ -44,7 +45,7 @@ const useStyles = makeStyles(() => ({
     votes: {
         fontSize: "20px",
         fontWeight: "500",
-        marginLeft: "15px"
+        margin: "0 15px"
     }
 }));
 
@@ -58,13 +59,15 @@ const Post = (props) => {
                 props.posts.map((post) => {
                     return (
                         <div key={post.id}>
-                            <Card className={classes.root} onClick={() => goToPostPage(history, post.id)}>
+                            <Card className={classes.root} >
                                 <CardHeader
-
+                                    onClick={() => goToPostPage(history, post.id)}
                                     className={classes.cardHeader}
                                     title={post.username}
                                 />
-                                <CardContent>
+                                <CardContent
+                                    onClick={() => goToPostPage(history, post.id)}
+                                >
                                     <Typography variant="body2" color="textSecondary" component="p">
                                         {post.body}
                                     </Typography>
@@ -74,9 +77,10 @@ const Post = (props) => {
                                     <Box className={classes.actions}>
                                         <IconButton aria-label="like">
                                             <ThumbUpAltIcon/>
-                                            {!post.userSum ? <p className={classes.votes}>0</p> :
-                                                <p className={classes.votes}>{post.userSum}</p>}
                                         </IconButton>
+
+                                        {!post.userSum ? <p className={classes.votes}>0</p> :
+                                            <p className={classes.votes}>{post.userSum}</p>}
 
                                         <IconButton aria-label="deslike">
                                             <ThumbDownIcon/>

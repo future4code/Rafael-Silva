@@ -1,9 +1,10 @@
 import useProtectedPage from "../../hooks/useProtectedPage";
-import {CardContainer, MainContainer} from "./styled";
-import {Grid} from "@material-ui/core";
+import {CardContainer, MainContainer, PostsContainer, RegisterPost} from "./styled";
+import {Grid, Typography} from "@material-ui/core";
 import Post from "../../components/Post/Post";
-import {useContext} from "react";
+import React, {useContext} from "react";
 import GlobalContext from "../../global/GlobalContext";
+import FeedForm from "./FeedForm";
 
 const FeedPage = () => {
     useProtectedPage()
@@ -12,22 +13,26 @@ const FeedPage = () => {
     const posts = states && states.posts
 
     return (
-        <MainContainer m={5}>
-            <Grid container>
-                <Grid item xs={8}>
-                    <CardContainer>
+        <MainContainer>
+            {posts &&
+            <PostsContainer>
+                <CardContainer>
 
-                        <Post
-                            posts={posts}
-                        />
+                    <Post
+                        posts={posts}
+                    />
 
-                    </CardContainer>
-                </Grid>
+                </CardContainer>
 
-                <Grid item xs={4}>
-                    <h1>FeedPage</h1>
-                </Grid>
-            </Grid>
+                <RegisterPost>
+                    <Typography variant={"h4"}>
+                        Cadastrar Post:
+                    </Typography>
+                    <FeedForm/>
+                </RegisterPost>
+
+            </PostsContainer>
+            }
         </MainContainer>
     )
 }

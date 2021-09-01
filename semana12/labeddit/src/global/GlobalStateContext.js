@@ -5,14 +5,16 @@ import useRequestData from "../hooks/useRequestData";
 const GlobalStateContext = (props) => {
     const [posts, setPosts] = useState([])
     const [data] = useRequestData("/posts", [])
+    const [rightButtonText, setRightButtonText] = useState(data ? "Logout" : "")
 
     useEffect(() => {
         setPosts(data)
     }, [data])
 
 
-    const states = {posts};
-    const setters = {};
+
+    const states = {posts, rightButtonText};
+    const setters = {setRightButtonText};
     const requests = {};
 
     return (

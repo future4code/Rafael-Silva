@@ -1,51 +1,48 @@
 import React, {useState} from "react"
-import {InputsContainer, LoginFormContainer} from "./styled"
+import {FeedFormContainer, InputsContainer} from "./styled"
 import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
 import useForm from '../../hooks/useForm'
-import {login} from "../../services/user"
 import {useHistory} from 'react-router-dom'
 import {CircularProgress} from "@material-ui/core";
+import {createPost} from "../../services/post";
 
-const LoginForm = () => {
-    const [form, onChange, clear] = useForm({email: "", password: ""})
+const FeedForm = () => {
+    const [form, onChange, clear] = useForm({title: "", body: ""})
     const history = useHistory()
     const [isLoading, setIsLoading] = useState(false)
 
     const onSubmitForm = (event) => {
         event.preventDefault()
-        if (form.password.length < 8) {
-            alert("Digite uma senha maior que 8 caracteres")
-        } else {
-            login(form, clear, history, setIsLoading)
-        }
+        createPost(form, clear, setIsLoading)
     }
 
     return (
-        <LoginFormContainer>
+        <FeedFormContainer>
             <form onSubmit={onSubmitForm}>
                 <InputsContainer>
                     <TextField
-                        name={"email"}
-                        value={form.email}
+                        name={"title"}
+                        value={form.title}
                         onChange={onChange}
-                        label={"E-mail"}
+                        label={"Título do Post"}
                         variant={"outlined"}
                         fullWidth
                         margin={"normal"}
                         required
-                        type={"email"}
+                        type={"text"}
                     />
                     <TextField
-                        name={"password"}
-                        value={form.password}
+                        name={"body"}
+                        value={form.body}
                         onChange={onChange}
-                        label={"Senha"}
+                        label={"Conteúdo do Post"}
                         variant={"outlined"}
                         fullWidth
                         margin={"normal"}
                         required
-                        type={"password"}
+                        multiline
+                        rows={4}
                         title={"Digite uma senha maior que 8 caracteres"}
                         pattern={"^.{8,}$"}
                     />
@@ -56,11 +53,11 @@ const LoginForm = () => {
                     variant={"contained"}
                     color={"primary"}
                 >
-                    {isLoading ? <CircularProgress color={"inherit"} size={24}/> : <>Fazer Login</>}
+                    {isLoading ? <CircularProgress color={"inherit"} size={24}/> : <>Criar Post</>}
                 </Button>
             </form>
-        </LoginFormContainer>
+        </FeedFormContainer>
     )
 }
 
-export default LoginForm
+export default FeedForm

@@ -5,6 +5,7 @@ import LoginPage from "../pages/LoginPage/LoginPage";
 import SignUpPage from "../pages/SignUpPage/SignUpPage";
 import FeedPage from "../pages/FeedPage/FeedPage";
 import PostPage from "../pages/PostPage/PostPage";
+import Header from "../components/Header/Header";
 
 
 const Router = () => {
@@ -20,10 +21,12 @@ const Router = () => {
                 </Route>
 
                 <Route exact path="/">
+                    <Header/>
                     <FeedPage/>
                 </Route>
 
                 <Route exact path="/post/:id">
+                    <Header/>
                     <PostPage/>
                 </Route>
 
