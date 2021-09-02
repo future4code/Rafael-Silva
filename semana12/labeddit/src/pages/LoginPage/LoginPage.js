@@ -1,12 +1,17 @@
 import React from "react"
-import {Box, Button, Grid, Typography} from "@material-ui/core";
+import {Box, Button, Typography} from "@material-ui/core";
 import {goToSignUp} from "../../routes/coordinator";
 import {useHistory} from "react-router-dom";
 import useUnprotectedPage from "../../hooks/useUnprotectedPage";
 import LoginForm from "./LoginForm";
-import {ImageSidebar, ScreenContainer} from "./styled";
+import {ElementLogin, ImageSidebar, LoginContainer, MainContainer} from "./styled";
+import Slider from 'react-animated-slider';
+import 'react-animated-slider/build/horizontal.css';
 
 import posts from "../../assets/posts.svg"
+import blogging from "../../assets/blogging.svg"
+import notification from "../../assets/Push_notifications.svg"
+
 
 const LoginPage = () => {
     useUnprotectedPage()
@@ -14,33 +19,33 @@ const LoginPage = () => {
 
 
     return (
-        <Box m={10}>
-            <Grid container>
+        <MainContainer>
+            <LoginContainer>
+                <ElementLogin>
+                    <Typography variant={"h4"}>
+                        Login
+                    </Typography>
 
-                <Grid item xs={6}>
-                    <ScreenContainer>
-                        <Typography variant={"h4"}>
-                            Login
-                        </Typography>
-                        <LoginForm/>
-                        <Button
-                            onClick={() => goToSignUp(history)}
-                            type={"submit"}
-                            fullWidth
-                            variant={"text"}
-                            color={"primary"}
-                        >Não possui conta? Cadastre-se</Button>
-                    </ScreenContainer>
-                </Grid>
+                    <LoginForm/>
 
-                <Grid item xs={6}>
-                    <Box>
-                        <ImageSidebar src={posts}/>
-                    </Box>
-                </Grid>
+                    <Button
+                        onClick={() => goToSignUp(history)}
+                        type={"submit"}
+                        fullWidth
+                        variant={"text"}
+                        color={"primary"}
+                    >Não possui conta? Cadastre-se
+                    </Button>
+                </ElementLogin>
 
-            </Grid>
-        </Box>
+                <Slider previousButton nextButton autoplay={1500}>
+                    <ImageSidebar src={posts}/>
+                    <ImageSidebar src={blogging}/>
+                    <ImageSidebar src={notification}/>
+                </Slider>
+
+            </LoginContainer>
+        </MainContainer>
     )
 }
 
