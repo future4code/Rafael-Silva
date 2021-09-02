@@ -23,7 +23,7 @@ const FeedForm = () => {
                         name={"title"}
                         value={form.title}
                         onChange={onChange}
-                        label={"Título do Posts"}
+                        label={"Título do Post"}
                         variant={"outlined"}
                         fullWidth
                         margin={"normal"}
@@ -34,7 +34,7 @@ const FeedForm = () => {
                         name={"body"}
                         value={form.body}
                         onChange={onChange}
-                        label={"Conteúdo do Posts"}
+                        label={"Conteúdo do Post"}
                         variant={"outlined"}
                         fullWidth
                         margin={"normal"}

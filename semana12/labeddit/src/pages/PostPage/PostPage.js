@@ -14,23 +14,26 @@ const PostPage = () => {
 
     return (
         <MainContainer>
-            <PostContainer>
-                <Post
+            {postId &&
+            <>
+                <PostContainer>
+                    <Post
+                        postId={postId}
+                    />
+                </PostContainer>
+
+                <hr/>
+                <PostCommentForm
                     postId={postId}
                 />
-            </PostContainer>
 
-            <hr/>
-            <PostCommentForm
-                postId={postId}
-            />
+                <hr/>
 
-            <hr/>
-
-            <Comments
-                postId={postId}
-            />
-
+                <Comments
+                    postId={postId}
+                />
+            </>
+            }
         </MainContainer>
     )
 }

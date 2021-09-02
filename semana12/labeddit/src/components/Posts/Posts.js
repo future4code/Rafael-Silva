@@ -12,7 +12,8 @@ import ThumbUpAltIcon from '@material-ui/icons/ThumbUpAlt';
 import ThumbDownIcon from '@material-ui/icons/ThumbDown';
 import {goToPostPage} from "../../routes/coordinator";
 import {useHistory} from "react-router-dom";
-import {userNegativeVote, userPositiveVote} from "../../services/post";
+import {DeletePostVote, postVote} from "../../services/post";
+import NotInterestedIcon from "@material-ui/icons/NotInterested";
 
 const useStyles = makeStyles(() => ({
     root: {
@@ -51,19 +52,6 @@ const useStyles = makeStyles(() => ({
 const Posts = (props) => {
     const classes = useStyles();
     const history = useHistory()
-    // const [postId, setPostId] = useState("")
-    // const [vote, setVote] = useState("")
-
-    const positiveVote = (postId) => {
-
-        userPositiveVote(postId)
-    }
-
-    const negativeVote = (postId) => {
-
-        userNegativeVote(postId)
-    }
-
 
     return (
         <>
@@ -89,7 +77,7 @@ const Posts = (props) => {
                             <CardActions className={classes.cardFooter} disableSpacing>
                                 <Box className={classes.actions}>
                                     <IconButton
-                                        onClick={() => positiveVote(post.id)}
+                                        onClick={() => postVote(post, 1)}
                                         aria-label="like"
                                     >
                                         <ThumbUpAltIcon/>
@@ -99,9 +87,15 @@ const Posts = (props) => {
                                         <p className={classes.votes}>{post.voteSum}</p>}
 
                                     <IconButton
-                                        onClick={() => negativeVote(post.id)}
+                                        onClick={() => postVote(post, -1)}
                                         aria-label="deslike">
                                         <ThumbDownIcon/>
+                                    </IconButton>
+
+                                    <IconButton
+                                        onClick={() => DeletePostVote(post.id)}
+                                        aria-label="deleteVote">
+                                        <NotInterestedIcon alt={"deleteVote"}/>
                                     </IconButton>
 
                                 </Box>
@@ -109,7 +103,7 @@ const Posts = (props) => {
                                     ? (
                                         <>
                                             <p className={classes.comments}>0</p>
-                                            <p className={classes.comments}>Comentarios</p>
+                                            <p className={classes.comments}>Comentários</p>
                                         </>
                                     ) : (
                                         <>

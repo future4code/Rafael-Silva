@@ -2,6 +2,8 @@ import {Box, Card, CardActions, CardContent, CardHeader, IconButton, makeStyles,
 import ThumbUpAltIcon from "@material-ui/icons/ThumbUpAlt";
 import ThumbDownIcon from "@material-ui/icons/ThumbDown";
 import useRequestData from "../../hooks/useRequestData";
+import {commentVote, DeleteCommentVote, DeletePostVote} from "../../services/post";
+import NotInterestedIcon from "@material-ui/icons/NotInterested";
 
 const useStyles = makeStyles(() => ({
     root: {
@@ -60,15 +62,25 @@ const Comments = (props) => {
 
                             <CardActions className={classes.cardFooter} disableSpacing>
                                 <Box className={classes.actions}>
-                                    <IconButton aria-label="like">
+                                    <IconButton
+                                        onClick={() => commentVote(comment, 1)}
+                                        aria-label="like">
                                         <ThumbUpAltIcon/>
                                     </IconButton>
 
-                                    {!comment.userSum ? <p className={classes.votes}>0</p> :
-                                        <p className={classes.votes}>{comment.userSum}</p>}
+                                    {comment && !comment.userVote ? <p className={classes.votes}>0</p> :
+                                        <p className={classes.votes}>{comment && comment.userVote}</p>}
 
-                                    <IconButton aria-label="deslike">
+                                    <IconButton
+                                        onClick={() => commentVote(comment, -1)}
+                                        aria-label="deslike">
                                         <ThumbDownIcon/>
+                                    </IconButton>
+
+                                    <IconButton
+                                        onClick={() => DeleteCommentVote(comment.id)}
+                                        aria-label="deleteVote">
+                                        <NotInterestedIcon alt={"deleteVote"}/>
                                     </IconButton>
 
                                 </Box>
