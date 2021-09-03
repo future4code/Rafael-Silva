@@ -8,6 +8,7 @@ export const goToSignUp = (history) => {
 
 export const goToFeedPage = (history) => {
     history.push("/")
+    window.location.reload()
 }
 
 export const goToPostPage = (history, id) => {
