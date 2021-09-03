@@ -50,7 +50,7 @@ const useStyles = makeStyles(() => ({
 }));
 
 const Posts = (props) => {
-    const classes = useStyles();
+    const classes = useStyles()
     const history = useHistory()
 
     return (
@@ -111,7 +111,6 @@ const Posts = (props) => {
                                             <p className={classes.comments}>Comentarios</p>
                                         </>
                                     )}
-
 
                             </CardActions>
                         </Card>

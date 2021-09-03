@@ -29,24 +29,19 @@ const FeedPage = () => {
     const posts = states && states.posts
 
     const handleChange = (event, value) => {
-        setters.setIsLoading(true)
+
         setters.setPage(value);
-        setTimeout(() => setters.setIsLoading(false), 300)
     };
 
     return (
         <MainContainer>
-            {states.isLoading
-                ? <Loading/>
-                : <>
+            {posts
+                ? <>
                     <PostsContainer>
                         <CardContainer>
-                            {states.isLoading
-                                ? <Loading/>
-                                : <Posts
-                                    posts={posts}
-                                />
-                            }
+                            <Posts
+                                posts={posts}
+                            />
                         </CardContainer>
 
                         <RegisterPost>
@@ -62,6 +57,7 @@ const FeedPage = () => {
                         <Pagination count={posts.length} onChange={handleChange} variant="outlined" color="primary"/>
                     </div>
                 </>
+                : <Loading/>
             }
         </MainContainer>
     )

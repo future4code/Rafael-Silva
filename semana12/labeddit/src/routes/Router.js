@@ -21,12 +21,16 @@ const Router = () => {
                 </Route>
 
                 <Route exact path="/">
-                    <Header/>
+                    <Header
+                        Search={true}
+                    />
                     <FeedPage/>
                 </Route>
 
                 <Route exact path="/post/:id">
-                    <Header/>
+                    <Header
+                        Search={false}
+                    />
                     <PostPage/>
                 </Route>
 

@@ -1,5 +1,5 @@
 import React from "react"
-import {Box, Button, Typography} from "@material-ui/core";
+import {Button, Typography} from "@material-ui/core";
 import {goToSignUp} from "../../routes/coordinator";
 import {useHistory} from "react-router-dom";
 import useUnprotectedPage from "../../hooks/useUnprotectedPage";

@@ -7,3 +7,11 @@ export const StyledToolbar = styled(Toolbar)`
   justify-content: space-between;
   background-color: #E3E3E3;
 `
+
+export const SearchContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+`

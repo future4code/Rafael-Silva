@@ -2,7 +2,7 @@ import {Box, Card, CardActions, CardContent, CardHeader, IconButton, makeStyles,
 import ThumbUpAltIcon from "@material-ui/icons/ThumbUpAlt";
 import ThumbDownIcon from "@material-ui/icons/ThumbDown";
 import useRequestData from "../../hooks/useRequestData";
-import {commentVote, DeleteCommentVote, DeletePostVote} from "../../services/post";
+import {commentVote, DeleteCommentVote} from "../../services/post";
 import NotInterestedIcon from "@material-ui/icons/NotInterested";
 
 const useStyles = makeStyles(() => ({
