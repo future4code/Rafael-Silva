@@ -1,47 +1,95 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
-import { getCards } from "../../services/cards";
 import tarot from "../../constants/tarot.json";
-import axios from "axios";
-import { IMAGES_URL } from "../../constants/urls";
+import { IMAGES_URL, IMAGE_BACK_CARDS } from "../../constants/urls";
+
+//COMPONENTS
+import Card from "../../components/Card/Card";
+import Header from "../../components/Header/Header";
+import { goToSelectCard } from "../../routes/coordinator";
+import { useHistory } from "react-router";
 
 const MainContainer = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 `;
 
-const CardsContainer = styled.div`
-  margin: 10%;
-  display: flex;
-  border: 1px solid #000;
+export const Cards = styled.div`
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 30px;
+
+    /* Put a card in the next row when previous cards take all width */
+    flex-wrap: wrap;
+    overflow-x: hidden;
+
+    //border: 1px solid #FF5F6D;
 `;
 
-const Card = styled.div`
-  width: 20%;
+export const CardsItem = styled.div`
+    /* There will be 4 cards per row */
+    flex-basis: 20%;
+    padding-left: 8px;
+    padding-right: 8px;
+    margin-bottom: 40px;
+    margin-right: 40px;
+    max-height: 50%;
 `;
 
 const CardsPage = () => {
-  const image = tarot.cards.map((card) => {
+    const history = useHistory();
+    const [imageBack, setImageBack] = useState(false);
+
+
+    const renderImages = () => {
+        let image = tarot.cards.map((card) => {
+            return (
+                <CardsItem key={card.name}>
+                    <Card Image={IMAGES_URL + card.image} />
+                </CardsItem>
+            );
+        });
+
+        return image;
+    };
+
+    const embarrassCards = () => {
+        setImageBack(true);
+    };
+
+    const renderImagesBack = () => {
+        let imagesBack = tarot.cards.map((card) => {
+            return (
+                <CardsItem
+                    key={card.name}
+                    style={{ cursor: "pointer" }}
+                    onClick={() => goToSelectCard(history, Math.floor(Math.random() * tarot.cards.length))}>
+                    <Card Image={IMAGE_BACK_CARDS} />
+                </CardsItem>
+            );
+        });
+
+        return imagesBack;
+    };
+
+    useEffect(() => {
+        if (imageBack) {
+            renderImagesBack();
+        } else {
+            renderImages();
+        }
+    }, [imageBack]);
+
     return (
-      <Card>
-        <img src={IMAGES_URL + card.image} />
-        <p>{card.name}</p>
-      </Card>
+        <MainContainer>
+            <Header Embarrass={embarrassCards} />
+            <Cards>{imageBack ? renderImagesBack() : renderImages()}</Cards>
+        </MainContainer>
     );
-  });
-
-  console.log(image);
-
-  return (
-    <MainContainer>
-      <CardsContainer>
-       {image}
-      </CardsContainer>
-    </MainContainer>
-  );
 };
 
 export default CardsPage;
