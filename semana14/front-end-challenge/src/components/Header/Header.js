@@ -1,3 +1,5 @@
+import { useHistory } from "react-router";
+
 import styled from "styled-components";
 
 const Container = styled.div`
@@ -38,12 +40,17 @@ const Button = styled.button`
 `;
 
 const Header = (props) => {
+  const history = useHistory()
   return (
-    <Container>
-      <div>
-        <Button onClick={props.Embarrass}>Embaralhar</Button>
-      </div>
-    </Container>
+      <Container>
+          <div>
+              {props.BackButton === true ? (
+                  <Button onClick={() => history.goBack()}>Voltar</Button>
+              ) : (
+                  <Button onClick={props.Embarrass}>Embaralhar</Button>
+              )}
+          </div>
+      </Container>
   );
 };
 
