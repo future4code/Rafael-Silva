@@ -1,0 +1,11 @@
+{
+  "name": "comecando-com-nodejs",
+  "version": "1.0.0",
+  "description": "Começando com Node.js",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./index.js"
+  },
+  "author": "Rafael N. Silva",
+  "license": "ISC"
+}
