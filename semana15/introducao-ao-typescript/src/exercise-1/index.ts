@@ -21,8 +21,8 @@
 
 //c)
 // type person = {
-//     name: string;
-//     age: number;
+//     name: string,
+//     age: number,
 //     favoriteColor: string;
 // };
 
@@ -51,36 +51,36 @@
 
 //d)
 
-// enum Colors {
-//     RED = "red",
-//     ORANGE = "orange",
-//     YELLOW = "yellow",
-//     GREEN = "green",
-//     BLUE = "blue",
-// }
+enum Colors {
+    RED = "red",
+    ORANGE = "orange",
+    YELLOW = "yellow",
+    GREEN = "green",
+    BLUE = "blue"
+}
 
-// type person = {
-//     name: string;
-//     age: number;
-//     favoriteColor: Colors;
-// };
+type person = {
+    name: string;
+    age: number;
+    favoriteColor: Colors;
+};
 
-// const person1: person = {
-//     name: "Rafael",
-//     age: 22,
-//     favoriteColor: Colors.GREEN,
-// };
+const person1: person = {
+    name: "Rafael",
+    age: 22,
+    favoriteColor: Colors.GREEN
+};
 
-// const person2: person = {
-//     name: "Gabriel",
-//     age: 25,
-//     favoriteColor: Colors.BLUE
-// };
+const person2: person = {
+    name: "Gabriel",
+    age: 25,
+    favoriteColor: Colors.BLUE
+};
 
-// const person3: person = {
-//     name: "Berenice",
-//     age: 59,
-//     favoriteColor: Colors.YELLOW
-// };
+const person3: person = {
+    name: "Berenice",
+    age: 59,
+    favoriteColor: Colors.YELLOW
+};
 
-// console.log(person1, person2, person3);
+console.log(person1, person2, person3);
