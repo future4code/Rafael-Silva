@@ -1,7 +1,4 @@
-const chalk = require("chalk");
-
-const red = chalk.red;
-const green = chalk.green;
+const { red, green } = require('../utils/colors')
 
 // Exercicio 2:
 
