@@ -4,10 +4,7 @@
     "description": "Começando com Node.js",
     "main": "index.js",
     "scripts": {
-        "task1": "node task1/index.js",
-        "task2": "node task2/index.js",
-        "task3": "node task3/index.js",
-        "task4": "node task4/index.js"
+        "start": "clear && node index.js"
     },
     "author": "Rafael N. Silva",
     "license": "ISC",

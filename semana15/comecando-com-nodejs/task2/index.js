@@ -1,4 +1,4 @@
-const { red, green } = require('../utils/colors')
+const { red, green } = require('./utils/colors')
 
 // Exercicio 2:
 
