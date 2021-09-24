@@ -45,8 +45,6 @@ app.get("/users/balance", (req: Request, res: Response) => {
                 })
                 .map((user) => {
                     const balance: {} = {
-                        name: user.name,
-                        document: user.document,
                         balance: user.balance
                     };
 
