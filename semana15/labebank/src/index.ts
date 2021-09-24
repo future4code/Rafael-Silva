@@ -7,7 +7,7 @@ import { users } from "./database/users";
 import { user } from "./database/types";
 
 //Helpers
-const calculateAge = require("./utils/calculateAge");
+const { ageFromDateOfBirthday } = require("./utils/Helpers");
 
 const app: Express = express();
 app.use(express.json());
@@ -78,7 +78,7 @@ app.post("/users", (req: Request, res: Response) => {
             throw new Error("Preencha todos os campos");
         }
 
-        const age = calculateAge(birthDate);
+        const age = ageFromDateOfBirthday(birthDate);
 
         if (age < 18) {
             errorCode = 422;
@@ -110,6 +110,37 @@ app.post("/users", (req: Request, res: Response) => {
         res.status(errorCode).send({ message: error.message });
     }
 });
+
+//Endpoint: Pagar Conta
+app.post("/users/pay", (req: Request, res: Response) => {
+    let errorCode = 400
+    try {
+        if (!req.query.document) {
+            errorCode = 422;
+            throw new Error("Informe seu CPF para fazer um pagamento!");
+        }
+
+        const { value, date, description } = req.body;
+
+        if (!value || !description) {
+            errorCode = 422;
+            throw new Error("Ooops! Dados incompletos!");
+        }
+
+        if (!date){
+            let today = new Date();
+            const dd = String(today.getDate()).padStart(2, "0");
+            const mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
+            const yyyy = today.getFullYear();
+    
+            const date:string = `"${dd}/${mm}/${yyyy}"`;    
+        }
+        
+    } catch (e) {
+        const error = e as Error;
+        res.status(errorCode).send({ message: error.message });
+    }
+})
 
 //Endpoint: Adicionar saldo
 app.put("/users/balance", (req: Request, res: Response) => {
