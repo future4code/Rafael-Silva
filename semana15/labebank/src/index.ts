@@ -13,7 +13,7 @@ const app: Express = express();
 app.use(express.json());
 app.use(cors());
 
-//Endpoint Retorna todos os usuarios
+//Endpoint: Retorna todos os usuarios
 app.get("/users", (req: Request, res: Response) => {
     let errorCode = 400;
     try {
@@ -29,7 +29,7 @@ app.get("/users", (req: Request, res: Response) => {
     }
 });
 
-//Endpoint Pegar saldo
+//Endpoint: Pegar saldo
 app.get("/users/balance", (req: Request, res: Response) => {
     let errorCode = 400;
     try {
@@ -51,8 +51,6 @@ app.get("/users/balance", (req: Request, res: Response) => {
                     return balance;
                 });
 
-            console.log(search);
-
             if (search.length > 0) {
                 res.status(200).send(search);
             } else {
@@ -69,8 +67,7 @@ app.get("/users/balance", (req: Request, res: Response) => {
     }
 });
 
-//Endpoint Criar Conta
-
+//Endpoint: Criar Conta
 app.post("/users", (req: Request, res: Response) => {
     let errorCode = 400;
     try {
@@ -108,6 +105,41 @@ app.post("/users", (req: Request, res: Response) => {
         users.splice(0, users.length, ...newUser);
 
         res.status(201).send({ message: "Usuário criado com sucesso!" });
+    } catch (e) {
+        const error = e as Error;
+        res.status(errorCode).send({ message: error.message });
+    }
+});
+
+//Endpoint: Adicionar saldo
+app.put("/users/balance", (req: Request, res: Response) => {
+    let errorCode = 400;
+    try {
+        if (req.query.name && req.query.document && req.query.balance) {
+            const name: string = req.query.name as string;
+            const document: number = Number(req.query.document);
+            const balance: number = Number(req.query.balance);
+
+            const userIndex: number = users.findIndex((user) => user.document === document);
+
+            if (userIndex !== -1) {
+                const user = users[userIndex];
+
+                const newUser: user = {
+                    ...user,
+                    balance: (user.balance += balance)
+                };
+
+                users[userIndex] = newUser;
+            } else {
+                errorCode = 404;
+                throw new Error("Usuário não encontrado");
+            }
+            res.status(200).send({ message: "Saldo adicionado com sucesso!" });
+        } else {
+            errorCode = 422;
+            throw new Error("Ooops! Dados incompletos!");
+        }
     } catch (e) {
         const error = e as Error;
         res.status(errorCode).send({ message: error.message });
