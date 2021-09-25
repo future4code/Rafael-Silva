@@ -3,11 +3,11 @@ import cors from "cors";
 import { AddressInfo } from "net";
 
 //Database
-import { users } from "./database/users";
-import { user } from "./database/types";
+import { accounts } from "./database/accounts";
+import { account } from "./database/types";
 
 //Helpers
-const { ageFromDateOfBirthday } = require("./utils/Helpers");
+const { ageFromDateOfBirthday, dateInformedByUser, dateFormater } = require("./utils/Helpers");
 
 const app: Express = express();
 app.use(express.json());
@@ -15,26 +15,25 @@ app.use(cors());
 
 //Endpoint: Retorna todos os usuarios
 app.get("/users", (req: Request, res: Response) => {
-    let errorCode = 400;
     try {
-        if (users.length > 0) {
-            res.status(200).send(users);
+        if (accounts.length > 0) {
+            res.status(200).send(accounts);
         } else {
-            errorCode = 404;
+            res.statusCode = 404;
             throw new Error("Users not found!");
         }
     } catch (e) {
         const error = e as Error;
-        res.status(errorCode).send({ message: error.message });
+        console.log(error);
+        res.send({ message: error.message });
     }
 });
 
-//Endpoint: Pegar saldo
+// Endpoint: Pegar saldo
 app.get("/users/balance", (req: Request, res: Response) => {
-    let errorCode = 400;
     try {
         if (req.query.name && req.query.document) {
-            const search: {}[] = users
+            const search: {}[] = accounts
                 .filter((user) => {
                     const name: string = req.query.name as string;
                     const document: number = Number(req.query.document);
@@ -45,6 +44,8 @@ app.get("/users/balance", (req: Request, res: Response) => {
                 })
                 .map((user) => {
                     const balance: {} = {
+                        name: user.name,
+                        document: user.document,
                         balance: user.balance
                     };
 
@@ -54,126 +55,156 @@ app.get("/users/balance", (req: Request, res: Response) => {
             if (search.length > 0) {
                 res.status(200).send(search);
             } else {
-                errorCode = 404;
+                res.statusCode = 404;
                 throw new Error("Usuário não encontrado");
             }
         } else {
-            errorCode = 422;
+            res.statusCode = 422;
             throw new Error("Ooops! Dados incompletos!");
         }
     } catch (e) {
         const error = e as Error;
-        res.status(errorCode).send({ message: error.message });
+        console.log(error);
+        res.send({ message: error.message });
     }
 });
 
 //Endpoint: Criar Conta
 app.post("/users", (req: Request, res: Response) => {
-    let errorCode = 400;
     try {
         const { name, birthDate, document } = req.body;
 
         if (!name || !birthDate || !document) {
-            errorCode = 422;
+            res.statusCode = 422;
             throw new Error("Preencha todos os campos");
         }
 
         const age = ageFromDateOfBirthday(birthDate);
 
         if (age < 18) {
-            errorCode = 422;
+            res.statusCode = 406;
             throw new Error("Somente maiores de 18 anos podem cadastrar uma nova conta.");
         }
 
-        const sameDocument = users.find((user) => user.document === document);
+        const sameDocument = accounts.find((user) => user.document === document);
 
         if (sameDocument) {
-            errorCode = 422;
+            res.statusCode = 406;
             throw new Error("CPF já existe");
         }
 
-        const newUser: user[] = [
-            ...users,
-            {
-                name,
-                birthDate,
-                document,
-                balance: 0
-            }
-        ];
+        const newUser: account = {
+            name,
+            birthDate,
+            document,
+            balance: 0,
+            statement: []
+        };
 
-        users.splice(0, users.length, ...newUser);
+        accounts.push(newUser);
 
         res.status(201).send({ message: "Usuário criado com sucesso!" });
     } catch (e) {
         const error = e as Error;
-        res.status(errorCode).send({ message: error.message });
+        console.log(error);
+        res.send({ message: error.message });
     }
 });
 
 //Endpoint: Pagar Conta
 app.post("/users/pay", (req: Request, res: Response) => {
-    let errorCode = 400
     try {
-        if (!req.query.document) {
-            errorCode = 422;
+        const document = Number(req.query.document);
+
+        if (!document) {
+            res.statusCode = 406;
             throw new Error("Informe seu CPF para fazer um pagamento!");
         }
 
-        const { value, date, description } = req.body;
+        let { value, date, description } = req.body;
 
         if (!value || !description) {
-            errorCode = 422;
+            res.statusCode = 422;
             throw new Error("Ooops! Dados incompletos!");
         }
 
-        if (!date){
+        if (!date) {
             let today = new Date();
             const dd = String(today.getDate()).padStart(2, "0");
             const mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
             const yyyy = today.getFullYear();
-    
-            const date:string = `"${dd}/${mm}/${yyyy}"`;    
+
+            date = `${dd}/${mm}/${yyyy}`;
         }
-        
+
+        const dateInformed = dateInformedByUser(date);
+
+        if (dateInformed === false) {
+            res.statusCode = 406;
+            throw new Error(`Ooops! Você não pode efetuar um pagamento anterior a essa data.`);
+        }
+
+        const newStatement = {
+            value,
+            date,
+            description
+        };
+
+        const user = accounts.filter((user) => {
+            if (user.document === document) {
+                user.statement.push(newStatement);
+                user.balance -= newStatement.value;
+                return true;
+            } else {
+                return false;
+            }
+        });
+
+        if (user) {
+            res.status(200).send({ message: "Pagamento efetuado com sucesso!" });
+        } else {
+            res.statusCode = 404;
+            throw new Error(`Usuário não encontrado`);
+        }
     } catch (e) {
         const error = e as Error;
-        res.status(errorCode).send({ message: error.message });
+        console.log(error);
+        res.send({ message: error.message });
     }
-})
+});
 
-//Endpoint: Adicionar saldo
+// Endpoint: Adicionar saldo
 app.put("/users/balance", (req: Request, res: Response) => {
-    let errorCode = 400;
     try {
         if (req.query.name && req.query.document && req.query.balance) {
-            const name: string = req.query.name as string;
+            // const name: string = req.query.name as string;
             const document: number = Number(req.query.document);
             const balance: number = Number(req.query.balance);
 
-            const userIndex: number = users.findIndex((user) => user.document === document);
+            const userIndex: number = accounts.findIndex((user) => user.document === document);
 
             if (userIndex !== -1) {
-                const user = users[userIndex];
+                const user = accounts[userIndex];
 
-                const newUser: user = {
+                const newUser: account = {
                     ...user,
                     balance: (user.balance += balance)
                 };
 
-                users[userIndex] = newUser;
+                accounts[userIndex] = newUser;
             } else {
-                errorCode = 404;
+                res.statusCode = 404;
                 throw new Error("Usuário não encontrado");
             }
             res.status(200).send({ message: "Saldo adicionado com sucesso!" });
         } else {
-            errorCode = 422;
+            res.statusCode = 422;
             throw new Error("Ooops! Dados incompletos!");
         }
     } catch (e) {
         const error = e as Error;
-        res.status(errorCode).send({ message: error.message });
+        console.log(error);
+        res.send({ message: error.message });
     }
 });
 
