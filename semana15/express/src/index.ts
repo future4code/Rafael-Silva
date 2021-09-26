@@ -82,6 +82,45 @@ app.get("/countries/:id", (req: Request, res: Response) => {
     }
 });
 
+
+// Endpoint 4 - Editar país
+app.post("/countries/:id", (req: Request, res: Response) => {
+    try {
+        const { name, capital, continent } = req.body;
+
+        const id = Number(req.params.id);
+
+        if (!name || !capital) {
+            res.statusCode = 422;
+            throw new Error("Invalid data.");
+        }
+
+        const country: boolean[] = countries.filter((c) => {
+            if (c.id === id) {
+                return c
+            }
+        }).map((c) => {
+            c.name = name;
+            c.capital = capital;
+            return true;
+        })
+
+          if (country) {
+              res.status(201).send({ message: "Update Country Successfully!" });
+          } else {
+              res.statusCode = 404;
+              throw new Error("Country not found!");
+          }
+
+    } catch (e) {
+        const error = e as Error;
+        console.log(error);
+        res.send({ message: error.message });
+    }
+});
+
+
+// Endpoint 6 - Criar país
 app.post("/countries", (req:Request, res:Response) => {
     try {
          const authorization = req.headers.authorization as string;
@@ -103,7 +142,7 @@ app.post("/countries", (req:Request, res:Response) => {
              throw new Error("Invalid data.");
          }
 
-         
+
     } catch (e) {
          const error = e as Error;
          console.log(error);
