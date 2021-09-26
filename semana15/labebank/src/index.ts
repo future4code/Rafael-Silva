@@ -7,7 +7,7 @@ import { accounts } from "./database/accounts";
 import { account } from "./database/types";
 
 //Helpers
-const { ageFromDateOfBirthday, dateInformedByUser } = require("./utils/Helpers");
+import { ageFromDateOfBirthday, dateInformedByUser } from "./utils/Helpers";
 
 const app: Express = express();
 app.use(express.json());
@@ -44,8 +44,6 @@ app.get("/users/balance", (req: Request, res: Response) => {
                 })
                 .map((user) => {
                     const balance: {} = {
-                        name: user.name,
-                        document: user.document,
                         balance: user.balance
                     };
 
@@ -73,14 +71,12 @@ app.get("/users/balance", (req: Request, res: Response) => {
 app.post("/users", (req: Request, res: Response) => {
     try {
         const { name, birthDate, document } = req.body;
-
         if (!name || !birthDate || !document) {
             res.statusCode = 422;
             throw new Error("Preencha todos os campos");
         }
 
         const age = ageFromDateOfBirthday(birthDate);
-
         if (age < 18) {
             res.statusCode = 406;
             throw new Error("Somente maiores de 18 anos podem cadastrar uma nova conta.");
@@ -90,7 +86,7 @@ app.post("/users", (req: Request, res: Response) => {
 
         if (sameDocument) {
             res.statusCode = 406;
-            throw new Error("CPF já existe");
+            throw new Error("O CPF informado já existe");
         }
 
         const newUser: account = {
@@ -201,7 +197,10 @@ app.post("/users/transference", (req: Request, res: Response) => {
                 const newStatement = {
                     value,
                     date: `${actualDay}/${actualMonth}/${actualYear}`,
-                    description: `Transação interna de ${value} para ${recipientName}(${recipientDocument}).`
+                    description: `Transação realizada no valor de ${value.toLocaleString("pt-BR", {
+                        style: "currency",
+                        currency: "BRL"
+                    })} para ${recipientName}(${recipientDocument}).`
                 };
 
                 user.balance = user.balance - value;
@@ -223,7 +222,13 @@ app.post("/users/transference", (req: Request, res: Response) => {
                 const newStatement = {
                     value,
                     date: `${actualDay}/${actualMonth}/${actualYear}`,
-                    description: `Transação recebida de ${name}(${document}) no valor de ${value}.`
+                    description: `Transação recebida de ${name}(${document}) no valor de ${value.toLocaleString(
+                        "pt-BR",
+                        {
+                            style: "currency",
+                            currency: "BRL"
+                        }
+                    )}.`
                 };
 
                 user.balance = user.balance + value;
@@ -265,6 +270,19 @@ app.put("/users/balance", (req: Request, res: Response) => {
                     ...user,
                     balance: (user.balance += balance)
                 };
+
+                const today = new Date();
+                const actualDay = today.getDate();
+                const actualMonth = today.getMonth() + 1;
+                const actualYear = today.getFullYear();
+
+                const newStatement = {
+                    value: balance,
+                    date: `${actualDay}/${actualMonth}/${actualYear}`,
+                    description: "Depósito de dinheiro"
+                };
+
+                newUser.statement.push(newStatement);
 
                 accounts[userIndex] = newUser;
             } else {

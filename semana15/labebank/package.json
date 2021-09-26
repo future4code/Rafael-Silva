@@ -1,5 +1,5 @@
 {
-    "name": "sistema-bancario",
+    "name": "LabeBank",
     "version": "1.0.0",
     "description": "Sistema Bancário simples",
     "main": "index.js",
