@@ -7,7 +7,7 @@ import { accounts } from "./database/accounts";
 import { account } from "./database/types";
 
 //Helpers
-const { ageFromDateOfBirthday, dateInformedByUser, dateFormater } = require("./utils/Helpers");
+const { ageFromDateOfBirthday, dateInformedByUser } = require("./utils/Helpers");
 
 const app: Express = express();
 app.use(express.json());
@@ -112,7 +112,7 @@ app.post("/users", (req: Request, res: Response) => {
 });
 
 //Endpoint: Pagar Conta
-app.post("/users/pay", (req: Request, res: Response) => {
+app.post("/users/payment", (req: Request, res: Response) => {
     try {
         const document = Number(req.query.document);
 
@@ -152,8 +152,8 @@ app.post("/users/pay", (req: Request, res: Response) => {
 
         const user = accounts.filter((user) => {
             if (user.document === document) {
+                user.balance = user.balance - value;
                 user.statement.push(newStatement);
-                user.balance -= newStatement.value;
                 return true;
             } else {
                 return false;
@@ -173,15 +173,90 @@ app.post("/users/pay", (req: Request, res: Response) => {
     }
 });
 
+app.post("/users/transference", (req: Request, res: Response) => {
+    try {
+        const name = req.query.name as string;
+        const document = Number(req.query.document);
+        const recipientName = req.query.recipientName as string;
+        const recipientDocument = Number(req.query.recipientDocument);
+        const value = Number(req.query.value);
+
+        if (!name || !document || !recipientName || !recipientDocument || !value) {
+            res.statusCode = 422;
+            throw new Error("Faltam dados para completar a transação.");
+        }
+
+        const user: account[] = accounts.filter((user) => {
+            if (user.document === document) {
+                if (user.balance < value) {
+                    res.statusCode = 406;
+                    throw new Error("Saldo insuficiente para completar a transação.");
+                }
+
+                const today = new Date();
+                const actualDay = today.getDate();
+                const actualMonth = today.getMonth() + 1;
+                const actualYear = today.getFullYear();
+
+                const newStatement = {
+                    value,
+                    date: `${actualDay}/${actualMonth}/${actualYear}`,
+                    description: `Transação interna de ${value} para ${recipientName}(${recipientDocument}).`
+                };
+
+                user.balance = user.balance - value;
+                user.statement.push(newStatement);
+
+                return true;
+            } else {
+                return false;
+            }
+        });
+
+        const recipient: account[] = accounts.filter((user) => {
+            if (user.document === recipientDocument) {
+                const today = new Date();
+                const actualDay = today.getDate();
+                const actualMonth = today.getMonth() + 1;
+                const actualYear = today.getFullYear();
+
+                const newStatement = {
+                    value,
+                    date: `${actualDay}/${actualMonth}/${actualYear}`,
+                    description: `Transação recebida de ${name}(${document}) no valor de ${value}.`
+                };
+
+                user.balance = user.balance + value;
+                user.statement.push(newStatement);
+
+                return true;
+            } else {
+                return false;
+            }
+        });
+
+        if (user || recipient) {
+            res.status(200).send({ message: "Transação realizada com sucesso!" });
+        } else {
+            res.statusCode = 404;
+            throw new Error(`Usuários não encontrado`);
+        }
+    } catch (e) {
+        const error = e as Error;
+        console.log(error);
+        res.send({ message: error.message });
+    }
+});
+
 // Endpoint: Adicionar saldo
 app.put("/users/balance", (req: Request, res: Response) => {
     try {
         if (req.query.name && req.query.document && req.query.balance) {
-            // const name: string = req.query.name as string;
+            const name: string = req.query.name as string;
             const document: number = Number(req.query.document);
             const balance: number = Number(req.query.balance);
 
-            const userIndex: number = accounts.findIndex((user) => user.document === document);
+            const userIndex: number = accounts.findIndex((user) => user.document === document && user.name === name);
 
             if (userIndex !== -1) {
                 const user = accounts[userIndex];
