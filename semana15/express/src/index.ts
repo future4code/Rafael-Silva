@@ -33,8 +33,6 @@ app.get("/countries/search", (req: Request, res: Response) => {
         if (req.query.name || req.query.capital || req.query.continent) {
             // console.log(req.query.name);
             const search = countries.filter((country) => {
-
-                
                 const name: any = req.query.name;
                 const capital: any = req.query.capital;
                 const continent: any = req.query.continent;
@@ -81,6 +79,67 @@ app.get("/countries/:id", (req: Request, res: Response) => {
         }
     } catch (error: any) {
         res.send(error.message);
+    }
+});
+
+app.post("/countries", (req:Request, res:Response) => {
+    try {
+         const authorization = req.headers.authorization as string;
+
+         if (!authorization) {
+             res.statusCode = 403;
+             throw new Error("Not Authorized");
+         }
+
+         if (authorization.length < 10) {
+             res.statusCode = 403;
+             throw new Error("Not Authorized");
+         }
+
+         const { name, capital, continent } = req.body
+
+         if (!name || !capital || !continent) {
+             res.statusCode = 422;
+             throw new Error("Invalid data.");
+         }
+
+         
+    } catch (e) {
+         const error = e as Error;
+         console.log(error);
+         res.send({ message: error.message });
+    }
+})
+
+// Endpoint 5 - Deletar país
+
+app.delete("/countries/:id", (req: Request, res: Response) => {
+    try {
+        const authorization = req.headers.authorization as string;
+
+        if (!authorization) {
+            res.statusCode = 403;
+            throw new Error("Not Authorized");
+        }
+
+        if (authorization.length < 10) {
+            res.statusCode = 403;
+            throw new Error("Not Authorized");
+        }
+
+        const countryIndex: number | undefined = countries.findIndex((c) => c.id === Number(req.params.id));
+
+        if (countryIndex !== -1) {
+            countries.splice(countryIndex, 1);
+            res.status(200).end();
+        } else {
+            res.statusCode = 404;
+            throw new Error("Country not found!");
+        }
+    } catch (e) {
+        const error = e as Error;
+        console.log(error);
+        res.send({ message: error.message });
     }
 });
 
