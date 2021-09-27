@@ -1,0 +1,20 @@
+{
+  "name": "introducao-ao-typescript",
+  "version": "1.0.0",
+  "description": "Introdução ao TypeScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "exc1": "clear && tsc && node ./build/exercise-1/index.js",
+    "exc2": "clear && tsc && node ./build/exercise-2/index.js",
+    "exc3": "clear && tsc && node ./build/exercise-3/index.js",
+    "exc4": "clear && tsc && node ./build/exercise-4/index.js",
+    "exc5": "clear && tsc && node ./build/exercise-5/index.js",
+    "exc6": "clear && tsc && node ./build/exercise-6/index.js",
+    "exc7": "clear && tsc && node ./build/exercise-7/index.js",
+    "exc8": "clear && tsc && node ./build/exercise-8/index.js"
+  },
+  "author": "Rafael N. Silva",
+  "license": "ISC"
+}
