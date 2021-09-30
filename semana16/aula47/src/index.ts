@@ -37,25 +37,25 @@ app.get("/actors", async (req: Request, res: Response) => {
 // Exercicio 1:
 
 // a)
-app.get("/actors/:id", async (req: Request, res: Response) => {
-    try {
-        const id = req.params.id as string;
+// app.get("/actors/:id", async (req: Request, res: Response) => {
+//     try {
+//         const id = req.params.id as string;
 
-        const actors = await getActorsById(id);
+//         const actors = await getActorsById(id);
 
-        if (!id) {
-            res.statusCode = 404;
-            throw new Error("Actor not found");
-        } else {
-            console.log(actors);
-            res.status(200).send(actors);
-        }
-    } catch (e) {
-        const error = e as Error;
-        console.log(error);
-        res.send({ message: error.message });
-    }
-});
+//         if (!id) {
+//             res.statusCode = 404;
+//             throw new Error("Actor not found");
+//         } else {
+//             console.log(actors);
+//             res.status(200).send(actors);
+//         }
+//     } catch (e) {
+//         const error = e as Error;
+//         console.log(error);
+//         res.send({ message: error.message });
+//     }
+// });
 
 //b)
 
@@ -108,48 +108,151 @@ app.get("/actors/:id", async (req: Request, res: Response) => {
 
 // Exercicio 2:
 
-app.get("/actors/salary/:gender", async (req: Request, res: Response) => {
-    try {
-        const gender = req.params.gender as GENDER;
+// app.get("/actors/salary/:gender", async (req: Request, res: Response) => {
+//     try {
+//         const gender = req.params.gender as GENDER;
 
-        if (!gender) {
-            res.statusCode = 403;
-            throw new Error("Not Accepteble");
-        }
+//         if (!gender) {
+//             res.statusCode = 403;
+//             throw new Error("Not Accepteble");
+//         }
 
-        const salary = await averageSalaryByGender(gender);
+//         const salary = await averageSalaryByGender(gender);
 
-        if (salary.averageSalary !== null) {
-            res.status(200).send(salary);
-        } else {
-            res.statusCode = 404;
-            throw new Error("Actor not found");
-        }
-    } catch (e) {
-        const error = e as Error;
-        console.log(error);
-        res.send({ message: error.message });
-    }
-});
+//         if (salary.averageSalary !== null) {
+//             res.status(200).send(salary);
+//         } else {
+//             res.statusCode = 404;
+//             throw new Error("Actor not found");
+//         }
+//     } catch (e) {
+//         const error = e as Error;
+//         console.log(error);
+//         res.send({ message: error.message });
+//     }
+// });
 
-app.post("/actors/create", async (req: Request, res: Response) => {
-    try {
-        const { id, name, salary, dateOfBirth, gender } = req.body;
+// app.post("/actors/create", async (req: Request, res: Response) => {
+//     try {
+//         const { id, name, salary, dateOfBirth, gender } = req.body;
 
-        if (!id || !name || !salary || !dateOfBirth || !gender) {
-            res.statusCode = 403;
-            throw new Error("Not Accepteble");
-        }
+//         if (!id || !name || !salary || !dateOfBirth || !gender) {
+//             res.statusCode = 403;
+//             throw new Error("Not Accepteble");
+//         }
 
-        createActor(id, name, salary, dateOfBirth, gender);
+//         createActor(id, name, salary, dateOfBirth, gender);
 
-        res.status(201).send({ message: "Actor created successfully!" });
-    } catch (e) {
-        const error = e as Error;
-        console.log(error);
-        res.send({ message: error.message });
-    }
-});
+//         res.status(201).send({ message: "Actor created successfully!" });
+//     } catch (e) {
+//         const error = e as Error;
+//         console.log(error);
+//         res.send({ message: error.message });
+//     }
+// });
+
+// app.put("/actors", async (req: Request, res: Response) => {
+//     try {
+//         const id = req.query.id as string;
+//         const salary = Number(req.query.salary);
+
+//         if (!id || !salary) {
+//             res.statusCode = 403;
+//             throw new Error("Not Accepteble");
+//         }
+
+//         const actorUpdate = await updateActorSalary(id, salary);
+
+//         if (actorUpdate) {
+//             res.status(201).send({ message: "Actor salary update successfully!" });
+//         } else {
+//             res.statusCode = 404;
+//             throw new Error("Actor Not Found");
+//         }
+//     } catch (e) {
+//         const error = e as Error;
+//         console.log(error);
+//         res.send({ message: error.message });
+//     }
+// });
+
+// app.delete("/actors/:id", async (req: Request, res: Response) => {
+//     try {
+//         const id = req.params.id as string;
+
+//         if (!id) {
+//             res.statusCode = 403;
+//             throw new Error("Not Accepteble");
+//         }
+
+//         const result = await deleteActor(id);
+
+//         if (result) {
+//             res.status(201).send({ message: "Actor delete successfully!" });
+//         } else {
+//             res.statusCode = 404;
+//             throw new Error("Actor Not Found");
+//         }
+//     } catch (e) {
+//         const error = e as Error;
+//         console.log(error);
+//         res.send({ message: error.message });
+//     }
+// });
+
+// Exercício 3:
+
+//a)
+// app.get("/actors/:id", async (req: Request, res: Response) => {
+//     try {
+//         const id = req.params.id as string;
+
+//         const actors = await getActorsById(id);
+
+//         if (!id) {
+//             res.statusCode = 404;
+//             throw new Error("Actor not found");
+//         } else {
+//             console.log(actors);
+//             res.status(200).send(actors);
+//         }
+//     } catch (e) {
+//         const error = e as Error;
+//         console.log(error);
+//         res.send({ message: error.message });
+//     }
+// });
+
+//b)
+
+// app.get("/actors", async (req: Request, res: Response) => {
+//     try {
+//         const gender = req.query.gender as string;
+
+//         if (gender !== "male" && gender !== "female") {
+//             res.statusCode = 403;
+//             throw new Error("Gender not accepted. Accepteble 'male' or 'female'");
+//         }
+
+//         const actorsGender = await countActors(gender);
+
+//         if (!actorsGender) {
+//             res.statusCode = 404;
+//             throw new Error("Actor not found");
+//         } else {
+//             console.log(actorsGender);
+//             res.status(200).send(actorsGender);
+//         }
+//     } catch (e) {
+//         const error = e as Error;
+//         console.log(error);
+//         res.send({ message: error.message });
+//     }
+// });
+
+// Exercicio 4:
+
+// a)
 
 app.put("/actors", async (req: Request, res: Response) => {
     try {
@@ -176,6 +279,9 @@ app.put("/actors", async (req: Request, res: Response) => {
     }
 });
 
+
+// b) 
+
 app.delete("/actors/:id", async (req: Request, res: Response) => {
     try {
         const id = req.params.id as string;
@@ -199,6 +305,8 @@ app.delete("/actors/:id", async (req: Request, res: Response) => {
         res.send({ message: error.message });
     }
 });
+
+
 
 const server = app.listen(process.env.PORT || 3003, () => {
     if (server) {
