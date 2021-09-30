@@ -1,9 +1,9 @@
 ## Exercício 1:
 
-* a) 
+-   a)
 
-    - Com o método `raw` podemos passar comandos SQL como o SELECT, através de uma template string, mesclando typescript e SQL.
-    - Então passando o id 002, o retorno é:
+    -   Com o método `raw` podemos passar comandos SQL como o SELECT, através de uma template string, mesclando typescript e SQL.
+    -   Então passando o id 002, o retorno é:
 
     ```
     {
@@ -17,7 +17,7 @@
     }
     ```
 
-* b)
+-   b)
 
     ```
     export const getActorsByName = async (name: string): Promise<any> => {
@@ -29,7 +29,7 @@
     }
     ```
 
-* c)
+-   c)
 
     ```
     export const countActors = async (gender: string): Promise<any> => {
@@ -41,5 +41,39 @@
     }
     ```
 
+---
 
-    
+## Exercício 2:
+
+-   a)
+
+    ```
+    export const updateActorSalary = async (id: string, salary: number) : Promise<boolean> => {
+        const result = await connection("actors").update({
+            salary: salary,
+        })
+        .where({id: id})
+
+        return result ? true : false;
+    }
+    ```
+
+-   b)
+
+    ```
+    export const deleteActor = async (id: string): Promise<boolean> => {
+        const result = await connection("actors").delete().where({ id: id });
+        return result ? true : false;
+    };
+    ```
+
+-   c)
+
+    ```
+    export const averageSalaryByGender = async (gender: string): Promise<any> => {
+        const result = await connection("actors").avg({ averageSalary: `salary` }).where({ gender: gender });
+
+        return result[0]
+    };
+
+    ```
