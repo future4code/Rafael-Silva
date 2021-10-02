@@ -21,6 +21,7 @@ export const getAllUsers = async (): Promise<Object | boolean> => {
 
         return users;
     } catch (error) {
+        console.log(error);
         return false;
     }
 };
@@ -42,6 +43,7 @@ export const findUserById = async (id: number): Promise<User | boolean> => {
         const result = await connection.select("*").from("TodoListUser").where({ id: id });
         return result[0];
     } catch (error) {
+        console.log(error);
         return false;
     }
 };
@@ -56,6 +58,7 @@ export const createUser = async (id: number, name: string, nickname: string, ema
             email: email
         });
     } catch (error) {
+        console.log(error);
         return false;
     }
 };
@@ -73,6 +76,7 @@ export const updateUser = async (user: User): Promise<boolean> => {
 
         return true;
     } catch (error) {
+        console.log(error);
         return false;
     }
 };
