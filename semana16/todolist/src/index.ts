@@ -2,7 +2,7 @@ import express, { Express, Request, Response } from "express";
 import cors from "cors";
 import { AddressInfo } from "net";
 import { date_fmt_back, uuid } from "./Config/Helpers";
-import { createTask, createUser, findUserById, getUserById, updateUser } from "./App/app";
+import { createTask, createUser, findUserById, getTaskById, getUserById, updateUser } from "./App/app";
 import { Task, User } from "./Config/Types";
 
 const app: Express = express();
@@ -34,6 +34,34 @@ app.get("/user/:id", async (req: Request, res: Response) => {
         res.send({ message: error.message });
     }
 });
+
+// Endpoint: Pegar tarefa pelo id
+app.get("/task/:id", async (req: Request, res: Response) => {
+    try {
+        const id = Number(req.params.id);
+
+        if (!id) {
+            res.statusCode = 404;
+            throw new Error("Usuário não encontrado.");
+        }
+
+        const task = await getTaskById(id);
+
+        if (task === false) {
+            res.statusCode = 404;
+            throw new Error("Usuário não encontrado.");
+        } else {
+            res.status(200).send(task);
+        }
+    } catch (e) {
+        const error = e as Error;
+        console.log(error);
+        res.send({ message: error.message });
+    }
+});
+
+
+
 
 // Endpoint: Criar usuário
 app.post("/user", async (req: Request, res: Response) => {
@@ -74,8 +102,8 @@ app.post("/task", async (req: Request, res: Response) => {
             id: id,
             title: title,
             description: description,
-            limitDate: date,
-            creatorUserId: creatorUserId
+            limit_date: date,
+            creator_user_id: creatorUserId
         };
 
         const result = await createTask(newTask);

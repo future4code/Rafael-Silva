@@ -9,6 +9,6 @@ export interface Task {
     id: number;
     title: string;
     description: string;
-    limitDate: string;
-    creatorUserId: number;
+    limit_date: string;
+    creator_user_id: number;
 }
