@@ -3,12 +3,23 @@ import express, { Request, Response } from "express";
 //Models
 import { Task } from "../Models/Interfaces/Task";
 import { User } from "../Models/Interfaces/User";
-import { createUser, findUserById, getUserById, updateUser } from "../Models/User";
+import { createUser, findUserById, getAllUsers, getUserById, updateUser } from "../Models/User";
 import { createTask, getTaskById } from "../Models/Task";
 
 //Helpers
-import { date_fmt_back, uuid } from '../Config/Helpers';
+import { date_fmt_back, uuid } from "../Config/Helpers";
 
+// Endpoint: Pegar todos os usuários
+export const getAllUsersApp = async (req: Request, res: Response) => {
+    try {
+        const users = await getAllUsers();
+        res.status(200).send(users);
+    } catch (e) {
+        const error = e as Error;
+        console.log(error);
+        res.send({ message: error.message });
+    }
+};
 
 // Endpoint: Pegar usuário pelo id
 export const getUserByIdApp = async (req: Request, res: Response) => {

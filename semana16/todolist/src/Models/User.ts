@@ -3,6 +3,49 @@ import connection from "../Core/Connection";
 //Types
 import { User } from "../Models/Interfaces/User";
 
+//Get All Users
+export const getAllUsers = async (): Promise<Object | boolean> => {
+    try {
+        const result = await connection.select("*").from("TodoListUser");
+
+        const resultModified = result.map((user) => {
+            return {
+                id: user.id,
+                nickname: user.nickname
+            };
+        });
+
+        const users = {
+            users: resultModified
+        };
+
+        return users;
+    } catch (error) {
+        return false;
+    }
+};
+
+// Get User By id
+export const getUserById = async (id: number): Promise<any> => {
+    try {
+        const result = await connection.select("id", "nickname").from("TodoListUser").where({ id: id });
+
+        return result[0];
+    } catch (error) {
+        return false;
+    }
+};
+
+//Find User By id
+export const findUserById = async (id: number): Promise<User | boolean> => {
+    try {
+        const result = await connection.select("*").from("TodoListUser").where({ id: id });
+        return result[0];
+    } catch (error) {
+        return false;
+    }
+};
+
 // Create a new user
 export const createUser = async (id: number, name: string, nickname: string, email: string): Promise<any> => {
     try {
@@ -29,27 +72,6 @@ export const updateUser = async (user: User): Promise<boolean> => {
             .where({ id: user.id });
 
         return true;
-    } catch (error) {
-        return false;
-    }
-};
-
-// Get User By id
-export const getUserById = async (id: number): Promise<any> => {
-    try {
-        const result = await connection.select("id", "nickname").from("TodoListUser").where({ id: id });
-
-        return result[0];
-    } catch (error) {
-        return false;
-    }
-};
-
-//Find User By id
-export const findUserById = async (id: number): Promise<User | boolean> => {
-    try {
-        const result = await connection.select("*").from("TodoListUser").where({ id: id });
-        return result[0];
     } catch (error) {
         return false;
     }
