@@ -1,9 +1,9 @@
 import express, { Express, Request, Response } from "express";
 import cors from "cors";
 import { AddressInfo } from "net";
-import { uuid } from "./Config/Helpers";
-import { createUser, findUserById, getUserById, updateUser } from "./App/app";
-import { User } from "./Config/Types";
+import { date_fmt_back, uuid } from "./Config/Helpers";
+import { createTask, createUser, findUserById, getUserById, updateUser } from "./App/app";
+import { Task, User } from "./Config/Types";
 
 const app: Express = express();
 
@@ -42,7 +42,7 @@ app.post("/user", async (req: Request, res: Response) => {
 
         if (!name || !nickname || !email) {
             res.statusCode = 403;
-            throw new Error("Invalid Fields!");
+            throw new Error("Campos Inválidos!");
         }
 
         const id = uuid();
@@ -50,6 +50,42 @@ app.post("/user", async (req: Request, res: Response) => {
         await createUser(id, name, nickname, email);
 
         res.status(201).send({ message: "Usuário criado com sucesso!" });
+    } catch (e) {
+        const error = e as Error;
+        console.log(error);
+        res.send({ message: error.message });
+    }
+});
+
+// Endpoint: Criar tarefa
+app.post("/task", async (req: Request, res: Response) => {
+    try {
+        const { title, description, limitDate, creatorUserId } = req.body;
+
+        if (!title || !description || !limitDate || !creatorUserId) {
+            res.statusCode = 403;
+            throw new Error("Campos Inválidos!");
+        }
+        const id = uuid();
+
+        const date = await date_fmt_back(limitDate);
+
+        const newTask: Task = {
+            id: id,
+            title: title,
+            description: description,
+            limitDate: date,
+            creatorUserId: creatorUserId
+        };
+
+        const result = await createTask(newTask);
+
+        if (result === false) {
+            res.statusCode = 404;
+            throw new Error("Usuário não encontrado.");
+        } else {
+            res.status(201).send({ message: "Tarefa criada com sucesso!" });
+        }
     } catch (e) {
         const error = e as Error;
         console.log(error);
@@ -67,7 +103,6 @@ app.put("/user/edit/:id", async (req: Request, res: Response) => {
             res.statusCode = 404;
             throw new Error("Usuário não encontrado.");
         }
-
 
         const findUser = await findUserById(id);
 
@@ -96,7 +131,6 @@ app.put("/user/edit/:id", async (req: Request, res: Response) => {
         } else {
             res.status(200).send({ message: "Usuário atualizado com sucesso!" });
         }
-        res.status(201).send({ message: "Usuário criado com sucesso!" });
     } catch (e) {
         const error = e as Error;
         console.log(error);

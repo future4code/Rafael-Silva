@@ -4,3 +4,11 @@ export interface User {
     nickname: string;
     email: string;
 }
+
+export interface Task {
+    id: number;
+    title: string;
+    description: string;
+    limitDate: string;
+    creatorUserId: number;
+}

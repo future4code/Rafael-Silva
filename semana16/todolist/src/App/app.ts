@@ -1,9 +1,9 @@
 import connection from "../Core/connection";
 
 //Types
-import { User } from "../Config/Types";
+import { Task, User } from "../Config/Types";
 
-// Create User
+// Create a new user
 export const createUser = async (id: number, name: string, nickname: string, email: string): Promise<any> => {
     try {
         await connection("TodoListUser").insert({
@@ -17,7 +17,7 @@ export const createUser = async (id: number, name: string, nickname: string, ema
     }
 };
 
-// Update Users
+// Update User
 export const updateUser = async (user: User): Promise<boolean> => {
     try {
         await connection("TodoListUser").update({
@@ -52,3 +52,21 @@ export const findUserById = async (id: number): Promise<User | boolean> => {
         return false;
     }
 };
+
+
+//Create a new task
+export const createTask = async (task: Task): Promise<boolean> => {
+    try {
+        await connection("TodoListTask").insert({
+            id: task.id,
+            title: task.title,
+            description: task.description,
+            limit_date: task.limitDate,
+            creator_user_id: task.creatorUserId
+        });
+
+        return true;
+    } catch (error) {
+        return false;
+    }
+}
