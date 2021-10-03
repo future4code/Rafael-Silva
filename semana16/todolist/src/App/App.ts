@@ -202,8 +202,8 @@ export const getTaskResponsibleApp = async (req: Request, res: Response) => {
         const id = Number(req.params.id);
 
         if (!id) {
-            res.statusCode = 404;
-            throw new Error("Usuário não encontrado.");
+            res.statusCode = 403;
+            throw new Error("Campo Inválido.");
         }
 
         const users = await getTaskResponsibility(id);

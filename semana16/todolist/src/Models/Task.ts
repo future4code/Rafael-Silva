@@ -6,7 +6,6 @@ import { Task } from "../Models/Interfaces/Task";
 
 //Helpers
 import { date_fmt } from "../Config/Helpers";
-import ta from "date-fns/esm/locale/ta/index.js";
 
 // Get task by id
 export const getTaskById = async (taskId: number): Promise<Object | boolean> => {
@@ -16,6 +15,7 @@ export const getTaskById = async (taskId: number): Promise<Object | boolean> => 
         let task = result[0];
 
         const user = await getUserById(task.creator_user_id);
+        const responsibleUsers = await getTaskResponsibility(taskId);
 
         task = {
             id: task.id,
@@ -24,7 +24,8 @@ export const getTaskById = async (taskId: number): Promise<Object | boolean> => 
             limitDate: date_fmt(task.limit_date),
             status: task.status,
             creatorUserId: user.id,
-            creatorUserNickname: user.nickname
+            creatorUserNickname: user.nickname,
+            responsibleUsers: Object.values(responsibleUsers)[0]
         };
 
         return task;
@@ -66,20 +67,13 @@ export const getTaskCreatedByUser = async (userId: number): Promise<Object | boo
 // Get Task Responsible
 export const getTaskResponsibility = async (taskId: number): Promise<Object | boolean> => {
     try {
-        const result = await connection("TodoListResponsibleUserTaskRelation")
-            .join("TodoListUser", "TodoListUser.id", "TodoListResponsibleUserTaskRelation.responsible_user_id")
-            .select("TodoListUser.id", "TodoListUser.nickname")
-            .where({ "TodoListResponsibleUserTaskRelation.task_id": taskId });
-
-        const resultModified = result.map((user) => {
-            return {
-                id: user.id,
-                nickname: user.nickname
-            };
-        });
+        const result = await connection("TodoListResponsibleUserTaskRelation as responsible")
+            .join("TodoListUser as user", "user.id", "responsible.responsible_user_id")
+            .select("user.id", "user.nickname")
+            .where({ "responsible.task_id": taskId });
 
         const users = {
-            users: resultModified
+            users: result
         };
 
         return users;
