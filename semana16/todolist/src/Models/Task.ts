@@ -75,6 +75,47 @@ export const getTaskByStatus = async (status: string): Promise<any> => {
     }
 };
 
+//get Delayed Tasks
+export const getDelayedTasks = async (): Promise<Object | boolean> => {
+    try {
+        const result = await connection.raw(`
+        SELECT  task.id as task_id,
+                task.title,
+                task.description,
+                task.limit_date,
+                task.status,
+                user.id as user_id,
+                user.nickname
+        FROM TodoListTask as task
+        JOIN TodoListUser as user 
+        ON user.id = task.creator_user_id
+        WHERE task.limit_date < CURDATE()
+        AND task.status <> "done"
+    `);
+
+        const resultModified = result[0].map((task: any) => {
+            return {
+                taskId: task.task_id,
+                title: task.title,
+                description: task.description,
+                limitDate: date_fmt(task.limit_date),
+                status: task.status,
+                creatorUserId: task.user_id,
+                creatorUserNickname: task.nickname
+            };
+        });
+
+        const tasks = {
+            tasks: resultModified
+        };
+
+        return tasks;
+    } catch (error) {
+        console.log(error);
+        return false;
+    }
+};
+
 // Find a Task
 export const findTask = async (id: number): Promise<Task | boolean> => {
     try {

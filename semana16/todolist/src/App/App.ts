@@ -8,6 +8,7 @@ import {
     createResponsibilityTask,
     createTask,
     findTask,
+    getDelayedTasks,
     getTaskById,
     getTaskByStatus,
     getTaskCreatedByUser,
@@ -238,6 +239,19 @@ export const getTaskByStatusApp = async (req: Request, res: Response) => {
         const task = await getTaskByStatus(status);
 
         res.status(200).send(task);
+    } catch (e) {
+        const error = e as Error;
+        console.log(error);
+        res.send({ message: error.message });
+    }
+};
+
+// Endpoint: Pegar todas as tarefas atrasadas
+export const getTaskDelayedApp = async (req: Request, res: Response) => {
+    try {
+        const tasks = await getDelayedTasks();
+
+        res.status(200).send(tasks);
     } catch (e) {
         const error = e as Error;
         console.log(error);
