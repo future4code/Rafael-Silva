@@ -2,7 +2,8 @@ import connection from "../Core/Connection";
 import { getUserById } from "./User";
 
 //Types
-import { Task } from "../Models/Interfaces/Task";
+import { Task } from "./Interfaces/Task";
+import { Status } from "./Interfaces/Status";
 
 //Helpers
 import { date_fmt } from "../Config/Helpers";
@@ -35,10 +36,21 @@ export const getTaskById = async (taskId: number): Promise<Object | boolean> => 
     }
 };
 
+// Find a Task
+export const findTask = async (id: number): Promise<Task | boolean> => {
+    try {
+        const result = await connection.select("*").from("TodoListTask").where({ id: id });
+        return result[0];
+    } catch (error) {
+        console.log(error);
+        return false;
+    }
+};
+
 // Get tasks created by user
 export const getTaskCreatedByUser = async (userId: number): Promise<Object | boolean> => {
     try {
-        const result = await connection.select("*").from("TodoListTask").where({ creator_user_id: userId });
+        const result = await connection.select("*").from("").where({ creator_user_id: userId });
         const user = await getUserById(userId);
 
         const resultModified = result.map((task) => {
@@ -108,6 +120,22 @@ export const createResponsibilityTask = async (taskId: number, responsibleUserId
             task_id: taskId,
             responsible_user_id: responsibleUserId
         });
+
+        return true;
+    } catch (error) {
+        console.log(error);
+        return false;
+    }
+};
+
+// Update Status Task
+export const updateTaskStatus = async (taskId: number, status: Status): Promise<boolean> => {
+    try {
+        await connection("TodoListTask")
+            .update({
+                status: status
+            })
+            .where({ id: taskId });
 
         return true;
     } catch (error) {

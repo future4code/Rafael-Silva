@@ -7,9 +7,11 @@ import { createUser, findUserById, getAllUsers, getUserById, searchUser, updateU
 import {
     createResponsibilityTask,
     createTask,
+    findTask,
     getTaskById,
     getTaskCreatedByUser,
-    getTaskResponsibility
+    getTaskResponsibility,
+    updateTaskStatus
 } from "../Models/Task";
 
 //Helpers
@@ -38,9 +40,9 @@ export const getUserByIdApp = async (req: Request, res: Response) => {
     try {
         const id = Number(req.params.id);
 
-        if (!id) {
+        if (isNaN(id)) {
             res.statusCode = 404;
-            throw new Error("Usuário não encontrado.");
+            throw new Error("Campo Inválido");
         }
 
         const user = await getUserById(id);
@@ -106,9 +108,9 @@ export const updateUserApp = async (req: Request, res: Response) => {
         const id = Number(req.params.id);
         const { name, nickname, email } = req.body;
 
-        if (!id) {
+        if (isNaN(id)) {
             res.statusCode = 404;
-            throw new Error("Usuário não encontrado.");
+            throw new Error("Campo Inválido");
         }
 
         const findUser = await findUserById(id);
@@ -134,7 +136,7 @@ export const updateUserApp = async (req: Request, res: Response) => {
 
         if (user === false) {
             res.statusCode = 404;
-            throw new Error("Usuário não encontrado.");
+            throw new Error("Não foi possível editar usuário.");
         } else {
             res.status(200).send({ message: "Usuário atualizado com sucesso!" });
         }
@@ -156,16 +158,16 @@ export const getTaskByIdApp = async (req: Request, res: Response) => {
     try {
         const id = Number(req.params.id);
 
-        if (!id) {
+        if (isNaN(id)) {
             res.statusCode = 404;
-            throw new Error("Usuário não encontrado.");
+            throw new Error("Campo Inválido");
         }
 
         const task = await getTaskById(id);
 
         if (task === false) {
             res.statusCode = 404;
-            throw new Error("Usuário não encontrado.");
+            throw new Error("Tarefa não encontrada.");
         } else {
             res.status(200).send(task);
         }
@@ -181,7 +183,7 @@ export const getTaskCreatedByUserApp = async (req: Request, res: Response) => {
     try {
         const id = Number(req.query.creatorUserId);
 
-        if (!id) {
+        if (isNaN(id)) {
             res.statusCode = 404;
             throw new Error("Usuário não encontrado.");
         }
@@ -201,7 +203,7 @@ export const getTaskResponsibleApp = async (req: Request, res: Response) => {
     try {
         const id = Number(req.params.id);
 
-        if (!id) {
+        if (isNaN(id)) {
             res.statusCode = 403;
             throw new Error("Campo Inválido.");
         }
@@ -274,6 +276,44 @@ export const taskResponsible = async (req: Request, res: Response) => {
             throw new Error("Usuário não encontrado.");
         } else {
             res.status(201).send({ message: "Adicionado responsável pela tarefa com sucesso!" });
+        }
+    } catch (e) {
+        const error = e as Error;
+        console.log(error);
+        res.send({ message: error.message });
+    }
+};
+
+// Endpoint: Atualizar o status da tarefa pelo id
+export const updateStatusTaskApp = async (req: Request, res: Response) => {
+    try {
+        const id: number = Number(req.params.id);
+        const { status } = req.body;
+
+        if (isNaN(id)) {
+            res.statusCode = 403;
+            throw new Error("Campo Inválido.");
+        }
+
+        const task = await findTask(id)
+
+        if (task === false){
+            res.statusCode = 404;
+            throw new Error("Tarefa não encontrada.");
+        }
+
+        if (!status) {
+            res.statusCode = 403;
+            throw new Error("String Inválida.");
+        }
+
+        const result = await updateTaskStatus(id, status);
+
+        if (result === false) {
+            res.statusCode = 400;
+            throw new Error("Não foi possível alterar o status dessa tarefa.");
+        } else {
+            res.status(201).send({ message: "Status atualizado com sucesso!" });
         }
     } catch (e) {
         const error = e as Error;
