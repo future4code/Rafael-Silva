@@ -11,6 +11,7 @@ import {
     getTaskDelayedApp,
     getTaskResponsibleApp,
     getUserByIdApp,
+    removeResponsibleApp,
     searchUserApp,
     taskResponsible,
     updateStatusTaskApp,
@@ -40,5 +41,7 @@ router.post("/task", createTaskApp);
 router.post("/task/responsible", taskResponsible);
 
 router.put("/task/status/:id", updateStatusTaskApp);
+
+router.delete("/task/:taskId/responsible/:responsibleUserId", removeResponsibleApp);
 
 export default router;

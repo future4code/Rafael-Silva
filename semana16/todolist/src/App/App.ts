@@ -3,7 +3,7 @@ import express, { Request, Response } from "express";
 //Models
 import { Task } from "../Models/Interfaces/Task";
 import { User } from "../Models/Interfaces/User";
-import { createUser, findUserById, getAllUsers, getUserById, searchUser, updateUser } from "../Models/User";
+import { createUser, findUser, getAllUsers, getUserById, searchUser, updateUser } from "../Models/User";
 import {
     createResponsibilityTask,
     createTask,
@@ -13,6 +13,7 @@ import {
     getTaskByStatus,
     getTaskCreatedByUser,
     getTaskResponsibility,
+    removeResponsibility,
     updateTaskStatus
 } from "../Models/Task";
 
@@ -116,9 +117,9 @@ export const updateUserApp = async (req: Request, res: Response) => {
             throw new Error("Campo Inválido");
         }
 
-        const findUser = await findUserById(id);
+        const userFound = await findUser(id);
 
-        if (findUser === false) {
+        if (userFound === false) {
             res.statusCode = 404;
             throw new Error("Usuário não encontrado.");
         }
@@ -349,7 +350,47 @@ export const updateStatusTaskApp = async (req: Request, res: Response) => {
             res.statusCode = 400;
             throw new Error("Não foi possível alterar o status dessa tarefa.");
         } else {
-            res.status(201).send({ message: "Status atualizado com sucesso!" });
+            res.status(200).send({ message: "Status atualizado com sucesso!" });
+        }
+    } catch (e) {
+        const error = e as Error;
+        console.log(error);
+        res.send({ message: error.message });
+    }
+};
+
+// Endpoint:  Retirar um usuário responsável de uma tarefa
+export const removeResponsibleApp = async (req: Request, res: Response) => {
+    try {
+        const taskId: number = Number(req.params.taskId);
+        const responsibleUserId = Number(req.params.responsibleUserId);
+
+        if (isNaN(taskId) && isNaN(responsibleUserId)) {
+            res.statusCode = 403;
+            throw new Error("Campo Inválido.");
+        }
+
+        const taskFound = await findTask(taskId, "TodoListResponsibleUserTaskRelation", true);
+
+        if (taskFound === false) {
+            res.statusCode = 404;
+            throw new Error("Tarefa não encontrada.");
+        }
+
+        const userFound = await findUser(responsibleUserId, "TodoListResponsibleUserTaskRelation", true);
+
+        if (userFound === false) {
+            res.statusCode = 404;
+            throw new Error("Usuário não encontrada.");
+        }
+
+        const result = await removeResponsibility(taskId, responsibleUserId);
+
+        if (result === false) {
+            res.statusCode = 400;
+            throw new Error("Não foi possível alterar o status dessa tarefa.");
+        } else {
+            res.status(200).send({ message: "Removido responsável pela tarefa." });
         }
     } catch (e) {
         const error = e as Error;

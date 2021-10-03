@@ -38,9 +38,20 @@ export const getUserById = async (id: number): Promise<any> => {
 };
 
 //Find User By id
-export const findUserById = async (id: number): Promise<User | boolean> => {
+export const findUser = async (
+    id: number,
+    table: string = "TodoListUser",
+    column: boolean = false
+): Promise<User | boolean> => {
     try {
-        const result = await connection.select("*").from("TodoListUser").where({ id: id });
+        let result;
+
+        if (column === false) {
+            result = await connection.select("*").from(`${table}`).where({ id: id });
+        } else {
+            result = await connection.select("*").from(`${table}`).where({ responsible_user_id: id });
+        }
+
         return result[0];
     } catch (error) {
         console.log(error);

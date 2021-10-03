@@ -117,9 +117,20 @@ export const getDelayedTasks = async (): Promise<Object | boolean> => {
 };
 
 // Find a Task
-export const findTask = async (id: number): Promise<Task | boolean> => {
+export const findTask = async (
+    id: number,
+    table: string = "TodoListTask",
+    column: boolean = false
+): Promise<Task | boolean> => {
     try {
-        const result = await connection.select("*").from("TodoListTask").where({ id: id });
+        let result;
+        
+        if (column === false) {
+            result = await connection.select("*").from(`${table}`).where({ id: id });
+        } else {
+            result = await connection.select("*").from(`${table}`).where({ task_id: id });
+        }
+
         return result[0];
     } catch (error) {
         console.log(error);
@@ -216,6 +227,20 @@ export const updateTaskStatus = async (taskId: number, status: Status): Promise<
                 status: status
             })
             .where({ id: taskId });
+
+        return true;
+    } catch (error) {
+        console.log(error);
+        return false;
+    }
+};
+
+// Remove Responsible User
+export const removeResponsibility = async (taskId: number, userId: number): Promise<boolean> => {
+    try {
+        await connection("TodoListResponsibleUserTaskRelation")
+            .delete()
+            .where({ task_id: taskId, responsible_user_id: userId });
 
         return true;
     } catch (error) {
