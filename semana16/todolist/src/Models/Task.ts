@@ -63,6 +63,32 @@ export const getTaskCreatedByUser = async (userId: number): Promise<Object | boo
     }
 };
 
+// Get Task Responsible
+export const getTaskResponsibility = async (taskId: number): Promise<any> => {
+    try {
+        const result = await connection("TodoListResponsibleUserTaskRelation")
+            .join("TodoListUser", "TodoListUser.id", "TodoListResponsibleUserTaskRelation.responsible_user_id")
+            .select("TodoListUser.id", "TodoListUser.nickname")
+            .where({ "TodoListResponsibleUserTaskRelation.task_id": taskId });
+
+        const resultModified = result.map((user) => {
+            return {
+                id: user.id,
+                nickname: user.nickname
+            };
+        });
+
+        const users = {
+            users: resultModified
+        };
+
+        return users;
+    } catch (error) {
+        console.log(error);
+        return false;
+    }
+};
+
 //Create a new task
 export const createTask = async (task: Task): Promise<boolean> => {
     try {
@@ -81,6 +107,7 @@ export const createTask = async (task: Task): Promise<boolean> => {
     }
 };
 
+// Create Task Responsible
 export const createResponsibilityTask = async (taskId: number, responsibleUserId: number): Promise<boolean> => {
     try {
         await connection("TodoListResponsibleUserTaskRelation").insert({

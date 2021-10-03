@@ -4,7 +4,7 @@ import express, { Request, Response } from "express";
 import { Task } from "../Models/Interfaces/Task";
 import { User } from "../Models/Interfaces/User";
 import { createUser, findUserById, getAllUsers, getUserById, searchUser, updateUser } from "../Models/User";
-import { createResponsibilityTask, createTask, getTaskById, getTaskCreatedByUser } from "../Models/Task";
+import { createResponsibilityTask, createTask, getTaskById, getTaskCreatedByUser, getTaskResponsibility  } from "../Models/Task";
 
 //Helpers
 import { date_fmt_back, uuid } from "../Config/Helpers";
@@ -183,6 +183,26 @@ export const getTaskCreatedByUserApp = async (req: Request, res: Response) => {
         const tasks = await getTaskCreatedByUser(id);
 
         res.status(200).send(tasks);
+    } catch (e) {
+        const error = e as Error;
+        console.log(error);
+        res.send({ message: error.message });
+    }
+};
+
+// Endpoint: Pegar usuários responsáveis por uma tarefa
+export const getTaskResponsibleApp = async (req: Request, res: Response) => {
+    try {
+        const id = Number(req.params.id);
+
+        if (!id) {
+            res.statusCode = 404;
+            throw new Error("Usuário não encontrado.");
+        }
+
+        const users = await getTaskResponsibility(id);
+
+        res.status(200).send(users);
     } catch (e) {
         const error = e as Error;
         console.log(error);

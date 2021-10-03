@@ -7,6 +7,7 @@ import {
     getAllUsersApp,
     getTaskByIdApp,
     getTaskCreatedByUserApp,
+    getTaskResponsibleApp,
     getUserByIdApp,
     searchUserApp,
     taskResponsible,
@@ -27,6 +28,7 @@ router.put("/user/edit/:id", updateUserApp);
 // TASKS ROUTES
 router.get("/task", getTaskCreatedByUserApp);
 router.get("/task/:id", getTaskByIdApp);
+router.get("/task/:id/responsible", getTaskResponsibleApp);
 
 router.post("/task", createTaskApp);
 router.post("/task/responsible", taskResponsible);
