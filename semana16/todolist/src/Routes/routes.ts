@@ -8,20 +8,25 @@ import {
     getTaskByIdApp,
     getTaskCreatedByUserApp,
     getUserByIdApp,
+    searchUserApp,
     updateUserApp
 } from "../App/App";
 
 const router: Router = Router();
 
-// ROUTES
+//USERS ROUTES
+router.get("/user", searchUserApp);
 router.get("/user/all", getAllUsersApp);
 router.get("/user/:id", getUserByIdApp);
+
+router.post("/user", createUserApp);
+
+router.put("/user/edit/:id", updateUserApp);
+
+// TASKS ROUTES
 router.get("/task", getTaskCreatedByUserApp);
 router.get("/task/:id", getTaskByIdApp);
 
-router.post("/user", createUserApp);
 router.post("/task", createTaskApp);
-
-router.put("/user/edit/:id", updateUserApp);
 
 export default router;

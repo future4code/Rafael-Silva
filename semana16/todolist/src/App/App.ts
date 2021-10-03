@@ -3,7 +3,7 @@ import express, { Request, Response } from "express";
 //Models
 import { Task } from "../Models/Interfaces/Task";
 import { User } from "../Models/Interfaces/User";
-import { createUser, findUserById, getAllUsers, getUserById, updateUser } from "../Models/User";
+import { createUser, findUserById, getAllUsers, getUserById, searchUser, updateUser } from "../Models/User";
 import { createTask, getTaskById, getTaskCreatedByUser } from "../Models/Task";
 
 //Helpers
@@ -45,6 +45,26 @@ export const getUserByIdApp = async (req: Request, res: Response) => {
         } else {
             res.status(200).send(user);
         }
+    } catch (e) {
+        const error = e as Error;
+        console.log(error);
+        res.send({ message: error.message });
+    }
+};
+
+// Endpoint: Pesquisar usuário
+export const searchUserApp = async (req: Request, res: Response) => {
+    try {
+        const search = req.query.query as string;
+
+        if (search === "") {
+            res.statusCode = 403;
+            throw new Error("Campo Inválido.");
+        }
+
+        const users = await searchUser(search);
+
+        res.status(200).send(users);
     } catch (e) {
         const error = e as Error;
         console.log(error);

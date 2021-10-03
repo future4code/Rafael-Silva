@@ -48,6 +48,32 @@ export const findUserById = async (id: number): Promise<User | boolean> => {
     }
 };
 
+// Search a User
+export const searchUser = async (search: string): Promise<Object | boolean> => {
+    try {
+        const result = await connection("TodoListUser")
+            .where("name", "like", `%${search}%`)
+            .orWhere("nickname", "like", `%${search}%`)
+            .orWhere("email", "like", `%${search}%`);
+
+        const resultModified = result.map((user) => {
+            return {
+                id: user.id,
+                nickname: user.nickname
+            };
+        });
+
+        const users = {
+            users: resultModified
+        };
+
+        return users;
+    } catch (error) {
+        console.log(error);
+        return false;
+    }
+};
+
 // Create a new user
 export const createUser = async (id: number, name: string, nickname: string, email: string): Promise<any> => {
     try {
