@@ -9,6 +9,7 @@ import {
     getTaskCreatedByUserApp,
     getUserByIdApp,
     searchUserApp,
+    taskResponsible,
     updateUserApp
 } from "../App/App";
 
@@ -28,5 +29,6 @@ router.get("/task", getTaskCreatedByUserApp);
 router.get("/task/:id", getTaskByIdApp);
 
 router.post("/task", createTaskApp);
+router.post("/task/responsible", taskResponsible);
 
 export default router;

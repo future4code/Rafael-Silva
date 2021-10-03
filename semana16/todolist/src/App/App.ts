@@ -4,7 +4,7 @@ import express, { Request, Response } from "express";
 import { Task } from "../Models/Interfaces/Task";
 import { User } from "../Models/Interfaces/User";
 import { createUser, findUserById, getAllUsers, getUserById, searchUser, updateUser } from "../Models/User";
-import { createTask, getTaskById, getTaskCreatedByUser } from "../Models/Task";
+import { createResponsibilityTask, createTask, getTaskById, getTaskCreatedByUser } from "../Models/Task";
 
 //Helpers
 import { date_fmt_back, uuid } from "../Config/Helpers";
@@ -218,6 +218,32 @@ export const createTaskApp = async (req: Request, res: Response) => {
             throw new Error("Usuário não encontrado.");
         } else {
             res.status(201).send({ message: "Tarefa criada com sucesso!" });
+        }
+    } catch (e) {
+        const error = e as Error;
+        console.log(error);
+        res.send({ message: error.message });
+    }
+};
+
+// Endpoint: Atribuir um usuário responsável a uma tarefa
+export const taskResponsible = async (req: Request, res: Response) => {
+    try {
+        const { task_id, responsible_user_id } = req.body;
+
+        if (!task_id || !responsible_user_id) {
+            res.statusCode = 403;
+            throw new Error("Campos Inválidos!");
+        }
+
+
+        const result = await createResponsibilityTask(task_id, responsible_user_id)
+
+        if (result === false) {
+            res.statusCode = 404;
+            throw new Error("Usuário não encontrado.");
+        } else {
+            res.status(201).send({ message: "Adicionado responsável pela tarefa com sucesso!" });
         }
     } catch (e) {
         const error = e as Error;

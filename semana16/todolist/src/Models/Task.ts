@@ -80,3 +80,17 @@ export const createTask = async (task: Task): Promise<boolean> => {
         return false;
     }
 };
+
+export const createResponsibilityTask = async (taskId: number, responsibleUserId: number): Promise<boolean> => {
+    try {
+        await connection("TodoListResponsibleUserTaskRelation").insert({
+            task_id: taskId,
+            responsible_user_id: responsibleUserId
+        });
+
+        return true;
+    } catch (error) {
+        console.log(error);
+        return false;
+    }
+};
