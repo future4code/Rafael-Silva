@@ -36,6 +36,45 @@ export const getTaskById = async (taskId: number): Promise<Object | boolean> => 
     }
 };
 
+// Get Task By Status
+export const getTaskByStatus = async (status: string): Promise<any> => {
+    try {
+        const result = await connection("TodoListTask as task")
+            .join("TodoListUser as user", "user.id", "task.creator_user_id")
+            .select(
+                "task.id as task_id",
+                "task.title",
+                "task.description",
+                "task.limit_date",
+                "task.status",
+                "user.id as user_id",
+                "user.nickname"
+            )
+            .where({ "task.status": status });
+
+        const resultModified = result.map((task) => {
+            return {
+                taskId: task.task_id,
+                title: task.title,
+                description: task.description,
+                limitDate: date_fmt(task.limit_date),
+                status: task.status,
+                creatorUserId: task.user_id,
+                creatorUserNickname: task.nickname
+            };
+        });
+
+        const tasks = {
+            tasks: resultModified
+        };
+
+        return tasks;
+    } catch (error) {
+        console.log(error);
+        return false;
+    }
+};
+
 // Find a Task
 export const findTask = async (id: number): Promise<Task | boolean> => {
     try {
@@ -50,7 +89,7 @@ export const findTask = async (id: number): Promise<Task | boolean> => {
 // Get tasks created by user
 export const getTaskCreatedByUser = async (userId: number): Promise<Object | boolean> => {
     try {
-        const result = await connection.select("*").from("").where({ creator_user_id: userId });
+        const result = await connection.select("*").from("TodoListTask").where({ creator_user_id: userId });
         const user = await getUserById(userId);
 
         const resultModified = result.map((task) => {

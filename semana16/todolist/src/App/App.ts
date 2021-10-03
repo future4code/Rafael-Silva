@@ -9,6 +9,7 @@ import {
     createTask,
     findTask,
     getTaskById,
+    getTaskByStatus,
     getTaskCreatedByUser,
     getTaskResponsibility,
     updateTaskStatus
@@ -16,6 +17,7 @@ import {
 
 //Helpers
 import { date_fmt_back, uuid } from "../Config/Helpers";
+import { Status } from "../Models/Interfaces/Status";
 
 /**
  * ################################
@@ -223,6 +225,26 @@ export const getTaskResponsibleApp = async (req: Request, res: Response) => {
     }
 };
 
+// Endpoint: Pegar todas as tarefas por status
+export const getTaskByStatusApp = async (req: Request, res: Response) => {
+    try {
+        const status = req.query.status as string;
+
+        if (status === "") {
+            res.statusCode = 403;
+            throw new Error("Campo Inválido");
+        }
+
+        const task = await getTaskByStatus(status);
+
+        res.status(200).send(task);
+    } catch (e) {
+        const error = e as Error;
+        console.log(error);
+        res.send({ message: error.message });
+    }
+};
+
 // Endpoint: Criar tarefa
 export const createTaskApp = async (req: Request, res: Response) => {
     try {
@@ -295,9 +317,9 @@ export const updateStatusTaskApp = async (req: Request, res: Response) => {
             throw new Error("Campo Inválido.");
         }
 
-        const task = await findTask(id)
+        const task = await findTask(id);
 
-        if (task === false){
+        if (task === false) {
             res.statusCode = 404;
             throw new Error("Tarefa não encontrada.");
         }
