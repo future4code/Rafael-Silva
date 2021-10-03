@@ -4,7 +4,13 @@ import express, { Request, Response } from "express";
 import { Task } from "../Models/Interfaces/Task";
 import { User } from "../Models/Interfaces/User";
 import { createUser, findUserById, getAllUsers, getUserById, searchUser, updateUser } from "../Models/User";
-import { createResponsibilityTask, createTask, getTaskById, getTaskCreatedByUser, getTaskResponsibility  } from "../Models/Task";
+import {
+    createResponsibilityTask,
+    createTask,
+    getTaskById,
+    getTaskCreatedByUser,
+    getTaskResponsibility
+} from "../Models/Task";
 
 //Helpers
 import { date_fmt_back, uuid } from "../Config/Helpers";
@@ -202,6 +208,11 @@ export const getTaskResponsibleApp = async (req: Request, res: Response) => {
 
         const users = await getTaskResponsibility(id);
 
+        if (Object.values(users)[0].length === 0) {
+            res.statusCode = 404;
+            throw new Error("Tarefa não encontrada.");
+        }
+
         res.status(200).send(users);
     } catch (e) {
         const error = e as Error;
@@ -256,8 +267,7 @@ export const taskResponsible = async (req: Request, res: Response) => {
             throw new Error("Campos Inválidos!");
         }
 
-
-        const result = await createResponsibilityTask(task_id, responsible_user_id)
+        const result = await createResponsibilityTask(task_id, responsible_user_id);
 
         if (result === false) {
             res.statusCode = 404;

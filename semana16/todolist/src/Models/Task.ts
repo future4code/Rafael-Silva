@@ -64,7 +64,7 @@ export const getTaskCreatedByUser = async (userId: number): Promise<Object | boo
 };
 
 // Get Task Responsible
-export const getTaskResponsibility = async (taskId: number): Promise<any> => {
+export const getTaskResponsibility = async (taskId: number): Promise<Object | boolean> => {
     try {
         const result = await connection("TodoListResponsibleUserTaskRelation")
             .join("TodoListUser", "TodoListUser.id", "TodoListResponsibleUserTaskRelation.responsible_user_id")
