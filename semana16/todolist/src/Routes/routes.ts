@@ -5,6 +5,7 @@ import {
     createTaskApp,
     createUserApp,
     deleteTaskApp,
+    deleteUserApp,
     getAllUsersApp,
     getTaskByIdApp,
     getTaskByStatusApp,
@@ -31,12 +32,13 @@ router.post("/user", createUserApp);
 
 router.put("/user/edit/:id", updateUserApp);
 
+router.delete("/user/:id", deleteUserApp);
+
 // TASKS ROUTES
 router.get("/task", getTaskCreatedByUserApp);
 router.get("/task/status", getTaskByStatusApp);
 router.get("/task/delayed", getTaskDelayedApp);
 router.get("/task/search", searchTaskApp);
-
 
 router.get("/task/:id", getTaskByIdApp);
 router.get("/task/:id/responsible", getTaskResponsibleApp);
@@ -48,6 +50,5 @@ router.put("/task/status/edit", updateStatusTaskApp);
 
 router.delete("/task/:id", deleteTaskApp);
 router.delete("/task/:taskId/responsible/:responsibleUserId", removeResponsibleApp);
-
 
 export default router;

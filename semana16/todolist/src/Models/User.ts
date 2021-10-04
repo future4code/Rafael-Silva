@@ -117,3 +117,15 @@ export const updateUser = async (user: User): Promise<boolean> => {
         return false;
     }
 };
+
+// Delete a user
+export const deleteUser = async (userId: number): Promise<boolean> => {
+    try {
+        await connection("TodoListUser").delete().where({ id: userId });
+
+        return true;
+    } catch (error) {
+        console.log(error);
+        return false;
+    }
+};

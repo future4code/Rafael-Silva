@@ -3,7 +3,7 @@ import express, { Request, Response } from "express";
 //Models
 import { Task } from "../Models/Interfaces/Task";
 import { User } from "../Models/Interfaces/User";
-import { createUser, findUser, getAllUsers, getUserById, searchUser, updateUser } from "../Models/User";
+import { createUser, deleteUser, findUser, getAllUsers, getUserById, searchUser, updateUser } from "../Models/User";
 import {
     createResponsibilityTask,
     createTask,
@@ -145,6 +145,31 @@ export const updateUserApp = async (req: Request, res: Response): Promise<void> 
             throw new Error("Não foi possível editar usuário.");
         } else {
             res.status(200).send({ message: "Usuário atualizado com sucesso!" });
+        }
+    } catch (e) {
+        const error = e as Error;
+        console.log(error);
+        res.send({ message: error.message });
+    }
+};
+
+// Endpoint: Deletar User
+export const deleteUserApp = async (req: Request, res: Response): Promise<void> => {
+    try {
+        const id: number = Number(req.params.id);
+
+        if (isNaN(id)) {
+            res.statusCode = 422;
+            throw new Error("Campo Inválido.");
+        }
+
+        const result = await deleteUser(id);
+
+        if (result === false) {
+            res.statusCode = 400;
+            throw new Error("Não foi possível deletar usuário.");
+        } else {
+            res.status(200).send({ message: "Usuário deletado com sucesso!" });
         }
     } catch (e) {
         const error = e as Error;
