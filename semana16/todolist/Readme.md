@@ -283,6 +283,16 @@ Um API simples de criação e gerenciamento de tarefas.
 }
 ```
 
+---
+
+### **Endpoint**: Deletar tarefa
+
+-   **Método:** DELETE
+-   **Path:** `/task/:id`
+-   **Path Param**: o parâmetro indica o id da task (`taskId`)
+
+---
+
 ## Credits
 
 -   [Rafael N. Silva](https://github.com/rafansilva) (Developer)
