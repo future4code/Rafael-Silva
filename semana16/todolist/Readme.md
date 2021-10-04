@@ -1,6 +1,6 @@
-## To Do List
+# To Do List
 
-Ums sistema simples de criação e gerenciamento de tarefas.
+Um API simples de criação e gerenciamento de tarefas.
 
 ## ENDPOINTS
 
@@ -25,7 +25,7 @@ Ums sistema simples de criação e gerenciamento de tarefas.
 
 ```json
 {
-    "id": "001",
+    "id": 001,
     "nickname": "astrodev"
 }
 ```
@@ -53,7 +53,7 @@ Ums sistema simples de criação e gerenciamento de tarefas.
     "title": "Criar banco dos alunos",
     "description": "Devemos criar o banco dos alunos para o módulo do backend",
     "limitDate": "04/05/2020",
-    "creatorUserId": "001"
+    "creatorUserId": 001
 }
 ```
 
@@ -70,7 +70,7 @@ Ums sistema simples de criação e gerenciamento de tarefas.
     "description": "Devemos criar o banco dos alunos para o módulo do backend",
     "limitDate": "04/05/2020",
     "status": "to_do",
-    "creatorUserId": "001",
+    "creatorUserId": 001,
     "creatorUserNickname": "astrodev"
 }
 ```
@@ -84,7 +84,7 @@ Ums sistema simples de criação e gerenciamento de tarefas.
 {
     "users": [
         {
-            "id": "001",
+            "id": 001,
             "nickname": "astrodev"
         }
     ]
@@ -101,11 +101,11 @@ Ums sistema simples de criação e gerenciamento de tarefas.
 {
     "tasks": [
         {
-            "taskId": "001",
+            "taskId": 001,
             "title": "Criar banco dos alunos",
             "description": "Devemos criar o banco dos alunos para o módulo do backend",
             "limitDate": "04/05/2020",
-            "creatorUserId": "001",
+            "creatorUserId": 001,
             "status": "to_do",
             "creatorUserNickname": "astrodev"
         }
@@ -123,22 +123,22 @@ Ums sistema simples de criação e gerenciamento de tarefas.
 {
     "users": [
         {
-            "id": "001",
+            "id": 001,
             "nickname": "astrodev"
         }
     ]
 }
 ```
 
--   **Endpoint**: Atribuir um usuário responsável a uma tarefa
+-   **Endpoint**: Atribuir um usuário (ou mais usuários) responsável a uma tarefa
 -   **Método:** POST
 -   **Path:** `/task/responsible`
 -   **Body:**
 
 ```json
 {
-    "task_id": "Astro Dev",
-    "responsible_user_id": "astrodev"
+    "task_id": 332,
+    "responsible_user_id": 001 // or [001, 002]
 }
 ```
 
@@ -152,7 +152,7 @@ Ums sistema simples de criação e gerenciamento de tarefas.
 {
     "users": [
         {
-            "id": "001",
+            "id": 001,
             "nickname": "astrodev"
         }
     ]
@@ -184,7 +184,7 @@ Ums sistema simples de criação e gerenciamento de tarefas.
             "title": "Criar banco dos alunos",
             "description": "Devemos criar o banco dos alunos para o módulo do backend",
             "limitDate": "04/05/2020",
-            "creatorUserId": "001",
+            "creatorUserId": 001,
             "creatorUserNickname": "astrodev"
         }
     ]
@@ -204,7 +204,7 @@ Ums sistema simples de criação e gerenciamento de tarefas.
             "title": "Criar banco dos alunos",
             "description": "Devemos criar o banco dos alunos para o módulo do backend",
             "limitDate": "04/05/2020",
-            "creatorUserId": "001",
+            "creatorUserId": 001,
             "creatorUserNickname": "astrodev"
         }
     ]
