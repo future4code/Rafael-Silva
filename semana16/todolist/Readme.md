@@ -4,7 +4,10 @@ Um API simples de criação e gerenciamento de tarefas.
 
 ## ENDPOINTS
 
--   **Endpoint**: Criar usuário
+---
+
+### **Endpoint**: Criar usuário
+
 -   **Método:** POST
 -   **Path:** `/user`
 -   **Body:**
@@ -17,7 +20,10 @@ Um API simples de criação e gerenciamento de tarefas.
 }
 ```
 
--   **Endpoint**: Pegar usuário pelo id
+---
+
+### **Endpoint**: Pegar usuário pelo id
+
 -   **Método:** GET
 -   **Path:** `/user/:id`
 -   **Path Param**: é o id do usuário
@@ -30,7 +36,10 @@ Um API simples de criação e gerenciamento de tarefas.
 }
 ```
 
--   **Endpoint**: Editar usuário
+---
+
+### **Endpoint**: Editar usuário
+
 -   **Método:** PUT
 -   **Path:** `/user/edit/:id`
 -   **Path Param**: é o id do usuário
@@ -43,7 +52,10 @@ Um API simples de criação e gerenciamento de tarefas.
 }
 ```
 
--   **Endpoint**: Criar tarefa
+---
+
+### **Endpoint**: Criar tarefa
+
 -   **Método:** POST
 -   **Path:** `/task`
 -   **Body:**
@@ -57,7 +69,10 @@ Um API simples de criação e gerenciamento de tarefas.
 }
 ```
 
--   **Endpoint**: Pegar tarefa pelo id
+---
+
+### **Endpoint**: Pegar tarefa pelo id
+
 -   **Método:** GET
 -   **Path:** `/task/:id`
 -   **Path Param**: é o id da tarefa
@@ -75,7 +90,10 @@ Um API simples de criação e gerenciamento de tarefas.
 }
 ```
 
--   **Endpoint**: Pegar todos os usuários
+---
+
+### **Endpoint**: Pegar todos os usuários
+
 -   **Método:** GET
 -   **Path:** `/user/all`
 -   **Body de Resposta:**
@@ -91,7 +109,10 @@ Um API simples de criação e gerenciamento de tarefas.
 }
 ```
 
--   **Endpoint**: Pegar tarefas criadas por um usuário
+---
+
+### **Endpoint**: Pegar tarefas criadas por um usuário
+
 -   **Método:** GET
 -   **Path:** `/task?creatorUserId=id`
 -   **Query String:** indica o id do usuário que criou através da chave `creatorUserId`
@@ -113,7 +134,10 @@ Um API simples de criação e gerenciamento de tarefas.
 }
 ```
 
--   **Endpoint**: Pesquisar usuário
+---
+
+### **Endpoint**: Pesquisar usuário
+
 -   **Método:** GET
 -   **Path:** `/user?query=astro`
 -   **Query String:** indica o termo de busca através da chave `query`
@@ -130,7 +154,10 @@ Um API simples de criação e gerenciamento de tarefas.
 }
 ```
 
--   **Endpoint**: Atribuir um usuário (ou mais usuários) responsável a uma tarefa
+---
+
+### **Endpoint**: Atribuir um usuário (ou mais usuários) responsável a uma tarefa
+
 -   **Método:** POST
 -   **Path:** `/task/responsible`
 -   **Body:**
@@ -142,7 +169,10 @@ Um API simples de criação e gerenciamento de tarefas.
 }
 ```
 
--   **Endpoint**: Pegar usuários responsáveis por uma tarefa
+---
+
+### **Endpoint**: Pegar usuários responsáveis por uma tarefa
+
 -   **Método:** GET
 -   **Path:** `/task/:id/responsible`
 -   **Path Param**: é o id da tarefa
@@ -159,7 +189,10 @@ Um API simples de criação e gerenciamento de tarefas.
 }
 ```
 
--   **Endpoint**: Atualizar o status da tarefa pelo id
+---
+
+### **Endpoint**: Atualizar o status da tarefa pelo id
+
 -   **Method:** PUT
 -   **Path:** `/task/status/:id/`
 -   **Body:**
@@ -170,7 +203,10 @@ Um API simples de criação e gerenciamento de tarefas.
 }
 ```
 
--   **Endpoint**: Pegar todas as tarefas por status
+---
+
+### **Endpoint**: Pegar todas as tarefas por status
+
 -   **Método:** GET
 -   **Path:** `/task/status?status=valor_do_status`
 -   **Query String:** indica o status através da chave `status`
@@ -191,7 +227,10 @@ Um API simples de criação e gerenciamento de tarefas.
 }
 ```
 
--   **Endpoint**: Pegar todas as tarefas atrasadas
+---
+
+### **Endpoint**: Pegar todas as tarefas atrasadas
+
 -   **Método:** GET
 -   **Path:** `/task/delayed`
 -   **Body de Resposta:**
@@ -211,12 +250,38 @@ Um API simples de criação e gerenciamento de tarefas.
 }
 ```
 
--   **Endpoint**: Retirar um usuário responsável de uma tarefa
+---
+
+### **Endpoint**: Retirar um usuário responsável de uma tarefa
+
 -   **Método:** DELETE
 -   **Path:** `/task/:taskId/responsible/:responsibleUserId`
 -   **Path Param**: o primeiro indica o id da task (`taskId`)e o segundo o id do usuário responsável (`responsibleUserId`)
 
+---
+
+### **Endpoint**: Procurar tarefa por termos
+
+-   **Método:** GET
+-   **Path:** `/task?query=banco`
+-   **Query String:** indica o termo de busca através da chave `query`
+-   **Body de Resposta:**
+
+```json
+{
+    "tasks": [
+        {
+            "taskId": "001",
+            "title": "Criar banco dos alunos",
+            "description": "Devemos criar o banco dos alunos para o módulo do backend",
+            "limitDate": "04/05/2020",
+            "creatorUserId": 001,
+            "creatorUserNickname": "astrodev"
+        }
+    ]
+}
+```
 
 ## Credits
 
-- [Rafael N. Silva](https://github.com/rafansilva) (Developer)
+-   [Rafael N. Silva](https://github.com/rafansilva) (Developer)
