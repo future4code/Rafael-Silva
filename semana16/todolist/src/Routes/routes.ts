@@ -12,6 +12,7 @@ import {
     getTaskResponsibleApp,
     getUserByIdApp,
     removeResponsibleApp,
+    searchTaskApp,
     searchUserApp,
     taskResponsible,
     updateStatusTaskApp,
@@ -33,6 +34,8 @@ router.put("/user/edit/:id", updateUserApp);
 router.get("/task", getTaskCreatedByUserApp);
 router.get("/task/status", getTaskByStatusApp);
 router.get("/task/delayed", getTaskDelayedApp);
+router.get("/task/search", searchTaskApp);
+
 
 router.get("/task/:id", getTaskByIdApp);
 router.get("/task/:id/responsible", getTaskResponsibleApp);

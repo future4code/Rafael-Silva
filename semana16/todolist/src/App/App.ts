@@ -14,13 +14,12 @@ import {
     getTaskCreatedByUser,
     getTaskResponsibility,
     removeResponsibility,
+    searchTasks,
     updateTaskStatus
 } from "../Models/Task";
 
 //Helpers
 import { date_fmt_back, uuid } from "../Config/Helpers";
-import { Status } from "../Models/Interfaces/Status";
-import { isArray } from "util";
 
 /**
  * ################################
@@ -252,6 +251,26 @@ export const getTaskByStatusApp = async (req: Request, res: Response) => {
 export const getTaskDelayedApp = async (req: Request, res: Response) => {
     try {
         const tasks = await getDelayedTasks();
+
+        res.status(200).send(tasks);
+    } catch (e) {
+        const error = e as Error;
+        console.log(error);
+        res.send({ message: error.message });
+    }
+};
+
+// Endpoint: Procurar tarefa por termos
+export const searchTaskApp = async (req: Request, res: Response) => {
+    try {
+        const search = req.query.search as string;
+
+        if (search === "" || !search) {
+            res.statusCode = 403;
+            throw new Error("Campo Inválido.");
+        }
+
+        const tasks = await searchTasks(search);
 
         res.status(200).send(tasks);
     } catch (e) {
