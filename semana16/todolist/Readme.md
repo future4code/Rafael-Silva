@@ -289,7 +289,15 @@ Um API simples de criação e gerenciamento de tarefas.
 
 -   **Método:** DELETE
 -   **Path:** `/task/:id`
--   **Path Param**: o parâmetro indica o id da task (`taskId`)
+-   **Path Param**: o parâmetro indica o id da task (`id`)
+
+---
+
+### **Endpoint**: Deletar usuário
+
+-   **Método:** DELETE
+-   **Path:** `/user/:id`
+-   **Path Param**: o parâmetro indica o id do usuário (`id`)
 
 ---
 
