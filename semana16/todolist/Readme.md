@@ -191,15 +191,16 @@ Um API simples de criação e gerenciamento de tarefas.
 
 ---
 
-### **Endpoint**: Atualizar o status da tarefa pelo id
+### **Endpoint**: Atualizar o status de uma ou várias tarefas
 
--   **Method:** PUT
--   **Path:** `/task/status/:id/`
+-   **Método:** PUT
+-   **Path:** `/task/status/edit`
 -   **Body:**
 
 ```json
 {
-    "status": "doing"
+    "task_ids": [001],
+    "status": "done"
 }
 ```
 
@@ -216,7 +217,7 @@ Um API simples de criação e gerenciamento de tarefas.
 {
     "tasks": [
         {
-            "taskId": "001",
+            "taskId": 001,
             "title": "Criar banco dos alunos",
             "description": "Devemos criar o banco dos alunos para o módulo do backend",
             "limitDate": "04/05/2020",
@@ -239,7 +240,7 @@ Um API simples de criação e gerenciamento de tarefas.
 {
     "tasks": [
         {
-            "taskId": "001",
+            "taskId": 001,
             "title": "Criar banco dos alunos",
             "description": "Devemos criar o banco dos alunos para o módulo do backend",
             "limitDate": "04/05/2020",
@@ -271,7 +272,7 @@ Um API simples de criação e gerenciamento de tarefas.
 {
     "tasks": [
         {
-            "taskId": "001",
+            "taskId": 001,
             "title": "Criar banco dos alunos",
             "description": "Devemos criar o banco dos alunos para o módulo do backend",
             "limitDate": "04/05/2020",
