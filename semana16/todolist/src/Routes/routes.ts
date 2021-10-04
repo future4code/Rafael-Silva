@@ -4,6 +4,7 @@ import { Router } from "express";
 import {
     createTaskApp,
     createUserApp,
+    deleteTaskApp,
     getAllUsersApp,
     getTaskByIdApp,
     getTaskByStatusApp,
@@ -45,6 +46,8 @@ router.post("/task/responsible", taskResponsible);
 
 router.put("/task/status/edit", updateStatusTaskApp);
 
+router.delete("/task/:id", deleteTaskApp);
 router.delete("/task/:taskId/responsible/:responsibleUserId", removeResponsibleApp);
+
 
 export default router;

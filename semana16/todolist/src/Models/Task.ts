@@ -333,3 +333,15 @@ export const removeResponsibility = async (taskId: number, userId: number): Prom
         return false;
     }
 };
+
+// Delete a task
+export const deleteTask = async (taskId: number): Promise<boolean> => {
+    try {
+        await connection("TodoListTask").delete().where({ id: taskId });
+
+        return true;
+    } catch (error) {
+        console.log(error);
+        return false;
+    }
+};

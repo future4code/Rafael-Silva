@@ -7,6 +7,7 @@ import { createUser, findUser, getAllUsers, getUserById, searchUser, updateUser 
 import {
     createResponsibilityTask,
     createTask,
+    deleteTask,
     findMultipleTasks,
     findTask,
     getDelayedTasks,
@@ -29,7 +30,7 @@ import { date_fmt_back, uuid } from "../Config/Helpers";
  */
 
 // Endpoint: Pegar todos os usuários
-export const getAllUsersApp = async (req: Request, res: Response) => {
+export const getAllUsersApp = async (req: Request, res: Response): Promise<void> => {
     try {
         const users = await getAllUsers();
         res.status(200).send(users);
@@ -41,7 +42,7 @@ export const getAllUsersApp = async (req: Request, res: Response) => {
 };
 
 // Endpoint: Pegar usuário pelo id
-export const getUserByIdApp = async (req: Request, res: Response) => {
+export const getUserByIdApp = async (req: Request, res: Response): Promise<void> => {
     try {
         const id = Number(req.params.id);
 
@@ -66,7 +67,7 @@ export const getUserByIdApp = async (req: Request, res: Response) => {
 };
 
 // Endpoint: Pesquisar usuário
-export const searchUserApp = async (req: Request, res: Response) => {
+export const searchUserApp = async (req: Request, res: Response): Promise<void> => {
     try {
         const search = req.query.query as string;
 
@@ -86,7 +87,7 @@ export const searchUserApp = async (req: Request, res: Response) => {
 };
 
 // Endpoint: Criar usuário
-export const createUserApp = async (req: Request, res: Response) => {
+export const createUserApp = async (req: Request, res: Response): Promise<void> => {
     try {
         const { name, nickname, email } = req.body;
 
@@ -108,7 +109,7 @@ export const createUserApp = async (req: Request, res: Response) => {
 };
 
 // Endpoint: Editar usuário
-export const updateUserApp = async (req: Request, res: Response) => {
+export const updateUserApp = async (req: Request, res: Response): Promise<void> => {
     try {
         const id = Number(req.params.id);
         const { name, nickname, email } = req.body;
@@ -159,7 +160,7 @@ export const updateUserApp = async (req: Request, res: Response) => {
  */
 
 // Endpoint: Pegar tarefa pelo id
-export const getTaskByIdApp = async (req: Request, res: Response) => {
+export const getTaskByIdApp = async (req: Request, res: Response): Promise<void> => {
     try {
         const id = Number(req.params.id);
 
@@ -204,7 +205,7 @@ export const getTaskCreatedByUserApp = async (req: Request, res: Response) => {
 };
 
 // Endpoint: Pegar usuários responsáveis por uma tarefa
-export const getTaskResponsibleApp = async (req: Request, res: Response) => {
+export const getTaskResponsibleApp = async (req: Request, res: Response): Promise<void> => {
     try {
         const id = Number(req.params.id);
 
@@ -229,7 +230,7 @@ export const getTaskResponsibleApp = async (req: Request, res: Response) => {
 };
 
 // Endpoint: Pegar todas as tarefas por status
-export const getTaskByStatusApp = async (req: Request, res: Response) => {
+export const getTaskByStatusApp = async (req: Request, res: Response): Promise<void> => {
     try {
         const status = req.query.status as string;
 
@@ -249,7 +250,7 @@ export const getTaskByStatusApp = async (req: Request, res: Response) => {
 };
 
 // Endpoint: Pegar todas as tarefas atrasadas
-export const getTaskDelayedApp = async (req: Request, res: Response) => {
+export const getTaskDelayedApp = async (req: Request, res: Response): Promise<void> => {
     try {
         const tasks = await getDelayedTasks();
 
@@ -262,7 +263,7 @@ export const getTaskDelayedApp = async (req: Request, res: Response) => {
 };
 
 // Endpoint: Procurar tarefa por termos
-export const searchTaskApp = async (req: Request, res: Response) => {
+export const searchTaskApp = async (req: Request, res: Response): Promise<void> => {
     try {
         const search = req.query.search as string;
 
@@ -282,7 +283,7 @@ export const searchTaskApp = async (req: Request, res: Response) => {
 };
 
 // Endpoint: Criar tarefa
-export const createTaskApp = async (req: Request, res: Response) => {
+export const createTaskApp = async (req: Request, res: Response): Promise<void> => {
     try {
         const { title, description, limitDate, creatorUserId } = req.body;
 
@@ -319,7 +320,7 @@ export const createTaskApp = async (req: Request, res: Response) => {
 
 // Endpoint: Atribuir um usuário responsável a uma tarefa
 // Atribuir mais de um responsável a uma tarefa
-export const taskResponsible = async (req: Request, res: Response) => {
+export const taskResponsible = async (req: Request, res: Response): Promise<void> => {
     try {
         const { task_id, responsible_user_id } = req.body;
 
@@ -351,7 +352,7 @@ export const taskResponsible = async (req: Request, res: Response) => {
 };
 
 // Endpoint: Atualizar o status de uma ou várias tarefas
-export const updateStatusTaskApp = async (req: Request, res: Response) => {
+export const updateStatusTaskApp = async (req: Request, res: Response): Promise<void> => {
     try {
         const { task_ids, status } = req.body;
 
@@ -387,7 +388,7 @@ export const updateStatusTaskApp = async (req: Request, res: Response) => {
 };
 
 // Endpoint:  Retirar um usuário responsável de uma tarefa
-export const removeResponsibleApp = async (req: Request, res: Response) => {
+export const removeResponsibleApp = async (req: Request, res: Response): Promise<void> => {
     try {
         const taskId: number = Number(req.params.taskId);
         const responsibleUserId = Number(req.params.responsibleUserId);
@@ -418,6 +419,31 @@ export const removeResponsibleApp = async (req: Request, res: Response) => {
             throw new Error("Não foi possível alterar o status dessa tarefa.");
         } else {
             res.status(200).send({ message: "Removido responsável pela tarefa." });
+        }
+    } catch (e) {
+        const error = e as Error;
+        console.log(error);
+        res.send({ message: error.message });
+    }
+};
+
+// Endpoint: Deletar tarefa
+export const deleteTaskApp = async (req: Request, res: Response): Promise<void> => {
+    try {
+        const id: number = Number(req.params.id);
+
+        if (isNaN(id)) {
+            res.statusCode = 422;
+            throw new Error("Campo Inválido.");
+        }
+
+        const result = await deleteTask(id);
+
+        if (result === false) {
+            res.statusCode = 400;
+            throw new Error("Não foi possível deletar tarefa.");
+        } else {
+            res.status(200).send({ message: "Tarefa deletada com sucesso!" });
         }
     } catch (e) {
         const error = e as Error;
