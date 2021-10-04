@@ -19,6 +19,6 @@ CREATE TABLE TodoListTask (
 CREATE TABLE TodoListResponsibleUserTaskRelation (
 	task_id INT,
     responsible_user_id INT,
-    FOREIGN KEY (task_id) REFERENCES TodoListTask(id),
-    FOREIGN KEY (responsible_user_id) REFERENCES TodoListUser(id)
+    FOREIGN KEY (task_id) REFERENCES TodoListTask(id) ON DELETE CASCADE,
+    FOREIGN KEY (responsible_user_id) REFERENCES TodoListUser(id) ON DELETE CASCADE
 );
