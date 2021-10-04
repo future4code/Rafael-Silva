@@ -124,7 +124,7 @@ export const findTask = async (
 ): Promise<Task | boolean> => {
     try {
         let result;
-        
+
         if (column === false) {
             result = await connection.select("*").from(`${table}`).where({ id: id });
         } else {
@@ -205,12 +205,16 @@ export const createTask = async (task: Task): Promise<boolean> => {
 };
 
 // Create Task Responsible
-export const createResponsibilityTask = async (taskId: number, responsibleUserId: number): Promise<boolean> => {
+export const createResponsibilityTask = async (taskId: number, responsibleUserId: number[]): Promise<boolean> => {
     try {
-        await connection("TodoListResponsibleUserTaskRelation").insert({
-            task_id: taskId,
-            responsible_user_id: responsibleUserId
+        const fieldsToInsert = responsibleUserId.map((field) => {
+            return {
+                task_id: taskId,
+                responsible_user_id: field
+            };
         });
+
+        await connection("TodoListResponsibleUserTaskRelation").insert(fieldsToInsert);
 
         return true;
     } catch (error) {

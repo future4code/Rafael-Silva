@@ -20,6 +20,7 @@ import {
 //Helpers
 import { date_fmt_back, uuid } from "../Config/Helpers";
 import { Status } from "../Models/Interfaces/Status";
+import { isArray } from "util";
 
 /**
  * ################################
@@ -297,16 +298,24 @@ export const createTaskApp = async (req: Request, res: Response) => {
 };
 
 // Endpoint: Atribuir um usuário responsável a uma tarefa
+// Atribuir mais de um responsável a uma tarefa
 export const taskResponsible = async (req: Request, res: Response) => {
     try {
         const { task_id, responsible_user_id } = req.body;
 
-        if (!task_id || !responsible_user_id) {
+        if (!task_id || !responsible_user_id || responsible_user_id.length === 0) {
             res.statusCode = 403;
             throw new Error("Campos Inválidos!");
         }
 
-        const result = await createResponsibilityTask(task_id, responsible_user_id);
+        const isArray = Array.isArray(responsible_user_id);
+        let result;
+
+        if (isArray === false) {
+            result = await createResponsibilityTask(task_id, [responsible_user_id]);
+        } else {
+            result = await createResponsibilityTask(task_id, responsible_user_id);
+        }
 
         if (result === false) {
             res.statusCode = 404;
