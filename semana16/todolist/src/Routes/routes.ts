@@ -43,7 +43,7 @@ router.get("/task/:id/responsible", getTaskResponsibleApp);
 router.post("/task", createTaskApp);
 router.post("/task/responsible", taskResponsible);
 
-router.put("/task/status/:id", updateStatusTaskApp);
+router.put("/task/status/edit", updateStatusTaskApp);
 
 router.delete("/task/:taskId/responsible/:responsibleUserId", removeResponsibleApp);
 

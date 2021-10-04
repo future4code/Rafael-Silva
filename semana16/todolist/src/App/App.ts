@@ -7,6 +7,7 @@ import { createUser, findUser, getAllUsers, getUserById, searchUser, updateUser 
 import {
     createResponsibilityTask,
     createTask,
+    findMultipleTasks,
     findTask,
     getDelayedTasks,
     getTaskById,
@@ -70,7 +71,7 @@ export const searchUserApp = async (req: Request, res: Response) => {
         const search = req.query.query as string;
 
         if (search === "") {
-            res.statusCode = 403;
+            res.statusCode = 422;
             throw new Error("Campo Inválido.");
         }
 
@@ -90,7 +91,7 @@ export const createUserApp = async (req: Request, res: Response) => {
         const { name, nickname, email } = req.body;
 
         if (!name || !nickname || !email) {
-            res.statusCode = 403;
+            res.statusCode = 422;
             throw new Error("Campos Inválidos!");
         }
 
@@ -125,7 +126,7 @@ export const updateUserApp = async (req: Request, res: Response) => {
         }
 
         if (!name || !nickname) {
-            res.statusCode = 403;
+            res.statusCode = 422;
             throw new Error("Campos Inválidos!");
         }
 
@@ -208,7 +209,7 @@ export const getTaskResponsibleApp = async (req: Request, res: Response) => {
         const id = Number(req.params.id);
 
         if (isNaN(id)) {
-            res.statusCode = 403;
+            res.statusCode = 422;
             throw new Error("Campo Inválido.");
         }
 
@@ -233,7 +234,7 @@ export const getTaskByStatusApp = async (req: Request, res: Response) => {
         const status = req.query.status as string;
 
         if (status === "") {
-            res.statusCode = 403;
+            res.statusCode = 422;
             throw new Error("Campo Inválido");
         }
 
@@ -266,7 +267,7 @@ export const searchTaskApp = async (req: Request, res: Response) => {
         const search = req.query.search as string;
 
         if (search === "" || !search) {
-            res.statusCode = 403;
+            res.statusCode = 422;
             throw new Error("Campo Inválido.");
         }
 
@@ -286,7 +287,7 @@ export const createTaskApp = async (req: Request, res: Response) => {
         const { title, description, limitDate, creatorUserId } = req.body;
 
         if (!title || !description || !limitDate || !creatorUserId) {
-            res.statusCode = 403;
+            res.statusCode = 422;
             throw new Error("Campos Inválidos!");
         }
         const id = uuid();
@@ -323,7 +324,7 @@ export const taskResponsible = async (req: Request, res: Response) => {
         const { task_id, responsible_user_id } = req.body;
 
         if (!task_id || !responsible_user_id || responsible_user_id.length === 0) {
-            res.statusCode = 403;
+            res.statusCode = 422;
             throw new Error("Campos Inválidos!");
         }
 
@@ -349,34 +350,32 @@ export const taskResponsible = async (req: Request, res: Response) => {
     }
 };
 
-// Endpoint: Atualizar o status da tarefa pelo id
+// Endpoint: Atualizar o status de uma ou várias tarefas
 export const updateStatusTaskApp = async (req: Request, res: Response) => {
     try {
-        const id: number = Number(req.params.id);
-        const { status } = req.body;
+        const { task_ids, status } = req.body;
 
-        if (isNaN(id)) {
-            res.statusCode = 403;
+        if (!task_ids || !status || task_ids.length === 0) {
+            res.statusCode = 422;
             throw new Error("Campo Inválido.");
         }
 
-        const task = await findTask(id);
+        const isArray = Array.isArray(task_ids);
 
-        if (task === false) {
-            res.statusCode = 404;
-            throw new Error("Tarefa não encontrada.");
+        if (isArray === false) {
+            const tasks = await findMultipleTasks([task_ids]);
+
+            if (tasks === false) {
+                res.statusCode = 404;
+                throw new Error("Tarefa não encontrada.");
+            }
         }
 
-        if (!status) {
-            res.statusCode = 403;
-            throw new Error("String Inválida.");
-        }
-
-        const result = await updateTaskStatus(id, status);
+        const result = await updateTaskStatus(task_ids, status);
 
         if (result === false) {
             res.statusCode = 400;
-            throw new Error("Não foi possível alterar o status dessa tarefa.");
+            throw new Error("Não foi possível alterar o status.");
         } else {
             res.status(200).send({ message: "Status atualizado com sucesso!" });
         }
@@ -394,7 +393,7 @@ export const removeResponsibleApp = async (req: Request, res: Response) => {
         const responsibleUserId = Number(req.params.responsibleUserId);
 
         if (isNaN(taskId) && isNaN(responsibleUserId)) {
-            res.statusCode = 403;
+            res.statusCode = 422;
             throw new Error("Campo Inválido.");
         }
 

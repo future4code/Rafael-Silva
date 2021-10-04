@@ -138,6 +138,40 @@ export const findTask = async (
     }
 };
 
+// Find Tasks
+export const findMultipleTasks = async (
+    id: number[],
+    table: string = "TodoListTask",
+    column: boolean = false
+): Promise<Task | boolean> => {
+    try {
+        const fieldsToFind = id.map((field) => {
+            return {
+                id: field
+            };
+        });
+
+        let result;
+
+        if (column === false) {
+            result = await connection.select("*").from(`${table}`).where(fieldsToFind);
+        } else {
+            const fieldsToFindTaskId = id.map((field) => {
+                return {
+                    task_id: field
+                };
+            });
+
+            result = await connection.select("*").from(`${table}`).where(fieldsToFindTaskId);
+        }
+
+        return result[0];
+    } catch (error) {
+        console.log(error);
+        return false;
+    }
+};
+
 // Get tasks created by user
 export const getTaskCreatedByUser = async (userId: number): Promise<Object | boolean> => {
     try {
@@ -267,19 +301,23 @@ export const createResponsibilityTask = async (taskId: number, responsibleUserId
 };
 
 // Update Status Task
-export const updateTaskStatus = async (taskId: number, status: Status): Promise<boolean> => {
-    try {
-        await connection("TodoListTask")
-            .update({
-                status: status
-            })
-            .where({ id: taskId });
+export const updateTaskStatus = async (taskId: number[], status: Status): Promise<boolean> => {
+    return connection.transaction((trx) => {
+        const queries: any = [];
+        taskId.forEach((task) => {
+            const query = connection("TodoListTask")
+                .where("id", task)
+                .update({
+                    status: status
+                })
+                .transacting(trx); // This makes every update be in the same transaction
+            queries.push(query);
+        });
 
-        return true;
-    } catch (error) {
-        console.log(error);
-        return false;
-    }
+        Promise.all(queries) // Once every query is written
+            .then(trx.commit) // We try to execute all of them
+            .catch(trx.rollback); // And rollback in case any of them goes wrong
+    });
 };
 
 // Remove Responsible User
