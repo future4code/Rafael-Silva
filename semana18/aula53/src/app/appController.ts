@@ -6,10 +6,10 @@ export const createUser = async (req: Request, res: Response): Promise<void> => 
     try {
         // const {name, email, password} = req.body
 
-        const id = create_uuid()
-        const user = new User(id, "Rafael", "rafa@email.com", "123456")
+        // const id = create_uuid()
+        // const user = new User(id, "Rafael", "rafa@email.com", "123456")
 
-        console.log(user)
+        // console.log(user)
 
         
     } catch (e) {
