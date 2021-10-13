@@ -23,5 +23,11 @@
 
 ### Exercício 1:
 
--   a) Todas as propriedades foram impressas menos a calculateBill(), pois ela é uma função. E para acessar o conteúdo dessa propriedade, fazemos assim 
-        `client.calculateBill()`.
+-   a) Todas as propriedades foram impressas menos a calculateBill(), pois ela é uma função. E para acessar o conteúdo dessa propriedade, fazemos assim
+    `client.calculateBill()`.
+
+### Exercício 2:
+
+-   a) error TS2511: Cannot create an instance of an abstract class.
+
+-   b) Nesse caso é necessario cria uma nova classe que extende essa classe abastrata Place

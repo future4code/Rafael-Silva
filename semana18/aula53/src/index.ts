@@ -8,6 +8,8 @@ import { create_uuid } from './config/helpers';
 import { User } from './models/User';
 import { Customer } from './models/Customer';
 import { Client } from './models/Interfaces/Client';
+import { Place } from './models/Place';
+import { Places } from './models/Places';
 
 const app = express();
 
@@ -52,7 +54,7 @@ console.log(customer.introduceYourself());
 
 //Polimorfismo:
 // Exercicio 1:
-
+/*
 const client: Client = {
     name: 'Marcos',
     registrationNumber: 2334,
@@ -63,6 +65,13 @@ const client: Client = {
 };
 
 console.log(client.calculateBill())
+*/
+
+// Exercicio 2:
+
+const place = new Places("04849-328");
+
+console.log(place.getCep())
 
 const server = app.listen(process.env.PORT || 3003, () => {
     if (server) {
