@@ -1,14 +1,17 @@
 import { format } from "date-fns";
 
 /**
- * ###################
- * ###   REQUEST   ###
- * ###################
+ * ################
+ * ###   MISC   ###
+ * ################
  */
 
-export const uuid = () => {
-    return Number(Date.now().toString(10).substr(2, 4)) + Number(Math.random().toString(10).substr(2, 4));
+export const create_uuid = (min: number = 1000, max: number = 9000): number => {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 };
+
+// `arr` is an array
+export const isEmpty = (arr: []) => !Array.isArray(arr) || arr.length === 0;
 
 /**
  * ################

@@ -3,7 +3,7 @@ import cors from 'cors';
 import { AddressInfo } from 'net';
 
 //ROUTES
-import router from './Routes/routes';
+import router from './routes/routes';
 
 const app = express();
 
