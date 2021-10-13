@@ -7,6 +7,7 @@ import router from './routes/routes';
 import { create_uuid } from './config/helpers';
 import { User } from './models/User';
 import { Customer } from './models/Customer';
+import { Client } from './models/Interfaces/Client';
 
 const app = express();
 
@@ -49,9 +50,19 @@ console.log(customer);
 console.log(customer.introduceYourself());
 */
 
+//Polimorfismo:
+// Exercicio 1:
 
-//Polimorfismo
+const client: Client = {
+    name: 'Marcos',
+    registrationNumber: 2334,
+    consumedEnergy: 200,
+    calculateBill: () => {
+        return 2;
+    },
+};
 
+console.log(client.calculateBill())
 
 const server = app.listen(process.env.PORT || 3003, () => {
     if (server) {
