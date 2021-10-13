@@ -14,3 +14,7 @@
 -   b) A mensagem (Chamando o construtor da classe User) foi impressa no terminal duas vezes. A classe User está sendo instanciada pela const user, 
         então ocorre o primeiro `console.log()` e depois a classe Customer que está sendo instanciada pela const customer, e é uma classe filha da User, então
         ocorre o segundo `console.log()`.
+
+### Exercício 3:
+
+-   a) Não é possível imprimir o atributo password, pois ele é privado e não existe um método get para acessar esse atributo.

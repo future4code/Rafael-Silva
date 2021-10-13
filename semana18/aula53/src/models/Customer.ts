@@ -13,4 +13,8 @@ export class Customer extends User {
     public getCreditCard(): string {
         return this.creditCard;
     }
+
+    public setPurchaseTotal(purchaseTotal: number): void{
+        this.purchaseTotal = purchaseTotal;
+    }
 }
