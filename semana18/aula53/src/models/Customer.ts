@@ -5,7 +5,7 @@ export class Customer extends User {
     private creditCard: string;
 
     constructor(id: number, name: string, email: string, password: string, creditCard: string) {
-        super(id, email, name, password);
+        super(id, name, email, password);
         console.log('Chamando o construtor da classe Customer');
         this.creditCard = creditCard;
     }

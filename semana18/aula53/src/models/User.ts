@@ -7,8 +7,8 @@ export class User {
     constructor(id: number, name: string, email: string, password: string) {
         console.log('Chamando o construtor da classe User');
         this.id = id;
-        this.email = email;
         this.name = name;
+        this.email = email;
         this.password = password;
     }
 
@@ -25,6 +25,6 @@ export class User {
     }
 
     public introduceYourself(): string {
-        return "Olá, bom dia!"
+        return `Olá, sou ${this.getName()}. Bom dia!`;
     }
 }

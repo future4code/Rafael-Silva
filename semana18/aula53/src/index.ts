@@ -17,27 +17,40 @@ app.use('/', router);
 
 //Herança:
 //Exercicio 1:
+/*
 const id = create_uuid();
 const user = new User(id, 'Rafael', 'rafa@email.com', '123456');
 
 // console.log(user);
+*/
 
 // Exercicio 2:
-
+/*
 const customer = new Customer(id, 'Rafael', 'rafa@email.com', '123456', '12412421sds');
 
-// console.log(customer);
+ console.log(customer);
+*/
 
 // Exercicio 3:
-
+/*
+ 
 customer.setPurchaseTotal(200)
 
 console.log(customer);
+*/
 
 // Exercicio 4:
+/*
+ console.log(customer.introduceYourself());
+*/
 
+// Exercicio 5:
+/*
 console.log(customer.introduceYourself());
+*/
 
+
+//Polimorfismo
 
 
 const server = app.listen(process.env.PORT || 3003, () => {
