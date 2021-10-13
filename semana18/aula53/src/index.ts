@@ -34,6 +34,12 @@ customer.setPurchaseTotal(200)
 
 console.log(customer);
 
+// Exercicio 4:
+
+console.log(customer.introduceYourself());
+
+
+
 const server = app.listen(process.env.PORT || 3003, () => {
     if (server) {
         const address = server.address() as AddressInfo;
