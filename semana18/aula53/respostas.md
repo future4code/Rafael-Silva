@@ -31,3 +31,10 @@
 -   a) error TS2511: Cannot create an instance of an abstract class.
 
 -   b) Nesse caso é necessario cria uma nova classe que extende essa classe abastrata Place
+
+### Exercício 3:
+
+-   1. É necessario extender essa classe para pode utilizar seus métodos já implementados
+-   2. Porque a interface já define o que uma classe deve ter. Agora uma classe abstrata já implementa métodos e atributos comuns que qualquer classe que vá extender essa classe abstrata, possa usar ou não esses métodos já implementados. Uma interface não dá essa opção.
+-   3. Porque ela já defini e implementa métodos comuns, para as subclasses poderem utilizar ou não.
+

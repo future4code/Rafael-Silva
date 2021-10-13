@@ -9,7 +9,9 @@ import { User } from './models/User';
 import { Customer } from './models/Customer';
 import { Client } from './models/Interfaces/Client';
 import { Place } from './models/Place';
-import { Places } from './models/Places';
+import { Residence } from './models/Residence';
+import { Commerce } from './models/Commerce';
+import { Industry } from './models/Industry';
 
 const app = express();
 
@@ -68,10 +70,21 @@ console.log(client.calculateBill())
 */
 
 // Exercicio 2:
+/*
+const place = new Place("04849-328");
 
-const place = new Places("04849-328");
+console.log(place)
+*/
 
-console.log(place.getCep())
+// Exercicio 3:
+
+const home = new Residence(4, '04849-328');
+
+const novaera = new Commerce(3, '04849-300');
+
+const siemens = new Industry(400, '32322-531');
+
+console.log(home, novaera, siemens);
 
 const server = app.listen(process.env.PORT || 3003, () => {
     if (server) {
