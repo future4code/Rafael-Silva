@@ -19,4 +19,17 @@ export default class UserDatabase extends BaseDatabase {
             return false;
         }
     }
+
+    // eslint-disable-next-line class-methods-use-this
+    async getAllUsers(): Promise<User[] | boolean> {
+        try {
+            const result = await BaseDatabase.connection('User');
+
+            return result;
+        } catch (error) {
+            // eslint-disable-next-line no-console
+            console.log(error);
+            return false;
+        }
+    }
 }
