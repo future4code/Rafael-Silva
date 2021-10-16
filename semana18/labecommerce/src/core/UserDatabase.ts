@@ -1,9 +1,9 @@
+import User from '../models/User';
 import BaseDatabase from './BaseDatabase';
-import UserInterface from '../models/Interfaces/UserInterface';
 
-export default class User extends BaseDatabase {
+export default class UserDatabase extends BaseDatabase {
     // eslint-disable-next-line class-methods-use-this
-    async create(user: UserInterface): Promise<boolean> {
+    async create(user: User): Promise<boolean> {
         try {
             await BaseDatabase.connection('User').insert(user);
 

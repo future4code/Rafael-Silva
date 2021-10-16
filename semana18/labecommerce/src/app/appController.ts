@@ -4,10 +4,13 @@ import { Request, Response } from 'express';
 import { v4 as uuid } from 'uuid';
 
 // Interfaces
-import UserInterface from '../models/Interfaces/UserInterface';
+// import UserInterface from '../models/Interfaces/UserInterface';
 
 // Support
 import Message from '../support/Message';
+
+// Models
+import User from '../models/User';
 
 // Database
 import UserDatabase from '../core/UserDatabase';
@@ -29,12 +32,7 @@ export const createUser = async (
         }
 
         const id = uuid();
-        const newUser: UserInterface = {
-            id,
-            name,
-            email,
-            age,
-        };
+        const newUser = new User(id, name, age, email);
 
         const result = await new UserDatabase().create(newUser);
 
@@ -44,7 +42,7 @@ export const createUser = async (
                 400,
             );
         } else {
-            res.status(201).send({message: "Usuário criado com sucesso!"})
+            res.status(201).send({ message: 'Usuário criado com sucesso!' });
         }
     } catch (e) {
         const error = e as Error;
