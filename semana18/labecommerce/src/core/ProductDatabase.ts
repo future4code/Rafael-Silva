@@ -20,4 +20,17 @@ export default class ProductDatabase extends BaseDatabase {
             return false;
         }
     }
+
+    // eslint-disable-next-line class-methods-use-this
+    async getAllProducts(): Promise<Product[] | boolean> {
+        try {
+            const result = await BaseDatabase.connection('Product');
+
+            return result;
+        } catch (error) {
+            // eslint-disable-next-line no-console
+            console.log(error);
+            return false;
+        }
+    }
 }
