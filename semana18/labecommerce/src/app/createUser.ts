@@ -10,7 +10,7 @@ import Message from '../support/Message';
 import User from '../models/User';
 
 // Database
-import UserDatabase from '../core/UserDatabase';
+import UserDatabase from '../repository/UserDatabase';
 
 const createUser = async (req: Request, res: Response): Promise<void> => {
     try {

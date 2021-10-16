@@ -1,11 +1,11 @@
 import User from '../models/User';
-import BaseDatabase from './BaseDatabase';
+import Database from '../database/Database';
 
-export default class UserDatabase extends BaseDatabase {
+export default class UserDatabase extends Database {
     // eslint-disable-next-line class-methods-use-this
     async create(user: User): Promise<boolean> {
         try {
-            await BaseDatabase.connection('User').insert({
+            await Database.connection('User').insert({
                 id: user.getId(),
                 name: user.getName(),
                 age: user.getAge(),
@@ -23,7 +23,7 @@ export default class UserDatabase extends BaseDatabase {
     // eslint-disable-next-line class-methods-use-this
     async getAllUsers(): Promise<User[] | boolean> {
         try {
-            const result = await BaseDatabase.connection('User');
+            const result = await Database.connection('User');
 
             return result;
         } catch (error) {

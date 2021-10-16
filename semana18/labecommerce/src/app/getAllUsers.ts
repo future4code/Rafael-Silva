@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 
-import UserDatabase from '../core/UserDatabase';
+import UserDatabase from '../repository/UserDatabase';
 import Message from '../support/Message';
 
 const getAllUsers = async (req: Request, res: Response): Promise<void> => {

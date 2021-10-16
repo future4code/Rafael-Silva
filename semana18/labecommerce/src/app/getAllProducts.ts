@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 
-import ProductDatabase from '../core/ProductDatabase';
+import ProductDatabase from '../repository/ProductDatabase';
 import Message from '../support/Message';
 
 const getAllUsers = async (req: Request, res: Response): Promise<void> => {

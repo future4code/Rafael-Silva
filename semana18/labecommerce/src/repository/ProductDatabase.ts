@@ -1,11 +1,11 @@
-import BaseDatabase from './BaseDatabase';
+import Database from '../database/Database';
 import Product from '../models/Product';
 
-export default class ProductDatabase extends BaseDatabase {
+export default class ProductDatabase extends Database {
     // eslint-disable-next-line class-methods-use-this
     async create(product: Product): Promise<boolean> {
         try {
-            await BaseDatabase.connection('Product').insert({
+            await Database.connection('Product').insert({
                 id: product.getId(),
                 name: product.getName(),
                 description: product.getDescription(),
@@ -24,7 +24,7 @@ export default class ProductDatabase extends BaseDatabase {
     // eslint-disable-next-line class-methods-use-this
     async getAllProducts(): Promise<Product[] | boolean> {
         try {
-            const result = await BaseDatabase.connection('Product');
+            const result = await Database.connection('Product');
 
             return result;
         } catch (error) {

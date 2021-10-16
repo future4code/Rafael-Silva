@@ -10,7 +10,7 @@ import Message from '../support/Message';
 import Product from '../models/Product';
 
 // Database
-import ProductDatabase from '../core/ProductDatabase';
+import ProductDatabase from '../repository/ProductDatabase';
 
 const createProduct = async (req: Request, res: Response): Promise<void> => {
     try {
