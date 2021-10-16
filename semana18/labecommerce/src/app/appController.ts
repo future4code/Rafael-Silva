@@ -18,6 +18,12 @@ export const createUser = async (
             throw new Message('Campos Inválidos!', 406);
         }
 
+        if (Number.isNaN(age)) {
+            throw new Message('Campo "age" inválido!', 406);
+        }
+
+        
+
         console.log(name);
     } catch (e) {
         const error = e as Error;
