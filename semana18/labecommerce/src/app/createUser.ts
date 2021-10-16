@@ -3,9 +3,6 @@ import { Request, Response } from 'express';
 // Helpers
 import { v4 as uuid } from 'uuid';
 
-// Interfaces
-// import UserInterface from '../models/Interfaces/UserInterface';
-
 // Support
 import Message from '../support/Message';
 
@@ -15,11 +12,7 @@ import User from '../models/User';
 // Database
 import UserDatabase from '../core/UserDatabase';
 
-/* eslint-disable import/prefer-default-export */
-export const createUser = async (
-    req: Request,
-    res: Response,
-): Promise<void> => {
+const createUser = async (req: Request, res: Response): Promise<void> => {
     try {
         const { name, email, age } = req.body;
 
@@ -50,3 +43,5 @@ export const createUser = async (
         res.send({ message: error.message });
     }
 };
+
+export default createUser;
