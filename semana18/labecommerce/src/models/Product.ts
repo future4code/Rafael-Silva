@@ -7,16 +7,40 @@ export default class Product {
 
     private price: number;
 
-    private created: number;
+    private created: Date;
 
-    private updated: number;
+    private updated: Date;
 
     constructor(id: string, name: string, description: string, price: number) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.price = price;
-        this.created = Date.now();
-        this.updated = Date.now();
+        this.created = new Date();
+        this.updated = new Date();
+    }
+
+    public getId(): string {
+        return this.id;
+    }
+
+    public getName(): string {
+        return this.name;
+    }
+
+    public getDescription(): string {
+        return this.description;
+    }
+
+    public getPrice(): number {
+        return this.price;
+    }
+
+    public getCreated(): Date {
+        return this.created;
+    }
+
+    public getUpdated(): Date {
+        return this.updated;
     }
 }
