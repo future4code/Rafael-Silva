@@ -13,7 +13,8 @@ export default class UserDatabase extends BaseDatabase {
             });
 
             return true;
-        } catch (error: any) {
+        } catch (error) {
+            // eslint-disable-next-line no-console
             console.log(error);
             return false;
         }

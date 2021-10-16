@@ -39,6 +39,7 @@ const createUser = async (req: Request, res: Response): Promise<void> => {
         }
     } catch (e) {
         const error = e as Error;
+        // eslint-disable-next-line no-console
         console.log(error);
         res.send({ message: error.message });
     }
