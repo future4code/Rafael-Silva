@@ -14,12 +14,16 @@ export default class User {
         this.email = email;
     }
 
-    public getUserId(): string {
+    public getId(): string {
         return this.id;
     }
 
     public getName(): string {
         return this.name;
+    }
+
+    public getAge(): number {
+        return this.age;
     }
 
     public getEmail(): string {
