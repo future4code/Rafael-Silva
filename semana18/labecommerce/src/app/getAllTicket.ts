@@ -1,19 +1,19 @@
 import { Request, Response } from 'express';
 
-import ProductDatabase from '../repository/ProductDatabase';
+import TicketDatabase from '../repository/TicketDatabase';
 import Message from '../support/Message';
 
-const getAllProducts = async (req: Request, res: Response): Promise<void> => {
+const getAllTickets = async (req: Request, res: Response): Promise<void> => {
     try {
-        const products = await new ProductDatabase().getAllProducts();
+        const tickets = await new TicketDatabase().getAllTickets();
 
-        if (products === false) {
+        if (tickets === false) {
             throw new Message(
                 'Ooops! Ocorreu um erro inesperado. Tente novamente mais tarde.',
                 400,
             );
         } else {
-            res.status(200).send(products);
+            res.status(200).send(tickets);
         }
     } catch (e) {
         const error = e as Error;
@@ -23,4 +23,4 @@ const getAllProducts = async (req: Request, res: Response): Promise<void> => {
     }
 };
 
-export default getAllProducts;
+export default getAllTickets;
