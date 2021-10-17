@@ -2,10 +2,6 @@
 
 No LabEcommerce você encontrará os melhores produtos para sua viagem espacial.
 
-## Link:
-
--   https://labesystem5.herokuapp.com/
-
 ## ENDPOINTS
 
 ---
