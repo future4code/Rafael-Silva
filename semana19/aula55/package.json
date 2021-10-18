@@ -19,12 +19,14 @@
     "author": "Labenu",
     "license": "ISC",
     "dependencies": {
+        "@types/uuid": "^8.3.1",
         "cors": "^2.8.5",
+        "date-fns": "^2.24.0",
         "dotenv": "^8.2.0",
         "express": "^4.17.1",
         "knex": "^0.95.2",
         "mysql": "^2.18.1",
-        "date-fns": "^2.24.0"
+        "uuid": "^8.3.2"
     },
     "devDependencies": {
         "@types/cors": "^2.8.10",
