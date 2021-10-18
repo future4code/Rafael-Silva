@@ -103,3 +103,7 @@
     }
 
     ```
+
+### Exercício 7:
+
+-   a) A função verify() decodifica o token e verifica se ele é valido ou não, se o token passado para a função verify() for um token valido, a função retorna a informação guardada nesse token que é tipado como `as any` que indica que seu retorno pode ser qualquer tipo de dado. 

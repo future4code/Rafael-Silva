@@ -2,7 +2,7 @@ import { Request, Response } from 'express';
 import dotenv from 'dotenv';
 import userInterface from '../models/interfaces/userInterface';
 import UserDatabase from '../repository/UserDatabase';
-import { isEmail, uuid } from '../services/Helpers';
+import { isEmail } from '../services/Helpers';
 import Auth from '../models/Auth';
 
 dotenv.config();
