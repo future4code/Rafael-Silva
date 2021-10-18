@@ -6,7 +6,7 @@ dotenv.config();
 
 export default class Auth {
     public static generateToken(payload: authInterface): string {
-        const token = sign(payload, process.env.JWT_TOKEN as string, {
+        const token = sign(payload, process.env.JWT_KEY as string, {
             expiresIn: '24h',
         });
 

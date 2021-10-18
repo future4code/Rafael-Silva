@@ -1,13 +1,30 @@
 import { format } from 'date-fns';
 import { v4 } from 'uuid';
 
+
 /**
- * ################
- * ###   MISC   ###
- * ################
+ * ####################
+ * ###   VALIDATE   ###
+ * ####################
  */
 
-export const uuid = (): string => v4();
+export const isEmail = (emailAdress: string): boolean => {
+    // eslint-disable-next-line no-useless-escape
+    const regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+    if (emailAdress.match(regexEmail)) {
+        return true;
+    }
+
+    return false;
+};
+
+/**
+ * ##################
+ * ###   STRING   ###
+ * ##################
+ */
+
 
 /**
  * ################
@@ -27,3 +44,11 @@ export const dateFmtBack = (date: string, formatStr = 'yyyy-MM-dd'): string => {
 
     return format(new Date(year, month, day), formatStr);
 };
+
+/**
+ * ################
+ * ###   MISC   ###
+ * ################
+ */
+
+export const uuid = (): string => v4();
