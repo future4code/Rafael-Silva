@@ -31,3 +31,12 @@ algoritmo, geralmente é utilizado um `cost` de 12. O `salt` utiliza o `cost` pa
 - a) Eu modificaria primeiro o endpoint de cadastro(signup), para já criar o novo usuário com a hash da senha para pode comparar essa hash no login. 
 
 - d) Não, porque o endpoint `user/profile` só requer o token de acesso e é uma requisição GET, não sendo necessário criptografar nenhum dado.
+
+### Exercício 3:
+
+- a) 
+
+    ```
+    ALTER TABLE `lovelace-2147692-rafael-silva`.`aula55-user` ADD `role` ENUM("NORMAL","ADMIN") DEFAULT "NORMAL" NOT NULL;
+
+    ```

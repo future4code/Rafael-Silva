@@ -36,7 +36,10 @@ const signup = async (req: Request, res: Response) => {
             throw new Error('`email` ou `senha` Inválidos.');
         }
 
-        const token = Auth.generateToken({ id: user.id });
+        const token = Auth.generateToken({
+            id: user.id,
+            role: user.role,
+        });
 
         res.status(200).send({ token });
     } catch (e) {

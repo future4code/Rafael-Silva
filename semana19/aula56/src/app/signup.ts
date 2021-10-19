@@ -4,16 +4,22 @@ import userInterface from '../models/interfaces/userInterface';
 import UserDatabase from '../repository/UserDatabase';
 import { isEmail, uuid, passwd } from '../services/Helpers';
 import Auth from '../models/Auth';
+import UserRoles from '../models/enums/UserRoles';
 
 dotenv.config();
 
 const signup = async (req: Request, res: Response) => {
     try {
-        const { email, password } = req.body;
+        const { email, password, role } = req.body;
 
-        if (!email || !password) {
-            res.statusCode = 406;
+        if (!email || !password || !role) {
+            res.statusCode = 422;
             throw new Error('Dados inválidos.');
+        }
+
+        if (!(role in UserRoles)) {
+            res.statusCode = 422;
+            throw new Error("'role' deve ser 'NORMAL' ou 'ADMIN'");
         }
 
         if (!isEmail(email)) {
@@ -44,11 +50,12 @@ const signup = async (req: Request, res: Response) => {
             id,
             email,
             password: passwd(password),
+            role,
         };
 
         const result = await UserDatabase.create(newUser);
 
-        const token = Auth.generateToken({ id });
+        const token = Auth.generateToken({ id, role });
 
         if (result === false) {
             res.statusCode = 404;

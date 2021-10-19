@@ -21,6 +21,7 @@ export default class Auth {
             ) as JwtPayload;
             return {
                 id: tokenData.id,
+                role: tokenData.role,
             };
         } catch (error) {
             // eslint-disable-next-line no-console
