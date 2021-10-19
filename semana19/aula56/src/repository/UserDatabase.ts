@@ -8,6 +8,7 @@ export default class UserDatabase extends Database {
                 id: user.id,
                 email: user.email,
                 password: user.password,
+                role: user.role,
             });
 
             return true;

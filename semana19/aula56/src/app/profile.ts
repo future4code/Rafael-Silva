@@ -2,6 +2,7 @@ import { Request, Response } from 'express';
 import Auth from '../models/Auth';
 import authInterface from '../models/interfaces/authInterface';
 import userInterface from '../models/interfaces/userInterface';
+import UserRoles from '../models/enums/UserRoles';
 import UserDatabase from '../repository/UserDatabase';
 
 const profile = async (req: Request, res: Response) => {
@@ -15,6 +16,11 @@ const profile = async (req: Request, res: Response) => {
             throw new Error(
                 'Token inválido, expirado ou ausente da chave `Authorization` do cabeçalho',
             );
+        }
+
+        if (tokenVerify.role !== UserRoles.NORMAL) {
+            res.statusCode = 401;
+            throw new Error('Acesso não autorizado');
         }
 
         // prettier-ignore
