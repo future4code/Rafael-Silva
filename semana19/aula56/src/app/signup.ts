@@ -2,7 +2,7 @@ import { Request, Response } from 'express';
 import dotenv from 'dotenv';
 import userInterface from '../models/interfaces/userInterface';
 import UserDatabase from '../repository/UserDatabase';
-import { isEmail, uuid } from '../services/Helpers';
+import { isEmail, uuid, passwd } from '../services/Helpers';
 import Auth from '../models/Auth';
 
 dotenv.config();
@@ -39,7 +39,12 @@ const signup = async (req: Request, res: Response) => {
         }
 
         const id = uuid();
-        const newUser: userInterface = { id, email, password };
+
+        const newUser: userInterface = {
+            id,
+            email,
+            password: passwd(password),
+        };
 
         const result = await UserDatabase.create(newUser);
 

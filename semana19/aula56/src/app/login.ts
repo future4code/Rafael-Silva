@@ -2,7 +2,7 @@ import { Request, Response } from 'express';
 import dotenv from 'dotenv';
 import userInterface from '../models/interfaces/userInterface';
 import UserDatabase from '../repository/UserDatabase';
-import { isEmail } from '../services/Helpers';
+import { isEmail, isPasswd } from '../services/Helpers';
 import Auth from '../models/Auth';
 
 dotenv.config();
@@ -31,7 +31,7 @@ const signup = async (req: Request, res: Response) => {
 
         const user = (await UserDatabase.findByEmail(email)) as userInterface;
 
-        if (!user || user.password !== password) {
+        if (!user || !isPasswd(password, user.password)) {
             res.statusCode = 401;
             throw new Error('`email` ou `senha` Inválidos.');
         }
