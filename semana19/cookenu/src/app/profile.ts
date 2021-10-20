@@ -1,8 +1,7 @@
 import { Request, Response } from 'express';
 import Auth from '../models/Auth';
-import authInterface from '../models/interfaces/authInterface';
+import authInterface, { USER_ROLES } from '../models/interfaces/authInterface';
 import userInterface from '../models/interfaces/userInterface';
-import UserRoles from '../models/enums/UserRoles';
 import UserDatabase from '../repository/UserDatabase';
 
 const profile = async (req: Request, res: Response) => {
@@ -18,12 +17,11 @@ const profile = async (req: Request, res: Response) => {
             );
         }
 
-        if (tokenVerify.role !== UserRoles.NORMAL) {
+        if (tokenVerify.role !== USER_ROLES.NORMAL) {
             res.statusCode = 401;
             throw new Error('Acesso não autorizado');
         }
 
-        // prettier-ignore
         const user = (await UserDatabase.findById(tokenVerify.id)) as userInterface;
 
         if (user) {
@@ -37,7 +35,6 @@ const profile = async (req: Request, res: Response) => {
     } catch (e) {
         const error = e as Error;
 
-        // eslint-disable-next-line no-console
         console.log(error);
 
         if (res.statusCode === 200) {

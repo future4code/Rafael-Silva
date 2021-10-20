@@ -13,7 +13,6 @@ export default class UserDatabase extends Database {
 
             return true;
         } catch (error) {
-            // eslint-disable-next-line no-console
             console.log(error);
             return false;
         }
@@ -27,7 +26,6 @@ export default class UserDatabase extends Database {
 
             return result[0];
         } catch (error) {
-            // eslint-disable-next-line no-console
             console.log(error);
             return false;
         }
@@ -43,7 +41,6 @@ export default class UserDatabase extends Database {
 
             return result[0];
         } catch (error) {
-            // eslint-disable-next-line no-console
             console.log(error);
             return false;
         }

@@ -45,7 +45,6 @@ const signup = async (req: Request, res: Response) => {
     } catch (e) {
         const error = e as Error;
 
-        // eslint-disable-next-line no-console
         console.log(error);
 
         if (res.statusCode === 200) {

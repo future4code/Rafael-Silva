@@ -4,7 +4,7 @@ import userInterface from '../models/interfaces/userInterface';
 import UserDatabase from '../repository/UserDatabase';
 import { isEmail, uuid, passwd } from '../services/Helpers';
 import Auth from '../models/Auth';
-import UserRoles from '../models/enums/UserRoles';
+import { USER_ROLES } from '../models/interfaces/authInterface';
 
 dotenv.config();
 
@@ -17,7 +17,7 @@ const signup = async (req: Request, res: Response) => {
             throw new Error('Dados inválidos.');
         }
 
-        if (!(role in UserRoles)) {
+        if (!(role in USER_ROLES)) {
             res.statusCode = 422;
             throw new Error("'role' deve ser 'NORMAL' ou 'ADMIN'");
         }
@@ -71,7 +71,6 @@ const signup = async (req: Request, res: Response) => {
     } catch (e) {
         const error = e as Error;
 
-        // eslint-disable-next-line no-console
         console.log(error);
 
         if (res.statusCode === 200) {

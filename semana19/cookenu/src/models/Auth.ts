@@ -24,7 +24,6 @@ export default class Auth {
                 role: tokenData.role,
             };
         } catch (error) {
-            // eslint-disable-next-line no-console
             console.log(error);
             return false;
         }

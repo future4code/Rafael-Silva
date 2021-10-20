@@ -1,6 +1,9 @@
-import UserRoles from '../enums/UserRoles';
+export enum USER_ROLES {
+    ADMIN = 'ADMIN',
+    NORMAL = 'NORMAL',
+}
 
 export default interface authInterface {
     id: string;
-    role: UserRoles;
+    role: USER_ROLES;
 }
