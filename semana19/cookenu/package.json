@@ -9,7 +9,7 @@
         "start": "tsc && node ./build/index.js",
         "dev": "ts-node-dev --transpile-only --ignore-watch node_modules ./src/index.ts",
         "build": "tsc",
-        "migrations": "tsnd ./src/data/migrations.ts"
+        "migrations": "tsnd ./src/database/migrations.ts"
     },
     "dependencies": {
         "@types/bcryptjs": "^2.4.2",
