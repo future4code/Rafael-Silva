@@ -35,7 +35,7 @@ const createTables = async (): Promise<boolean> => {
                     id varchar(255) NOT NULL,
                     user_id varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
                     title varchar(255) NOT NULL,
-                    description varchar(255) NOT NULL,
+                    description text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
                     created_at date NOT NULL,
                     PRIMARY KEY (id),
                     KEY cookenu_recipes_FK (user_id),
