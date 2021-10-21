@@ -1,7 +1,7 @@
 import knex from 'knex';
 import dotenv from 'dotenv';
 import users from "./users.json";
-import recipes from "./recipes.json";
+import recipe from "./recipe.json";
 
 dotenv.config();
 
@@ -31,7 +31,7 @@ const createTables = async (): Promise<boolean> => {
                     UNIQUE KEY cookenu_users_UN (email)
                 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
-                CREATE TABLE cookenu_recipes (
+                CREATE TABLE cookenu_recipe (
                     id varchar(255) NOT NULL,
                     user_id varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
                     title varchar(255) NOT NULL,
@@ -75,7 +75,7 @@ const insertUsers = async (): Promise<boolean> => {
 
 const insertRecipes = async (): Promise<boolean> => {
     try {
-        await connection('cookenu_recipes').insert(recipes);
+        await connection('cookenu_recipes').insert(recipe);
 
         console.log("Receitas criados com sucesso!");
         return true;
