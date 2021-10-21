@@ -1,11 +1,8 @@
 import { Request, Response } from 'express';
-import dotenv from 'dotenv';
 import UserDatabase from '../repository/UserDatabase';
 import { isEmail, isPasswd } from '../services/Helpers';
 import Auth from '../models/Auth';
 
-
-dotenv.config();
 
 const signup = async (req: Request, res: Response) => {
     try {
