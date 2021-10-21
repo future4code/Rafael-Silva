@@ -1,9 +1,9 @@
 import { Request, Response } from 'express';
 import dotenv from 'dotenv';
-import userInterface from '../models/interfaces/userInterface';
 import UserDatabase from '../repository/UserDatabase';
 import { isEmail, isPasswd } from '../services/Helpers';
 import Auth from '../models/Auth';
+
 
 dotenv.config();
 
@@ -21,24 +21,20 @@ const signup = async (req: Request, res: Response) => {
             throw new Error('`email` ou `senha` Inválidos.');
         }
 
-        if (
-            password.toString().length < Number(process.env.PASSWD_MIN) ||
-            password.toString().length > Number(process.env.PASSWD_MAX)
-        ) {
+        const user = await UserDatabase.findByEmail(email);
+
+        if (user === false) {
             res.statusCode = 401;
             throw new Error('`email` ou `senha` Inválidos.');
         }
 
-        const user = (await UserDatabase.findByEmail(email)) as userInterface;
-
-        if (!user || !isPasswd(password, user.password)) {
+        if (!isPasswd(password, user.password)) {
             res.statusCode = 401;
             throw new Error('`email` ou `senha` Inválidos.');
         }
 
         const token = Auth.generateToken({
             id: user.id,
-            role: user.role,
         });
 
         res.status(200).send({ token });

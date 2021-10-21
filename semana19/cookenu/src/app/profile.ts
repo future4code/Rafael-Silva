@@ -1,7 +1,6 @@
 import { Request, Response } from 'express';
 import Auth from '../models/Auth';
-import authInterface, { USER_ROLES } from '../models/interfaces/authInterface';
-import userInterface from '../models/interfaces/userInterface';
+import authInterface from '../models/interfaces/authInterface';
 import UserDatabase from '../repository/UserDatabase';
 
 const profile = async (req: Request, res: Response) => {
@@ -17,15 +16,11 @@ const profile = async (req: Request, res: Response) => {
             );
         }
 
-        if (tokenVerify.role !== USER_ROLES.NORMAL) {
-            res.statusCode = 401;
-            throw new Error('Acesso não autorizado');
-        }
+        const user = await UserDatabase.findById(tokenVerify.id);
 
-        const user = (await UserDatabase.findById(tokenVerify.id)) as userInterface;
 
         if (user) {
-            res.status(200).send({ id: user.id, email: user.email });
+            res.status(200).send({ id: user.id, name: user.name, email: user.email });
         } else {
             res.statusCode = 404;
             throw new Error(

@@ -19,9 +19,9 @@ export default class Auth {
                 token,
                 process.env.JWT_KEY as string,
             ) as JwtPayload;
+
             return {
                 id: tokenData.id,
-                role: tokenData.role,
             };
         } catch (error) {
             console.log(error);

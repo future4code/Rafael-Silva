@@ -1,14 +1,14 @@
 import Database from '../database/Database';
-import userInterface from '../models/interfaces/userInterface';
+import { User } from '../models/User';
 
 export default class UserDatabase extends Database {
-    public static async create(user: userInterface): Promise<boolean> {
+    public static async create(user: User): Promise<boolean> {
         try {
-            await Database.connection('aula55-user').insert({
-                id: user.id,
-                email: user.email,
-                password: user.password,
-                role: user.role,
+            await Database.connection('cookenu_users').insert({
+                id: user.getId(),
+                name: user.getName(),
+                email: user.getEmail(),
+                password: user.getPassword()
             });
 
             return true;
@@ -18,11 +18,15 @@ export default class UserDatabase extends Database {
         }
     }
 
-    public static async findById(id: string): Promise<userInterface | boolean> {
+    public static async findById(id: string): Promise<any> {
         try {
-            const result = await Database.connection('aula55-user').where({
+            const result = await Database.connection('cookenu_users').where({
                 id,
             });
+
+            if (result.length === 0) {
+                return false;
+            }
 
             return result[0];
         } catch (error) {
@@ -33,11 +37,15 @@ export default class UserDatabase extends Database {
 
     public static async findByEmail(
         email: string,
-    ): Promise<userInterface | boolean> {
+    ): Promise<any> {
         try {
-            const result = await Database.connection('aula55-user').where({
+            const result = await Database.connection('cookenu_users').where({
                 email,
             });
+
+            if (result.length === 0) {
+                return false;
+            }
 
             return result[0];
         } catch (error) {

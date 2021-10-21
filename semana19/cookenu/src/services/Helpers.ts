@@ -12,7 +12,6 @@ dotenv.config();
  */
 
 export const isEmail = (emailAdress: string): boolean => {
-    // eslint-disable-next-line no-useless-escape
     const regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
     if (emailAdress.match(regexEmail)) {
@@ -22,8 +21,17 @@ export const isEmail = (emailAdress: string): boolean => {
     return false;
 };
 
-export const isPasswd = (password: string, hash: string): boolean =>
-    bcrypt.compareSync(password, hash);
+export const isPasswd = (password: string, hash: string): boolean => {
+    if (
+        password.toString().length < Number(process.env.PASSWD_MIN) ||
+        password.toString().length > Number(process.env.PASSWD_MAX)
+    ) {
+        return false;
+    }
+
+    return bcrypt.compareSync(password, hash);
+};
+
 
 /**
  * ####################

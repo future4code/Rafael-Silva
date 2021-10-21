@@ -1,25 +1,19 @@
 import { Request, Response } from 'express';
 import dotenv from 'dotenv';
-import userInterface from '../models/interfaces/userInterface';
 import UserDatabase from '../repository/UserDatabase';
 import { isEmail, uuid, passwd } from '../services/Helpers';
 import Auth from '../models/Auth';
-import { USER_ROLES } from '../models/interfaces/authInterface';
+import { User } from "../models/User"
 
 dotenv.config();
 
 const signup = async (req: Request, res: Response) => {
     try {
-        const { email, password, role } = req.body;
+        const { name, email, password } = req.body;
 
-        if (!email || !password || !role) {
+        if (!name || !email || !password) {
             res.statusCode = 422;
             throw new Error('Dados inválidos.');
-        }
-
-        if (!(role in USER_ROLES)) {
-            res.statusCode = 422;
-            throw new Error("'role' deve ser 'NORMAL' ou 'ADMIN'");
         }
 
         if (!isEmail(email)) {
@@ -46,16 +40,16 @@ const signup = async (req: Request, res: Response) => {
 
         const id = uuid();
 
-        const newUser: userInterface = {
+        const newUser = new User(
             id,
+            name,
             email,
-            password: passwd(password),
-            role,
-        };
+            passwd(password),
+        );
 
         const result = await UserDatabase.create(newUser);
 
-        const token = Auth.generateToken({ id, role });
+        const token = Auth.generateToken({ id });
 
         if (result === false) {
             res.statusCode = 404;
@@ -64,7 +58,7 @@ const signup = async (req: Request, res: Response) => {
             );
         } else {
             res.status(200).send({
-                message: 'Usuário criado com sucesso!',
+                message: 'Usuário cadastrado com sucesso!',
                 token,
             });
         }

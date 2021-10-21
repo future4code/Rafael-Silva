@@ -13,4 +13,20 @@ export class User {
         this.email = email;
         this.password = password;
     }
+
+    public getId(): string {
+        return this.id;
+    }
+
+    public getName(): string {
+        return this.name;
+    }
+
+    public getEmail(): string {
+        return this.email;
+    }
+
+    public getPassword(): string {
+        return this.password;
+    }
 }
