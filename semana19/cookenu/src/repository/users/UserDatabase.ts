@@ -1,5 +1,5 @@
-import Database from '../database/Database';
-import { User } from '../models/User';
+import Database from '../../database/Database';
+import { User } from '../../models/User';
 
 export default class UserDatabase extends Database {
     public static async create(user: User): Promise<boolean> {

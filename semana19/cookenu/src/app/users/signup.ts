@@ -1,9 +1,9 @@
 import { Request, Response } from 'express';
 import dotenv from 'dotenv';
-import UserDatabase from '../repository/UserDatabase';
-import { isEmail, uuid, passwd } from '../services/Helpers';
-import Auth from '../models/Auth';
-import { User } from "../models/User"
+import UserDatabase from '../../repository/users/UserDatabase';
+import { isEmail, uuid, passwd } from '../../services/Helpers';
+import Auth from '../../models/Auth';
+import { User } from "../../models/User";
 
 dotenv.config();
 

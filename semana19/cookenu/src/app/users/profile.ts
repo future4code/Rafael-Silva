@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
-import Auth from '../models/Auth';
-import authInterface from '../models/interfaces/authInterface';
-import UserDatabase from '../repository/UserDatabase';
+import Auth from '../../models/Auth';
+import authInterface from '../../models/interfaces/authInterface';
+import UserDatabase from '../../repository/users/UserDatabase';
 
 const profile = async (req: Request, res: Response) => {
     try {
@@ -12,7 +12,7 @@ const profile = async (req: Request, res: Response) => {
         if (!tokenVerify) {
             res.statusCode = 403;
             throw new Error(
-                'Token inválido, expirado ou ausente da chave `Authorization` do cabeçalho',
+                "Token inválido, expirado ou ausente da chave 'token' do cabeçalho",
             );
         }
 

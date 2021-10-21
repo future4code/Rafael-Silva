@@ -53,10 +53,16 @@ export const passwd = (password: string): string => {
  * ################
  */
 
-export const dateFmt = (date: string, formatStr = 'dd/MM/yyyy'): string =>
-    format(new Date(date), formatStr);
+export const dateFmt = (date?: string, formatStr = 'dd/MM/yyyy'): string => {
+    if (!date) {
+        return format(new Date(), formatStr);
+    }
+    return format(new Date(date), formatStr);
+}
 
-export const dateFmtBack = (date: string, formatStr = 'yyyy-MM-dd'): string => {
+
+
+export const dateFmtYmd = (date: string, formatStr = 'yyyy-MM-dd'): string => {
     const newDate = date.split('/');
 
     const day = Number(newDate[0]);

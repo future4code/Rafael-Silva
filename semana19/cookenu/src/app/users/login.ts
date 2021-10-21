@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
-import UserDatabase from '../repository/UserDatabase';
-import { isEmail, isPasswd } from '../services/Helpers';
-import Auth from '../models/Auth';
+import UserDatabase from '../../repository/users/UserDatabase';
+import { isEmail, isPasswd } from '../../services/Helpers';
+import Auth from '../../models/Auth';
 
 
 const signup = async (req: Request, res: Response) => {
