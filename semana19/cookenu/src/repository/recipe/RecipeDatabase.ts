@@ -21,4 +21,21 @@ export class RecipeDatabase extends Database {
             return false;
         }
     };
+
+    public static async findById(id: string): Promise<any> {
+        try {
+            const result = await Database.connection('cookenu_recipe').where({
+                id,
+            });
+
+            if (result.length === 0) {
+                return false;
+            }
+
+            return result[0];
+        } catch (error) {
+            console.log(error);
+            return false;
+        }
+    }
 }
