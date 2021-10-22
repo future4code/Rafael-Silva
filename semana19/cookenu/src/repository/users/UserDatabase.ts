@@ -68,4 +68,18 @@ export default class UserDatabase extends Database {
             return false;
         }
     }
+
+    public static async unfollow(userId: string, userFollowId: string): Promise<boolean> {
+        try {
+            await Database.connection('cookenu_followers').where({
+                user_id: userId,
+                followers: userFollowId
+            }).del();
+
+            return true;
+        } catch (error) {
+            console.log(error);
+            return false;
+        }
+    }
 }
