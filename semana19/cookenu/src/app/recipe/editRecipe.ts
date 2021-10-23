@@ -49,7 +49,7 @@ const editRecipe = async (req: Request, res: Response) => {
         const updateRecipe = await RecipeDatabase.update(id, title, description);
 
         if (updateRecipe === false) {
-            res.statusCode = 500;
+            res.statusCode = 400;
             throw new Error(
                 'Oops! Ocorreu um error inesperado. Tente novamente mais tarde',
             );
