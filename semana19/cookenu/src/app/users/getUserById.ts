@@ -19,8 +19,8 @@ const getUserById = async (req: Request, res: Response) => {
 
         const id = req.params.id as string;
 
-        if (!id || Number.isNaN(id)) {
-            res.statusCode = 422;
+        if (!id) {
+            res.statusCode = 400;
             throw new Error("'id' inválido!");
         }
 
