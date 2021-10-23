@@ -9,7 +9,8 @@ export default class UserDatabase extends Database {
                 id: user.getId(),
                 name: user.getName(),
                 email: user.getEmail(),
-                password: user.getPassword()
+                password: user.getPassword(),
+                role: user.getRole(),
             });
 
             return true;

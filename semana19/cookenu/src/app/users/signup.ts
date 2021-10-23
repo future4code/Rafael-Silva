@@ -4,16 +4,23 @@ import UserDatabase from '../../repository/users/UserDatabase';
 import { isEmail, uuid, passwd } from '../../services/Helpers';
 import Auth from '../../models/Auth';
 import { User } from "../../models/User";
+import { USER_ROLES } from '../../models/interfaces/authInterface';
+
 
 dotenv.config();
 
 const signup = async (req: Request, res: Response) => {
     try {
         const { name, email, password } = req.body;
+        let { role } = req.body;
 
         if (!name || !email || !password) {
             res.statusCode = 422;
             throw new Error('Dados inválidos.');
+        }
+
+        if (!role) {
+            role = USER_ROLES.NORMAL;
         }
 
         if (!isEmail(email)) {
@@ -31,6 +38,12 @@ const signup = async (req: Request, res: Response) => {
             );
         }
 
+        role = role.toUpperCase();
+        if (!(role in USER_ROLES)) {
+            res.statusCode = 406;
+            throw new Error('`role` Inválido. É possível criar somente users `ADMIN` e `NORMAL`.');
+        }
+
         const user = await UserDatabase.findByEmail(email);
 
         if (user) {
@@ -45,11 +58,12 @@ const signup = async (req: Request, res: Response) => {
             name,
             email,
             passwd(password),
+            role,
         );
 
         const result = await UserDatabase.create(newUser);
 
-        const token = Auth.generateToken({ id });
+        const token = Auth.generateToken({ id, role });
 
         if (result === false) {
             res.statusCode = 404;

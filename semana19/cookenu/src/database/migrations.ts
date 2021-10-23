@@ -27,6 +27,7 @@ const createTables = async (): Promise<boolean> => {
                     name varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
                     email varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
                     password varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+                    role enum('NORMAL','ADMIN') NOT NULL DEFAULT 'NORMAL',
                     PRIMARY KEY (id),
                     UNIQUE KEY cookenu_users_UN (email)
                 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;

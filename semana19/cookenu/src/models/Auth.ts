@@ -22,6 +22,7 @@ export default class Auth {
 
             return {
                 id: tokenData.id,
+                role: tokenData.role
             };
         } catch (error) {
             console.log(error);
