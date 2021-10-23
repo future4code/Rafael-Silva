@@ -3,7 +3,7 @@ import Auth from '../../models/Auth';
 import authInterface from '../../models/interfaces/authInterface';
 import UserDatabase from '../../repository/users/UserDatabase';
 
-export const followUser = async (req: Request, res: Response) => {
+const followUser = async (req: Request, res: Response) => {
     try {
         const token = req.headers.token as string;
 
@@ -55,3 +55,5 @@ export const followUser = async (req: Request, res: Response) => {
         }
     }
 };
+
+export default followUser;
