@@ -21,8 +21,8 @@ const createRecipe = async (req: Request, res: Response) => {
         const { title, description } = req.body;
 
         if (!title || !description) {
-            res.statusCode = 422;
-            throw new Error("Dados inválidos! Tente novamente.");
+            res.statusCode = 400;
+            throw new Error("Todos os campos são obrigatórios");
         }
 
         const id = uuid();
@@ -31,7 +31,7 @@ const createRecipe = async (req: Request, res: Response) => {
         const result = await RecipeDatabase.create(newRecipe);
 
         if (result === false) {
-            res.statusCode = 404;
+            res.statusCode = 500;
             throw new Error(
                 'Oops! Ocorreu um error inesperado. Tente novamente mais tarde',
             );
