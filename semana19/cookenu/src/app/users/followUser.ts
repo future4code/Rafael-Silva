@@ -38,7 +38,7 @@ const followUser = async (req: Request, res: Response) => {
         const result = await UserDatabase.follow(tokenVerify.id, user.id);
 
         if (result === false) {
-            res.statusCode = 404;
+            res.statusCode = 400;
             throw new Error('Oops! Ocorreu um error inesperado. Tente novamente mais tarde');
         } else {
             res.status(200).send({ message: 'Followed successfully!' });
