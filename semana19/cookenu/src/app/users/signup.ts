@@ -15,8 +15,8 @@ const signup = async (req: Request, res: Response) => {
         let { role } = req.body;
 
         if (!name || !email || !password) {
-            res.statusCode = 422;
-            throw new Error('Dados inválidos.');
+            res.statusCode = 400;
+            throw new Error("Todos os campos são obrigatórios");
         }
 
         if (!role) {
@@ -24,7 +24,7 @@ const signup = async (req: Request, res: Response) => {
         }
 
         if (!isEmail(email)) {
-            res.statusCode = 406;
+            res.statusCode = 400;
             throw new Error('`email` Inválido.');
         }
 
@@ -32,7 +32,7 @@ const signup = async (req: Request, res: Response) => {
             password.toString().length < Number(process.env.PASSWD_MIN) ||
             password.toString().length > Number(process.env.PASSWD_MAX)
         ) {
-            res.statusCode = 406;
+            res.statusCode = 400;
             throw new Error(
                 'É necessário um `password` entre 8 e 40 caracteres.',
             );
@@ -40,7 +40,7 @@ const signup = async (req: Request, res: Response) => {
 
         role = role.toUpperCase();
         if (!(role in USER_ROLES)) {
-            res.statusCode = 406;
+            res.statusCode = 400;
             throw new Error('`role` Inválido. É possível criar somente users `ADMIN` e `NORMAL`.');
         }
 
@@ -66,7 +66,7 @@ const signup = async (req: Request, res: Response) => {
         const token = Auth.generateToken({ id, role });
 
         if (result === false) {
-            res.statusCode = 404;
+            res.statusCode = 400;
             throw new Error(
                 'Oops! Ocorreu um error inesperado. Tente novamente mais tarde',
             );
