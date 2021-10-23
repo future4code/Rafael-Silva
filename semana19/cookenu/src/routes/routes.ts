@@ -2,6 +2,7 @@ import { Router } from 'express';
 
 // ENDPOINTS
 import createRecipe from '../app/recipe/createRecipe';
+import deleteRecipe from '../app/recipe/deleteRecipe';
 import editRecipe from '../app/recipe/editRecipe';
 import getFeed from '../app/recipe/getFeed';
 import getRecipeById from '../app/recipe/getRecipeById';
@@ -26,6 +27,8 @@ router.post('/user/unfollow', unfollowUser);
 router.post('/recipe', createRecipe);
 
 router.put('/recipe/:id', editRecipe);
+
+router.delete('/recipe/:id', deleteRecipe)
 
 
 export default router;

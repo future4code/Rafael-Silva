@@ -54,4 +54,18 @@ export class RecipeDatabase extends Database {
             return false;
         }
     }
+
+
+    public static async delete(recipeId: string): Promise<any> {
+        try {
+            await Database.connection('cookenu_recipe').delete().where({
+                id: recipeId
+            });
+
+            return true;
+        } catch (error) {
+            console.log(error);
+            return false;
+        }
+    }
 }
