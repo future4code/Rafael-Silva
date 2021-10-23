@@ -31,7 +31,7 @@ const createRecipe = async (req: Request, res: Response) => {
         const result = await RecipeDatabase.create(newRecipe);
 
         if (result === false) {
-            res.statusCode = 500;
+            res.statusCode = 400;
             throw new Error(
                 'Oops! Ocorreu um error inesperado. Tente novamente mais tarde',
             );
