@@ -28,7 +28,7 @@ const getRecipeById = async (req: Request, res: Response) => {
         const recipe = await RecipeDatabase.findById(id);
 
         if (recipe === false) {
-            res.statusCode = 500;
+            res.statusCode = 400;
             throw new Error(
                 'Oops! Ocorreu um error inesperado. Tente novamente mais tarde',
             );
