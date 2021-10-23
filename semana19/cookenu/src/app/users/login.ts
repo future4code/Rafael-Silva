@@ -9,8 +9,8 @@ const signup = async (req: Request, res: Response) => {
         const { email, password } = req.body;
 
         if (!email || !password) {
-            res.statusCode = 406;
-            throw new Error('Dados inválidos.');
+            res.statusCode = 400;
+            throw new Error("Todos os campos são obrigatórios");
         }
 
         if (!isEmail(email)) {
