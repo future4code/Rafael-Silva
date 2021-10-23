@@ -19,7 +19,7 @@ const unfollowUser = async (req: Request, res: Response) => {
         const { userToUnfollowId } = req.body;
 
         if (!userToUnfollowId) {
-            res.statusCode = 422;
+            res.statusCode = 400;
             throw new Error("'id' do usuário inválida!");
         }
 
@@ -38,8 +38,10 @@ const unfollowUser = async (req: Request, res: Response) => {
         const result = await UserDatabase.unfollow(tokenVerify.id, user.id);
 
         if (result === false) {
-            res.statusCode = 401;
-            throw new Error("Você não segue esse usuário!");
+            res.statusCode = 400;
+            throw new Error(
+                'Oops! Ocorreu um error inesperado. Tente novamente mais tarde',
+            );
         } else {
             res.status(200).send({ message: "Unfollowed successfully!" });
         }
