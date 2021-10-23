@@ -38,4 +38,20 @@ export class RecipeDatabase extends Database {
             return false;
         }
     }
+
+    public static async update(recipeId: string, title: string, description: string): Promise<any> {
+        try {
+            await Database.connection('cookenu_recipe').update({
+                title,
+                description
+            }).where({
+                id: recipeId
+            });
+
+            return true;
+        } catch (error) {
+            console.log(error);
+            return false;
+        }
+    }
 }
