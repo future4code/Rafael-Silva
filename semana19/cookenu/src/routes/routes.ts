@@ -4,7 +4,7 @@ import { Router } from 'express';
 import createRecipe from '../app/recipe/createRecipe';
 import deleteRecipe from '../app/recipe/deleteRecipe';
 import editRecipe from '../app/recipe/editRecipe';
-import getFeed from '../app/recipe/getFeed';
+import getFeed from '../app/users/getFeed';
 import getRecipeById from '../app/recipe/getRecipeById';
 import followUser from '../app/users/followUser';
 import getUserById from '../app/users/getUserById';
