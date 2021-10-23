@@ -1,23 +1,13 @@
 import { dateFmt } from '../services/Helpers';
 
 export class Recipe {
-    private id: string;
-
-    private userId: string;
-
-    private title: string;
-
-    private description: string;
-
-    private createdAt: string;
-
-    constructor(id: string, userId: string, title: string, description: string, createdAt: string = dateFmt()) {
-        this.id = id;
-        this.userId = userId;
-        this.title = title;
-        this.description = description;
-        this.createdAt = createdAt;
-    }
+    constructor(
+        private id: string,
+        private userId: string,
+        private title: string,
+        private description: string,
+        private createdAt: string = dateFmt()
+    ) { }
 
     public getId(): string {
         return this.id;
