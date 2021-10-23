@@ -21,6 +21,7 @@
         "no-shadow": "off",
         "no-useless-escape": "off",
         "@typescript-eslint/no-explicit-any": "off",
+        "no-useless-constructor": "off",
         "import/prefer-default-export": "off",
         "import/extensions": [
             "error",

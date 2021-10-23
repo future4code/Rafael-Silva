@@ -1,23 +1,13 @@
 import { USER_ROLES } from './interfaces/authInterface';
 
 export class User {
-    private id: string;
-
-    private name: string;
-
-    private email: string;
-
-    private password: string;
-
-    private role: USER_ROLES;
-
-    constructor(id: string, name: string, email: string, password: string, role: USER_ROLES) {
-        this.id = id;
-        this.name = name;
-        this.email = email;
-        this.password = password;
-        this.role = role;
-    }
+    constructor(
+        private id: string,
+        private name: string,
+        private email: string,
+        private password: string,
+        private role: USER_ROLES
+    ) { }
 
     public getId(): string {
         return this.id;
