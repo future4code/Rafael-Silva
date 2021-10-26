@@ -1,5 +1,5 @@
 {
   "*.ts": [
-    "tsc && eslint \"src/**/*.{ts}\" --quiet --fix"
+    "eslint . --fix"
   ]
 }
