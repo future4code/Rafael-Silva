@@ -1,4 +1,4 @@
-import { UserInterface } from '../business/interfaces/UserInterface';
+import { UserInterface } from '../models/interfaces/UserInterface';
 import Database from './Database';
 
 export class UserData extends Database{

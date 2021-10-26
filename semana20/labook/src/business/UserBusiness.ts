@@ -2,8 +2,8 @@ import { UserData } from '../data/UserData';
 import Auth from '../services/Auth';
 import { isEmail, uuid, passwd, isPasswd } from '../services/helpers';
 import ErrorMessage from '../error/ErrorMessage';
-import AuthInterface, { USER_ROLES } from './interfaces/AuthInterface';
-import { UserInterface } from './interfaces/UserInterface';
+import AuthInterface, { USER_ROLES } from '../models/interfaces/AuthInterface';
+import { UserInterface } from '../models/interfaces/UserInterface';
 
 export class UserBusiness {
 

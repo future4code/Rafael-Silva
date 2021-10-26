@@ -1,6 +1,6 @@
 import dotenv from 'dotenv';
 import { JwtPayload, sign, verify } from 'jsonwebtoken';
-import authInterface from '../business/interfaces/AuthInterface';
+import authInterface from '../models/interfaces/AuthInterface';
 
 dotenv.config();
 

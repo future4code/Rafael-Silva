@@ -6,7 +6,8 @@
     "scripts": {
         "start": "tsc && node ./build/index.js",
         "dev": "ts-node-dev --transpile-only --ignore-watch node_modules ./src/index.ts",
-        "build": "tsc"
+        "build": "tsc",
+        "prepare": "husky install"
     },
     "author": "Rafael N. Silva",
     "license": "ISC",
@@ -37,8 +38,8 @@
         "eslint-import-resolver-typescript": "^2.5.0",
         "eslint-plugin-import": "^2.25.2",
         "git-commit-msg-linter": "^3.2.8",
-        "husky": "^7.0.2",
-        "lint-staged": "^11.2.3",
+        "husky": "^7.0.0",
+        "lint-staged": "^11.1.4",
         "prettier": "^2.4.1",
         "ts-node-dev": "^1.1.6",
         "typescript": "^4.2.3"
