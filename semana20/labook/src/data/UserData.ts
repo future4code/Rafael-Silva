@@ -3,9 +3,13 @@ import { User } from '../models/User';
 import Database from './Database';
 
 export class UserData extends Database implements UserRepository {
-    async findAll(): Promise<User[] | boolean> {
+    constructor() {
+        super("labook_users");
+    }
+
+    public findAll = async (): Promise<User[] | boolean> => {
         try {
-            const result = await Database.connection.select('*').from('labook_users');
+            const result = await Database.connection.select('*').from(this.tableName);
 
             if (result.length === 0) {
                 return false;
@@ -15,11 +19,11 @@ export class UserData extends Database implements UserRepository {
             console.log(error);
             return false;
         }
-    }
+    };
 
-    async findById(id: string): Promise<User | boolean> {
+    public findById = async (id: string): Promise<User | boolean> => {
         try {
-            const result = await Database.connection.select('*').from('labook_users').where({ id });
+            const result = await Database.connection.select('*').from(this.tableName).where({ id });
 
             if (result.length === 0) {
                 return false;
@@ -30,11 +34,11 @@ export class UserData extends Database implements UserRepository {
             console.log(error);
             return false;
         }
-    }
+    };
 
-    async findByEmail(email: string): Promise<User | boolean> {
+    public findByEmail = async (email: string): Promise<User | boolean> => {
         try {
-            const result = await Database.connection.select('*').from('labook_users').where({ email });
+            const result = await Database.connection.select('*').from(this.tableName).where({ email });
 
             if (result.length === 0) {
                 return false;
@@ -45,11 +49,11 @@ export class UserData extends Database implements UserRepository {
             console.log(error);
             return false;
         }
-    }
+    };
 
-    async create(user: User): Promise<boolean> {
+    public create = async (user: User): Promise<boolean> => {
         try {
-            await Database.connection('labook_users').insert({
+            await Database.connection(this.tableName).insert({
                 id: user.getId(),
                 name: user.getName(),
                 email: user.getEmail(),
@@ -61,17 +65,17 @@ export class UserData extends Database implements UserRepository {
             console.log(error);
             return false;
         }
-    }
+    };
 
-    async delete(id: string): Promise<boolean> {
+    public delete = async (id: string): Promise<boolean> => {
         try {
-            await Database.connection('labook_users').where({ id }).del();
+            await Database.connection(this.tableName).where({ id }).del();
 
             return true;
         } catch (error) {
             console.log(error);
             return false;
         }
-    }
+    };
 
 }

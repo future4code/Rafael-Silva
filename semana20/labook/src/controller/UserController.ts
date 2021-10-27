@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { UserBusiness } from '../business/UserBusiness';
+import { UserBusiness, SignupInputDTO } from '../business/UserBusiness';
 import { UserData } from '../data/UserData';
 
 export class UserController {
@@ -9,10 +9,15 @@ export class UserController {
         this.userBusiness = new UserBusiness(new UserData());
     }
 
-    async signupController(req: Request, res: Response): Promise<void> {
+    public signupController = async (req: Request, res: Response): Promise<void> => {
         try {
-            const { name, email, password } = req.body;
-            const result = await this.userBusiness.signupBusiness({ name, email, password });
+            const input: SignupInputDTO = { 
+                name: req.body.name, 
+                email: req.body.email, 
+                password: req.body.password 
+            };
+
+            const result = await this.userBusiness.signupBusiness(input);
             res.status(200).send(result);
         } catch (e) {
             const error = e as Error;
@@ -23,7 +28,7 @@ export class UserController {
         }
     }
 
-    async loginController(req: Request, res: Response): Promise<void> {
+    public loginController = async (req: Request, res: Response): Promise<void> => {
         try {
             const { email, password } = req.body;
             const result = await this.userBusiness.loginBusiness({ email, password });
@@ -37,7 +42,7 @@ export class UserController {
         }
     }
 
-    async getAllUsersController(req: Request, res: Response): Promise<void> {
+    public getAllUsersController = async (req: Request, res: Response): Promise<void> => {
         try {
             const token = req.headers.token as string;
             const result = await this.userBusiness.getAllUser(token);
@@ -51,7 +56,7 @@ export class UserController {
         }
     }
 
-    async deleteUserController(req: Request, res: Response): Promise<void> {
+    public deleteUserController = async (req: Request, res: Response): Promise<void> => {
         try {
             const token = req.headers.token as string;
             const { id } = req.params;

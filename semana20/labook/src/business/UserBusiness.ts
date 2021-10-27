@@ -15,7 +15,7 @@ import ErrorMessage from '../error/ErrorMessage';
 import { isEmail, uuid, passwd, isPasswd } from '../utils/helpers';
 
 
-export interface SignupInputDTO{
+export interface SignupInputDTO {
     name: string;
     email: string;
     password: string;
@@ -27,11 +27,11 @@ export class UserBusiness {
 
     constructor(
         userDatabaseImp: UserRepository
-    ) { 
+    ) {
         this.userData = userDatabaseImp;
     }
 
-    async signupBusiness (input: SignupInputDTO): Promise<object> {
+    public signupBusiness = async (input: SignupInputDTO): Promise<object> => {
         const { name, email, password } = input;
 
         if (!name || !email || !password) {
@@ -77,7 +77,7 @@ export class UserBusiness {
         }
     };
 
-   async loginBusiness (input: any): Promise<object> {
+    public loginBusiness = async (input: any): Promise<object> => {
         const { email, password } = input;
 
         if (!email || !password) {
@@ -88,7 +88,7 @@ export class UserBusiness {
             throw new ErrorMessage('`email` Inválido.', 400);
         }
 
-       const user = await this.userData.findByEmail(email) as User;
+        const user = await this.userData.findByEmail(email) as User;
 
         if (!user) {
             throw new ErrorMessage('Usuário não encontrado.', 401);
@@ -105,7 +105,7 @@ export class UserBusiness {
         };
     };
 
-    async getAllUser (token: string): Promise<User[] | boolean> {
+    public getAllUser = async (token: string): Promise<User[] | boolean> => {
         const tokenVerify = Auth.getTokenData(token) as AuthInterface;
 
         if (!tokenVerify) {
@@ -124,7 +124,7 @@ export class UserBusiness {
         return user;
     };
 
-    async deleteUser (token: string, id: string): Promise<object> {
+    public deleteUser = async (token: string, id: string): Promise<object> => {
         const tokenVerify = Auth.getTokenData(token) as AuthInterface;
 
         if (!tokenVerify) {
