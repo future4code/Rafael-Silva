@@ -3,16 +3,16 @@ import { UserBusiness } from '../business/UserBusiness';
 import { UserData } from '../data/UserData';
 
 export class UserController {
-    private userBusiness: UserBusiness
+    private userBusiness: UserBusiness;
 
     constructor() {
         this.userBusiness = new UserBusiness(new UserData());
     }
 
-    public async signupController(req: Request, res: Response): Promise<void> {
+    async signupController(req: Request, res: Response): Promise<void> {
         try {
-            const { name, email, password, role } = req.body;
-            const result = await new UserBusiness().signupBusiness({ name, email, password, role});
+            const { name, email, password } = req.body;
+            const result = await this.userBusiness.signupBusiness({ name, email, password });
             res.status(200).send(result);
         } catch (e) {
             const error = e as Error;
@@ -23,10 +23,10 @@ export class UserController {
         }
     }
 
-    public async loginController(req: Request, res: Response): Promise<void> {
+    async loginController(req: Request, res: Response): Promise<void> {
         try {
             const { email, password } = req.body;
-            const result = await new UserBusiness().loginBusiness({ email, password });
+            const result = await this.userBusiness.loginBusiness({ email, password });
             res.status(200).send(result);
         } catch (e) {
             const error = e as Error;
@@ -37,10 +37,10 @@ export class UserController {
         }
     }
 
-    public async getAllUsersController(req: Request, res: Response): Promise<void> {
+    async getAllUsersController(req: Request, res: Response): Promise<void> {
         try {
             const token = req.headers.token as string;
-            const result = await new UserBusiness().getAllUser(token);
+            const result = await this.userBusiness.getAllUser(token);
             res.status(200).send(result);
         } catch (e) {
             const error = e as Error;
@@ -51,11 +51,11 @@ export class UserController {
         }
     }
 
-    public async deleteUserController(req: Request, res: Response): Promise<void> {
+    async deleteUserController(req: Request, res: Response): Promise<void> {
         try {
             const token = req.headers.token as string;
             const { id } = req.params;
-            const result = await new UserBusiness().deleteUser(token, id);
+            const result = await this.userBusiness.deleteUser(token, id);
             res.status(200).send(result);
         } catch (e) {
             const error = e as Error;
@@ -65,5 +65,5 @@ export class UserController {
             res.send({ message: error.message });
         }
     }
-    
+
 }
