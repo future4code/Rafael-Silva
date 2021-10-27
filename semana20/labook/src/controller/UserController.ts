@@ -1,7 +1,14 @@
 import { Request, Response } from 'express';
 import { UserBusiness } from '../business/UserBusiness';
+import { UserData } from '../data/UserData';
 
 export class UserController {
+    private userBusiness: UserBusiness
+
+    constructor() {
+        this.userBusiness = new UserBusiness(new UserData());
+    }
+
     public async signupController(req: Request, res: Response): Promise<void> {
         try {
             const { name, email, password, role } = req.body;

@@ -1,24 +1,42 @@
-import { UserData } from '../data/UserData';
+
+// repository
+import UserRepository from './repository/UserRepository';
+
+// models
+import AuthInterface from '../models/interfaces/AuthInterface';
+import { User } from '../models/User';
+
+// services
 import Auth from '../services/Auth';
-import { isEmail, uuid, passwd, isPasswd } from '../services/helpers';
 import ErrorMessage from '../error/ErrorMessage';
-import AuthInterface, { USER_ROLES } from '../models/interfaces/AuthInterface';
-import { UserInterface } from '../models/interfaces/UserInterface';
+
+
+// utils
+import { isEmail, uuid, passwd, isPasswd } from '../utils/helpers';
+
+
+export interface SignupInputDTO{
+    name: string;
+    email: string;
+    password: string;
+}
+
 
 export class UserBusiness {
+    private userData: UserRepository;
 
-    public signupBusiness = async (input: any): Promise<object> => {
+    constructor(
+        userDatabaseImp: UserRepository
+    ) { 
+        this.userData = userDatabaseImp;
+    }
+
+    async signupBusiness (input: SignupInputDTO): Promise<object> {
         const { name, email, password } = input;
-        let { role } = input;
 
         if (!name || !email || !password) {
             throw new ErrorMessage("Todos os campos são obrigatórios", 400);
         }
-
-        if (!role) {
-            role = USER_ROLES.NORMAL;
-        }
-
         if (!isEmail(email)) {
             throw new ErrorMessage('`email` Inválido.', 400);
         }
@@ -33,12 +51,7 @@ export class UserBusiness {
             );
         }
 
-        role = role.toUpperCase();
-        if (!(role in USER_ROLES)) {
-            throw new ErrorMessage('`role` Inválido. É possível criar somente users `ADMIN` e `NORMAL`.', 400);
-        }
-
-        const user = await UserData.findByEmail(email);
+        const user = await this.userData.findByEmail(email);
 
         if (user) {
             throw new ErrorMessage('Email já cadastrado.', 401);
@@ -46,17 +59,10 @@ export class UserBusiness {
 
         const id = uuid();
 
-        const newUser: UserInterface = {
-            id,
-            name,
-            email,
-            password: passwd(password),
-            role,
-        };
+        const newUser = new User(id, name, email, passwd(password));
+        const result = await this.userData.create(newUser);
 
-        const result = await UserData.create(newUser);
-
-        const token = Auth.generateToken({ id, role });
+        const token = Auth.generateToken({ id });
 
         if (result === false) {
             throw new ErrorMessage(
@@ -71,7 +77,7 @@ export class UserBusiness {
         }
     };
 
-    public loginBusiness = async (input: any): Promise<object> => {
+   async loginBusiness (input: any): Promise<object> {
         const { email, password } = input;
 
         if (!email || !password) {
@@ -82,24 +88,24 @@ export class UserBusiness {
             throw new ErrorMessage('`email` Inválido.', 400);
         }
 
-        const user = await UserData.findByEmail(email) as UserInterface;
+       const user = await this.userData.findByEmail(email) as User;
 
         if (!user) {
             throw new ErrorMessage('Usuário não encontrado.', 401);
         }
 
-        if (!isPasswd(password, user.password)) {
+        if (!isPasswd(password, user.getPassword())) {
             throw new ErrorMessage('`email` ou `senha` Inválidos.', 401);
         }
 
-        const token = Auth.generateToken({ id: user.id, role: user.role });
+        const token = Auth.generateToken({ id: user.getId() });
 
         return {
             token
         };
     };
 
-    public getAllUser = async (token: string): Promise<UserInterface[] | boolean> => {
+    async getAllUser (token: string): Promise<User[] | boolean> {
         const tokenVerify = Auth.getTokenData(token) as AuthInterface;
 
         if (!tokenVerify) {
@@ -109,7 +115,7 @@ export class UserBusiness {
             );
         }
 
-        const user = await UserData.findAll();
+        const user = await this.userData.findAll();
 
         if (!user) {
             throw new ErrorMessage('Usuário não encontrado.', 401);
@@ -118,7 +124,7 @@ export class UserBusiness {
         return user;
     };
 
-    public deleteUser = async (token: string, id: string): Promise<object> => {
+    async deleteUser (token: string, id: string): Promise<object> {
         const tokenVerify = Auth.getTokenData(token) as AuthInterface;
 
         if (!tokenVerify) {
@@ -128,17 +134,13 @@ export class UserBusiness {
             );
         }
 
-        if (tokenVerify.role !== USER_ROLES.ADMIN) {
-            throw new ErrorMessage('Apenas usuários `ADMIN` podem deletar usuários.', 403);
-        }
-
-        const user = await UserData.findById(id);
+        const user = await this.userData.findById(id);
 
         if (!user) {
             throw new ErrorMessage('Usuário não encontrado.', 401);
         }
 
-        const result = await UserData.delete(id);
+        const result = await this.userData.delete(id);
 
         if (result === false) {
             throw new ErrorMessage(
@@ -150,6 +152,6 @@ export class UserBusiness {
                 message: 'Usuário deletado com sucesso!',
             };
         }
-    }
+    };
 
 }

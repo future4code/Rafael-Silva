@@ -1,10 +1,11 @@
-import { UserInterface } from '../models/interfaces/UserInterface';
+import UserRepository from '../business/repository/UserRepository';
+import { User } from '../models/User';
 import Database from './Database';
 
-export class UserData extends Database{
-    public static async findAll(): Promise<UserInterface[] | boolean> {
+export class UserData extends Database implements UserRepository {
+    async findAll(): Promise<User[] | boolean> {
         try {
-            const result = await Database.connection.select('*').from('aula58_users');
+            const result = await Database.connection.select('*').from('labook_users');
 
             if (result.length === 0) {
                 return false;
@@ -16,9 +17,9 @@ export class UserData extends Database{
         }
     }
 
-    public static async findById(id: string): Promise<UserInterface| boolean> {
+    async findById(id: string): Promise<User | boolean> {
         try {
-            const result = await Database.connection.select('*').from('aula58_users').where({ id });
+            const result = await Database.connection.select('*').from('labook_users').where({ id });
 
             if (result.length === 0) {
                 return false;
@@ -31,9 +32,9 @@ export class UserData extends Database{
         }
     }
 
-    public static async findByEmail(email: string): Promise<UserInterface | boolean> {
+    async findByEmail(email: string): Promise<User | boolean> {
         try {
-            const result = await Database.connection.select('*').from('aula58_users').where({ email });
+            const result = await Database.connection.select('*').from('labook_users').where({ email });
 
             if (result.length === 0) {
                 return false;
@@ -46,14 +47,13 @@ export class UserData extends Database{
         }
     }
 
-    public static async create(user: UserInterface): Promise<boolean> {
+    async create(user: User): Promise<boolean> {
         try {
-            await Database.connection('aula58_users').insert({
-                id: user.id,
-                name: user.name,
-                email: user.email,
-                password: user.password,
-                role: user.role
+            await Database.connection('labook_users').insert({
+                id: user.getId(),
+                name: user.getName(),
+                email: user.getEmail(),
+                password: user.getPassword()
             });
 
             return true;
@@ -63,9 +63,9 @@ export class UserData extends Database{
         }
     }
 
-    public static async delete(id: string): Promise<boolean> {
+    async delete(id: string): Promise<boolean> {
         try {
-            await Database.connection('aula58_users').where({ id }).del();
+            await Database.connection('labook_users').where({ id }).del();
 
             return true;
         } catch (error) {
@@ -73,5 +73,5 @@ export class UserData extends Database{
             return false;
         }
     }
-    
+
 }

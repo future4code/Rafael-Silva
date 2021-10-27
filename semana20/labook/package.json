@@ -1,13 +1,14 @@
 {
     "name": "labook",
-    "description": "Labook é uma rede social que nasceu como uma rede de alunos de universidades americanas e hoje já conta com 2 bilhões de usuários ativos.",
+    "description": "O LaBook é uma rede social com o objetivo de promover a conexão e interação entre seus mais diversos usuários.",
     "version": "1.0.0",
     "main": "index.js",
     "scripts": {
         "start": "tsc && node ./build/index.js",
         "dev": "ts-node-dev --transpile-only --ignore-watch node_modules ./src/index.ts",
         "build": "tsc",
-        "lint": "npx lint-staged"
+        "lint": "npx lint-staged",
+        "migrations": "ts-node-dev ./src/data/migrations/migrations.ts"
     },
     "author": "Rafael N. Silva",
     "license": "ISC",

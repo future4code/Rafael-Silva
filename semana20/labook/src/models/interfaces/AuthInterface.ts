@@ -5,5 +5,4 @@ export enum USER_ROLES {
 
 export default interface AuthInterface {
     id: string;
-    role: USER_ROLES;
 }

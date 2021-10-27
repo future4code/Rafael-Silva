@@ -21,8 +21,7 @@ export default class Auth {
             ) as JwtPayload;
 
             return {
-                id: tokenData.id,
-                role: tokenData.role
+                id: tokenData.id
             };
         } catch (error) {
             console.log(error);
