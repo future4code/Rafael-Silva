@@ -6,12 +6,12 @@ const router: Router = Router();
 
 const userController = new UserController();
 
-router.get('/all', userController.getAllUsersController);
+router.get('/user/all', userController.getAllUsersController);
 
-router.post('/signup', userController.signupController);
-router.post('/login', userController.loginController);
+router.post('/user/signup', userController.signupController);
+router.post('/user/login', userController.loginController);
 
-router.delete('/delete/:id', userController.deleteUserController);
+router.delete('/user/delete/:id', userController.deleteUserController);
 
 
 
