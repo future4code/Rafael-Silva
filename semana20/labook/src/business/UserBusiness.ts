@@ -13,6 +13,7 @@ import ErrorMessage from '../error/ErrorMessage';
 
 // utils
 import { isEmail, uuid, passwd, isPasswd } from '../utils/helpers';
+import { UserInterface } from '../models/interfaces/UserInterface';
 
 
 export interface SignupInputDTO {
@@ -21,6 +22,11 @@ export interface SignupInputDTO {
     password: string;
 }
 
+
+export interface LoginInputDTO {
+    email: string;
+    password: string;
+}
 
 export class UserBusiness {
     private userData: UserRepository;
@@ -77,7 +83,7 @@ export class UserBusiness {
         }
     };
 
-    public loginBusiness = async (input: any): Promise<object> => {
+    public loginBusiness = async (input: LoginInputDTO): Promise<object> => {
         const { email, password } = input;
 
         if (!email || !password) {
@@ -88,24 +94,24 @@ export class UserBusiness {
             throw new ErrorMessage('`email` Inválido.', 400);
         }
 
-        const user = await this.userData.findByEmail(email) as User;
+        const user = await this.userData.findByEmail(email) as UserInterface;
 
         if (!user) {
             throw new ErrorMessage('Usuário não encontrado.', 401);
         }
 
-        if (!isPasswd(password, user.getPassword())) {
+        if (!isPasswd(password, user.password)) {
             throw new ErrorMessage('`email` ou `senha` Inválidos.', 401);
         }
 
-        const token = Auth.generateToken({ id: user.getId() });
+        const token = Auth.generateToken({ id: user.id });
 
         return {
             token
         };
     };
 
-    public getAllUser = async (token: string): Promise<User[] | boolean> => {
+    public getAllUser = async (token: string): Promise<UserInterface[] | boolean> => {
         const tokenVerify = Auth.getTokenData(token) as AuthInterface;
 
         if (!tokenVerify) {

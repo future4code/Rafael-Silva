@@ -1,4 +1,5 @@
 import UserRepository from '../business/repository/UserRepository';
+import { UserInterface } from '../models/interfaces/UserInterface';
 import { User } from '../models/User';
 import Database from './Database';
 
@@ -7,7 +8,7 @@ export class UserData extends Database implements UserRepository {
         super("labook_users");
     }
 
-    public findAll = async (): Promise<User[] | boolean> => {
+    public findAll = async (): Promise<UserInterface[] | boolean> => {
         try {
             const result = await Database.connection.select('*').from(this.tableName);
 
@@ -21,7 +22,7 @@ export class UserData extends Database implements UserRepository {
         }
     };
 
-    public findById = async (id: string): Promise<User | boolean> => {
+    public findById = async (id: string): Promise<UserInterface | boolean> => {
         try {
             const result = await Database.connection.select('*').from(this.tableName).where({ id });
 
@@ -36,7 +37,7 @@ export class UserData extends Database implements UserRepository {
         }
     };
 
-    public findByEmail = async (email: string): Promise<User | boolean> => {
+    public findByEmail = async (email: string): Promise<UserInterface | boolean> => {
         try {
             const result = await Database.connection.select('*').from(this.tableName).where({ email });
 

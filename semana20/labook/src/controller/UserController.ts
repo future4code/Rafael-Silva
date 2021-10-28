@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { UserBusiness, SignupInputDTO } from '../business/UserBusiness';
+import { UserBusiness, SignupInputDTO, LoginInputDTO } from '../business/UserBusiness';
 import { UserData } from '../data/UserData';
 
 export class UserController {
@@ -30,8 +30,12 @@ export class UserController {
 
     public loginController = async (req: Request, res: Response): Promise<void> => {
         try {
-            const { email, password } = req.body;
-            const result = await this.userBusiness.loginBusiness({ email, password });
+            const input: LoginInputDTO = {
+                email: req.body.email,
+                password: req.body.password
+            }
+            
+            const result = await this.userBusiness.loginBusiness(input);
             res.status(200).send(result);
         } catch (e) {
             const error = e as Error;
