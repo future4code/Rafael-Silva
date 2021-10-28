@@ -1,0 +1,37 @@
+[
+    {
+        "id": "1",
+        "photo": "image1",
+        "description": "5 dicas para dormir melhor.",
+        "type": "NORMAL",
+        "created_at": "2021-10-28"
+    },
+    {
+        "id": "2",
+        "photo": "image2",
+        "description": "Round 6 é a serie mais assistida da Netflix! Confira!",
+        "type": "NORMAL",
+        "created_at": "2021-10-28"
+    },
+    {
+        "id": "3",
+        "photo": "image3",
+        "description": "Qual é a melhor linguagem de programação para a web",
+        "type": "NORMAL",
+        "created_at": "2021-10-28"
+    },
+    {
+        "id": "4",
+        "photo": "image4",
+        "description": "Imersão Full Cycle e Full Stack",
+        "type": "EVENTO",
+        "created_at": "2021-10-28"
+    },
+    {
+        "id": "1",
+        "photo": "image5",
+        "description": "Rock in Rio começa nesse final de samana. ",
+        "type": "EVENTO",
+        "created_at": "2021-10-28"
+    }
+]

@@ -1,6 +1,7 @@
 import knex from 'knex';
 import dotenv from 'dotenv';
 import users from "./users.json";
+import posts from "./posts.json";
 
 dotenv.config();
 
@@ -29,6 +30,15 @@ const createTables = async (): Promise<boolean> => {
                     UNIQUE KEY labook_users_UN (email)
                 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+
+                CREATE TABLE labook_posts (
+                    id varchar(255) NOT NULL,
+                    photo varchar(255) DEFAULT NULL,
+                    description varchar(255) NOT NULL,
+                    type enum('NORMAL','EVENTO') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL DEFAULT 'NORMAL',
+                    created_at date NOT NULL
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
            `);
 
         console.log("Tabelas criadas com sucesso!");
@@ -54,22 +64,22 @@ const insertUsers = async (): Promise<boolean> => {
     }
 };
 
-// const insertRecipes = async (): Promise<boolean> => {
-//     try {
-//         await connection('labook_recipes').insert(recipe);
+const insertPosts = async (): Promise<boolean> => {
+    try {
+        await connection('labook_posts').insert(posts);
 
-//         console.log("Receitas criados com sucesso!");
-//         return true;
-//     } catch (e) {
-//         const error = e as Error;
-//         console.log(error);
-//         return false;
-//     }
-// };
+        console.log("Posts criados com sucesso!");
+        return true;
+    } catch (e) {
+        const error = e as Error;
+        console.log(error);
+        return false;
+    }
+};
 
 const closeConnection = () => { connection.destroy(); };
 
 createTables()
     .then(insertUsers)
-    // .then(insertRecipes)
+    .then(insertPosts)
     .finally(closeConnection);
