@@ -33,10 +33,16 @@ const createTables = async (): Promise<boolean> => {
 
                 CREATE TABLE labook_posts (
                     id varchar(255) NOT NULL,
-                    photo varchar(255) DEFAULT NULL,
-                    description varchar(255) NOT NULL,
+                    author_id varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+                    title varchar(255) NOT NULL,
+                    subtitle varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+                    photo varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+                    content text CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
                     type enum('NORMAL','EVENTO') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL DEFAULT 'NORMAL',
-                    created_at date NOT NULL
+                    created_at date NOT NULL,
+                    PRIMARY KEY (id),
+                    KEY labook_posts_FK (author_id),
+                    CONSTRAINT labook_posts_FK FOREIGN KEY (author_id) REFERENCES labook_users (id) ON DELETE CASCADE
                 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
            `);
