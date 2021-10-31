@@ -11,6 +11,8 @@ const postController = new PostController();
 
 router.get('/user/all', userController.getAllUsersController);
 
+router.get('/post/:id', postController.getPostByIdController);
+
 router.post('/user/signup', userController.signupController);
 router.post('/user/login', userController.loginController);
 

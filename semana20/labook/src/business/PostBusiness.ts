@@ -6,7 +6,7 @@ import AuthInterface from '../models/interfaces/AuthInterface';
 import { PostRepository } from './repository/PostRepository';
 
 // DTO's
-import { PostCreateDTO, PostType } from './interfacesDTOs/PostInterfaceDTO';
+import { GetPostByIdDTO, PostCreateDTO, PostType } from './interfacesDTOs/PostInterfaceDTO';
 
 // error message
 import ErrorMessage from '../error/ErrorMessage';
@@ -14,6 +14,7 @@ import ErrorMessage from '../error/ErrorMessage';
 // services
 import Auth from '../services/Auth';
 import { uuid } from '../utils/helpers';
+import { PostInterface } from '../models/interfaces/PostInterface';
 
 
 
@@ -73,6 +74,35 @@ export class PostBusiness {
             );
         } else {
             return { message: 'Post criado com sucesso' };
+        }
+    };
+
+    public getPostByIdBusiness = async (input: GetPostByIdDTO, token: string): Promise<object | boolean> => {
+        const tokenVerify = Auth.getTokenData(token) as AuthInterface;
+
+        if (!tokenVerify) {
+            throw new ErrorMessage(
+                "Token inválido, expirado ou ausente da chave 'token' do cabeçalho",
+                403
+            );
+        }
+
+        if (!input.id) {
+            throw new ErrorMessage(
+                'Id do post não informado',
+                400
+            );
+        }
+
+        const result = await this.postData.getPostById(input.id);
+
+        if (result === false) {
+            throw new ErrorMessage(
+                'Erro ao buscar post',
+                500
+            );
+        } else {
+            return result;
         }
     };
 }

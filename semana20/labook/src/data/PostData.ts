@@ -7,12 +7,39 @@ import { PostInterface } from '../models/interfaces/PostInterface';
 import { Post } from '../models/Post';
 
 // helpers
-import { dateFmtYmd } from '../utils/helpers';
+import { dateFmt, dateFmtYmd } from '../utils/helpers';
 
 export class PostData extends Database implements PostRepository {
     constructor() {
         super('labook_posts');
     }
+
+    public async getPostById(id: string): Promise<object | boolean> {
+        try {
+            const post = await Database.connection(this.tableName)
+                .select('*')
+                .where({ id })
+                .first();
+
+            if (post) {
+                return {
+                    id: post.id,
+                    authorId: post.author_id,
+                    title: post.title,
+                    subtitle: post.subtitle,
+                    content: post.content,
+                    photo: post.photo,
+                    type: post.type,
+                    created_at: dateFmt(post.created_at),
+                };
+            }
+
+            return false;
+        } catch (error) {
+            console.log(error);
+            return false;
+        }
+    };
 
     public async create(post: Post): Promise<PostInterface | boolean> {
         try {
@@ -33,5 +60,4 @@ export class PostData extends Database implements PostRepository {
             return false;
         }
     }
-
 }
