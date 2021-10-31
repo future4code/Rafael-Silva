@@ -10,3 +10,7 @@ export interface PostCreateDTO {
     type: PostType;
     photo?: string;
 }
+
+export interface GetPostByIdDTO {
+    id: string;
+}

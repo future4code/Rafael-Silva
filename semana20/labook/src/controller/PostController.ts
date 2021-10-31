@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { PostCreateDTO } from '../business/interfacesDTOs/PostInterfaceDTO';
+import { GetPostByIdDTO, PostCreateDTO } from '../business/interfacesDTOs/PostInterfaceDTO';
 
 // business
 import { PostBusiness} from '../business/PostBusiness';
@@ -15,7 +15,7 @@ export class PostController {
         this.postBusiness = new PostBusiness(new PostData());
     }
 
-    public createPostController = async (req: Request, res: Response) =>  {
+    public createPostController = async (req: Request, res: Response): Promise<void> =>  {
         try {
             const token = req.headers.token as string;
             const input: PostCreateDTO = {
@@ -35,6 +35,30 @@ export class PostController {
             } else {
                 res.status(400).send({
                     message: 'Post not created',
+                });
+            }
+
+        } catch (e) {
+            const error = e as Error;
+            console.log(error.message);
+            res.send({ message: error.message });
+        }
+    }
+
+    public getPostByIdController = async (req: Request, res: Response): Promise<void> => {
+        try {
+            const token = req.headers.token as string;
+            const input: GetPostByIdDTO = {
+                id: req.params.id
+            }
+
+            const post = await this.postBusiness.getPostByIdBusiness(input, token);
+
+            if (post) {
+                res.status(200).send(post);
+            } else {
+                res.status(400).send({
+                    message: 'Post not found',
                 });
             }
 
