@@ -15,23 +15,22 @@ export class PostController {
         this.postBusiness = new PostBusiness(new PostData());
     }
 
-    public async createPostController (req: Request, res: Response) {
+    public createPostController = async (req: Request, res: Response) =>  {
         try {
             const token = req.headers.token as string;
             const input: PostCreateDTO = {
                 title: req.body.title,
                 subtitle: req.body.subtitle,
                 content: req.body.content,
-                type: req.body.type,
-                photo: req.body.photo
+                type: req.body?.type,
+                photo: req.body?.photo
             }
 
             const post = await this.postBusiness.createPostBusiness(input, token);
 
             if (post) {
                 res.status(200).send({
-                    message: 'Post created',
-                    post
+                    message: 'Post created'
                 });
             } else {
                 res.status(400).send({

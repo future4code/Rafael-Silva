@@ -8,10 +8,10 @@ export class Post {
         private authorId: string,
         private title: string,
         private content: string,
-        private type: PostType = PostType.NORMAL,
-        private createdAt: string = dateFmt(),
+        private type: PostType,
         private subtitle?: string,
         private photo?: string,
+        private createdAt: string = dateFmt()
     ) { }
 
 

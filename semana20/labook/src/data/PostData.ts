@@ -24,7 +24,7 @@ export class PostData extends Database implements PostRepository {
                 photo: post.getPhoto(),
                 content: post.getContent(),
                 type: post.getType(),
-                create_at: dateFmtYmd(post.getCreatedAt()),
+                created_at: dateFmtYmd(post.getCreatedAt()),
             });
 
             return true;

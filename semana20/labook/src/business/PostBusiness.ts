@@ -26,7 +26,7 @@ export class PostBusiness {
         this.postData = PostDatabaseImp;
     }
 
-    public async createPostBusiness(input: PostCreateDTO, token: string): Promise<object> {
+    public createPostBusiness = async (input: PostCreateDTO, token: string): Promise<object> => {
         const tokenVerify = Auth.getTokenData(token) as AuthInterface;
 
         if (!tokenVerify) {
@@ -45,7 +45,7 @@ export class PostBusiness {
             );
         }
 
-        if ((type in PostType) === false) {
+        if ((type.toLocaleUpperCase() in PostType) === false) {
             throw new ErrorMessage(
                 'Tipo de post inválido',
                 400
@@ -74,5 +74,5 @@ export class PostBusiness {
         } else {
             return { message: 'Post criado com sucesso' };
         }
-    }
+    };
 }
