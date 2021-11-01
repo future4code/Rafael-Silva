@@ -1,12 +1,12 @@
 import { Router } from "express";
-import { UserController } from '../controller/UserController';
+import { PokemonController } from '../controller/Pokemon.controller';
 
 
 const router: Router = Router();
 
-const userController = new UserController();
+const pokemonController = new PokemonController();
 
-router.get('/all', userController.getAllUsersController);
+router.get('/pokemon/all', pokemonController.getAllPokemonController);
 
 
 
