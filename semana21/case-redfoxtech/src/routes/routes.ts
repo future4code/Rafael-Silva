@@ -8,10 +8,6 @@ const userController = new UserController();
 
 router.get('/all', userController.getAllUsersController);
 
-router.post('/signup', userController.signupController);
-router.post('/login', userController.loginController);
-
-router.delete('/delete/:id', userController.deleteUserController);
 
 
 
