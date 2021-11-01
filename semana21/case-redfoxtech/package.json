@@ -1,0 +1,47 @@
+{
+    "name": "template",
+    "description": "",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+        "start": "tsc && node ./build/index.js",
+        "dev": "ts-node-dev --transpile-only --ignore-watch node_modules ./src/index.ts",
+        "build": "tsc",
+        "lint": "npx lint-staged"
+    },
+    "author": "Rafael N. Silva",
+    "license": "ISC",
+    "dependencies": {
+        "bcryptjs": "^2.4.3",
+        "cors": "^2.8.5",
+        "date-fns": "^2.24.0",
+        "dotenv": "^8.2.0",
+        "express": "^4.17.1",
+        "jsonwebtoken": "^8.5.1",
+        "knex": "^0.95.2",
+        "mysql": "^2.18.1",
+        "uuid": "^8.3.2"
+    },
+    "devDependencies": {
+        "@types/bcryptjs": "^2.4.2",
+        "@types/cors": "^2.8.10",
+        "@types/express": "^4.17.11",
+        "@types/jsonwebtoken": "^8.5.5",
+        "@types/knex": "^0.16.1",
+        "@types/node": "^14.14.35",
+        "@types/uuid": "^8.3.1",
+        "@typescript-eslint/eslint-plugin": "^5.0.0",
+        "@typescript-eslint/parser": "^5.0.0",
+        "eslint": "^7.32.0",
+        "eslint-config-airbnb-base": "^14.2.1",
+        "eslint-config-prettier": "^8.3.0",
+        "eslint-import-resolver-typescript": "^2.5.0",
+        "eslint-plugin-import": "^2.25.2",
+        "git-commit-msg-linter": "^3.2.8",
+        "husky": "^7.0.2",
+        "lint-staged": "^11.2.3",
+        "prettier": "^2.4.1",
+        "ts-node-dev": "^1.1.6",
+        "typescript": "^4.2.3"
+    }
+}
