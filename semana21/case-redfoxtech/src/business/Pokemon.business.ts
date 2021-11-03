@@ -1,4 +1,3 @@
-import ErrorMessage from '../error/ErrorMessage';
 import { InputPokemonDTO } from './interfaceDTOS/PokemonDTOS';
 import { PokemonRepository } from './repository/PokemonRepository';
 
@@ -11,49 +10,56 @@ export class PokemonBusiness {
         this.pokemonData = PokemonDatabaseImp;
     }
 
-    async getAllBusiness(input: InputPokemonDTO): Promise<object> {
-        let { page, sort, order, name, type, limit } = input;
+    async getAllBusiness(input: InputPokemonDTO): Promise<any> {
+        let { row, name, type, sort, order, page, limit } = input;
+        let result;
+        let query = {};
 
         if (!page || page < 1 || Number.isNaN(page)) {
-          page = 1
+            page = 1;
         }
 
         if (!sort) {
-          sort = 'name'
+            sort = 'Row';
         }
 
-        if(!order) {
-          order = 'asc'
+        if (!order) {
+            order = 'asc';
         }
 
         if (!limit || limit < 1 || Number.isNaN(limit)) {
-            limit = 10
+            limit = 10;
         }
 
         const offset = page ? (page - 1) * limit : (1 - 1) * limit;
 
-        const orderBy = `${sort} ${order}`;
-        let where = {};
+        query = {
+            sort,
+            order,
+            limit,
+            offset
+        };
+
+        if (row) {
+            result = await this.pokemonData.getByRow(row);
+        }
 
         if (name) {
-            where = {
-                [name]: `%${name}%`
-            };
+            result = await this.pokemonData.getByName(name);
         }
 
         if (type) {
-            where = {
-                [type]: `%${type}%`
-            };
+            result = await this.pokemonData.getByType(type, query);
         }
-        const result = await this.pokemonData.getAll({
-            limit,
-            offset,
-            orderBy,
-            where,
-            limit
-        });
-        return result;
+
+
+        result = await this.pokemonData.getAll(query);
+
+        if (result) {
+            return result;
+        }
+        return false;
+
 
     }
 }

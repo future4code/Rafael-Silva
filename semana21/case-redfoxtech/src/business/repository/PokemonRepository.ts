@@ -1,7 +1,6 @@
 export interface PokemonRepository {
-  getAll(): Promise<any>;
-//   getById(id: number): Promise<Pokemon>;
-//   create(pokemon: Pokemon): Promise<Pokemon>;
-//   update(pokemon: Pokemon): Promise<Pokemon>;
-//   delete(id: number): Promise<Pokemon>;
+    getAll(query: object): Promise<object[] | boolean>;
+    getByRow(row: number): Promise<object | boolean>;
+    getByName(name: string): Promise<object | boolean>;
+    getByType(type: string, query: object): Promise<object[] | boolean>;
 }
