@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-// import { InputPokemonDTO } from '../business/interfaceDTOS/PokemonDTOS';
+import { InputPokemonDTO } from '../business/interfaceDTOS/PokemonDTOS';
 import { PokemonBusiness } from '../business/Pokemon.business';
 import { PokemonData } from '../data/PokemonData';
 
@@ -9,7 +9,17 @@ export class PokemonController {
     getAllPokemonController = async (req: Request, res: Response): Promise<void> => {
         try {
 
-            const result = await this.pokemonBusiness.getAll();
+            const input: InputPokemonDTO = {
+                row: Number(req.query.row),
+                name: req.query.name as string,
+                type: req.query.type as string,
+                sort: req.query.sort as string,
+                order: req.query.order as string,
+                page: Number(req.query.page),
+                limit: Number(req.query.limit)
+            };
+
+            const result = await this.pokemonBusiness.getAllBusiness(input);
 
             res.status(200).send(result);
 
@@ -20,5 +30,5 @@ export class PokemonController {
 
             res.send({ message: error.message });
         }
-    }
+    };
 }

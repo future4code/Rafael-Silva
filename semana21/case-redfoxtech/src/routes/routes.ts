@@ -6,7 +6,7 @@ const router: Router = Router();
 
 const pokemonController = new PokemonController();
 
-router.get('/pokemon/all', pokemonController.getAllPokemonController);
+router.get('/pokemon', pokemonController.getAllPokemonController);
 
 
 

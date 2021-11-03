@@ -1,5 +1,5 @@
-// import ErrorMessage from '../error/ErrorMessage';
-// import { InputPokemonDTO } from './interfaceDTOS/PokemonDTOS';
+import ErrorMessage from '../error/ErrorMessage';
+import { InputPokemonDTO } from './interfaceDTOS/PokemonDTOS';
 import { PokemonRepository } from './repository/PokemonRepository';
 
 export class PokemonBusiness {
@@ -11,10 +11,49 @@ export class PokemonBusiness {
         this.pokemonData = PokemonDatabaseImp;
     }
 
-    async getAll(): Promise<object> {
+    async getAllBusiness(input: InputPokemonDTO): Promise<object> {
+        let { page, sort, order, name, type, limit } = input;
 
-        const pokemon = await this.pokemonData.getAll();
+        if (!page || page < 1 || Number.isNaN(page)) {
+          page = 1
+        }
 
-        return pokemon;
+        if (!sort) {
+          sort = 'name'
+        }
+
+        if(!order) {
+          order = 'asc'
+        }
+
+        if (!limit || limit < 1 || Number.isNaN(limit)) {
+            limit = 10
+        }
+
+        const offset = page ? (page - 1) * limit : (1 - 1) * limit;
+
+        const orderBy = `${sort} ${order}`;
+        let where = {};
+
+        if (name) {
+            where = {
+                [name]: `%${name}%`
+            };
+        }
+
+        if (type) {
+            where = {
+                [type]: `%${type}%`
+            };
+        }
+        const result = await this.pokemonData.getAll({
+            limit,
+            offset,
+            orderBy,
+            where,
+            limit
+        });
+        return result;
+
     }
 }

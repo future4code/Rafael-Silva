@@ -8,7 +8,7 @@ export class PokemonData extends Database implements PokemonRepository {
         super('case_redfoxtech');
     }
 
-    async getAll(): Promise<any>{
+    async getAll({page, }): Promise<any>{
         try {
             const result = await Database.connection(this.tableName).orderBy('Row', 'asc').limit(20).offset(0);
 
