@@ -5,4 +5,8 @@ export default class ErrorMessage extends Error {
         super(message);
         this.statusCode = statusCode;
     }
+
+    getStatusCode(): number {
+        return this.statusCode;
+    }
 }

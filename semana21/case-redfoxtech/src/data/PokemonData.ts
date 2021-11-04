@@ -11,9 +11,9 @@ export class PokemonData extends Database implements PokemonRepository {
     async getAll(query: any): Promise<object[] | boolean> {
         try {
             const result = await Database.connection(this.tableName)
-            .orderBy(query.sort, query.order)
-            .limit(query.limit)
-            .offset(query.offset);
+                .orderBy(query.sort, query.order)
+                .limit(query.limit)
+                .offset(query.offset);
             return result;
         } catch (error) {
             console.log(error);
@@ -31,9 +31,13 @@ export class PokemonData extends Database implements PokemonRepository {
         }
     }
 
-    async getByName(name: string): Promise<object[] | boolean> {
+    async getByName(name: string, query: any): Promise<object[] | boolean> {
         try {
-            const result = await Database.connection(this.tableName).where('Name', "like", `%${name}%`);
+            const result = await Database.connection(this.tableName)
+                .orderBy(query.sort, query.order)
+                .where('Name', "like", `%${name}%`)
+                .limit(query.limit)
+                .offset(query.offset);
             return result;
         } catch (error) {
             console.log(error);

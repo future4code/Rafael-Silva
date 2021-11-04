@@ -2,6 +2,7 @@ import { Request, Response } from 'express';
 import { InputPokemonDTO } from '../business/interfaceDTOS/PokemonDTOS';
 import { PokemonBusiness } from '../business/Pokemon.business';
 import { PokemonData } from '../data/PokemonData';
+import ErrorMessage from '../error/ErrorMessage';
 
 export class PokemonController {
     constructor(private readonly pokemonBusiness: PokemonBusiness = new PokemonBusiness(new PokemonData())) { }
@@ -24,11 +25,11 @@ export class PokemonController {
             res.status(200).send(result);
 
         } catch (e) {
-            const error = e as Error;
+            const error = e as ErrorMessage;
 
             console.log(error);
 
-            res.send({ message: error.message });
+            res.status(error.getStatusCode() || 400).send({ message: error.message });
         }
     };
 }
