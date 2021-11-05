@@ -1,5 +1,5 @@
 export interface InputPokemonDTO {
-    row?: number;
+    id?: number;
     name?: string;
     type?: string;
     sort?: string;

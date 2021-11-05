@@ -11,7 +11,7 @@ export class PokemonController {
         try {
 
             const input: InputPokemonDTO = {
-                row: Number(req.query.row),
+                id: Number(req.query.id),
                 name: req.query.name as string,
                 type: req.query.type as string,
                 sort: req.query.sort as string,

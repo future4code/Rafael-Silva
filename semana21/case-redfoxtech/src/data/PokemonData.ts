@@ -21,9 +21,9 @@ export class PokemonData extends Database implements PokemonRepository {
         }
     }
 
-    async getByRow(row: number): Promise<object | boolean> {
+    async getById(id: number): Promise<object | boolean> {
         try {
-            const result = await Database.connection(this.tableName).where('Row', row);
+            const result = await Database.connection(this.tableName).where('id', id);
             return result[0];
         } catch (error) {
             console.log(error);
