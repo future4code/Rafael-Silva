@@ -21,7 +21,7 @@ const createTables = async (): Promise<boolean> => {
         await connection
             .raw(`
                 CREATE TABLE IF NOT EXISTS case_redfoxtech (
-                    Row int(11) DEFAULT NULL,
+                    id int(11) NOT NULL,
                     Name varchar(255) DEFAULT NULL,
                     Pokedex_Number int(11) DEFAULT NULL,
                     Img_name varchar(255) DEFAULT NULL,

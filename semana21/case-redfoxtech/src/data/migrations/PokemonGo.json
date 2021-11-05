@@ -1,6 +1,6 @@
 [
     {
-        "Row": 1,
+        "id": 1,
         "Name": "Bulbasaur",
         "Pokedex_Number": 1,
         "Img_name": 1,
@@ -32,7 +32,7 @@
         "CP39": 967
     },
     {
-        "Row": 2,
+        "id": 2,
         "Name": "Ivysaur",
         "Pokedex_Number": 2,
         "Img_name": 2,
@@ -64,7 +64,7 @@
         "CP39": 1529
     },
     {
-        "Row": 3,
+        "id": 3,
         "Name": "Venusaur",
         "Pokedex_Number": 3,
         "Img_name": 3,
@@ -96,7 +96,7 @@
         "CP39": 2531
     },
     {
-        "Row": 4,
+        "id": 4,
         "Name": "Charmander",
         "Pokedex_Number": 4,
         "Img_name": 4,
@@ -126,7 +126,7 @@
         "CP39": 819
     },
     {
-        "Row": 5,
+        "id": 5,
         "Name": "Charmeleon",
         "Pokedex_Number": 5,
         "Img_name": 5,
@@ -156,7 +156,7 @@
         "CP39": 1462
     },
     {
-        "Row": 6,
+        "id": 6,
         "Name": "Charizard",
         "Pokedex_Number": 6,
         "Img_name": 6,
@@ -188,7 +188,7 @@
         "CP39": 2648
     },
     {
-        "Row": 7,
+        "id": 7,
         "Name": "Squirtle",
         "Pokedex_Number": 7,
         "Img_name": 7,
@@ -218,7 +218,7 @@
         "CP39": 797
     },
     {
-        "Row": 8,
+        "id": 8,
         "Name": "Wartortle",
         "Pokedex_Number": 8,
         "Img_name": 8,
@@ -248,7 +248,7 @@
         "CP39": 1305
     },
     {
-        "Row": 9,
+        "id": 9,
         "Name": "Blastoise",
         "Pokedex_Number": 9,
         "Img_name": 9,
@@ -278,7 +278,7 @@
         "CP39": 2259
     },
     {
-        "Row": 10,
+        "id": 10,
         "Name": "Caterpie",
         "Pokedex_Number": 10,
         "Img_name": 10,
@@ -308,7 +308,7 @@
         "CP39": 387
     },
     {
-        "Row": 11,
+        "id": 11,
         "Name": "Metapod",
         "Pokedex_Number": 11,
         "Img_name": 11,
@@ -338,7 +338,7 @@
         "CP39": 413
     },
     {
-        "Row": 12,
+        "id": 12,
         "Name": "Butterfree",
         "Pokedex_Number": 12,
         "Img_name": 12,
@@ -370,7 +370,7 @@
         "CP39": 1677
     },
     {
-        "Row": 13,
+        "id": 13,
         "Name": "Weedle",
         "Pokedex_Number": 13,
         "Img_name": 13,
@@ -402,7 +402,7 @@
         "CP39": 391
     },
     {
-        "Row": 14,
+        "id": 14,
         "Name": "Kakuna",
         "Pokedex_Number": 14,
         "Img_name": 14,
@@ -434,7 +434,7 @@
         "CP39": 386
     },
     {
-        "Row": 15,
+        "id": 15,
         "Name": "Beedrill",
         "Pokedex_Number": 15,
         "Img_name": 15,
@@ -466,7 +466,7 @@
         "CP39": 1752
     },
     {
-        "Row": 16,
+        "id": 16,
         "Name": "Pidgey",
         "Pokedex_Number": 16,
         "Img_name": 16,
@@ -498,7 +498,7 @@
         "CP39": 572
     },
     {
-        "Row": 17,
+        "id": 17,
         "Name": "Pidgeotto",
         "Pokedex_Number": 17,
         "Img_name": 17,
@@ -530,7 +530,7 @@
         "CP39": 1070
     },
     {
-        "Row": 18,
+        "id": 18,
         "Name": "Pidgeot",
         "Pokedex_Number": 18,
         "Img_name": 18,
@@ -562,7 +562,7 @@
         "CP39": 1966
     },
     {
-        "Row": 19,
+        "id": 19,
         "Name": "Rattata",
         "Pokedex_Number": 19,
         "Img_name": 19,
@@ -592,7 +592,7 @@
         "CP39": 580
     },
     {
-        "Row": 20,
+        "id": 20,
         "Name": "Raticate",
         "Pokedex_Number": 20,
         "Img_name": 20,
@@ -622,8 +622,8 @@
         "CP39": 1527
     },
     {
-        "Row": 21,
-        "Name": "Spearow",
+        "id": 21,
+        "Name": "Speaid",
         "Pokedex_Number": 21,
         "Img_name": 21,
         "Generation": 1,
@@ -654,8 +654,8 @@
         "CP39": 664
     },
     {
-        "Row": 22,
-        "Name": "Fearow",
+        "id": 22,
+        "Name": "Feaid",
         "Pokedex_Number": 22,
         "Img_name": 22,
         "Generation": 1,
@@ -686,7 +686,7 @@
         "CP39": 1788
     },
     {
-        "Row": 23,
+        "id": 23,
         "Name": "Ekans",
         "Pokedex_Number": 23,
         "Img_name": 23,
@@ -716,7 +716,7 @@
         "CP39": 767
     },
     {
-        "Row": 24,
+        "id": 24,
         "Name": "Arbok",
         "Pokedex_Number": 24,
         "Img_name": 24,
@@ -746,7 +746,7 @@
         "CP39": 1712
     },
     {
-        "Row": 25,
+        "id": 25,
         "Name": "Pikachu",
         "Pokedex_Number": 25,
         "Img_name": 25,
@@ -776,7 +776,7 @@
         "CP39": 776
     },
     {
-        "Row": 26,
+        "id": 26,
         "Name": "Raichu",
         "Pokedex_Number": 26,
         "Img_name": 26,
@@ -806,7 +806,7 @@
         "CP39": 1996
     },
     {
-        "Row": 27,
+        "id": 27,
         "Name": "Sandshrew",
         "Pokedex_Number": 27,
         "Img_name": 27,
@@ -836,7 +836,7 @@
         "CP39": 1177
     },
     {
-        "Row": 28,
+        "id": 28,
         "Name": "Sandslash",
         "Pokedex_Number": 28,
         "Img_name": 28,
@@ -866,7 +866,7 @@
         "CP39": 2294
     },
     {
-        "Row": 29,
+        "id": 29,
         "Name": "Nidoran F",
         "Pokedex_Number": 29,
         "Img_name": 29,
@@ -896,7 +896,7 @@
         "CP39": 725
     },
     {
-        "Row": 30,
+        "id": 30,
         "Name": "Nidorina",
         "Pokedex_Number": 30,
         "Img_name": 30,
@@ -926,7 +926,7 @@
         "CP39": 1201
     },
     {
-        "Row": 31,
+        "id": 31,
         "Name": "Nidoqueen",
         "Pokedex_Number": 31,
         "Img_name": 31,
@@ -958,7 +958,7 @@
         "CP39": 2304
     },
     {
-        "Row": 32,
+        "id": 32,
         "Name": "Nidoran M",
         "Pokedex_Number": 32,
         "Img_name": 32,
@@ -988,7 +988,7 @@
         "CP39": 729
     },
     {
-        "Row": 33,
+        "id": 33,
         "Name": "Nidorino",
         "Pokedex_Number": 33,
         "Img_name": 33,
@@ -1018,7 +1018,7 @@
         "CP39": 1234
     },
     {
-        "Row": 34,
+        "id": 34,
         "Name": "Nidoking",
         "Pokedex_Number": 34,
         "Img_name": 34,
@@ -1050,7 +1050,7 @@
         "CP39": 2352
     },
     {
-        "Row": 35,
+        "id": 35,
         "Name": "Clefairy",
         "Pokedex_Number": 35,
         "Img_name": 35,
@@ -1080,7 +1080,7 @@
         "CP39": 1070
     },
     {
-        "Row": 36,
+        "id": 36,
         "Name": "Clefable",
         "Pokedex_Number": 36,
         "Img_name": 36,
@@ -1110,7 +1110,7 @@
         "CP39": 2320
     },
     {
-        "Row": 37,
+        "id": 37,
         "Name": "Vulpix",
         "Pokedex_Number": 37,
         "Img_name": 37,
@@ -1140,7 +1140,7 @@
         "CP39": 763
     },
     {
-        "Row": 38,
+        "id": 38,
         "Name": "Ninetales",
         "Pokedex_Number": 38,
         "Img_name": 38,
@@ -1170,7 +1170,7 @@
         "CP39": 2127
     },
     {
-        "Row": 39,
+        "id": 39,
         "Name": "Jigglypuff",
         "Pokedex_Number": 39,
         "Img_name": 39,
@@ -1202,7 +1202,7 @@
         "CP39": 703
     },
     {
-        "Row": 40,
+        "id": 40,
         "Name": "Wigglytuff",
         "Pokedex_Number": 40,
         "Img_name": 40,
@@ -1234,7 +1234,7 @@
         "CP39": 1879
     },
     {
-        "Row": 41,
+        "id": 41,
         "Name": "Zubat",
         "Pokedex_Number": 41,
         "Img_name": 41,
@@ -1266,7 +1266,7 @@
         "CP39": 560
     },
     {
-        "Row": 42,
+        "id": 42,
         "Name": "Golbat",
         "Pokedex_Number": 42,
         "Img_name": 42,
@@ -1298,7 +1298,7 @@
         "CP39": 1804
     },
     {
-        "Row": 43,
+        "id": 43,
         "Name": "Oddish",
         "Pokedex_Number": 43,
         "Img_name": 43,
@@ -1330,7 +1330,7 @@
         "CP39": 1054
     },
     {
-        "Row": 44,
+        "id": 44,
         "Name": "Gloom",
         "Pokedex_Number": 44,
         "Img_name": 44,
@@ -1362,7 +1362,7 @@
         "CP39": 1491
     },
     {
-        "Row": 45,
+        "id": 45,
         "Name": "Vileplume",
         "Pokedex_Number": 45,
         "Img_name": 45,
@@ -1394,7 +1394,7 @@
         "CP39": 2334
     },
     {
-        "Row": 46,
+        "id": 46,
         "Name": "Paras",
         "Pokedex_Number": 46,
         "Img_name": 46,
@@ -1426,7 +1426,7 @@
         "CP39": 824
     },
     {
-        "Row": 47,
+        "id": 47,
         "Name": "Parasect",
         "Pokedex_Number": 47,
         "Img_name": 47,
@@ -1458,7 +1458,7 @@
         "CP39": 1633
     },
     {
-        "Row": 48,
+        "id": 48,
         "Name": "Venonat",
         "Pokedex_Number": 48,
         "Img_name": 48,
@@ -1490,7 +1490,7 @@
         "CP39": 889
     },
     {
-        "Row": 49,
+        "id": 49,
         "Name": "Venomoth",
         "Pokedex_Number": 49,
         "Img_name": 49,
@@ -1522,7 +1522,7 @@
         "CP39": 1910
     },
     {
-        "Row": 50,
+        "id": 50,
         "Name": "Diglett",
         "Pokedex_Number": 50,
         "Img_name": 50,
@@ -1552,7 +1552,7 @@
         "CP39": 458
     },
     {
-        "Row": 51,
+        "id": 51,
         "Name": "Dugtrio",
         "Pokedex_Number": 51,
         "Img_name": 51,
@@ -1582,7 +1582,7 @@
         "CP39": 1314
     },
     {
-        "Row": 52,
+        "id": 52,
         "Name": "Meowth",
         "Pokedex_Number": 52,
         "Img_name": 52,
@@ -1612,7 +1612,7 @@
         "CP39": 629
     },
     {
-        "Row": 53,
+        "id": 53,
         "Name": "Persian",
         "Pokedex_Number": 53,
         "Img_name": 53,
@@ -1642,7 +1642,7 @@
         "CP39": 1517
     },
     {
-        "Row": 54,
+        "id": 54,
         "Name": "Psyduck",
         "Pokedex_Number": 54,
         "Img_name": 54,
@@ -1672,7 +1672,7 @@
         "CP39": 952
     },
     {
-        "Row": 55,
+        "id": 55,
         "Name": "Golduck",
         "Pokedex_Number": 55,
         "Img_name": 55,
@@ -1702,7 +1702,7 @@
         "CP39": 2238
     },
     {
-        "Row": 56,
+        "id": 56,
         "Name": "Mankey",
         "Pokedex_Number": 56,
         "Img_name": 56,
@@ -1732,7 +1732,7 @@
         "CP39": 987
     },
     {
-        "Row": 57,
+        "id": 57,
         "Name": "Primeape",
         "Pokedex_Number": 57,
         "Img_name": 57,
@@ -1762,8 +1762,8 @@
         "CP39": 2075
     },
     {
-        "Row": 58,
-        "Name": "Growlithe",
+        "id": 58,
+        "Name": "Gidlithe",
         "Pokedex_Number": 58,
         "Img_name": 58,
         "Generation": 1,
@@ -1792,7 +1792,7 @@
         "CP39": 1095
     },
     {
-        "Row": 59,
+        "id": 59,
         "Name": "Arcanine",
         "Pokedex_Number": 59,
         "Img_name": 59,
@@ -1822,7 +1822,7 @@
         "CP39": 2799
     },
     {
-        "Row": 60,
+        "id": 60,
         "Name": "Poliwag",
         "Pokedex_Number": 60,
         "Img_name": 60,
@@ -1852,7 +1852,7 @@
         "CP39": 685
     },
     {
-        "Row": 61,
+        "id": 61,
         "Name": "Poliwhirl",
         "Pokedex_Number": 61,
         "Img_name": 61,
@@ -1882,7 +1882,7 @@
         "CP39": 1294
     },
     {
-        "Row": 62,
+        "id": 62,
         "Name": "Poliwrath",
         "Pokedex_Number": 62,
         "Img_name": 62,
@@ -1914,7 +1914,7 @@
         "CP39": 2407
     },
     {
-        "Row": 63,
+        "id": 63,
         "Name": "Abra",
         "Pokedex_Number": 63,
         "Img_name": 63,
@@ -1944,7 +1944,7 @@
         "CP39": 1132
     },
     {
-        "Row": 64,
+        "id": 64,
         "Name": "Kadabra",
         "Pokedex_Number": 64,
         "Img_name": 64,
@@ -1974,7 +1974,7 @@
         "CP39": 1833
     },
     {
-        "Row": 65,
+        "id": 65,
         "Name": "Alakazam",
         "Pokedex_Number": 65,
         "Img_name": 65,
@@ -2004,7 +2004,7 @@
         "CP39": 2845
     },
     {
-        "Row": 66,
+        "id": 66,
         "Name": "Machop",
         "Pokedex_Number": 66,
         "Img_name": 66,
@@ -2034,7 +2034,7 @@
         "CP39": 1182
     },
     {
-        "Row": 67,
+        "id": 67,
         "Name": "Machoke",
         "Pokedex_Number": 67,
         "Img_name": 67,
@@ -2064,7 +2064,7 @@
         "CP39": 1882
     },
     {
-        "Row": 68,
+        "id": 68,
         "Name": "Machamp",
         "Pokedex_Number": 68,
         "Img_name": 68,
@@ -2094,7 +2094,7 @@
         "CP39": 2848
     },
     {
-        "Row": 69,
+        "id": 69,
         "Name": "Bellsprout",
         "Pokedex_Number": 69,
         "Img_name": 69,
@@ -2126,7 +2126,7 @@
         "CP39": 903
     },
     {
-        "Row": 70,
+        "id": 70,
         "Name": "Weepinbell",
         "Pokedex_Number": 70,
         "Img_name": 70,
@@ -2158,7 +2158,7 @@
         "CP39": 1453
     },
     {
-        "Row": 71,
+        "id": 71,
         "Name": "Victreebel",
         "Pokedex_Number": 71,
         "Img_name": 71,
@@ -2190,7 +2190,7 @@
         "CP39": 2236
     },
     {
-        "Row": 72,
+        "id": 72,
         "Name": "Tentacool",
         "Pokedex_Number": 72,
         "Img_name": 72,
@@ -2222,7 +2222,7 @@
         "CP39": 943
     },
     {
-        "Row": 73,
+        "id": 73,
         "Name": "Tentacruel",
         "Pokedex_Number": 73,
         "Img_name": 73,
@@ -2254,7 +2254,7 @@
         "CP39": 2340
     },
     {
-        "Row": 74,
+        "id": 74,
         "Name": "Geodude",
         "Pokedex_Number": 74,
         "Img_name": 74,
@@ -2286,7 +2286,7 @@
         "CP39": 1176
     },
     {
-        "Row": 75,
+        "id": 75,
         "Name": "Graveler",
         "Pokedex_Number": 75,
         "Img_name": 75,
@@ -2318,7 +2318,7 @@
         "CP39": 1789
     },
     {
-        "Row": 76,
+        "id": 76,
         "Name": "Golem",
         "Pokedex_Number": 76,
         "Img_name": 76,
@@ -2350,7 +2350,7 @@
         "CP39": 2875
     },
     {
-        "Row": 77,
+        "id": 77,
         "Name": "Ponyta",
         "Pokedex_Number": 77,
         "Img_name": 77,
@@ -2380,7 +2380,7 @@
         "CP39": 1480
     },
     {
-        "Row": 78,
+        "id": 78,
         "Name": "Rapidash",
         "Pokedex_Number": 78,
         "Img_name": 78,
@@ -2410,7 +2410,7 @@
         "CP39": 2220
     },
     {
-        "Row": 79,
+        "id": 79,
         "Name": "Slowpoke",
         "Pokedex_Number": 79,
         "Img_name": 79,
@@ -2442,7 +2442,7 @@
         "CP39": 1187
     },
     {
-        "Row": 80,
+        "id": 80,
         "Name": "Slowbro",
         "Pokedex_Number": 80,
         "Img_name": 80,
@@ -2474,7 +2474,7 @@
         "CP39": 2446
     },
     {
-        "Row": 81,
+        "id": 81,
         "Name": "Magnemite",
         "Pokedex_Number": 81,
         "Img_name": 81,
@@ -2506,7 +2506,7 @@
         "CP39": 1068
     },
     {
-        "Row": 82,
+        "id": 82,
         "Name": "Magneton",
         "Pokedex_Number": 82,
         "Img_name": 82,
@@ -2538,7 +2538,7 @@
         "CP39": 2205
     },
     {
-        "Row": 83,
+        "id": 83,
         "Name": "Farfetchd",
         "Pokedex_Number": 83,
         "Img_name": 83,
@@ -2570,7 +2570,7 @@
         "CP39": 1076
     },
     {
-        "Row": 84,
+        "id": 84,
         "Name": "Doduo",
         "Pokedex_Number": 84,
         "Img_name": 84,
@@ -2602,7 +2602,7 @@
         "CP39": 996
     },
     {
-        "Row": 85,
+        "id": 85,
         "Name": "Dodrio",
         "Pokedex_Number": 85,
         "Img_name": 85,
@@ -2634,7 +2634,7 @@
         "CP39": 2108
     },
     {
-        "Row": 86,
+        "id": 86,
         "Name": "Seel",
         "Pokedex_Number": 86,
         "Img_name": 86,
@@ -2664,7 +2664,7 @@
         "CP39": 886
     },
     {
-        "Row": 87,
+        "id": 87,
         "Name": "Dewgong",
         "Pokedex_Number": 87,
         "Img_name": 87,
@@ -2696,7 +2696,7 @@
         "CP39": 1867
     },
     {
-        "Row": 88,
+        "id": 88,
         "Name": "Grimer",
         "Pokedex_Number": 88,
         "Img_name": 88,
@@ -2726,7 +2726,7 @@
         "CP39": 1251
     },
     {
-        "Row": 89,
+        "id": 89,
         "Name": "Muk",
         "Pokedex_Number": 89,
         "Img_name": 89,
@@ -2756,7 +2756,7 @@
         "CP39": 2670
     },
     {
-        "Row": 90,
+        "id": 90,
         "Name": "Shellder",
         "Pokedex_Number": 90,
         "Img_name": 90,
@@ -2786,7 +2786,7 @@
         "CP39": 944
     },
     {
-        "Row": 91,
+        "id": 91,
         "Name": "Cloyster",
         "Pokedex_Number": 91,
         "Img_name": 91,
@@ -2818,7 +2818,7 @@
         "CP39": 2439
     },
     {
-        "Row": 92,
+        "id": 92,
         "Name": "Gastly",
         "Pokedex_Number": 92,
         "Img_name": 92,
@@ -2850,7 +2850,7 @@
         "CP39": 988
     },
     {
-        "Row": 93,
+        "id": 93,
         "Name": "Haunter",
         "Pokedex_Number": 93,
         "Img_name": 93,
@@ -2882,7 +2882,7 @@
         "CP39": 1692
     },
     {
-        "Row": 94,
+        "id": 94,
         "Name": "Gengar",
         "Pokedex_Number": 94,
         "Img_name": 94,
@@ -2914,7 +2914,7 @@
         "CP39": 2581
     },
     {
-        "Row": 95,
+        "id": 95,
         "Name": "Onix",
         "Pokedex_Number": 95,
         "Img_name": 95,
@@ -2946,8 +2946,8 @@
         "CP39": 988
     },
     {
-        "Row": 96,
-        "Name": "Drowzee",
+        "id": 96,
+        "Name": "Didzee",
         "Pokedex_Number": 96,
         "Img_name": 96,
         "Generation": 1,
@@ -2976,7 +2976,7 @@
         "CP39": 978
     },
     {
-        "Row": 97,
+        "id": 97,
         "Name": "Hypno",
         "Pokedex_Number": 97,
         "Img_name": 97,
@@ -3006,7 +3006,7 @@
         "CP39": 2019
     },
     {
-        "Row": 98,
+        "id": 98,
         "Name": "Krabby",
         "Pokedex_Number": 98,
         "Img_name": 98,
@@ -3036,7 +3036,7 @@
         "CP39": 1366
     },
     {
-        "Row": 99,
+        "id": 99,
         "Name": "Kingler",
         "Pokedex_Number": 99,
         "Img_name": 99,
@@ -3066,7 +3066,7 @@
         "CP39": 2656
     },
     {
-        "Row": 100,
+        "id": 100,
         "Name": "Voltorb",
         "Pokedex_Number": 100,
         "Img_name": 100,
@@ -3096,7 +3096,7 @@
         "CP39": 845
     },
     {
-        "Row": 101,
+        "id": 101,
         "Name": "Electrode",
         "Pokedex_Number": 101,
         "Img_name": 101,
@@ -3126,7 +3126,7 @@
         "CP39": 1873
     },
     {
-        "Row": 102,
+        "id": 102,
         "Name": "Exeggcute",
         "Pokedex_Number": 102,
         "Img_name": 102,
@@ -3158,7 +3158,7 @@
         "CP39": 1086
     },
     {
-        "Row": 103,
+        "id": 103,
         "Name": "Exeggutor",
         "Pokedex_Number": 103,
         "Img_name": 103,
@@ -3190,7 +3190,7 @@
         "CP39": 2875
     },
     {
-        "Row": 104,
+        "id": 104,
         "Name": "Cubone",
         "Pokedex_Number": 104,
         "Img_name": 104,
@@ -3220,8 +3220,8 @@
         "CP39": 930
     },
     {
-        "Row": 105,
-        "Name": "Marowak",
+        "id": 105,
+        "Name": "Maidak",
         "Pokedex_Number": 105,
         "Img_name": 105,
         "Generation": 1,
@@ -3250,7 +3250,7 @@
         "CP39": 1667
     },
     {
-        "Row": 106,
+        "id": 106,
         "Name": "Hitmonlee",
         "Pokedex_Number": 106,
         "Img_name": 106,
@@ -3280,7 +3280,7 @@
         "CP39": 2372
     },
     {
-        "Row": 107,
+        "id": 107,
         "Name": "Hitmonchan",
         "Pokedex_Number": 107,
         "Img_name": 107,
@@ -3310,7 +3310,7 @@
         "CP39": 2069
     },
     {
-        "Row": 108,
+        "id": 108,
         "Name": "Lickitung",
         "Pokedex_Number": 108,
         "Img_name": 108,
@@ -3340,7 +3340,7 @@
         "CP39": 1303
     },
     {
-        "Row": 109,
+        "id": 109,
         "Name": "Koffing",
         "Pokedex_Number": 109,
         "Img_name": 109,
@@ -3370,7 +3370,7 @@
         "CP39": 1075
     },
     {
-        "Row": 110,
+        "id": 110,
         "Name": "Weezing",
         "Pokedex_Number": 110,
         "Img_name": 110,
@@ -3400,7 +3400,7 @@
         "CP39": 2152
     },
     {
-        "Row": 111,
+        "id": 111,
         "Name": "Rhyhorn",
         "Pokedex_Number": 111,
         "Img_name": 111,
@@ -3432,7 +3432,7 @@
         "CP39": 1655
     },
     {
-        "Row": 112,
+        "id": 112,
         "Name": "Rhydon",
         "Pokedex_Number": 112,
         "Img_name": 112,
@@ -3464,7 +3464,7 @@
         "CP39": 3253
     },
     {
-        "Row": 113,
+        "id": 113,
         "Name": "Chansey",
         "Pokedex_Number": 113,
         "Img_name": 113,
@@ -3494,7 +3494,7 @@
         "CP39": 1448
     },
     {
-        "Row": 114,
+        "id": 114,
         "Name": "Tangela",
         "Pokedex_Number": 114,
         "Img_name": 114,
@@ -3524,7 +3524,7 @@
         "CP39": 2177
     },
     {
-        "Row": 115,
+        "id": 115,
         "Name": "Kangaskhan",
         "Pokedex_Number": 115,
         "Img_name": 115,
@@ -3554,7 +3554,7 @@
         "CP39": 2428
     },
     {
-        "Row": 116,
+        "id": 116,
         "Name": "Horsea",
         "Pokedex_Number": 116,
         "Img_name": 116,
@@ -3584,7 +3584,7 @@
         "CP39": 908
     },
     {
-        "Row": 117,
+        "id": 117,
         "Name": "Seadra",
         "Pokedex_Number": 117,
         "Img_name": 117,
@@ -3614,7 +3614,7 @@
         "CP39": 1951
     },
     {
-        "Row": 118,
+        "id": 118,
         "Name": "Goldeen",
         "Pokedex_Number": 118,
         "Img_name": 118,
@@ -3644,7 +3644,7 @@
         "CP39": 992
     },
     {
-        "Row": 119,
+        "id": 119,
         "Name": "Seaking",
         "Pokedex_Number": 119,
         "Img_name": 119,
@@ -3674,7 +3674,7 @@
         "CP39": 2011
     },
     {
-        "Row": 120,
+        "id": 120,
         "Name": "Staryu",
         "Pokedex_Number": 120,
         "Img_name": 120,
@@ -3704,7 +3704,7 @@
         "CP39": 913
     },
     {
-        "Row": 121,
+        "id": 121,
         "Name": "Starmie",
         "Pokedex_Number": 121,
         "Img_name": 121,
@@ -3736,7 +3736,7 @@
         "CP39": 2270
     },
     {
-        "Row": 122,
+        "id": 122,
         "Name": "Mr Mime",
         "Pokedex_Number": 122,
         "Img_name": 122,
@@ -3768,7 +3768,7 @@
         "CP39": 1956
     },
     {
-        "Row": 123,
+        "id": 123,
         "Name": "Scyther",
         "Pokedex_Number": 123,
         "Img_name": 123,
@@ -3800,7 +3800,7 @@
         "CP39": 2429
     },
     {
-        "Row": 124,
+        "id": 124,
         "Name": "Jynx",
         "Pokedex_Number": 124,
         "Img_name": 124,
@@ -3832,7 +3832,7 @@
         "CP39": 2476
     },
     {
-        "Row": 125,
+        "id": 125,
         "Name": "Electabuzz",
         "Pokedex_Number": 125,
         "Img_name": 125,
@@ -3862,7 +3862,7 @@
         "CP39": 2165
     },
     {
-        "Row": 126,
+        "id": 126,
         "Name": "Magmar",
         "Pokedex_Number": 126,
         "Img_name": 126,
@@ -3892,7 +3892,7 @@
         "CP39": 2222
     },
     {
-        "Row": 127,
+        "id": 127,
         "Name": "Pinsir",
         "Pokedex_Number": 127,
         "Img_name": 127,
@@ -3922,7 +3922,7 @@
         "CP39": 2730
     },
     {
-        "Row": 128,
+        "id": 128,
         "Name": "Tauros",
         "Pokedex_Number": 128,
         "Img_name": 128,
@@ -3952,7 +3952,7 @@
         "CP39": 2452
     },
     {
-        "Row": 129,
+        "id": 129,
         "Name": "Magikarp",
         "Pokedex_Number": 129,
         "Img_name": 129,
@@ -3982,7 +3982,7 @@
         "CP39": 217
     },
     {
-        "Row": 130,
+        "id": 130,
         "Name": "Gyarados",
         "Pokedex_Number": 130,
         "Img_name": 130,
@@ -4014,7 +4014,7 @@
         "CP39": 3234
     },
     {
-        "Row": 131,
+        "id": 131,
         "Name": "Lapras",
         "Pokedex_Number": 131,
         "Img_name": 131,
@@ -4046,7 +4046,7 @@
         "CP39": 2566
     },
     {
-        "Row": 132,
+        "id": 132,
         "Name": "Ditto",
         "Pokedex_Number": 132,
         "Img_name": 132,
@@ -4076,7 +4076,7 @@
         "CP39": 707
     },
     {
-        "Row": 133,
+        "id": 133,
         "Name": "Eevee",
         "Pokedex_Number": 133,
         "Img_name": 133,
@@ -4106,7 +4106,7 @@
         "CP39": 955
     },
     {
-        "Row": 134,
+        "id": 134,
         "Name": "Vaporeon",
         "Pokedex_Number": 134,
         "Img_name": 134,
@@ -4136,7 +4136,7 @@
         "CP39": 3112
     },
     {
-        "Row": 135,
+        "id": 135,
         "Name": "Jolteon",
         "Pokedex_Number": 135,
         "Img_name": 135,
@@ -4166,7 +4166,7 @@
         "CP39": 2691
     },
     {
-        "Row": 136,
+        "id": 136,
         "Name": "Flareon",
         "Pokedex_Number": 136,
         "Img_name": 136,
@@ -4196,7 +4196,7 @@
         "CP39": 2863
     },
     {
-        "Row": 137,
+        "id": 137,
         "Name": "Porygon",
         "Pokedex_Number": 137,
         "Img_name": 137,
@@ -4226,7 +4226,7 @@
         "CP39": 1545
     },
     {
-        "Row": 138,
+        "id": 138,
         "Name": "Omanyte",
         "Pokedex_Number": 138,
         "Img_name": 138,
@@ -4258,7 +4258,7 @@
         "CP39": 1326
     },
     {
-        "Row": 139,
+        "id": 139,
         "Name": "Omastar",
         "Pokedex_Number": 139,
         "Img_name": 139,
@@ -4290,7 +4290,7 @@
         "CP39": 2647
     },
     {
-        "Row": 140,
+        "id": 140,
         "Name": "Kabuto",
         "Pokedex_Number": 140,
         "Img_name": 140,
@@ -4322,7 +4322,7 @@
         "CP39": 1156
     },
     {
-        "Row": 141,
+        "id": 141,
         "Name": "Kabutops",
         "Pokedex_Number": 141,
         "Img_name": 141,
@@ -4354,7 +4354,7 @@
         "CP39": 2481
     },
     {
-        "Row": 142,
+        "id": 142,
         "Name": "Aerodactyl",
         "Pokedex_Number": 142,
         "Img_name": 142,
@@ -4386,7 +4386,7 @@
         "CP39": 2571
     },
     {
-        "Row": 143,
+        "id": 143,
         "Name": "Snorlax",
         "Pokedex_Number": 143,
         "Img_name": 143,
@@ -4416,7 +4416,7 @@
         "CP39": 3307
     },
     {
-        "Row": 144,
+        "id": 144,
         "Name": "Articuno",
         "Pokedex_Number": 144,
         "Img_name": 144,
@@ -4448,7 +4448,7 @@
         "CP39": 2891
     },
     {
-        "Row": 145,
+        "id": 145,
         "Name": "Zapdos",
         "Pokedex_Number": 145,
         "Img_name": 145,
@@ -4480,7 +4480,7 @@
         "CP39": 3282
     },
     {
-        "Row": 146,
+        "id": 146,
         "Name": "Moltres",
         "Pokedex_Number": 146,
         "Img_name": 146,
@@ -4512,7 +4512,7 @@
         "CP39": 3225
     },
     {
-        "Row": 147,
+        "id": 147,
         "Name": "Dratini",
         "Pokedex_Number": 147,
         "Img_name": 147,
@@ -4542,7 +4542,7 @@
         "CP39": 848
     },
     {
-        "Row": 148,
+        "id": 148,
         "Name": "Dragonair",
         "Pokedex_Number": 148,
         "Img_name": 148,
@@ -4572,7 +4572,7 @@
         "CP39": 1586
     },
     {
-        "Row": 149,
+        "id": 149,
         "Name": "Dragonite",
         "Pokedex_Number": 149,
         "Img_name": 149,
@@ -4603,7 +4603,7 @@
         "CP39": 3530
     },
     {
-        "Row": 150,
+        "id": 150,
         "Name": "Mewtwo",
         "Pokedex_Number": 150,
         "Img_name": 150,
@@ -4633,7 +4633,7 @@
         "CP39": 3925
     },
     {
-        "Row": 151,
+        "id": 151,
         "Name": "Mew",
         "Pokedex_Number": 151,
         "Img_name": 151,
@@ -4663,7 +4663,7 @@
         "CP39": 3046
     },
     {
-        "Row": 152,
+        "id": 152,
         "Name": "Chikorita",
         "Pokedex_Number": 152,
         "Img_name": 152,
@@ -4693,7 +4693,7 @@
         "CP39": 790
     },
     {
-        "Row": 153,
+        "id": 153,
         "Name": "Bayleef",
         "Pokedex_Number": 153,
         "Img_name": 153,
@@ -4723,7 +4723,7 @@
         "CP39": 1277
     },
     {
-        "Row": 154,
+        "id": 154,
         "Name": "Meganium",
         "Pokedex_Number": 154,
         "Img_name": 154,
@@ -4753,7 +4753,7 @@
         "CP39": 2195
     },
     {
-        "Row": 155,
+        "id": 155,
         "Name": "Cyndaquil",
         "Pokedex_Number": 155,
         "Img_name": 155,
@@ -4783,7 +4783,7 @@
         "CP39": 819
     },
     {
-        "Row": 156,
+        "id": 156,
         "Name": "Quilava",
         "Pokedex_Number": 156,
         "Img_name": 156,
@@ -4813,7 +4813,7 @@
         "CP39": 1462
     },
     {
-        "Row": 157,
+        "id": 157,
         "Name": "Typhlosion",
         "Pokedex_Number": 157,
         "Img_name": 157,
@@ -4843,7 +4843,7 @@
         "CP39": 2648
     },
     {
-        "Row": 158,
+        "id": 158,
         "Name": "Totodile",
         "Pokedex_Number": 158,
         "Img_name": 158,
@@ -4873,7 +4873,7 @@
         "CP39": 997
     },
     {
-        "Row": 159,
+        "id": 159,
         "Name": "Croconaw",
         "Pokedex_Number": 159,
         "Img_name": 159,
@@ -4903,7 +4903,7 @@
         "CP39": 1576
     },
     {
-        "Row": 160,
+        "id": 160,
         "Name": "Feraligatr",
         "Pokedex_Number": 160,
         "Img_name": 160,
@@ -4933,7 +4933,7 @@
         "CP39": 2682
     },
     {
-        "Row": 161,
+        "id": 161,
         "Name": "Sentret",
         "Pokedex_Number": 161,
         "Img_name": 161,
@@ -4963,7 +4963,7 @@
         "CP39": 511
     },
     {
-        "Row": 162,
+        "id": 162,
         "Name": "Furret",
         "Pokedex_Number": 162,
         "Img_name": 162,
@@ -4993,7 +4993,7 @@
         "CP39": 1643
     },
     {
-        "Row": 163,
+        "id": 163,
         "Name": "Hoothoot",
         "Pokedex_Number": 163,
         "Img_name": 163,
@@ -5025,7 +5025,7 @@
         "CP39": 631
     },
     {
-        "Row": 164,
+        "id": 164,
         "Name": "Noctowl",
         "Pokedex_Number": 164,
         "Img_name": 164,
@@ -5057,7 +5057,7 @@
         "CP39": 2011
     },
     {
-        "Row": 165,
+        "id": 165,
         "Name": "Ledyba",
         "Pokedex_Number": 165,
         "Img_name": 165,
@@ -5089,7 +5089,7 @@
         "CP39": 654
     },
     {
-        "Row": 166,
+        "id": 166,
         "Name": "Ledian",
         "Pokedex_Number": 166,
         "Img_name": 166,
@@ -5121,7 +5121,7 @@
         "CP39": 1256
     },
     {
-        "Row": 167,
+        "id": 167,
         "Name": "Spinarak",
         "Pokedex_Number": 167,
         "Img_name": 167,
@@ -5153,7 +5153,7 @@
         "CP39": 675
     },
     {
-        "Row": 168,
+        "id": 168,
         "Name": "Ariados",
         "Pokedex_Number": 168,
         "Img_name": 168,
@@ -5185,7 +5185,7 @@
         "CP39": 1613
     },
     {
-        "Row": 169,
+        "id": 169,
         "Name": "Crobat",
         "Pokedex_Number": 169,
         "Img_name": 169,
@@ -5217,7 +5217,7 @@
         "CP39": 2431
     },
     {
-        "Row": 170,
+        "id": 170,
         "Name": "Chinchou",
         "Pokedex_Number": 170,
         "Img_name": 170,
@@ -5248,7 +5248,7 @@
         "CP39": 1052
     },
     {
-        "Row": 171,
+        "id": 171,
         "Name": "Lanturn",
         "Pokedex_Number": 171,
         "Img_name": 171,
@@ -5279,7 +5279,7 @@
         "CP39": 2047
     },
     {
-        "Row": 172,
+        "id": 172,
         "Name": "Pichu",
         "Pokedex_Number": 172,
         "Img_name": 172,
@@ -5309,7 +5309,7 @@
         "CP39": 370
     },
     {
-        "Row": 173,
+        "id": 173,
         "Name": "Cleffa",
         "Pokedex_Number": 173,
         "Img_name": 173,
@@ -5339,7 +5339,7 @@
         "CP39": 611
     },
     {
-        "Row": 174,
+        "id": 174,
         "Name": "Igglybuff",
         "Pokedex_Number": 174,
         "Img_name": 174,
@@ -5371,7 +5371,7 @@
         "CP39": 505
     },
     {
-        "Row": 175,
+        "id": 175,
         "Name": "Togepi",
         "Pokedex_Number": 175,
         "Img_name": 175,
@@ -5401,7 +5401,7 @@
         "CP39": 532
     },
     {
-        "Row": 176,
+        "id": 176,
         "Name": "Togetic",
         "Pokedex_Number": 176,
         "Img_name": 176,
@@ -5433,7 +5433,7 @@
         "CP39": 1521
     },
     {
-        "Row": 177,
+        "id": 177,
         "Name": "Natu",
         "Pokedex_Number": 177,
         "Img_name": 177,
@@ -5464,7 +5464,7 @@
         "CP39": 911
     },
     {
-        "Row": 178,
+        "id": 178,
         "Name": "Xatu",
         "Pokedex_Number": 178,
         "Img_name": 178,
@@ -5495,7 +5495,7 @@
         "CP39": 1947
     },
     {
-        "Row": 179,
+        "id": 179,
         "Name": "Mareep",
         "Pokedex_Number": 179,
         "Img_name": 179,
@@ -5525,7 +5525,7 @@
         "CP39": 874
     },
     {
-        "Row": 180,
+        "id": 180,
         "Name": "Flaaffy",
         "Pokedex_Number": 180,
         "Img_name": 180,
@@ -5555,7 +5555,7 @@
         "CP39": 1382
     },
     {
-        "Row": 181,
+        "id": 181,
         "Name": "Ampharos",
         "Pokedex_Number": 181,
         "Img_name": 181,
@@ -5585,7 +5585,7 @@
         "CP39": 2656
     },
     {
-        "Row": 182,
+        "id": 182,
         "Name": "Bellossom",
         "Pokedex_Number": 182,
         "Img_name": 182,
@@ -5615,7 +5615,7 @@
         "CP39": 2078
     },
     {
-        "Row": 183,
+        "id": 183,
         "Name": "Marill",
         "Pokedex_Number": 183,
         "Img_name": 183,
@@ -5647,7 +5647,7 @@
         "CP39": 414
     },
     {
-        "Row": 184,
+        "id": 184,
         "Name": "Azumarill",
         "Pokedex_Number": 184,
         "Img_name": 184,
@@ -5679,7 +5679,7 @@
         "CP39": 1481
     },
     {
-        "Row": 185,
+        "id": 185,
         "Name": "Sudowoodo",
         "Pokedex_Number": 185,
         "Img_name": 185,
@@ -5709,7 +5709,7 @@
         "CP39": 2035
     },
     {
-        "Row": 186,
+        "id": 186,
         "Name": "Politoed",
         "Pokedex_Number": 186,
         "Img_name": 186,
@@ -5739,7 +5739,7 @@
         "CP39": 2337
     },
     {
-        "Row": 187,
+        "id": 187,
         "Name": "Hoppip",
         "Pokedex_Number": 187,
         "Img_name": 187,
@@ -5771,7 +5771,7 @@
         "CP39": 501
     },
     {
-        "Row": 188,
+        "id": 188,
         "Name": "Skiploom",
         "Pokedex_Number": 188,
         "Img_name": 188,
@@ -5803,7 +5803,7 @@
         "CP39": 869
     },
     {
-        "Row": 189,
+        "id": 189,
         "Name": "Jumpluff",
         "Pokedex_Number": 189,
         "Img_name": 189,
@@ -5835,7 +5835,7 @@
         "CP39": 1531
     },
     {
-        "Row": 190,
+        "id": 190,
         "Name": "Aipom",
         "Pokedex_Number": 190,
         "Img_name": 190,
@@ -5865,7 +5865,7 @@
         "CP39": 1171
     },
     {
-        "Row": 191,
+        "id": 191,
         "Name": "Sunkern",
         "Pokedex_Number": 191,
         "Img_name": 191,
@@ -5895,7 +5895,7 @@
         "CP39": 312
     },
     {
-        "Row": 192,
+        "id": 192,
         "Name": "Sunflora",
         "Pokedex_Number": 192,
         "Img_name": 192,
@@ -5925,7 +5925,7 @@
         "CP39": 2019
     },
     {
-        "Row": 193,
+        "id": 193,
         "Name": "Yanma",
         "Pokedex_Number": 193,
         "Img_name": 193,
@@ -5957,7 +5957,7 @@
         "CP39": 1308
     },
     {
-        "Row": 194,
+        "id": 194,
         "Name": "Wooper",
         "Pokedex_Number": 194,
         "Img_name": 194,
@@ -5989,7 +5989,7 @@
         "CP39": 587
     },
     {
-        "Row": 195,
+        "id": 195,
         "Name": "Quagsire",
         "Pokedex_Number": 195,
         "Img_name": 195,
@@ -6021,7 +6021,7 @@
         "CP39": 1902
     },
     {
-        "Row": 196,
+        "id": 196,
         "Name": "Espeon",
         "Pokedex_Number": 196,
         "Img_name": 196,
@@ -6051,7 +6051,7 @@
         "CP39": 2958
     },
     {
-        "Row": 197,
+        "id": 197,
         "Name": "Umbreon",
         "Pokedex_Number": 197,
         "Img_name": 197,
@@ -6081,8 +6081,8 @@
         "CP39": 2023
     },
     {
-        "Row": 198,
-        "Name": "Murkrow",
+        "id": 198,
+        "Name": "Murkid",
         "Pokedex_Number": 198,
         "Img_name": 198,
         "Generation": 2,
@@ -6113,7 +6113,7 @@
         "CP39": 1372
     },
     {
-        "Row": 199,
+        "id": 199,
         "Name": "Slowking",
         "Pokedex_Number": 199,
         "Img_name": 199,
@@ -6145,7 +6145,7 @@
         "CP39": 2446
     },
     {
-        "Row": 200,
+        "id": 200,
         "Name": "Misdreavus",
         "Pokedex_Number": 200,
         "Img_name": 200,
@@ -6175,7 +6175,7 @@
         "CP39": 1756
     },
     {
-        "Row": 201,
+        "id": 201,
         "Name": "Unown",
         "Pokedex_Number": 201,
         "Img_name": 201,
@@ -6205,7 +6205,7 @@
         "CP39": 1008
     },
     {
-        "Row": 202,
+        "id": 202,
         "Name": "Wobbuffet",
         "Pokedex_Number": 202,
         "Img_name": 202,
@@ -6235,7 +6235,7 @@
         "CP39": 1009
     },
     {
-        "Row": 203,
+        "id": 203,
         "Name": "Girafarig",
         "Pokedex_Number": 203,
         "Img_name": 203,
@@ -6267,7 +6267,7 @@
         "CP39": 1836
     },
     {
-        "Row": 204,
+        "id": 204,
         "Name": "Pineco",
         "Pokedex_Number": 204,
         "Img_name": 204,
@@ -6297,7 +6297,7 @@
         "CP39": 1030
     },
     {
-        "Row": 205,
+        "id": 205,
         "Name": "Forretress",
         "Pokedex_Number": 205,
         "Img_name": 205,
@@ -6329,7 +6329,7 @@
         "CP39": 2231
     },
     {
-        "Row": 206,
+        "id": 206,
         "Name": "Dunsparce",
         "Pokedex_Number": 206,
         "Img_name": 206,
@@ -6359,7 +6359,7 @@
         "CP39": 1592
     },
     {
-        "Row": 207,
+        "id": 207,
         "Name": "Gligar",
         "Pokedex_Number": 207,
         "Img_name": 207,
@@ -6391,7 +6391,7 @@
         "CP39": 1733
     },
     {
-        "Row": 208,
+        "id": 208,
         "Name": "Steelix",
         "Pokedex_Number": 208,
         "Img_name": 208,
@@ -6423,7 +6423,7 @@
         "CP39": 2404
     },
     {
-        "Row": 209,
+        "id": 209,
         "Name": "Snubbull",
         "Pokedex_Number": 209,
         "Img_name": 209,
@@ -6453,7 +6453,7 @@
         "CP39": 1108
     },
     {
-        "Row": 210,
+        "id": 210,
         "Name": "Granbull",
         "Pokedex_Number": 210,
         "Img_name": 210,
@@ -6483,7 +6483,7 @@
         "CP39": 2406
     },
     {
-        "Row": 211,
+        "id": 211,
         "Name": "Qwilfish",
         "Pokedex_Number": 211,
         "Img_name": 211,
@@ -6515,7 +6515,7 @@
         "CP39": 1883
     },
     {
-        "Row": 212,
+        "id": 212,
         "Name": "Scizor",
         "Pokedex_Number": 212,
         "Img_name": 212,
@@ -6547,7 +6547,7 @@
         "CP39": 2761
     },
     {
-        "Row": 213,
+        "id": 213,
         "Name": "Shuckle",
         "Pokedex_Number": 213,
         "Img_name": 213,
@@ -6579,7 +6579,7 @@
         "CP39": 296
     },
     {
-        "Row": 214,
+        "id": 214,
         "Name": "Heracross",
         "Pokedex_Number": 214,
         "Img_name": 214,
@@ -6611,7 +6611,7 @@
         "CP39": 2896
     },
     {
-        "Row": 215,
+        "id": 215,
         "Name": "Sneasel",
         "Pokedex_Number": 215,
         "Img_name": 215,
@@ -6643,7 +6643,7 @@
         "CP39": 1841
     },
     {
-        "Row": 216,
+        "id": 216,
         "Name": "Teddiursa",
         "Pokedex_Number": 216,
         "Img_name": 216,
@@ -6673,7 +6673,7 @@
         "CP39": 1167
     },
     {
-        "Row": 217,
+        "id": 217,
         "Name": "Ursaring",
         "Pokedex_Number": 217,
         "Img_name": 217,
@@ -6703,7 +6703,7 @@
         "CP39": 2720
     },
     {
-        "Row": 218,
+        "id": 218,
         "Name": "Slugma",
         "Pokedex_Number": 218,
         "Img_name": 218,
@@ -6733,7 +6733,7 @@
         "CP39": 740
     },
     {
-        "Row": 219,
+        "id": 219,
         "Name": "Magcargo",
         "Pokedex_Number": 219,
         "Img_name": 219,
@@ -6765,7 +6765,7 @@
         "CP39": 1521
     },
     {
-        "Row": 220,
+        "id": 220,
         "Name": "Swinub",
         "Pokedex_Number": 220,
         "Img_name": 220,
@@ -6797,7 +6797,7 @@
         "CP39": 653
     },
     {
-        "Row": 221,
+        "id": 221,
         "Name": "Piloswine",
         "Pokedex_Number": 221,
         "Img_name": 221,
@@ -6829,7 +6829,7 @@
         "CP39": 2252
     },
     {
-        "Row": 222,
+        "id": 222,
         "Name": "Corsola",
         "Pokedex_Number": 222,
         "Img_name": 222,
@@ -6861,7 +6861,7 @@
         "CP39": 1197
     },
     {
-        "Row": 223,
+        "id": 223,
         "Name": "Remoraid",
         "Pokedex_Number": 223,
         "Img_name": 223,
@@ -6891,7 +6891,7 @@
         "CP39": 738
     },
     {
-        "Row": 224,
+        "id": 224,
         "Name": "Octillery",
         "Pokedex_Number": 224,
         "Img_name": 224,
@@ -6921,7 +6921,7 @@
         "CP39": 2094
     },
     {
-        "Row": 225,
+        "id": 225,
         "Name": "Delibird",
         "Pokedex_Number": 225,
         "Img_name": 225,
@@ -6953,7 +6953,7 @@
         "CP39": 924
     },
     {
-        "Row": 226,
+        "id": 226,
         "Name": "Mantine",
         "Pokedex_Number": 226,
         "Img_name": 226,
@@ -6985,7 +6985,7 @@
         "CP39": 2003
     },
     {
-        "Row": 227,
+        "id": 227,
         "Name": "Skarmory",
         "Pokedex_Number": 227,
         "Img_name": 227,
@@ -7017,7 +7017,7 @@
         "CP39": 2003
     },
     {
-        "Row": 228,
+        "id": 228,
         "Name": "Houndour",
         "Pokedex_Number": 228,
         "Img_name": 228,
@@ -7049,7 +7049,7 @@
         "CP39": 1094
     },
     {
-        "Row": 229,
+        "id": 229,
         "Name": "Houndoom",
         "Pokedex_Number": 229,
         "Img_name": 229,
@@ -7081,7 +7081,7 @@
         "CP39": 2493
     },
     {
-        "Row": 230,
+        "id": 230,
         "Name": "Kingdra",
         "Pokedex_Number": 230,
         "Img_name": 230,
@@ -7113,7 +7113,7 @@
         "CP39": 2389
     },
     {
-        "Row": 231,
+        "id": 231,
         "Name": "Phanpy",
         "Pokedex_Number": 231,
         "Img_name": 231,
@@ -7143,7 +7143,7 @@
         "CP39": 1158
     },
     {
-        "Row": 232,
+        "id": 232,
         "Name": "Donphan",
         "Pokedex_Number": 232,
         "Img_name": 232,
@@ -7173,7 +7173,7 @@
         "CP39": 2979
     },
     {
-        "Row": 233,
+        "id": 233,
         "Name": "Porygon2",
         "Pokedex_Number": 233,
         "Img_name": 233,
@@ -7203,7 +7203,7 @@
         "CP39": 2509
     },
     {
-        "Row": 234,
+        "id": 234,
         "Name": "Stantler",
         "Pokedex_Number": 234,
         "Img_name": 234,
@@ -7233,7 +7233,7 @@
         "CP39": 1960
     },
     {
-        "Row": 235,
+        "id": 235,
         "Name": "Smeargle",
         "Pokedex_Number": 235,
         "Img_name": 235,
@@ -7263,7 +7263,7 @@
         "CP39": 384
     },
     {
-        "Row": 236,
+        "id": 236,
         "Name": "Tyrogue",
         "Pokedex_Number": 236,
         "Img_name": 236,
@@ -7293,7 +7293,7 @@
         "CP39": 398
     },
     {
-        "Row": 237,
+        "id": 237,
         "Name": "Hitmontop",
         "Pokedex_Number": 237,
         "Img_name": 237,
@@ -7323,7 +7323,7 @@
         "CP39": 1878
     },
     {
-        "Row": 238,
+        "id": 238,
         "Name": "Smoochum",
         "Pokedex_Number": 238,
         "Img_name": 238,
@@ -7354,7 +7354,7 @@
         "CP39": 1213
     },
     {
-        "Row": 239,
+        "id": 239,
         "Name": "Elekid",
         "Pokedex_Number": 239,
         "Img_name": 239,
@@ -7383,7 +7383,7 @@
         "CP39": 1057
     },
     {
-        "Row": 240,
+        "id": 240,
         "Name": "Magby",
         "Pokedex_Number": 240,
         "Img_name": 240,
@@ -7412,7 +7412,7 @@
         "CP39": 1161
     },
     {
-        "Row": 241,
+        "id": 241,
         "Name": "Miltank",
         "Pokedex_Number": 241,
         "Img_name": 241,
@@ -7442,7 +7442,7 @@
         "CP39": 2279
     },
     {
-        "Row": 242,
+        "id": 242,
         "Name": "Blissey",
         "Pokedex_Number": 242,
         "Img_name": 242,
@@ -7471,7 +7471,7 @@
         "CP39": 3173
     },
     {
-        "Row": 243,
+        "id": 243,
         "Name": "Raikou",
         "Pokedex_Number": 243,
         "Img_name": 243,
@@ -7501,7 +7501,7 @@
         "CP39": 3301
     },
     {
-        "Row": 244,
+        "id": 244,
         "Name": "Entei",
         "Pokedex_Number": 244,
         "Img_name": 244,
@@ -7531,7 +7531,7 @@
         "CP39": 3329
     },
     {
-        "Row": 245,
+        "id": 245,
         "Name": "Suicune",
         "Pokedex_Number": 245,
         "Img_name": 245,
@@ -7561,7 +7561,7 @@
         "CP39": 2783
     },
     {
-        "Row": 246,
+        "id": 246,
         "Name": "Larvitar",
         "Pokedex_Number": 246,
         "Img_name": 246,
@@ -7593,7 +7593,7 @@
         "CP39": 891
     },
     {
-        "Row": 247,
+        "id": 247,
         "Name": "Pupitar",
         "Pokedex_Number": 247,
         "Img_name": 247,
@@ -7625,7 +7625,7 @@
         "CP39": 1585
     },
     {
-        "Row": 248,
+        "id": 248,
         "Name": "Tyranitar",
         "Pokedex_Number": 248,
         "Img_name": 248,
@@ -7657,7 +7657,7 @@
         "CP39": 3617
     },
     {
-        "Row": 249,
+        "id": 249,
         "Name": "Lugia",
         "Pokedex_Number": 249,
         "Img_name": 249,
@@ -7688,7 +7688,7 @@
         "CP39": 3547
     },
     {
-        "Row": 250,
+        "id": 250,
         "Name": "Ho Oh",
         "Pokedex_Number": 250,
         "Img_name": 250,
@@ -7720,7 +7720,7 @@
         "CP39": 3833
     },
     {
-        "Row": 251,
+        "id": 251,
         "Name": "Celebi",
         "Pokedex_Number": 251,
         "Img_name": 251,
@@ -7752,7 +7752,7 @@
         "CP39": 3046
     },
     {
-        "Row": 252,
+        "id": 252,
         "Name": "Treecko",
         "Pokedex_Number": 252,
         "Img_name": 252,
@@ -7782,7 +7782,7 @@
         "CP39": 909
     },
     {
-        "Row": 253,
+        "id": 253,
         "Name": "Grovyle",
         "Pokedex_Number": 253,
         "Img_name": 253,
@@ -7812,7 +7812,7 @@
         "CP39": 1486
     },
     {
-        "Row": 254,
+        "id": 254,
         "Name": "Sceptile",
         "Pokedex_Number": 254,
         "Img_name": 254,
@@ -7842,7 +7842,7 @@
         "CP39": 2547
     },
     {
-        "Row": 255,
+        "id": 255,
         "Name": "Torchic",
         "Pokedex_Number": 255,
         "Img_name": 255,
@@ -7872,7 +7872,7 @@
         "CP39": 946
     },
     {
-        "Row": 256,
+        "id": 256,
         "Name": "Combusken",
         "Pokedex_Number": 256,
         "Img_name": 256,
@@ -7904,7 +7904,7 @@
         "CP39": 1451
     },
     {
-        "Row": 257,
+        "id": 257,
         "Name": "Blaziken",
         "Pokedex_Number": 257,
         "Img_name": 257,
@@ -7936,7 +7936,7 @@
         "CP39": 2593
     },
     {
-        "Row": 258,
+        "id": 258,
         "Name": "Mudkip",
         "Pokedex_Number": 258,
         "Img_name": 258,
@@ -7966,7 +7966,7 @@
         "CP39": 967
     },
     {
-        "Row": 259,
+        "id": 259,
         "Name": "Marshtomp",
         "Pokedex_Number": 259,
         "Img_name": 259,
@@ -7998,7 +7998,7 @@
         "CP39": 1594
     },
     {
-        "Row": 260,
+        "id": 260,
         "Name": "Swampert",
         "Pokedex_Number": 260,
         "Img_name": 260,
@@ -8030,7 +8030,7 @@
         "CP39": 2774
     },
     {
-        "Row": 261,
+        "id": 261,
         "Name": "Poochyena",
         "Pokedex_Number": 261,
         "Img_name": 261,
@@ -8060,7 +8060,7 @@
         "CP39": 556
     },
     {
-        "Row": 262,
+        "id": 262,
         "Name": "Mightyena",
         "Pokedex_Number": 262,
         "Img_name": 262,
@@ -8090,7 +8090,7 @@
         "CP39": 1757
     },
     {
-        "Row": 263,
+        "id": 263,
         "Name": "Zigzagoon",
         "Pokedex_Number": 263,
         "Img_name": 263,
@@ -8120,7 +8120,7 @@
         "CP39": 417
     },
     {
-        "Row": 264,
+        "id": 264,
         "Name": "Linoone",
         "Pokedex_Number": 264,
         "Img_name": 264,
@@ -8150,7 +8150,7 @@
         "CP39": 1511
     },
     {
-        "Row": 265,
+        "id": 265,
         "Name": "Wurmple",
         "Pokedex_Number": 265,
         "Img_name": 265,
@@ -8180,7 +8180,7 @@
         "CP39": 494
     },
     {
-        "Row": 266,
+        "id": 266,
         "Name": "Silcoon",
         "Pokedex_Number": 266,
         "Img_name": 266,
@@ -8210,7 +8210,7 @@
         "CP39": 509
     },
     {
-        "Row": 267,
+        "id": 267,
         "Name": "Beautifly",
         "Pokedex_Number": 267,
         "Img_name": 267,
@@ -8242,7 +8242,7 @@
         "CP39": 1551
     },
     {
-        "Row": 268,
+        "id": 268,
         "Name": "Cascoon",
         "Pokedex_Number": 268,
         "Img_name": 268,
@@ -8272,7 +8272,7 @@
         "CP39": 509
     },
     {
-        "Row": 269,
+        "id": 269,
         "Name": "Dustox",
         "Pokedex_Number": 269,
         "Img_name": 269,
@@ -8304,7 +8304,7 @@
         "CP39": 1105
     },
     {
-        "Row": 270,
+        "id": 270,
         "Name": "Lotad",
         "Pokedex_Number": 270,
         "Img_name": 270,
@@ -8336,7 +8336,7 @@
         "CP39": 518
     },
     {
-        "Row": 271,
+        "id": 271,
         "Name": "Lombre",
         "Pokedex_Number": 271,
         "Img_name": 271,
@@ -8368,7 +8368,7 @@
         "CP39": 1086
     },
     {
-        "Row": 272,
+        "id": 272,
         "Name": "Ludicolo",
         "Pokedex_Number": 272,
         "Img_name": 272,
@@ -8400,7 +8400,7 @@
         "CP39": 2197
     },
     {
-        "Row": 273,
+        "id": 273,
         "Name": "Seedot",
         "Pokedex_Number": 273,
         "Img_name": 273,
@@ -8430,7 +8430,7 @@
         "CP39": 518
     },
     {
-        "Row": 274,
+        "id": 274,
         "Name": "Nuzleaf",
         "Pokedex_Number": 274,
         "Img_name": 274,
@@ -8462,7 +8462,7 @@
         "CP39": 1101
     },
     {
-        "Row": 275,
+        "id": 275,
         "Name": "Shiftry",
         "Pokedex_Number": 275,
         "Img_name": 275,
@@ -8494,7 +8494,7 @@
         "CP39": 2155
     },
     {
-        "Row": 276,
+        "id": 276,
         "Name": "Taillow",
         "Pokedex_Number": 276,
         "Img_name": 276,
@@ -8526,7 +8526,7 @@
         "CP39": 632
     },
     {
-        "Row": 277,
+        "id": 277,
         "Name": "Swellow",
         "Pokedex_Number": 277,
         "Img_name": 277,
@@ -8558,7 +8558,7 @@
         "CP39": 1722
     },
     {
-        "Row": 278,
+        "id": 278,
         "Name": "Wingull",
         "Pokedex_Number": 278,
         "Img_name": 278,
@@ -8590,7 +8590,7 @@
         "CP39": 632
     },
     {
-        "Row": 279,
+        "id": 279,
         "Name": "Pelipper",
         "Pokedex_Number": 279,
         "Img_name": 279,
@@ -8622,7 +8622,7 @@
         "CP39": 1941
     },
     {
-        "Row": 280,
+        "id": 280,
         "Name": "Ralts",
         "Pokedex_Number": 280,
         "Img_name": 280,
@@ -8654,7 +8654,7 @@
         "CP39": 430
     },
     {
-        "Row": 281,
+        "id": 281,
         "Name": "Kirlia",
         "Pokedex_Number": 281,
         "Img_name": 281,
@@ -8686,7 +8686,7 @@
         "CP39": 831
     },
     {
-        "Row": 282,
+        "id": 282,
         "Name": "Gardevoir",
         "Pokedex_Number": 282,
         "Img_name": 282,
@@ -8718,7 +8718,7 @@
         "CP39": 2922
     },
     {
-        "Row": 283,
+        "id": 283,
         "Name": "Surskit",
         "Pokedex_Number": 283,
         "Img_name": 283,
@@ -8749,7 +8749,7 @@
         "CP39": 685
     },
     {
-        "Row": 284,
+        "id": 284,
         "Name": "Masquerain",
         "Pokedex_Number": 284,
         "Img_name": 284,
@@ -8781,7 +8781,7 @@
         "CP39": 2104
     },
     {
-        "Row": 285,
+        "id": 285,
         "Name": "Shroomish",
         "Pokedex_Number": 285,
         "Img_name": 285,
@@ -8811,7 +8811,7 @@
         "CP39": 711
     },
     {
-        "Row": 286,
+        "id": 286,
         "Name": "Breloom",
         "Pokedex_Number": 286,
         "Img_name": 286,
@@ -8843,7 +8843,7 @@
         "CP39": 2373
     },
     {
-        "Row": 287,
+        "id": 287,
         "Name": "Slakoth",
         "Pokedex_Number": 287,
         "Img_name": 287,
@@ -8873,7 +8873,7 @@
         "CP39": 928
     },
     {
-        "Row": 288,
+        "id": 288,
         "Name": "Vigoroth",
         "Pokedex_Number": 288,
         "Img_name": 288,
@@ -8903,7 +8903,7 @@
         "CP39": 1869
     },
     {
-        "Row": 289,
+        "id": 289,
         "Name": "Slaking",
         "Pokedex_Number": 289,
         "Img_name": 289,
@@ -8933,7 +8933,7 @@
         "CP39": 4484
     },
     {
-        "Row": 290,
+        "id": 290,
         "Name": "Nincada",
         "Pokedex_Number": 290,
         "Img_name": 290,
@@ -8965,7 +8965,7 @@
         "CP39": 665
     },
     {
-        "Row": 291,
+        "id": 291,
         "Name": "Ninjask",
         "Pokedex_Number": 291,
         "Img_name": 291,
@@ -8997,7 +8997,7 @@
         "CP39": 1765
     },
     {
-        "Row": 292,
+        "id": 292,
         "Name": "Shedinja",
         "Pokedex_Number": 292,
         "Img_name": 292,
@@ -9029,7 +9029,7 @@
         "CP39": 415
     },
     {
-        "Row": 293,
+        "id": 293,
         "Name": "Whismur",
         "Pokedex_Number": 293,
         "Img_name": 293,
@@ -9059,7 +9059,7 @@
         "CP39": 594
     },
     {
-        "Row": 294,
+        "id": 294,
         "Name": "Loudred",
         "Pokedex_Number": 294,
         "Img_name": 294,
@@ -9089,7 +9089,7 @@
         "CP39": 1215
     },
     {
-        "Row": 295,
+        "id": 295,
         "Name": "Exploud",
         "Pokedex_Number": 295,
         "Img_name": 295,
@@ -9119,7 +9119,7 @@
         "CP39": 2234
     },
     {
-        "Row": 296,
+        "id": 296,
         "Name": "Makuhita",
         "Pokedex_Number": 296,
         "Img_name": 296,
@@ -9149,7 +9149,7 @@
         "CP39": 735
     },
     {
-        "Row": 297,
+        "id": 297,
         "Name": "Hariyama",
         "Pokedex_Number": 297,
         "Img_name": 297,
@@ -9179,7 +9179,7 @@
         "CP39": 2726
     },
     {
-        "Row": 298,
+        "id": 298,
         "Name": "Azurill",
         "Pokedex_Number": 298,
         "Img_name": 298,
@@ -9210,7 +9210,7 @@
         "CP39": 312
     },
     {
-        "Row": 299,
+        "id": 299,
         "Name": "Nosepass",
         "Pokedex_Number": 299,
         "Img_name": 299,
@@ -9240,7 +9240,7 @@
         "CP39": 819
     },
     {
-        "Row": 300,
+        "id": 300,
         "Name": "Skitty",
         "Pokedex_Number": 300,
         "Img_name": 300,
@@ -9270,7 +9270,7 @@
         "CP39": 650
     },
     {
-        "Row": 301,
+        "id": 301,
         "Name": "Delcatty",
         "Pokedex_Number": 301,
         "Img_name": 301,
@@ -9300,7 +9300,7 @@
         "CP39": 1366
     },
     {
-        "Row": 302,
+        "id": 302,
         "Name": "Sableye",
         "Pokedex_Number": 302,
         "Img_name": 302,
@@ -9331,7 +9331,7 @@
         "CP39": 1286
     },
     {
-        "Row": 303,
+        "id": 303,
         "Name": "Mawile",
         "Pokedex_Number": 303,
         "Img_name": 303,
@@ -9363,7 +9363,7 @@
         "CP39": 1463
     },
     {
-        "Row": 304,
+        "id": 304,
         "Name": "Aron",
         "Pokedex_Number": 304,
         "Img_name": 304,
@@ -9395,7 +9395,7 @@
         "CP39": 1214
     },
     {
-        "Row": 305,
+        "id": 305,
         "Name": "Lairon",
         "Pokedex_Number": 305,
         "Img_name": 305,
@@ -9427,7 +9427,7 @@
         "CP39": 1976
     },
     {
-        "Row": 306,
+        "id": 306,
         "Name": "Aggron",
         "Pokedex_Number": 306,
         "Img_name": 306,
@@ -9459,7 +9459,7 @@
         "CP39": 2961
     },
     {
-        "Row": 307,
+        "id": 307,
         "Name": "Meditite",
         "Pokedex_Number": 307,
         "Img_name": 307,
@@ -9491,7 +9491,7 @@
         "CP39": 547
     },
     {
-        "Row": 308,
+        "id": 308,
         "Name": "Medicham",
         "Pokedex_Number": 308,
         "Img_name": 308,
@@ -9523,7 +9523,7 @@
         "CP39": 1257
     },
     {
-        "Row": 309,
+        "id": 309,
         "Name": "Electrike",
         "Pokedex_Number": 309,
         "Img_name": 309,
@@ -9553,7 +9553,7 @@
         "CP39": 798
     },
     {
-        "Row": 310,
+        "id": 310,
         "Name": "Manectric",
         "Pokedex_Number": 310,
         "Img_name": 310,
@@ -9583,7 +9583,7 @@
         "CP39": 2100
     },
     {
-        "Row": 311,
+        "id": 311,
         "Name": "Plusle",
         "Pokedex_Number": 311,
         "Img_name": 311,
@@ -9613,7 +9613,7 @@
         "CP39": 1657
     },
     {
-        "Row": 312,
+        "id": 312,
         "Name": "Minun",
         "Pokedex_Number": 312,
         "Img_name": 312,
@@ -9643,7 +9643,7 @@
         "CP39": 1563
     },
     {
-        "Row": 313,
+        "id": 313,
         "Name": "Volbeat",
         "Pokedex_Number": 313,
         "Img_name": 313,
@@ -9673,7 +9673,7 @@
         "CP39": 1597
     },
     {
-        "Row": 314,
+        "id": 314,
         "Name": "Illumise",
         "Pokedex_Number": 314,
         "Img_name": 314,
@@ -9703,7 +9703,7 @@
         "CP39": 1597
     },
     {
-        "Row": 315,
+        "id": 315,
         "Name": "Roselia",
         "Pokedex_Number": 315,
         "Img_name": 315,
@@ -9735,7 +9735,7 @@
         "CP39": 1694
     },
     {
-        "Row": 316,
+        "id": 316,
         "Name": "Gulpin",
         "Pokedex_Number": 316,
         "Img_name": 316,
@@ -9765,7 +9765,7 @@
         "CP39": 777
     },
     {
-        "Row": 317,
+        "id": 317,
         "Name": "Swalot",
         "Pokedex_Number": 317,
         "Img_name": 317,
@@ -9795,7 +9795,7 @@
         "CP39": 1845
     },
     {
-        "Row": 318,
+        "id": 318,
         "Name": "Carvanha",
         "Pokedex_Number": 318,
         "Img_name": 318,
@@ -9827,7 +9827,7 @@
         "CP39": 862
     },
     {
-        "Row": 319,
+        "id": 319,
         "Name": "Sharpedo",
         "Pokedex_Number": 319,
         "Img_name": 319,
@@ -9859,7 +9859,7 @@
         "CP39": 1957
     },
     {
-        "Row": 320,
+        "id": 320,
         "Name": "Wailmer",
         "Pokedex_Number": 320,
         "Img_name": 320,
@@ -9889,7 +9889,7 @@
         "CP39": 1404
     },
     {
-        "Row": 321,
+        "id": 321,
         "Name": "Wailord",
         "Pokedex_Number": 321,
         "Img_name": 321,
@@ -9919,7 +9919,7 @@
         "CP39": 2225
     },
     {
-        "Row": 322,
+        "id": 322,
         "Name": "Numel",
         "Pokedex_Number": 322,
         "Img_name": 322,
@@ -9950,7 +9950,7 @@
         "CP39": 944
     },
     {
-        "Row": 323,
+        "id": 323,
         "Name": "Camerupt",
         "Pokedex_Number": 323,
         "Img_name": 323,
@@ -9981,7 +9981,7 @@
         "CP39": 1987
     },
     {
-        "Row": 324,
+        "id": 324,
         "Name": "Torkoal",
         "Pokedex_Number": 324,
         "Img_name": 324,
@@ -10011,7 +10011,7 @@
         "CP39": 2007
     },
     {
-        "Row": 325,
+        "id": 325,
         "Name": "Spoink",
         "Pokedex_Number": 325,
         "Img_name": 325,
@@ -10041,7 +10041,7 @@
         "CP39": 1266
     },
     {
-        "Row": 326,
+        "id": 326,
         "Name": "Grumpig",
         "Pokedex_Number": 326,
         "Img_name": 326,
@@ -10071,7 +10071,7 @@
         "CP39": 2277
     },
     {
-        "Row": 327,
+        "id": 327,
         "Name": "Spinda",
         "Pokedex_Number": 327,
         "Img_name": 327,
@@ -10101,7 +10101,7 @@
         "CP39": 1072
     },
     {
-        "Row": 328,
+        "id": 328,
         "Name": "Trapinch",
         "Pokedex_Number": 328,
         "Img_name": 328,
@@ -10131,7 +10131,7 @@
         "CP39": 1076
     },
     {
-        "Row": 329,
+        "id": 329,
         "Name": "Vibrava",
         "Pokedex_Number": 329,
         "Img_name": 329,
@@ -10163,7 +10163,7 @@
         "CP39": 1050
     },
     {
-        "Row": 330,
+        "id": 330,
         "Name": "Flygon",
         "Pokedex_Number": 330,
         "Img_name": 330,
@@ -10195,7 +10195,7 @@
         "CP39": 2423
     },
     {
-        "Row": 331,
+        "id": 331,
         "Name": "Cacnea",
         "Pokedex_Number": 331,
         "Img_name": 331,
@@ -10225,7 +10225,7 @@
         "CP39": 1065
     },
     {
-        "Row": 332,
+        "id": 332,
         "Name": "Cacturne",
         "Pokedex_Number": 332,
         "Img_name": 332,
@@ -10257,7 +10257,7 @@
         "CP39": 2062
     },
     {
-        "Row": 333,
+        "id": 333,
         "Name": "Swablu",
         "Pokedex_Number": 333,
         "Img_name": 333,
@@ -10289,7 +10289,7 @@
         "CP39": 712
     },
     {
-        "Row": 334,
+        "id": 334,
         "Name": "Altaria",
         "Pokedex_Number": 334,
         "Img_name": 334,
@@ -10320,7 +10320,7 @@
         "CP39": 1842
     },
     {
-        "Row": 335,
+        "id": 335,
         "Name": "Zangoose",
         "Pokedex_Number": 335,
         "Img_name": 335,
@@ -10350,7 +10350,7 @@
         "CP39": 2182
     },
     {
-        "Row": 336,
+        "id": 336,
         "Name": "Seviper",
         "Pokedex_Number": 336,
         "Img_name": 336,
@@ -10380,7 +10380,7 @@
         "CP39": 1900
     },
     {
-        "Row": 337,
+        "id": 337,
         "Name": "Lunatone",
         "Pokedex_Number": 337,
         "Img_name": 337,
@@ -10412,7 +10412,7 @@
         "CP39": 2213
     },
     {
-        "Row": 338,
+        "id": 338,
         "Name": "Solrock",
         "Pokedex_Number": 338,
         "Img_name": 338,
@@ -10444,7 +10444,7 @@
         "CP39": 2213
     },
     {
-        "Row": 339,
+        "id": 339,
         "Name": "Barboach",
         "Pokedex_Number": 339,
         "Img_name": 339,
@@ -10476,7 +10476,7 @@
         "CP39": 705
     },
     {
-        "Row": 340,
+        "id": 340,
         "Name": "Whiscash",
         "Pokedex_Number": 340,
         "Img_name": 340,
@@ -10508,7 +10508,7 @@
         "CP39": 1963
     },
     {
-        "Row": 341,
+        "id": 341,
         "Name": "Corphish",
         "Pokedex_Number": 341,
         "Img_name": 341,
@@ -10538,7 +10538,7 @@
         "CP39": 1092
     },
     {
-        "Row": 342,
+        "id": 342,
         "Name": "Crawdaunt",
         "Pokedex_Number": 342,
         "Img_name": 342,
@@ -10570,7 +10570,7 @@
         "CP39": 2284
     },
     {
-        "Row": 343,
+        "id": 343,
         "Name": "Baltoy",
         "Pokedex_Number": 343,
         "Img_name": 343,
@@ -10602,7 +10602,7 @@
         "CP39": 667
     },
     {
-        "Row": 344,
+        "id": 344,
         "Name": "Claydol",
         "Pokedex_Number": 344,
         "Img_name": 344,
@@ -10634,7 +10634,7 @@
         "CP39": 1756
     },
     {
-        "Row": 345,
+        "id": 345,
         "Name": "Lileep",
         "Pokedex_Number": 345,
         "Img_name": 345,
@@ -10666,7 +10666,7 @@
         "CP39": 1164
     },
     {
-        "Row": 346,
+        "id": 346,
         "Name": "Cradily",
         "Pokedex_Number": 346,
         "Img_name": 346,
@@ -10698,7 +10698,7 @@
         "CP39": 2051
     },
     {
-        "Row": 347,
+        "id": 347,
         "Name": "Anorith",
         "Pokedex_Number": 347,
         "Img_name": 347,
@@ -10730,7 +10730,7 @@
         "CP39": 1292
     },
     {
-        "Row": 348,
+        "id": 348,
         "Name": "Armaldo",
         "Pokedex_Number": 348,
         "Img_name": 348,
@@ -10762,7 +10762,7 @@
         "CP39": 2637
     },
     {
-        "Row": 349,
+        "id": 349,
         "Name": "Feebas",
         "Pokedex_Number": 349,
         "Img_name": 349,
@@ -10792,7 +10792,7 @@
         "CP39": 217
     },
     {
-        "Row": 350,
+        "id": 350,
         "Name": "Milotic",
         "Pokedex_Number": 350,
         "Img_name": 350,
@@ -10822,7 +10822,7 @@
         "CP39": 2925
     },
     {
-        "Row": 351,
+        "id": 351,
         "Name": "Castform",
         "Pokedex_Number": 351,
         "Img_name": 351,
@@ -10852,7 +10852,7 @@
         "CP39": 1464
     },
     {
-        "Row": 352,
+        "id": 352,
         "Name": "Kecleon",
         "Pokedex_Number": 352,
         "Img_name": 352,
@@ -10882,7 +10882,7 @@
         "CP39": 1896
     },
     {
-        "Row": 353,
+        "id": 353,
         "Name": "Shuppet",
         "Pokedex_Number": 353,
         "Img_name": 353,
@@ -10912,7 +10912,7 @@
         "CP39": 860
     },
     {
-        "Row": 354,
+        "id": 354,
         "Name": "Banette",
         "Pokedex_Number": 354,
         "Img_name": 354,
@@ -10942,7 +10942,7 @@
         "CP39": 2044
     },
     {
-        "Row": 355,
+        "id": 355,
         "Name": "Duskull",
         "Pokedex_Number": 355,
         "Img_name": 355,
@@ -10972,7 +10972,7 @@
         "CP39": 516
     },
     {
-        "Row": 356,
+        "id": 356,
         "Name": "Dusclops",
         "Pokedex_Number": 356,
         "Img_name": 356,
@@ -11002,7 +11002,7 @@
         "CP39": 1316
     },
     {
-        "Row": 357,
+        "id": 357,
         "Name": "Tropius",
         "Pokedex_Number": 357,
         "Img_name": 357,
@@ -11034,7 +11034,7 @@
         "CP39": 1820
     },
     {
-        "Row": 358,
+        "id": 358,
         "Name": "Chimecho",
         "Pokedex_Number": 358,
         "Img_name": 358,
@@ -11064,7 +11064,7 @@
         "CP39": 2065
     },
     {
-        "Row": 359,
+        "id": 359,
         "Name": "Absol",
         "Pokedex_Number": 359,
         "Img_name": 359,
@@ -11094,7 +11094,7 @@
         "CP39": 2248
     },
     {
-        "Row": 360,
+        "id": 360,
         "Name": "Wynaut",
         "Pokedex_Number": 360,
         "Img_name": 360,
@@ -11123,7 +11123,7 @@
         "CP39": 496
     },
     {
-        "Row": 361,
+        "id": 361,
         "Name": "Snorunt",
         "Pokedex_Number": 361,
         "Img_name": 361,
@@ -11153,7 +11153,7 @@
         "CP39": 761
     },
     {
-        "Row": 362,
+        "id": 362,
         "Name": "Glalie",
         "Pokedex_Number": 362,
         "Img_name": 362,
@@ -11182,7 +11182,7 @@
         "CP39": 1917
     },
     {
-        "Row": 363,
+        "id": 363,
         "Name": "Spheal",
         "Pokedex_Number": 363,
         "Img_name": 363,
@@ -11213,7 +11213,7 @@
         "CP39": 863
     },
     {
-        "Row": 364,
+        "id": 364,
         "Name": "Sealeo",
         "Pokedex_Number": 364,
         "Img_name": 364,
@@ -11244,7 +11244,7 @@
         "CP39": 1584
     },
     {
-        "Row": 365,
+        "id": 365,
         "Name": "Walrein",
         "Pokedex_Number": 365,
         "Img_name": 365,
@@ -11275,7 +11275,7 @@
         "CP39": 2569
     },
     {
-        "Row": 366,
+        "id": 366,
         "Name": "Clamperl",
         "Pokedex_Number": 366,
         "Img_name": 366,
@@ -11304,7 +11304,7 @@
         "CP39": 1075
     },
     {
-        "Row": 367,
+        "id": 367,
         "Name": "Huntail",
         "Pokedex_Number": 367,
         "Img_name": 367,
@@ -11333,7 +11333,7 @@
         "CP39": 2109
     },
     {
-        "Row": 368,
+        "id": 368,
         "Name": "Gorebyss",
         "Pokedex_Number": 368,
         "Img_name": 368,
@@ -11362,7 +11362,7 @@
         "CP39": 2248
     },
     {
-        "Row": 369,
+        "id": 369,
         "Name": "Relicanth",
         "Pokedex_Number": 369,
         "Img_name": 369,
@@ -11393,7 +11393,7 @@
         "CP39": 2521
     },
     {
-        "Row": 370,
+        "id": 370,
         "Name": "Luvdisc",
         "Pokedex_Number": 370,
         "Img_name": 370,
@@ -11422,7 +11422,7 @@
         "CP39": 725
     },
     {
-        "Row": 371,
+        "id": 371,
         "Name": "Bagon",
         "Pokedex_Number": 371,
         "Img_name": 371,
@@ -11451,7 +11451,7 @@
         "CP39": 1038
     },
     {
-        "Row": 372,
+        "id": 372,
         "Name": "Shelgon",
         "Pokedex_Number": 372,
         "Img_name": 372,
@@ -11480,7 +11480,7 @@
         "CP39": 1930
     },
     {
-        "Row": 373,
+        "id": 373,
         "Name": "Salamence",
         "Pokedex_Number": 373,
         "Img_name": 373,
@@ -11510,7 +11510,7 @@
         "CP39": 3481
     },
     {
-        "Row": 374,
+        "id": 374,
         "Name": "Beldum",
         "Pokedex_Number": 374,
         "Img_name": 374,
@@ -11541,7 +11541,7 @@
         "CP39": 831
     },
     {
-        "Row": 375,
+        "id": 375,
         "Name": "Metang",
         "Pokedex_Number": 375,
         "Img_name": 375,
@@ -11572,7 +11572,7 @@
         "CP39": 1547
     },
     {
-        "Row": 376,
+        "id": 376,
         "Name": "Metagross",
         "Pokedex_Number": 376,
         "Img_name": 376,
@@ -11603,7 +11603,7 @@
         "CP39": 3592
     },
     {
-        "Row": 377,
+        "id": 377,
         "Name": "Regirock",
         "Pokedex_Number": 377,
         "Img_name": 377,
@@ -11632,7 +11632,7 @@
         "CP39": 3043
     },
     {
-        "Row": 378,
+        "id": 378,
         "Name": "Regice",
         "Pokedex_Number": 378,
         "Img_name": 378,
@@ -11661,7 +11661,7 @@
         "CP39": 3043
     },
     {
-        "Row": 379,
+        "id": 379,
         "Name": "Registeel",
         "Pokedex_Number": 379,
         "Img_name": 379,
@@ -11690,7 +11690,7 @@
         "CP39": 2228
     },
     {
-        "Row": 380,
+        "id": 380,
         "Name": "Latias",
         "Pokedex_Number": 380,
         "Img_name": 380,
@@ -11720,7 +11720,7 @@
         "CP39": 3329
     },
     {
-        "Row": 381,
+        "id": 381,
         "Name": "Latios",
         "Pokedex_Number": 381,
         "Img_name": 381,
@@ -11750,7 +11750,7 @@
         "CP39": 3592
     },
     {
-        "Row": 382,
+        "id": 382,
         "Name": "Kyogre",
         "Pokedex_Number": 382,
         "Img_name": 382,
@@ -11779,7 +11779,7 @@
         "CP39": 4016
     },
     {
-        "Row": 383,
+        "id": 383,
         "Name": "Groudon",
         "Pokedex_Number": 383,
         "Img_name": 383,
@@ -11808,7 +11808,7 @@
         "CP39": 4016
     },
     {
-        "Row": 384,
+        "id": 384,
         "Name": "Rayquaza",
         "Pokedex_Number": 384,
         "Img_name": 384,
@@ -11838,7 +11838,7 @@
         "CP39": 3593
     },
     {
-        "Row": 385,
+        "id": 385,
         "Name": "Jirachi",
         "Pokedex_Number": 385,
         "Img_name": 385,
@@ -11869,7 +11869,7 @@
         "CP39": 3046
     },
     {
-        "Row": 386,
+        "id": 386,
         "Name": "Deoxys Defense",
         "Pokedex_Number": 386,
         "Img_name": "386-defense",
@@ -11898,7 +11898,7 @@
         "CP39": 1949
     },
     {
-        "Row": 387,
+        "id": 387,
         "Name": "Deoxys Normal",
         "Pokedex_Number": 386,
         "Img_name": 386,
@@ -11927,7 +11927,7 @@
         "CP39": 2709
     },
     {
-        "Row": 388,
+        "id": 388,
         "Name": "Deoxys Attack",
         "Pokedex_Number": 386,
         "Img_name": "386-attack",
@@ -11956,7 +11956,7 @@
         "CP39": 2212
     },
     {
-        "Row": 389,
+        "id": 389,
         "Name": "Deoxys Speed",
         "Pokedex_Number": 386,
         "Img_name": "386-speed",
@@ -11985,7 +11985,7 @@
         "CP39": 2469
     },
     {
-        "Row": 390,
+        "id": 390,
         "Name": "Turtwig",
         "Pokedex_Number": 387,
         "Img_name": 387,
@@ -12014,7 +12014,7 @@
         "CP39": 1051
     },
     {
-        "Row": 391,
+        "id": 391,
         "Name": "Grotle",
         "Pokedex_Number": 388,
         "Img_name": 388,
@@ -12043,7 +12043,7 @@
         "CP39": 1757
     },
     {
-        "Row": 392,
+        "id": 392,
         "Name": "Torterra",
         "Pokedex_Number": 389,
         "Img_name": 389,
@@ -12073,7 +12073,7 @@
         "CP39": 2785
     },
     {
-        "Row": 393,
+        "id": 393,
         "Name": "Chimchar",
         "Pokedex_Number": 390,
         "Img_name": 390,
@@ -12102,7 +12102,7 @@
         "CP39": 803
     },
     {
-        "Row": 394,
+        "id": 394,
         "Name": "Monferno",
         "Pokedex_Number": 391,
         "Img_name": 391,
@@ -12133,7 +12133,7 @@
         "CP39": 1395
     },
     {
-        "Row": 395,
+        "id": 395,
         "Name": "Infernape",
         "Pokedex_Number": 392,
         "Img_name": 392,
@@ -12164,7 +12164,7 @@
         "CP39": 2429
     },
     {
-        "Row": 396,
+        "id": 396,
         "Name": "Piplup",
         "Pokedex_Number": 393,
         "Img_name": 393,
@@ -12193,7 +12193,7 @@
         "CP39": 934
     },
     {
-        "Row": 397,
+        "id": 397,
         "Name": "Prinplup",
         "Pokedex_Number": 394,
         "Img_name": 394,
@@ -12222,7 +12222,7 @@
         "CP39": 1526
     },
     {
-        "Row": 398,
+        "id": 398,
         "Name": "Empoleon",
         "Pokedex_Number": 395,
         "Img_name": 395,
@@ -12253,7 +12253,7 @@
         "CP39": 2702
     },
     {
-        "Row": 399,
+        "id": 399,
         "Name": "Starly",
         "Pokedex_Number": 396,
         "Img_name": 396,
@@ -12284,7 +12284,7 @@
         "CP39": 594
     },
     {
-        "Row": 400,
+        "id": 400,
         "Name": "Staravia",
         "Pokedex_Number": 397,
         "Img_name": 397,
@@ -12315,7 +12315,7 @@
         "CP39": 1153
     },
     {
-        "Row": 401,
+        "id": 401,
         "Name": "Staraptor",
         "Pokedex_Number": 398,
         "Img_name": 398,
@@ -12346,7 +12346,7 @@
         "CP39": 2637
     },
     {
-        "Row": 402,
+        "id": 402,
         "Name": "Bidoof",
         "Pokedex_Number": 399,
         "Img_name": 399,
@@ -12375,7 +12375,7 @@
         "CP39": 632
     },
     {
-        "Row": 403,
+        "id": 403,
         "Name": "Bibarel",
         "Pokedex_Number": 400,
         "Img_name": 400,
@@ -12406,7 +12406,7 @@
         "CP39": 1659
     },
     {
-        "Row": 404,
+        "id": 404,
         "Name": "Kricketot",
         "Pokedex_Number": 401,
         "Img_name": 401,
@@ -12435,7 +12435,7 @@
         "CP39": 328
     },
     {
-        "Row": 405,
+        "id": 405,
         "Name": "Kricketune",
         "Pokedex_Number": 402,
         "Img_name": 402,
@@ -12464,7 +12464,7 @@
         "CP39": 1501
     },
     {
-        "Row": 406,
+        "id": 406,
         "Name": "Shinx",
         "Pokedex_Number": 403,
         "Img_name": 403,
@@ -12493,7 +12493,7 @@
         "CP39": 740
     },
     {
-        "Row": 407,
+        "id": 407,
         "Name": "Luxio",
         "Pokedex_Number": 404,
         "Img_name": 404,
@@ -12522,7 +12522,7 @@
         "CP39": 1305
     },
     {
-        "Row": 408,
+        "id": 408,
         "Name": "Luxray",
         "Pokedex_Number": 405,
         "Img_name": 405,
@@ -12551,7 +12551,7 @@
         "CP39": 2630
     },
     {
-        "Row": 409,
+        "id": 409,
         "Name": "Budew",
         "Pokedex_Number": 406,
         "Img_name": 406,
@@ -12582,7 +12582,7 @@
         "CP39": 755
     },
     {
-        "Row": 410,
+        "id": 410,
         "Name": "Roserade",
         "Pokedex_Number": 407,
         "Img_name": 407,
@@ -12613,7 +12613,7 @@
         "CP39": 2743
     },
     {
-        "Row": 411,
+        "id": 411,
         "Name": "Cranidos",
         "Pokedex_Number": 408,
         "Img_name": 408,
@@ -12642,7 +12642,7 @@
         "CP39": 1661
     },
     {
-        "Row": 412,
+        "id": 412,
         "Name": "Rampardos",
         "Pokedex_Number": 409,
         "Img_name": 409,
@@ -12671,7 +12671,7 @@
         "CP39": 3133
     },
     {
-        "Row": 413,
+        "id": 413,
         "Name": "Shieldon",
         "Pokedex_Number": 410,
         "Img_name": 410,
@@ -12702,7 +12702,7 @@
         "CP39": 724
     },
     {
-        "Row": 414,
+        "id": 414,
         "Name": "Bastiodon",
         "Pokedex_Number": 411,
         "Img_name": 411,
@@ -12733,7 +12733,7 @@
         "CP39": 1381
     },
     {
-        "Row": 415,
+        "id": 415,
         "Name": "Burmy (Plant Cloak)",
         "Pokedex_Number": 412,
         "Img_name": 412,
@@ -12762,7 +12762,7 @@
         "CP39": 403
     },
     {
-        "Row": 415,
+        "id": 415,
         "Name": "Burmy (Trash Cloak)",
         "Pokedex_Number": 412,
         "Img_name": "412-trash",
@@ -12791,7 +12791,7 @@
         "CP39": 403
     },
     {
-        "Row": 415,
+        "id": 415,
         "Name": "Burmy (Sandy Cloak)",
         "Pokedex_Number": 412,
         "Img_name": "412-sandy",
@@ -12820,7 +12820,7 @@
         "CP39": 403
     },
     {
-        "Row": 418,
+        "id": 418,
         "Name": "Wormadam (Plant Cloak)",
         "Pokedex_Number": 413,
         "Img_name": 413,
@@ -12851,7 +12851,7 @@
         "CP39": 1593
     },
     {
-        "Row": 419,
+        "id": 419,
         "Name": "Wormadam (Trash Cloak)",
         "Pokedex_Number": 413,
         "Img_name": "413-trash",
@@ -12882,7 +12882,7 @@
         "CP39": 1593
     },
     {
-        "Row": 420,
+        "id": 420,
         "Name": "Wormadam (Sandy Cloak)",
         "Pokedex_Number": 413,
         "Img_name": "413-sandy",
@@ -12913,7 +12913,7 @@
         "CP39": 1593
     },
     {
-        "Row": 421,
+        "id": 421,
         "Name": "Mothim",
         "Pokedex_Number": 414,
         "Img_name": 414,
@@ -12944,7 +12944,7 @@
         "CP39": 1629
     },
     {
-        "Row": 422,
+        "id": 422,
         "Name": "Combee",
         "Pokedex_Number": 415,
         "Img_name": 415,
@@ -12975,7 +12975,7 @@
         "CP39": 390
     },
     {
-        "Row": 423,
+        "id": 423,
         "Name": "Vespiquen",
         "Pokedex_Number": 416,
         "Img_name": 416,
@@ -13006,7 +13006,7 @@
         "CP39": 1799
     },
     {
-        "Row": 424,
+        "id": 424,
         "Name": "Pachirisu",
         "Pokedex_Number": 417,
         "Img_name": 417,
@@ -13035,7 +13035,7 @@
         "CP39": 1094
     },
     {
-        "Row": 425,
+        "id": 425,
         "Name": "Buizel",
         "Pokedex_Number": 418,
         "Img_name": 418,
@@ -13064,7 +13064,7 @@
         "CP39": 932
     },
     {
-        "Row": 426,
+        "id": 426,
         "Name": "Floatzel",
         "Pokedex_Number": 419,
         "Img_name": 419,
@@ -13093,7 +13093,7 @@
         "CP39": 2279
     },
     {
-        "Row": 427,
+        "id": 427,
         "Name": "Cherubi",
         "Pokedex_Number": 420,
         "Img_name": 420,
@@ -13122,7 +13122,7 @@
         "CP39": 817
     },
     {
-        "Row": 428,
+        "id": 428,
         "Name": "Cherrim",
         "Pokedex_Number": 421,
         "Img_name": 421,
@@ -13151,7 +13151,7 @@
         "CP39": 1859
     },
     {
-        "Row": 429,
+        "id": 429,
         "Name": "Shellos",
         "Pokedex_Number": 422,
         "Img_name": 422,
@@ -13180,7 +13180,7 @@
         "CP39": 1053
     },
     {
-        "Row": 430,
+        "id": 430,
         "Name": "Gastrodon",
         "Pokedex_Number": 423,
         "Img_name": 423,
@@ -13211,7 +13211,7 @@
         "CP39": 2233
     },
     {
-        "Row": 431,
+        "id": 431,
         "Name": "Ambipom",
         "Pokedex_Number": 424,
         "Img_name": 424,
@@ -13240,7 +13240,7 @@
         "CP39": 2186
     },
     {
-        "Row": 432,
+        "id": 432,
         "Name": "Drifloon",
         "Pokedex_Number": 425,
         "Img_name": 425,
@@ -13271,7 +13271,7 @@
         "CP39": 1134
     },
     {
-        "Row": 433,
+        "id": 433,
         "Name": "Drifblim",
         "Pokedex_Number": 426,
         "Img_name": 426,
@@ -13302,7 +13302,7 @@
         "CP39": 2353
     },
     {
-        "Row": 434,
+        "id": 434,
         "Name": "Buneary",
         "Pokedex_Number": 427,
         "Img_name": 427,
@@ -13331,7 +13331,7 @@
         "CP39": 1120
     },
     {
-        "Row": 435,
+        "id": 435,
         "Name": "Lopunny",
         "Pokedex_Number": 428,
         "Img_name": 428,
@@ -13360,7 +13360,7 @@
         "CP39": 1858
     },
     {
-        "Row": 436,
+        "id": 436,
         "Name": "Mismagius",
         "Pokedex_Number": 429,
         "Img_name": 429,
@@ -13389,8 +13389,8 @@
         "CP39": 2430
     },
     {
-        "Row": 437,
-        "Name": "Honchkrow",
+        "id": 437,
+        "Name": "Honchkid",
         "Pokedex_Number": 430,
         "Img_name": 430,
         "Generation": 4,
@@ -13420,7 +13420,7 @@
         "CP39": 2529
     },
     {
-        "Row": 438,
+        "id": 438,
         "Name": "Glameow",
         "Pokedex_Number": 431,
         "Img_name": 431,
@@ -13449,7 +13449,7 @@
         "CP39": 811
     },
     {
-        "Row": 439,
+        "id": 439,
         "Name": "Purugly",
         "Pokedex_Number": 432,
         "Img_name": 432,
@@ -13478,7 +13478,7 @@
         "CP39": 1772
     },
     {
-        "Row": 440,
+        "id": 440,
         "Name": "Chingling",
         "Pokedex_Number": 433,
         "Img_name": 433,
@@ -13507,7 +13507,7 @@
         "CP39": 849
     },
     {
-        "Row": 441,
+        "id": 441,
         "Name": "Stunky",
         "Pokedex_Number": 434,
         "Img_name": 434,
@@ -13538,7 +13538,7 @@
         "CP39": 1033
     },
     {
-        "Row": 442,
+        "id": 442,
         "Name": "Skuntank",
         "Pokedex_Number": 435,
         "Img_name": 435,
@@ -13569,7 +13569,7 @@
         "CP39": 2230
     },
     {
-        "Row": 443,
+        "id": 443,
         "Name": "Bronzor",
         "Pokedex_Number": 436,
         "Img_name": 436,
@@ -13600,7 +13600,7 @@
         "CP39": 527
     },
     {
-        "Row": 444,
+        "id": 444,
         "Name": "Bronzong",
         "Pokedex_Number": 437,
         "Img_name": 437,
@@ -13631,7 +13631,7 @@
         "CP39": 1997
     },
     {
-        "Row": 445,
+        "id": 445,
         "Name": "Bonsly",
         "Pokedex_Number": 438,
         "Img_name": 438,
@@ -13660,7 +13660,7 @@
         "CP39": 1196
     },
     {
-        "Row": 446,
+        "id": 446,
         "Name": "Mime Jr.",
         "Pokedex_Number": 439,
         "Img_name": 439,
@@ -13691,7 +13691,7 @@
         "CP39": 855
     },
     {
-        "Row": 447,
+        "id": 447,
         "Name": "Happiny",
         "Pokedex_Number": 440,
         "Img_name": 440,
@@ -13720,7 +13720,7 @@
         "CP39": 395
     },
     {
-        "Row": 448,
+        "id": 448,
         "Name": "Chatot",
         "Pokedex_Number": 441,
         "Img_name": 441,
@@ -13751,7 +13751,7 @@
         "CP39": 1629
     },
     {
-        "Row": 449,
+        "id": 449,
         "Name": "Spiritomb",
         "Pokedex_Number": 442,
         "Img_name": 442,
@@ -13781,7 +13781,7 @@
         "CP39": 1777
     },
     {
-        "Row": 450,
+        "id": 450,
         "Name": "Gible",
         "Pokedex_Number": 443,
         "Img_name": 443,
@@ -13812,7 +13812,7 @@
         "CP39": 974
     },
     {
-        "Row": 451,
+        "id": 451,
         "Name": "Gabite",
         "Pokedex_Number": 444,
         "Img_name": 444,
@@ -13843,7 +13843,7 @@
         "CP39": 1703
     },
     {
-        "Row": 452,
+        "id": 452,
         "Name": "Garchomp",
         "Pokedex_Number": 445,
         "Img_name": 445,
@@ -13874,7 +13874,7 @@
         "CP39": 3769
     },
     {
-        "Row": 453,
+        "id": 453,
         "Name": "Munchlax",
         "Pokedex_Number": 446,
         "Img_name": 446,
@@ -13903,7 +13903,7 @@
         "CP39": 1947
     },
     {
-        "Row": 454,
+        "id": 454,
         "Name": "Riolu",
         "Pokedex_Number": 447,
         "Img_name": 447,
@@ -13932,7 +13932,7 @@
         "CP39": 821
     },
     {
-        "Row": 455,
+        "id": 455,
         "Name": "Lucario",
         "Pokedex_Number": 448,
         "Img_name": 448,
@@ -13963,7 +13963,7 @@
         "CP39": 2425
     },
     {
-        "Row": 456,
+        "id": 456,
         "Name": "Hippopotas",
         "Pokedex_Number": 449,
         "Img_name": 449,
@@ -13992,7 +13992,7 @@
         "CP39": 1283
     },
     {
-        "Row": 457,
+        "id": 457,
         "Name": "Hippowdon",
         "Pokedex_Number": 450,
         "Img_name": 450,
@@ -14021,7 +14021,7 @@
         "CP39": 3045
     },
     {
-        "Row": 458,
+        "id": 458,
         "Name": "Skorupi",
         "Pokedex_Number": 451,
         "Img_name": 451,
@@ -14052,7 +14052,7 @@
         "CP39": 876
     },
     {
-        "Row": 459,
+        "id": 459,
         "Name": "Drapion",
         "Pokedex_Number": 452,
         "Img_name": 452,
@@ -14083,7 +14083,7 @@
         "CP39": 2286
     },
     {
-        "Row": 460,
+        "id": 460,
         "Name": "Croagunk",
         "Pokedex_Number": 453,
         "Img_name": 453,
@@ -14113,7 +14113,7 @@
         "CP39": 810
     },
     {
-        "Row": 461,
+        "id": 461,
         "Name": "Toxicroak",
         "Pokedex_Number": 454,
         "Img_name": 454,
@@ -14143,7 +14143,7 @@
         "CP39": 2277
     },
     {
-        "Row": 462,
+        "id": 462,
         "Name": "Carnivine",
         "Pokedex_Number": 455,
         "Img_name": 455,
@@ -14172,7 +14172,7 @@
         "CP39": 1951
     },
     {
-        "Row": 463,
+        "id": 463,
         "Name": "Finneon",
         "Pokedex_Number": 456,
         "Img_name": 456,
@@ -14201,7 +14201,7 @@
         "CP39": 840
     },
     {
-        "Row": 464,
+        "id": 464,
         "Name": "Lumineon",
         "Pokedex_Number": 457,
         "Img_name": 457,
@@ -14230,7 +14230,7 @@
         "CP39": 1648
     },
     {
-        "Row": 465,
+        "id": 465,
         "Name": "Mantyke",
         "Pokedex_Number": 458,
         "Img_name": 458,
@@ -14261,7 +14261,7 @@
         "CP39": 1140
     },
     {
-        "Row": 466,
+        "id": 466,
         "Name": "Snover",
         "Pokedex_Number": 459,
         "Img_name": 459,
@@ -14292,7 +14292,7 @@
         "CP39": 1039
     },
     {
-        "Row": 467,
+        "id": 467,
         "Name": "Abomasnow",
         "Pokedex_Number": 460,
         "Img_name": 460,
@@ -14323,7 +14323,7 @@
         "CP39": 2213
     },
     {
-        "Row": 468,
+        "id": 468,
         "Name": "Weavile",
         "Pokedex_Number": 461,
         "Img_name": 461,
@@ -14354,7 +14354,7 @@
         "CP39": 2775
     },
     {
-        "Row": 469,
+        "id": 469,
         "Name": "Magnezone",
         "Pokedex_Number": 462,
         "Img_name": 462,
@@ -14385,7 +14385,7 @@
         "CP39": 2953
     },
     {
-        "Row": 470,
+        "id": 470,
         "Name": "Lickilicky",
         "Pokedex_Number": 463,
         "Img_name": 463,
@@ -14414,7 +14414,7 @@
         "CP39": 2325
     },
     {
-        "Row": 471,
+        "id": 471,
         "Name": "Rhyperior",
         "Pokedex_Number": 464,
         "Img_name": 464,
@@ -14445,8 +14445,8 @@
         "CP39": 3813
     },
     {
-        "Row": 472,
-        "Name": "Tangrowth",
+        "id": 472,
+        "Name": "Tangidth",
         "Pokedex_Number": 465,
         "Img_name": 465,
         "Generation": 4,
@@ -14474,7 +14474,7 @@
         "CP39": 3065
     },
     {
-        "Row": 473,
+        "id": 473,
         "Name": "Electivire",
         "Pokedex_Number": 466,
         "Img_name": 466,
@@ -14503,7 +14503,7 @@
         "CP39": 2862
     },
     {
-        "Row": 474,
+        "id": 474,
         "Name": "Magmortar",
         "Pokedex_Number": 467,
         "Img_name": 467,
@@ -14533,7 +14533,7 @@
         "CP39": 2937
     },
     {
-        "Row": 475,
+        "id": 475,
         "Name": "Togekiss",
         "Pokedex_Number": 468,
         "Img_name": 468,
@@ -14564,7 +14564,7 @@
         "CP39": 3126
     },
     {
-        "Row": 476,
+        "id": 476,
         "Name": "Yanmega",
         "Pokedex_Number": 469,
         "Img_name": 469,
@@ -14595,7 +14595,7 @@
         "CP39": 2832
     },
     {
-        "Row": 477,
+        "id": 477,
         "Name": "Leafeon",
         "Pokedex_Number": 470,
         "Img_name": 470,
@@ -14624,7 +14624,7 @@
         "CP39": 2808
     },
     {
-        "Row": 478,
+        "id": 478,
         "Name": "Glaceon",
         "Pokedex_Number": 471,
         "Img_name": 471,
@@ -14653,7 +14653,7 @@
         "CP39": 2825
     },
     {
-        "Row": 479,
+        "id": 479,
         "Name": "Gliscor",
         "Pokedex_Number": 472,
         "Img_name": 472,
@@ -14684,7 +14684,7 @@
         "CP39": 2565
     },
     {
-        "Row": 480,
+        "id": 480,
         "Name": "Mamoswine",
         "Pokedex_Number": 473,
         "Img_name": 473,
@@ -14715,7 +14715,7 @@
         "CP39": 3242
     },
     {
-        "Row": 481,
+        "id": 481,
         "Name": "Porygon-Z",
         "Pokedex_Number": 474,
         "Img_name": 474,
@@ -14744,7 +14744,7 @@
         "CP39": 3028
     },
     {
-        "Row": 482,
+        "id": 482,
         "Name": "Gallade",
         "Pokedex_Number": 475,
         "Img_name": 475,
@@ -14775,7 +14775,7 @@
         "CP39": 2922
     },
     {
-        "Row": 483,
+        "id": 483,
         "Name": "Probopass",
         "Pokedex_Number": 476,
         "Img_name": 476,
@@ -14806,7 +14806,7 @@
         "CP39": 1836
     },
     {
-        "Row": 484,
+        "id": 484,
         "Name": "Dusknoir",
         "Pokedex_Number": 477,
         "Img_name": 477,
@@ -14835,7 +14835,7 @@
         "CP39": 2017
     },
     {
-        "Row": 485,
+        "id": 485,
         "Name": "Froslass",
         "Pokedex_Number": 478,
         "Img_name": 478,
@@ -14866,7 +14866,7 @@
         "CP39": 1831
     },
     {
-        "Row": 486,
+        "id": 486,
         "Name": "Rotom (Heat Rotom)",
         "Pokedex_Number": 479,
         "Img_name": "479-heat",
@@ -14897,7 +14897,7 @@
         "CP39": 1741
     },
     {
-        "Row": 487,
+        "id": 487,
         "Name": "Rotom (Wash Rotom)",
         "Pokedex_Number": 479,
         "Img_name": "479-wash",
@@ -14928,7 +14928,7 @@
         "CP39": 1741
     },
     {
-        "Row": 488,
+        "id": 488,
         "Name": "Rotom (Frost Rotom)",
         "Pokedex_Number": 479,
         "Img_name": "479-frost",
@@ -14959,7 +14959,7 @@
         "CP39": 1741
     },
     {
-        "Row": 489,
+        "id": 489,
         "Name": "Rotom (Fan Rotom)",
         "Pokedex_Number": 479,
         "Img_name": "479-spin",
@@ -14990,7 +14990,7 @@
         "CP39": 1741
     },
     {
-        "Row": 490,
+        "id": 490,
         "Name": "Rotom (Mow Rotom)",
         "Pokedex_Number": 479,
         "Img_name": "479-mow",
@@ -15021,7 +15021,7 @@
         "CP39": 1741
     },
     {
-        "Row": 491,
+        "id": 491,
         "Name": "Rotom (Normal Rotom)",
         "Pokedex_Number": 479,
         "Img_name": 479,
@@ -15052,7 +15052,7 @@
         "CP39": 1741
     },
     {
-        "Row": 492,
+        "id": 492,
         "Name": "Uxie",
         "Pokedex_Number": 480,
         "Img_name": 480,
@@ -15081,7 +15081,7 @@
         "CP39": 2282
     },
     {
-        "Row": 493,
+        "id": 493,
         "Name": "Mesprit",
         "Pokedex_Number": 481,
         "Img_name": 481,
@@ -15110,7 +15110,7 @@
         "CP39": 2785
     },
     {
-        "Row": 494,
+        "id": 494,
         "Name": "Azelf",
         "Pokedex_Number": 482,
         "Img_name": 482,
@@ -15139,7 +15139,7 @@
         "CP39": 2903
     },
     {
-        "Row": 495,
+        "id": 495,
         "Name": "Dialga",
         "Pokedex_Number": 483,
         "Img_name": 483,
@@ -15170,7 +15170,7 @@
         "CP39": 4587
     },
     {
-        "Row": 496,
+        "id": 496,
         "Name": "Palkia",
         "Pokedex_Number": 484,
         "Img_name": 484,
@@ -15201,7 +15201,7 @@
         "CP39": 4494
     },
     {
-        "Row": 497,
+        "id": 497,
         "Name": "Heatran",
         "Pokedex_Number": 485,
         "Img_name": 485,
@@ -15232,7 +15232,7 @@
         "CP39": 3470
     },
     {
-        "Row": 498,
+        "id": 498,
         "Name": "Regigigas",
         "Pokedex_Number": 486,
         "Img_name": 486,
@@ -15261,7 +15261,7 @@
         "CP39": 4884
     },
     {
-        "Row": 499,
+        "id": 499,
         "Name": "Giratina (Altered Forme)",
         "Pokedex_Number": 487,
         "Img_name": 487,
@@ -15292,7 +15292,7 @@
         "CP39": 3908
     },
     {
-        "Row": 500,
+        "id": 500,
         "Name": "Giratina (Origin Forme)",
         "Pokedex_Number": 487,
         "Img_name": "487-origin",
@@ -15323,7 +15323,7 @@
         "CP39": 3908
     },
     {
-        "Row": 501,
+        "id": 501,
         "Name": "Cresselia",
         "Pokedex_Number": 488,
         "Img_name": 488,
@@ -15352,7 +15352,7 @@
         "CP39": 2737
     },
     {
-        "Row": 502,
+        "id": 502,
         "Name": "Phione",
         "Pokedex_Number": 489,
         "Img_name": 489,
@@ -15381,7 +15381,7 @@
         "CP39": 1917
     },
     {
-        "Row": 503,
+        "id": 503,
         "Name": "Manaphy",
         "Pokedex_Number": 490,
         "Img_name": 490,
@@ -15410,7 +15410,7 @@
         "CP39": 3046
     },
     {
-        "Row": 504,
+        "id": 504,
         "Name": "Darkrai",
         "Pokedex_Number": 491,
         "Img_name": 491,
@@ -15439,7 +15439,7 @@
         "CP39": 3355
     },
     {
-        "Row": 505,
+        "id": 505,
         "Name": "Shaymin (Land Forme)",
         "Pokedex_Number": 492,
         "Img_name": 492,
@@ -15468,7 +15468,7 @@
         "CP39": 3046
     },
     {
-        "Row": 506,
+        "id": 506,
         "Name": "Shaymin (Sky Forme)",
         "Pokedex_Number": 492,
         "Img_name": "492-sky",
@@ -15497,7 +15497,7 @@
         "CP39": 3046
     },
     {
-        "Row": 507,
+        "id": 507,
         "Name": "Arceus",
         "Pokedex_Number": 493,
         "Img_name": 493,
@@ -15526,7 +15526,7 @@
         "CP39": 4532
     },
     {
-        "Row": 508,
+        "id": 508,
         "Name": "Victini",
         "Pokedex_Number": 494,
         "Img_name": 494,
@@ -15557,7 +15557,7 @@
         "CP39": 3046
     },
     {
-        "Row": 509,
+        "id": 509,
         "Name": "Snivy",
         "Pokedex_Number": 495,
         "Img_name": 495,
@@ -15585,7 +15585,7 @@
         "CP39": 717
     },
     {
-        "Row": 510,
+        "id": 510,
         "Name": "Servine",
         "Pokedex_Number": 496,
         "Img_name": 496,
@@ -15613,7 +15613,7 @@
         "CP39": 1266
     },
     {
-        "Row": 511,
+        "id": 511,
         "Name": "Serperior",
         "Pokedex_Number": 497,
         "Img_name": 497,
@@ -15641,7 +15641,7 @@
         "CP39": 2059
     },
     {
-        "Row": 512,
+        "id": 512,
         "Name": "Tepig",
         "Pokedex_Number": 498,
         "Img_name": 498,
@@ -15669,7 +15669,7 @@
         "CP39": 963
     },
     {
-        "Row": 513,
+        "id": 513,
         "Name": "Pignite",
         "Pokedex_Number": 499,
         "Img_name": 499,
@@ -15699,7 +15699,7 @@
         "CP39": 1777
     },
     {
-        "Row": 514,
+        "id": 514,
         "Name": "Emboar",
         "Pokedex_Number": 500,
         "Img_name": 500,
@@ -15730,7 +15730,7 @@
         "CP39": 2811
     },
     {
-        "Row": 515,
+        "id": 515,
         "Name": "Oshawott",
         "Pokedex_Number": 501,
         "Img_name": 501,
@@ -15758,7 +15758,7 @@
         "CP39": 908
     },
     {
-        "Row": 516,
+        "id": 516,
         "Name": "Dewott",
         "Pokedex_Number": 502,
         "Img_name": 502,
@@ -15786,7 +15786,7 @@
         "CP39": 1574
     },
     {
-        "Row": 517,
+        "id": 517,
         "Name": "Samurott",
         "Pokedex_Number": 503,
         "Img_name": 503,
@@ -15815,7 +15815,7 @@
         "CP39": 2677
     },
     {
-        "Row": 518,
+        "id": 518,
         "Name": "Patrat",
         "Pokedex_Number": 504,
         "Img_name": 504,
@@ -15843,7 +15843,7 @@
         "CP39": 668
     },
     {
-        "Row": 519,
+        "id": 519,
         "Name": "Watchog",
         "Pokedex_Number": 505,
         "Img_name": 505,
@@ -15871,7 +15871,7 @@
         "CP39": 1597
     },
     {
-        "Row": 520,
+        "id": 520,
         "Name": "Lillipup",
         "Pokedex_Number": 506,
         "Img_name": 506,
@@ -15899,7 +15899,7 @@
         "CP39": 773
     },
     {
-        "Row": 521,
+        "id": 521,
         "Name": "Herdier",
         "Pokedex_Number": 507,
         "Img_name": 507,
@@ -15927,7 +15927,7 @@
         "CP39": 1408
     },
     {
-        "Row": 522,
+        "id": 522,
         "Name": "Stoutland",
         "Pokedex_Number": 508,
         "Img_name": 508,
@@ -15956,7 +15956,7 @@
         "CP39": 2597
     },
     {
-        "Row": 523,
+        "id": 523,
         "Name": "Purrloin",
         "Pokedex_Number": 509,
         "Img_name": 509,
@@ -15984,7 +15984,7 @@
         "CP39": 642
     },
     {
-        "Row": 524,
+        "id": 524,
         "Name": "Liepard",
         "Pokedex_Number": 510,
         "Img_name": 510,
@@ -16012,7 +16012,7 @@
         "CP39": 1635
     },
     {
-        "Row": 525,
+        "id": 525,
         "Name": "Pansage",
         "Pokedex_Number": 511,
         "Img_name": 511,
@@ -16040,7 +16040,7 @@
         "CP39": 820
     },
     {
-        "Row": 526,
+        "id": 526,
         "Name": "Simisage",
         "Pokedex_Number": 512,
         "Img_name": 512,
@@ -16068,7 +16068,7 @@
         "CP39": 2126
     },
     {
-        "Row": 527,
+        "id": 527,
         "Name": "Pansear",
         "Pokedex_Number": 513,
         "Img_name": 513,
@@ -16096,7 +16096,7 @@
         "CP39": 820
     },
     {
-        "Row": 528,
+        "id": 528,
         "Name": "Simisear",
         "Pokedex_Number": 514,
         "Img_name": 514,
@@ -16124,7 +16124,7 @@
         "CP39": 2126
     },
     {
-        "Row": 529,
+        "id": 529,
         "Name": "Panpour",
         "Pokedex_Number": 515,
         "Img_name": 515,
@@ -16152,7 +16152,7 @@
         "CP39": 820
     },
     {
-        "Row": 530,
+        "id": 530,
         "Name": "Simipour",
         "Pokedex_Number": 516,
         "Img_name": 516,
@@ -16180,7 +16180,7 @@
         "CP39": 2126
     },
     {
-        "Row": 531,
+        "id": 531,
         "Name": "Munna",
         "Pokedex_Number": 517,
         "Img_name": 517,
@@ -16208,7 +16208,7 @@
         "CP39": 1060
     },
     {
-        "Row": 532,
+        "id": 532,
         "Name": "Musharna",
         "Pokedex_Number": 518,
         "Img_name": 518,
@@ -16237,7 +16237,7 @@
         "CP39": 2612
     },
     {
-        "Row": 533,
+        "id": 533,
         "Name": "Pidove",
         "Pokedex_Number": 519,
         "Img_name": 519,
@@ -16267,7 +16267,7 @@
         "CP39": 760
     },
     {
-        "Row": 534,
+        "id": 534,
         "Name": "Tranquill",
         "Pokedex_Number": 520,
         "Img_name": 520,
@@ -16297,7 +16297,7 @@
         "CP39": 1325
     },
     {
-        "Row": 535,
+        "id": 535,
         "Name": "Unfezant",
         "Pokedex_Number": 521,
         "Img_name": 521,
@@ -16328,7 +16328,7 @@
         "CP39": 2596
     },
     {
-        "Row": 536,
+        "id": 536,
         "Name": "Blitzle",
         "Pokedex_Number": 522,
         "Img_name": 522,
@@ -16356,7 +16356,7 @@
         "CP39": 745
     },
     {
-        "Row": 537,
+        "id": 537,
         "Name": "Zebstrika",
         "Pokedex_Number": 523,
         "Img_name": 523,
@@ -16384,7 +16384,7 @@
         "CP39": 2196
     },
     {
-        "Row": 538,
+        "id": 538,
         "Name": "Roggenrola",
         "Pokedex_Number": 524,
         "Img_name": 524,
@@ -16412,7 +16412,7 @@
         "CP39": 1150
     },
     {
-        "Row": 539,
+        "id": 539,
         "Name": "Boldore",
         "Pokedex_Number": 525,
         "Img_name": 525,
@@ -16440,7 +16440,7 @@
         "CP39": 1986
     },
     {
-        "Row": 540,
+        "id": 540,
         "Name": "Gigalith",
         "Pokedex_Number": 526,
         "Img_name": 526,
@@ -16469,7 +16469,7 @@
         "CP39": 3113
     },
     {
-        "Row": 541,
+        "id": 541,
         "Name": "Woobat",
         "Pokedex_Number": 527,
         "Img_name": 527,
@@ -16498,7 +16498,7 @@
         "CP39": 904
     },
     {
-        "Row": 542,
+        "id": 542,
         "Name": "Swoobat",
         "Pokedex_Number": 528,
         "Img_name": 528,
@@ -16527,7 +16527,7 @@
         "CP39": 1531
     },
     {
-        "Row": 543,
+        "id": 543,
         "Name": "Drilbur",
         "Pokedex_Number": 529,
         "Img_name": 529,
@@ -16555,7 +16555,7 @@
         "CP39": 1226
     },
     {
-        "Row": 544,
+        "id": 544,
         "Name": "Excadrill",
         "Pokedex_Number": 530,
         "Img_name": 530,
@@ -16586,7 +16586,7 @@
         "CP39": 3089
     },
     {
-        "Row": 545,
+        "id": 545,
         "Name": "Audino",
         "Pokedex_Number": 531,
         "Img_name": 531,
@@ -16614,7 +16614,7 @@
         "CP39": 1575
     },
     {
-        "Row": 546,
+        "id": 546,
         "Name": "Timburr",
         "Pokedex_Number": 532,
         "Img_name": 532,
@@ -16642,7 +16642,7 @@
         "CP39": 1247
     },
     {
-        "Row": 547,
+        "id": 547,
         "Name": "Gurdurr",
         "Pokedex_Number": 533,
         "Img_name": 533,
@@ -16670,7 +16670,7 @@
         "CP39": 2097
     },
     {
-        "Row": 548,
+        "id": 548,
         "Name": "Conkeldurr",
         "Pokedex_Number": 534,
         "Img_name": 534,
@@ -16699,7 +16699,7 @@
         "CP39": 3258
     },
     {
-        "Row": 549,
+        "id": 549,
         "Name": "Tympole",
         "Pokedex_Number": 535,
         "Img_name": 535,
@@ -16727,7 +16727,7 @@
         "CP39": 719
     },
     {
-        "Row": 550,
+        "id": 550,
         "Name": "Palpitoad",
         "Pokedex_Number": 536,
         "Img_name": 536,
@@ -16757,7 +16757,7 @@
         "CP39": 1259
     },
     {
-        "Row": 551,
+        "id": 551,
         "Name": "Seismitoad",
         "Pokedex_Number": 537,
         "Img_name": 537,
@@ -16788,7 +16788,7 @@
         "CP39": 2408
     },
     {
-        "Row": 552,
+        "id": 552,
         "Name": "Throh",
         "Pokedex_Number": 538,
         "Img_name": 538,
@@ -16817,7 +16817,7 @@
         "CP39": 2432
     },
     {
-        "Row": 553,
+        "id": 553,
         "Name": "Sawk",
         "Pokedex_Number": 539,
         "Img_name": 539,
@@ -16845,7 +16845,7 @@
         "CP39": 2521
     },
     {
-        "Row": 554,
+        "id": 554,
         "Name": "Sewaddle",
         "Pokedex_Number": 540,
         "Img_name": 540,
@@ -16875,7 +16875,7 @@
         "CP39": 840
     },
     {
-        "Row": 555,
+        "id": 555,
         "Name": "Swadloon",
         "Pokedex_Number": 541,
         "Img_name": 541,
@@ -16905,7 +16905,7 @@
         "CP39": 1203
     },
     {
-        "Row": 556,
+        "id": 556,
         "Name": "Leavanny",
         "Pokedex_Number": 542,
         "Img_name": 542,
@@ -16935,7 +16935,7 @@
         "CP39": 2334
     },
     {
-        "Row": 557,
+        "id": 557,
         "Name": "Venipede",
         "Pokedex_Number": 543,
         "Img_name": 543,
@@ -16965,7 +16965,7 @@
         "CP39": 581
     },
     {
-        "Row": 558,
+        "id": 558,
         "Name": "Whirlipede",
         "Pokedex_Number": 544,
         "Img_name": 544,
@@ -16995,7 +16995,7 @@
         "CP39": 968
     },
     {
-        "Row": 559,
+        "id": 559,
         "Name": "Scolipede",
         "Pokedex_Number": 545,
         "Img_name": 545,
@@ -17025,7 +17025,7 @@
         "CP39": 2210
     },
     {
-        "Row": 560,
+        "id": 560,
         "Name": "Cottonee",
         "Pokedex_Number": 546,
         "Img_name": 546,
@@ -17055,7 +17055,7 @@
         "CP39": 590
     },
     {
-        "Row": 561,
+        "id": 561,
         "Name": "Whimsicott",
         "Pokedex_Number": 547,
         "Img_name": 547,
@@ -17085,7 +17085,7 @@
         "CP39": 1797
     },
     {
-        "Row": 562,
+        "id": 562,
         "Name": "Petilil",
         "Pokedex_Number": 548,
         "Img_name": 548,
@@ -17113,7 +17113,7 @@
         "CP39": 870
     },
     {
-        "Row": 563,
+        "id": 563,
         "Name": "Lilligant",
         "Pokedex_Number": 549,
         "Img_name": 549,
@@ -17141,7 +17141,7 @@
         "CP39": 2288
     },
     {
-        "Row": 564,
+        "id": 564,
         "Name": "Basculin",
         "Pokedex_Number": 550,
         "Img_name": 550,
@@ -17169,7 +17169,7 @@
         "CP39": 1908
     },
     {
-        "Row": 565,
+        "id": 565,
         "Name": "Sandile",
         "Pokedex_Number": 551,
         "Img_name": 551,
@@ -17199,7 +17199,7 @@
         "CP39": 889
     },
     {
-        "Row": 566,
+        "id": 566,
         "Name": "Krokorok",
         "Pokedex_Number": 552,
         "Img_name": 552,
@@ -17229,7 +17229,7 @@
         "CP39": 1246
     },
     {
-        "Row": 567,
+        "id": 567,
         "Name": "Krookodile",
         "Pokedex_Number": 553,
         "Img_name": 553,
@@ -17260,7 +17260,7 @@
         "CP39": 2869
     },
     {
-        "Row": 568,
+        "id": 568,
         "Name": "Darumaka",
         "Pokedex_Number": 554,
         "Img_name": 554,
@@ -17288,7 +17288,7 @@
         "CP39": 1294
     },
     {
-        "Row": 569,
+        "id": 569,
         "Name": "Darmanitan (Zen Mode)",
         "Pokedex_Number": 555,
         "Img_name": 555,
@@ -17317,7 +17317,7 @@
         "CP39": 2915
     },
     {
-        "Row": 570,
+        "id": 570,
         "Name": "Darmanitan (Standard Mode)",
         "Pokedex_Number": 555,
         "Img_name": 555,
@@ -17346,7 +17346,7 @@
         "CP39": 2915
     },
     {
-        "Row": 571,
+        "id": 571,
         "Name": "Maractus",
         "Pokedex_Number": 556,
         "Img_name": 556,
@@ -17374,7 +17374,7 @@
         "CP39": 2056
     },
     {
-        "Row": 572,
+        "id": 572,
         "Name": "Dwebble",
         "Pokedex_Number": 557,
         "Img_name": 557,
@@ -17404,7 +17404,7 @@
         "CP39": 1134
     },
     {
-        "Row": 573,
+        "id": 573,
         "Name": "Crustle",
         "Pokedex_Number": 558,
         "Img_name": 558,
@@ -17435,7 +17435,7 @@
         "CP39": 2405
     },
     {
-        "Row": 574,
+        "id": 574,
         "Name": "Scraggy",
         "Pokedex_Number": 559,
         "Img_name": 559,
@@ -17465,7 +17465,7 @@
         "CP39": 1176
     },
     {
-        "Row": 575,
+        "id": 575,
         "Name": "Scrafty",
         "Pokedex_Number": 560,
         "Img_name": 560,
@@ -17495,7 +17495,7 @@
         "CP39": 2031
     },
     {
-        "Row": 576,
+        "id": 576,
         "Name": "Sigilyph",
         "Pokedex_Number": 561,
         "Img_name": 561,
@@ -17524,7 +17524,7 @@
         "CP39": 2293
     },
     {
-        "Row": 577,
+        "id": 577,
         "Name": "Yamask",
         "Pokedex_Number": 562,
         "Img_name": 562,
@@ -17552,7 +17552,7 @@
         "CP39": 829
     },
     {
-        "Row": 578,
+        "id": 578,
         "Name": "Cofagrigus",
         "Pokedex_Number": 563,
         "Img_name": 563,
@@ -17580,7 +17580,7 @@
         "CP39": 2060
     },
     {
-        "Row": 579,
+        "id": 579,
         "Name": "Tirtouga",
         "Pokedex_Number": 564,
         "Img_name": 564,
@@ -17610,7 +17610,7 @@
         "CP39": 1391
     },
     {
-        "Row": 580,
+        "id": 580,
         "Name": "Carracosta",
         "Pokedex_Number": 565,
         "Img_name": 565,
@@ -17641,7 +17641,7 @@
         "CP39": 2536
     },
     {
-        "Row": 581,
+        "id": 581,
         "Name": "Archen",
         "Pokedex_Number": 566,
         "Img_name": 566,
@@ -17671,7 +17671,7 @@
         "CP39": 1600
     },
     {
-        "Row": 582,
+        "id": 582,
         "Name": "Archeops",
         "Pokedex_Number": 567,
         "Img_name": 567,
@@ -17702,7 +17702,7 @@
         "CP39": 3012
     },
     {
-        "Row": 583,
+        "id": 583,
         "Name": "Trubbish",
         "Pokedex_Number": 568,
         "Img_name": 568,
@@ -17730,7 +17730,7 @@
         "CP39": 857
     },
     {
-        "Row": 584,
+        "id": 584,
         "Name": "Garbodor",
         "Pokedex_Number": 569,
         "Img_name": 569,
@@ -17758,7 +17758,7 @@
         "CP39": 2135
     },
     {
-        "Row": 585,
+        "id": 585,
         "Name": "Zorua",
         "Pokedex_Number": 570,
         "Img_name": 570,
@@ -17786,7 +17786,7 @@
         "CP39": 972
     },
     {
-        "Row": 586,
+        "id": 586,
         "Name": "Zoroark",
         "Pokedex_Number": 571,
         "Img_name": 571,
@@ -17814,7 +17814,7 @@
         "CP39": 2258
     },
     {
-        "Row": 587,
+        "id": 587,
         "Name": "Minccino",
         "Pokedex_Number": 572,
         "Img_name": 572,
@@ -17842,7 +17842,7 @@
         "CP39": 758
     },
     {
-        "Row": 588,
+        "id": 588,
         "Name": "Cinccino",
         "Pokedex_Number": 573,
         "Img_name": 573,
@@ -17870,7 +17870,7 @@
         "CP39": 2028
     },
     {
-        "Row": 589,
+        "id": 589,
         "Name": "Gothita",
         "Pokedex_Number": 574,
         "Img_name": 574,
@@ -17898,7 +17898,7 @@
         "CP39": 822
     },
     {
-        "Row": 590,
+        "id": 590,
         "Name": "Gothorita",
         "Pokedex_Number": 575,
         "Img_name": 575,
@@ -17926,7 +17926,7 @@
         "CP39": 1434
     },
     {
-        "Row": 591,
+        "id": 591,
         "Name": "Gothitelle",
         "Pokedex_Number": 576,
         "Img_name": 576,
@@ -17954,7 +17954,7 @@
         "CP39": 2205
     },
     {
-        "Row": 592,
+        "id": 592,
         "Name": "Solosis",
         "Pokedex_Number": 577,
         "Img_name": 577,
@@ -17982,7 +17982,7 @@
         "CP39": 1178
     },
     {
-        "Row": 593,
+        "id": 593,
         "Name": "Duosion",
         "Pokedex_Number": 578,
         "Img_name": 578,
@@ -18010,7 +18010,7 @@
         "CP39": 1826
     },
     {
-        "Row": 594,
+        "id": 594,
         "Name": "Reuniclus",
         "Pokedex_Number": 579,
         "Img_name": 579,
@@ -18039,7 +18039,7 @@
         "CP39": 2801
     },
     {
-        "Row": 595,
+        "id": 595,
         "Name": "Ducklett",
         "Pokedex_Number": 580,
         "Img_name": 580,
@@ -18069,7 +18069,7 @@
         "CP39": 757
     },
     {
-        "Row": 596,
+        "id": 596,
         "Name": "Swanna",
         "Pokedex_Number": 581,
         "Img_name": 581,
@@ -18099,7 +18099,7 @@
         "CP39": 1888
     },
     {
-        "Row": 597,
+        "id": 597,
         "Name": "Vanillite",
         "Pokedex_Number": 582,
         "Img_name": 582,
@@ -18127,7 +18127,7 @@
         "CP39": 857
     },
     {
-        "Row": 598,
+        "id": 598,
         "Name": "Vanillish",
         "Pokedex_Number": 583,
         "Img_name": 583,
@@ -18155,7 +18155,7 @@
         "CP39": 1389
     },
     {
-        "Row": 599,
+        "id": 599,
         "Name": "Vanilluxe",
         "Pokedex_Number": 584,
         "Img_name": 584,
@@ -18184,7 +18184,7 @@
         "CP39": 2573
     },
     {
-        "Row": 600,
+        "id": 600,
         "Name": "Deerling",
         "Pokedex_Number": 585,
         "Img_name": 585,
@@ -18214,7 +18214,7 @@
         "CP39": 997
     },
     {
-        "Row": 601,
+        "id": 601,
         "Name": "Sawsbuck",
         "Pokedex_Number": 586,
         "Img_name": 586,
@@ -18244,7 +18244,7 @@
         "CP39": 2201
     },
     {
-        "Row": 602,
+        "id": 602,
         "Name": "Emolga",
         "Pokedex_Number": 587,
         "Img_name": 587,
@@ -18274,7 +18274,7 @@
         "CP39": 1419
     },
     {
-        "Row": 603,
+        "id": 603,
         "Name": "Karrablast",
         "Pokedex_Number": 588,
         "Img_name": 588,
@@ -18302,7 +18302,7 @@
         "CP39": 1013
     },
     {
-        "Row": 604,
+        "id": 604,
         "Name": "Escavalier",
         "Pokedex_Number": 589,
         "Img_name": 589,
@@ -18333,7 +18333,7 @@
         "CP39": 2592
     },
     {
-        "Row": 605,
+        "id": 605,
         "Name": "Foongus",
         "Pokedex_Number": 590,
         "Img_name": 590,
@@ -18363,7 +18363,7 @@
         "CP39": 894
     },
     {
-        "Row": 606,
+        "id": 606,
         "Name": "Amoonguss",
         "Pokedex_Number": 591,
         "Img_name": 591,
@@ -18393,7 +18393,7 @@
         "CP39": 2057
     },
     {
-        "Row": 607,
+        "id": 607,
         "Name": "Frillish",
         "Pokedex_Number": 592,
         "Img_name": 592,
@@ -18423,7 +18423,7 @@
         "CP39": 1149
     },
     {
-        "Row": 608,
+        "id": 608,
         "Name": "Jellicent",
         "Pokedex_Number": 593,
         "Img_name": 593,
@@ -18454,7 +18454,7 @@
         "CP39": 2276
     },
     {
-        "Row": 609,
+        "id": 609,
         "Name": "Alomomola",
         "Pokedex_Number": 594,
         "Img_name": 594,
@@ -18483,7 +18483,7 @@
         "CP39": 2233
     },
     {
-        "Row": 610,
+        "id": 610,
         "Name": "Joltik",
         "Pokedex_Number": 595,
         "Img_name": 595,
@@ -18512,7 +18512,7 @@
         "CP39": 877
     },
     {
-        "Row": 611,
+        "id": 611,
         "Name": "Galvantula",
         "Pokedex_Number": 596,
         "Img_name": 596,
@@ -18541,7 +18541,7 @@
         "CP39": 1979
     },
     {
-        "Row": 612,
+        "id": 612,
         "Name": "Ferroseed",
         "Pokedex_Number": 597,
         "Img_name": 597,
@@ -18571,7 +18571,7 @@
         "CP39": 794
     },
     {
-        "Row": 613,
+        "id": 613,
         "Name": "Ferrothorn",
         "Pokedex_Number": 598,
         "Img_name": 598,
@@ -18602,7 +18602,7 @@
         "CP39": 2128
     },
     {
-        "Row": 614,
+        "id": 614,
         "Name": "Klink",
         "Pokedex_Number": 599,
         "Img_name": 599,
@@ -18630,7 +18630,7 @@
         "CP39": 805
     },
     {
-        "Row": 615,
+        "id": 615,
         "Name": "Klang",
         "Pokedex_Number": 600,
         "Img_name": 600,
@@ -18658,7 +18658,7 @@
         "CP39": 1643
     },
     {
-        "Row": 616,
+        "id": 616,
         "Name": "Klinklang",
         "Pokedex_Number": 601,
         "Img_name": 601,
@@ -18687,7 +18687,7 @@
         "CP39": 2396
     },
     {
-        "Row": 617,
+        "id": 617,
         "Name": "Tynamo",
         "Pokedex_Number": 602,
         "Img_name": 602,
@@ -18715,7 +18715,7 @@
         "CP39": 656
     },
     {
-        "Row": 618,
+        "id": 618,
         "Name": "Eelektrik",
         "Pokedex_Number": 603,
         "Img_name": 603,
@@ -18743,7 +18743,7 @@
         "CP39": 1526
     },
     {
-        "Row": 619,
+        "id": 619,
         "Name": "Eelektross",
         "Pokedex_Number": 604,
         "Img_name": 604,
@@ -18772,7 +18772,7 @@
         "CP39": 2510
     },
     {
-        "Row": 620,
+        "id": 620,
         "Name": "Elgyem",
         "Pokedex_Number": 605,
         "Img_name": 605,
@@ -18800,7 +18800,7 @@
         "CP39": 1203
     },
     {
-        "Row": 621,
+        "id": 621,
         "Name": "Beheeyem",
         "Pokedex_Number": 606,
         "Img_name": 606,
@@ -18829,7 +18829,7 @@
         "CP39": 2552
     },
     {
-        "Row": 622,
+        "id": 622,
         "Name": "Litwick",
         "Pokedex_Number": 607,
         "Img_name": 607,
@@ -18859,7 +18859,7 @@
         "CP39": 863
     },
     {
-        "Row": 623,
+        "id": 623,
         "Name": "Lampent",
         "Pokedex_Number": 608,
         "Img_name": 608,
@@ -18889,7 +18889,7 @@
         "CP39": 1500
     },
     {
-        "Row": 624,
+        "id": 624,
         "Name": "Chandelure",
         "Pokedex_Number": 609,
         "Img_name": 609,
@@ -18920,7 +18920,7 @@
         "CP39": 2871
     },
     {
-        "Row": 625,
+        "id": 625,
         "Name": "Axew",
         "Pokedex_Number": 610,
         "Img_name": 610,
@@ -18948,7 +18948,7 @@
         "CP39": 1208
     },
     {
-        "Row": 626,
+        "id": 626,
         "Name": "Fraxure",
         "Pokedex_Number": 611,
         "Img_name": 611,
@@ -18976,7 +18976,7 @@
         "CP39": 2061
     },
     {
-        "Row": 627,
+        "id": 627,
         "Name": "Haxorus",
         "Pokedex_Number": 612,
         "Img_name": 612,
@@ -19005,7 +19005,7 @@
         "CP39": 3347
     },
     {
-        "Row": 628,
+        "id": 628,
         "Name": "Cubchoo",
         "Pokedex_Number": 613,
         "Img_name": 613,
@@ -19033,7 +19033,7 @@
         "CP39": 928
     },
     {
-        "Row": 629,
+        "id": 629,
         "Name": "Beartic",
         "Pokedex_Number": 614,
         "Img_name": 614,
@@ -19062,7 +19062,7 @@
         "CP39": 2825
     },
     {
-        "Row": 630,
+        "id": 630,
         "Name": "Cryogonal",
         "Pokedex_Number": 615,
         "Img_name": 615,
@@ -19091,7 +19091,7 @@
         "CP39": 2788
     },
     {
-        "Row": 631,
+        "id": 631,
         "Name": "Shelmet",
         "Pokedex_Number": 616,
         "Img_name": 616,
@@ -19119,7 +19119,7 @@
         "CP39": 735
     },
     {
-        "Row": 632,
+        "id": 632,
         "Name": "Accelgor",
         "Pokedex_Number": 617,
         "Img_name": 617,
@@ -19147,7 +19147,7 @@
         "CP39": 2312
     },
     {
-        "Row": 633,
+        "id": 633,
         "Name": "Stunfisk",
         "Pokedex_Number": 618,
         "Img_name": 618,
@@ -19178,7 +19178,7 @@
         "CP39": 2070
     },
     {
-        "Row": 634,
+        "id": 634,
         "Name": "Mienfoo",
         "Pokedex_Number": 619,
         "Img_name": 619,
@@ -19206,7 +19206,7 @@
         "CP39": 1173
     },
     {
-        "Row": 635,
+        "id": 635,
         "Name": "Mienshao",
         "Pokedex_Number": 620,
         "Img_name": 620,
@@ -19234,7 +19234,7 @@
         "CP39": 2411
     },
     {
-        "Row": 636,
+        "id": 636,
         "Name": "Druddigon",
         "Pokedex_Number": 621,
         "Img_name": 621,
@@ -19263,7 +19263,7 @@
         "CP39": 2481
     },
     {
-        "Row": 637,
+        "id": 637,
         "Name": "Golett",
         "Pokedex_Number": 622,
         "Img_name": 622,
@@ -19293,7 +19293,7 @@
         "CP39": 1042
     },
     {
-        "Row": 638,
+        "id": 638,
         "Name": "Golurk",
         "Pokedex_Number": 623,
         "Img_name": 623,
@@ -19324,7 +19324,7 @@
         "CP39": 2635
     },
     {
-        "Row": 639,
+        "id": 639,
         "Name": "Pawniard",
         "Pokedex_Number": 624,
         "Img_name": 624,
@@ -19354,7 +19354,7 @@
         "CP39": 1279
     },
     {
-        "Row": 640,
+        "id": 640,
         "Name": "Bisharp",
         "Pokedex_Number": 625,
         "Img_name": 625,
@@ -19385,7 +19385,7 @@
         "CP39": 2628
     },
     {
-        "Row": 641,
+        "id": 641,
         "Name": "Bouffalant",
         "Pokedex_Number": 626,
         "Img_name": 626,
@@ -19414,7 +19414,7 @@
         "CP39": 2598
     },
     {
-        "Row": 642,
+        "id": 642,
         "Name": "Rufflet",
         "Pokedex_Number": 627,
         "Img_name": 627,
@@ -19444,7 +19444,7 @@
         "CP39": 1338
     },
     {
-        "Row": 643,
+        "id": 643,
         "Name": "Braviary",
         "Pokedex_Number": 628,
         "Img_name": 628,
@@ -19475,7 +19475,7 @@
         "CP39": 2881
     },
     {
-        "Row": 644,
+        "id": 644,
         "Name": "Vullaby",
         "Pokedex_Number": 629,
         "Img_name": 629,
@@ -19505,7 +19505,7 @@
         "CP39": 1159
     },
     {
-        "Row": 645,
+        "id": 645,
         "Name": "Mandibuzz",
         "Pokedex_Number": 630,
         "Img_name": 630,
@@ -19536,7 +19536,7 @@
         "CP39": 2038
     },
     {
-        "Row": 646,
+        "id": 646,
         "Name": "Heatmor",
         "Pokedex_Number": 631,
         "Img_name": 631,
@@ -19564,7 +19564,7 @@
         "CP39": 2200
     },
     {
-        "Row": 647,
+        "id": 647,
         "Name": "Durant",
         "Pokedex_Number": 632,
         "Img_name": 632,
@@ -19595,7 +19595,7 @@
         "CP39": 2516
     },
     {
-        "Row": 648,
+        "id": 648,
         "Name": "Deino",
         "Pokedex_Number": 633,
         "Img_name": 633,
@@ -19625,7 +19625,7 @@
         "CP39": 914
     },
     {
-        "Row": 649,
+        "id": 649,
         "Name": "Zweilous",
         "Pokedex_Number": 634,
         "Img_name": 634,
@@ -19655,7 +19655,7 @@
         "CP39": 1654
     },
     {
-        "Row": 650,
+        "id": 650,
         "Name": "Hydreigon",
         "Pokedex_Number": 635,
         "Img_name": 635,
@@ -19686,7 +19686,7 @@
         "CP39": 3353
     },
     {
-        "Row": 651,
+        "id": 651,
         "Name": "Larvesta",
         "Pokedex_Number": 636,
         "Img_name": 636,
@@ -19716,7 +19716,7 @@
         "CP39": 1300
     },
     {
-        "Row": 652,
+        "id": 652,
         "Name": "Volcarona",
         "Pokedex_Number": 637,
         "Img_name": 637,
@@ -19747,7 +19747,7 @@
         "CP39": 3504
     },
     {
-        "Row": 653,
+        "id": 653,
         "Name": "Cobalion",
         "Pokedex_Number": 638,
         "Img_name": 638,
@@ -19778,7 +19778,7 @@
         "CP39": 2966
     },
     {
-        "Row": 654,
+        "id": 654,
         "Name": "Terrakion",
         "Pokedex_Number": 639,
         "Img_name": 639,
@@ -19809,7 +19809,7 @@
         "CP39": 3418
     },
     {
-        "Row": 655,
+        "id": 655,
         "Name": "Virizion",
         "Pokedex_Number": 640,
         "Img_name": 640,
@@ -19840,7 +19840,7 @@
         "CP39": 2966
     },
     {
-        "Row": 656,
+        "id": 656,
         "Name": "Tornadus (Therian Forme)",
         "Pokedex_Number": 641,
         "Img_name": 641,
@@ -19869,7 +19869,7 @@
         "CP39": 3086
     },
     {
-        "Row": 657,
+        "id": 657,
         "Name": "Tornadus (Incarnate Forme)",
         "Pokedex_Number": 641,
         "Img_name": 641,
@@ -19898,7 +19898,7 @@
         "CP39": 3086
     },
     {
-        "Row": 658,
+        "id": 658,
         "Name": "Thundurus (Incarnate Forme)",
         "Pokedex_Number": 642,
         "Img_name": 642,
@@ -19929,7 +19929,7 @@
         "CP39": 3086
     },
     {
-        "Row": 659,
+        "id": 659,
         "Name": "Thundurus (Therian Forme)",
         "Pokedex_Number": 642,
         "Img_name": 642,
@@ -19960,7 +19960,7 @@
         "CP39": 3086
     },
     {
-        "Row": 660,
+        "id": 660,
         "Name": "Reshiram",
         "Pokedex_Number": 643,
         "Img_name": 643,
@@ -19991,7 +19991,7 @@
         "CP39": 4587
     },
     {
-        "Row": 661,
+        "id": 661,
         "Name": "Zekrom",
         "Pokedex_Number": 644,
         "Img_name": 644,
@@ -20022,7 +20022,7 @@
         "CP39": 4587
     },
     {
-        "Row": 662,
+        "id": 662,
         "Name": "Landorus (Incarnate Forme)",
         "Pokedex_Number": 645,
         "Img_name": 645,
@@ -20053,7 +20053,7 @@
         "CP39": 3355
     },
     {
-        "Row": 663,
+        "id": 663,
         "Name": "Landorus (Therian Forme)",
         "Pokedex_Number": 645,
         "Img_name": 645,
@@ -20084,7 +20084,7 @@
         "CP39": 3355
     },
     {
-        "Row": 664,
+        "id": 664,
         "Name": "Kyurem (Black Kyurem)",
         "Pokedex_Number": 646,
         "Img_name": 646,
@@ -20115,7 +20115,7 @@
         "CP39": 4059
     },
     {
-        "Row": 665,
+        "id": 665,
         "Name": "Kyurem (Normal Kyurem)",
         "Pokedex_Number": 646,
         "Img_name": 646,
@@ -20146,7 +20146,7 @@
         "CP39": 4059
     },
     {
-        "Row": 666,
+        "id": 666,
         "Name": "Kyurem (White Kyurem)",
         "Pokedex_Number": 646,
         "Img_name": 646,
@@ -20177,7 +20177,7 @@
         "CP39": 4059
     },
     {
-        "Row": 667,
+        "id": 667,
         "Name": "Keldeo",
         "Pokedex_Number": 647,
         "Img_name": 647,
@@ -20208,7 +20208,7 @@
         "CP39": 3418
     },
     {
-        "Row": 668,
+        "id": 668,
         "Name": "Meloetta (Pirouette Forme)",
         "Pokedex_Number": 648,
         "Img_name": 648,
@@ -20239,7 +20239,7 @@
         "CP39": 3894
     },
     {
-        "Row": 669,
+        "id": 669,
         "Name": "Meloetta (Aria Forme)",
         "Pokedex_Number": 648,
         "Img_name": 648,
@@ -20270,7 +20270,7 @@
         "CP39": 3894
     },
     {
-        "Row": 670,
+        "id": 670,
         "Name": "Genesect",
         "Pokedex_Number": 649,
         "Img_name": 649,
@@ -20301,7 +20301,7 @@
         "CP39": 3013
     },
     {
-        "Row": 671,
+        "id": 671,
         "Name": "Chespin",
         "Pokedex_Number": 650,
         "Img_name": 650,
@@ -20329,7 +20329,7 @@
         "CP39": 992
     },
     {
-        "Row": 672,
+        "id": 672,
         "Name": "Quilladin",
         "Pokedex_Number": 651,
         "Img_name": 651,
@@ -20357,7 +20357,7 @@
         "CP39": 1594
     },
     {
-        "Row": 673,
+        "id": 673,
         "Name": "Chesnaught",
         "Pokedex_Number": 652,
         "Img_name": 652,
@@ -20388,7 +20388,7 @@
         "CP39": 2859
     },
     {
-        "Row": 674,
+        "id": 674,
         "Name": "Fennekin",
         "Pokedex_Number": 653,
         "Img_name": 653,
@@ -20416,7 +20416,7 @@
         "CP39": 885
     },
     {
-        "Row": 675,
+        "id": 675,
         "Name": "Braixen",
         "Pokedex_Number": 654,
         "Img_name": 654,
@@ -20444,7 +20444,7 @@
         "CP39": 1622
     },
     {
-        "Row": 676,
+        "id": 676,
         "Name": "Delphox",
         "Pokedex_Number": 655,
         "Img_name": 655,
@@ -20475,7 +20475,7 @@
         "CP39": 2867
     },
     {
-        "Row": 677,
+        "id": 677,
         "Name": "Froakie",
         "Pokedex_Number": 656,
         "Img_name": 656,
@@ -20503,7 +20503,7 @@
         "CP39": 834
     },
     {
-        "Row": 678,
+        "id": 678,
         "Name": "Frogadier",
         "Pokedex_Number": 657,
         "Img_name": 657,
@@ -20531,7 +20531,7 @@
         "CP39": 1430
     },
     {
-        "Row": 679,
+        "id": 679,
         "Name": "Greninja",
         "Pokedex_Number": 658,
         "Img_name": 658,
@@ -20561,7 +20561,7 @@
         "CP39": 2401
     },
     {
-        "Row": 680,
+        "id": 680,
         "Name": "Bunnelby",
         "Pokedex_Number": 659,
         "Img_name": 659,
@@ -20589,7 +20589,7 @@
         "CP39": 457
     },
     {
-        "Row": 681,
+        "id": 681,
         "Name": "Diggersby",
         "Pokedex_Number": 660,
         "Img_name": 660,
@@ -20619,7 +20619,7 @@
         "CP39": 1386
     },
     {
-        "Row": 682,
+        "id": 682,
         "Name": "Fletchling",
         "Pokedex_Number": 661,
         "Img_name": 661,
@@ -20649,7 +20649,7 @@
         "CP39": 686
     },
     {
-        "Row": 683,
+        "id": 683,
         "Name": "Fletchinder",
         "Pokedex_Number": 662,
         "Img_name": 662,
@@ -20679,7 +20679,7 @@
         "CP39": 1303
     },
     {
-        "Row": 684,
+        "id": 684,
         "Name": "Talonflame",
         "Pokedex_Number": 663,
         "Img_name": 663,
@@ -20709,7 +20709,7 @@
         "CP39": 2010
     },
     {
-        "Row": 685,
+        "id": 685,
         "Name": "Scatterbug",
         "Pokedex_Number": 664,
         "Img_name": 664,
@@ -20737,7 +20737,7 @@
         "CP39": 422
     },
     {
-        "Row": 686,
+        "id": 686,
         "Name": "Spewpa",
         "Pokedex_Number": 665,
         "Img_name": 665,
@@ -20765,7 +20765,7 @@
         "CP39": 431
     },
     {
-        "Row": 687,
+        "id": 687,
         "Name": "Vivillon",
         "Pokedex_Number": 666,
         "Img_name": 666,
@@ -20795,7 +20795,7 @@
         "CP39": 1689
     },
     {
-        "Row": 688,
+        "id": 688,
         "Name": "Litleo",
         "Pokedex_Number": 667,
         "Img_name": 667,
@@ -20825,7 +20825,7 @@
         "CP39": 1269
     },
     {
-        "Row": 689,
+        "id": 689,
         "Name": "Pyroar",
         "Pokedex_Number": 668,
         "Img_name": 668,
@@ -20856,7 +20856,7 @@
         "CP39": 2567
     },
     {
-        "Row": 690,
+        "id": 690,
         "Name": "Flabã©Bã©",
         "Pokedex_Number": 669,
         "Img_name": 669,
@@ -20884,7 +20884,7 @@
         "CP39": 950
     },
     {
-        "Row": 691,
+        "id": 691,
         "Name": "Floette",
         "Pokedex_Number": 670,
         "Img_name": 670,
@@ -20912,7 +20912,7 @@
         "CP39": 1421
     },
     {
-        "Row": 692,
+        "id": 692,
         "Name": "Florges",
         "Pokedex_Number": 671,
         "Img_name": 671,
@@ -20941,7 +20941,7 @@
         "CP39": 3175
     },
     {
-        "Row": 693,
+        "id": 693,
         "Name": "Skiddo",
         "Pokedex_Number": 672,
         "Img_name": 672,
@@ -20969,7 +20969,7 @@
         "CP39": 1137
     },
     {
-        "Row": 694,
+        "id": 694,
         "Name": "Gogoat",
         "Pokedex_Number": 673,
         "Img_name": 673,
@@ -20998,7 +20998,7 @@
         "CP39": 2736
     },
     {
-        "Row": 695,
+        "id": 695,
         "Name": "Pancham",
         "Pokedex_Number": 674,
         "Img_name": 674,
@@ -21026,7 +21026,7 @@
         "CP39": 1360
     },
     {
-        "Row": 696,
+        "id": 696,
         "Name": "Pangoro",
         "Pokedex_Number": 675,
         "Img_name": 675,
@@ -21057,7 +21057,7 @@
         "CP39": 2720
     },
     {
-        "Row": 697,
+        "id": 697,
         "Name": "Furfrou",
         "Pokedex_Number": 676,
         "Img_name": 676,
@@ -21085,7 +21085,7 @@
         "CP39": 1986
     },
     {
-        "Row": 698,
+        "id": 698,
         "Name": "Espurr",
         "Pokedex_Number": 677,
         "Img_name": 677,
@@ -21113,7 +21113,7 @@
         "CP39": 1125
     },
     {
-        "Row": 699,
+        "id": 699,
         "Name": "Meowstic",
         "Pokedex_Number": 678,
         "Img_name": 678,
@@ -21141,7 +21141,7 @@
         "CP39": 1935
     },
     {
-        "Row": 700,
+        "id": 700,
         "Name": "Honedge",
         "Pokedex_Number": 679,
         "Img_name": 679,
@@ -21171,7 +21171,7 @@
         "CP39": 1276
     },
     {
-        "Row": 701,
+        "id": 701,
         "Name": "Doublade",
         "Pokedex_Number": 680,
         "Img_name": 680,
@@ -21202,7 +21202,7 @@
         "CP39": 2359
     },
     {
-        "Row": 702,
+        "id": 702,
         "Name": "Aegislash",
         "Pokedex_Number": 681,
         "Img_name": 681,
@@ -21232,7 +21232,7 @@
         "CP39": 1401
     },
     {
-        "Row": 703,
+        "id": 703,
         "Name": "Spritzee",
         "Pokedex_Number": 682,
         "Img_name": 682,
@@ -21260,7 +21260,7 @@
         "CP39": 1151
     },
     {
-        "Row": 704,
+        "id": 704,
         "Name": "Aromatisse",
         "Pokedex_Number": 683,
         "Img_name": 683,
@@ -21288,7 +21288,7 @@
         "CP39": 2242
     },
     {
-        "Row": 705,
+        "id": 705,
         "Name": "Swirlix",
         "Pokedex_Number": 684,
         "Img_name": 684,
@@ -21316,7 +21316,7 @@
         "CP39": 1057
     },
     {
-        "Row": 706,
+        "id": 706,
         "Name": "Slurpuff",
         "Pokedex_Number": 685,
         "Img_name": 685,
@@ -21344,7 +21344,7 @@
         "CP39": 2039
     },
     {
-        "Row": 707,
+        "id": 707,
         "Name": "Inkay",
         "Pokedex_Number": 686,
         "Img_name": 686,
@@ -21374,7 +21374,7 @@
         "CP39": 813
     },
     {
-        "Row": 708,
+        "id": 708,
         "Name": "Malamar",
         "Pokedex_Number": 687,
         "Img_name": 687,
@@ -21404,7 +21404,7 @@
         "CP39": 2210
     },
     {
-        "Row": 709,
+        "id": 709,
         "Name": "Binacle",
         "Pokedex_Number": 688,
         "Img_name": 688,
@@ -21434,7 +21434,7 @@
         "CP39": 801
     },
     {
-        "Row": 710,
+        "id": 710,
         "Name": "Barbaracle",
         "Pokedex_Number": 689,
         "Img_name": 689,
@@ -21465,7 +21465,7 @@
         "CP39": 2487
     },
     {
-        "Row": 711,
+        "id": 711,
         "Name": "Skrelp",
         "Pokedex_Number": 690,
         "Img_name": 690,
@@ -21495,7 +21495,7 @@
         "CP39": 911
     },
     {
-        "Row": 712,
+        "id": 712,
         "Name": "Dragalge",
         "Pokedex_Number": 691,
         "Img_name": 691,
@@ -21525,7 +21525,7 @@
         "CP39": 2195
     },
     {
-        "Row": 713,
+        "id": 713,
         "Name": "Clauncher",
         "Pokedex_Number": 692,
         "Img_name": 692,
@@ -21553,7 +21553,7 @@
         "CP39": 936
     },
     {
-        "Row": 714,
+        "id": 714,
         "Name": "Clawitzer",
         "Pokedex_Number": 693,
         "Img_name": 693,
@@ -21582,7 +21582,7 @@
         "CP39": 2489
     },
     {
-        "Row": 715,
+        "id": 715,
         "Name": "Helioptile",
         "Pokedex_Number": 694,
         "Img_name": 694,
@@ -21612,7 +21612,7 @@
         "CP39": 804
     },
     {
-        "Row": 716,
+        "id": 716,
         "Name": "Heliolisk",
         "Pokedex_Number": 695,
         "Img_name": 695,
@@ -21642,7 +21642,7 @@
         "CP39": 2431
     },
     {
-        "Row": 717,
+        "id": 717,
         "Name": "Tyrunt",
         "Pokedex_Number": 696,
         "Img_name": 696,
@@ -21672,7 +21672,7 @@
         "CP39": 1507
     },
     {
-        "Row": 718,
+        "id": 718,
         "Name": "Tyrantrum",
         "Pokedex_Number": 697,
         "Img_name": 697,
@@ -21703,7 +21703,7 @@
         "CP39": 3062
     },
     {
-        "Row": 719,
+        "id": 719,
         "Name": "Amaura",
         "Pokedex_Number": 698,
         "Img_name": 698,
@@ -21733,7 +21733,7 @@
         "CP39": 1273
     },
     {
-        "Row": 720,
+        "id": 720,
         "Name": "Aurorus",
         "Pokedex_Number": 699,
         "Img_name": 699,
@@ -21764,7 +21764,7 @@
         "CP39": 2741
     },
     {
-        "Row": 721,
+        "id": 721,
         "Name": "Sylveon",
         "Pokedex_Number": 700,
         "Img_name": 700,
@@ -21793,7 +21793,7 @@
         "CP39": 3050
     },
     {
-        "Row": 722,
+        "id": 722,
         "Name": "Hawlucha",
         "Pokedex_Number": 701,
         "Img_name": 701,
@@ -21823,7 +21823,7 @@
         "CP39": 2236
     },
     {
-        "Row": 723,
+        "id": 723,
         "Name": "Dedenne",
         "Pokedex_Number": 702,
         "Img_name": 702,
@@ -21853,7 +21853,7 @@
         "CP39": 1669
     },
     {
-        "Row": 724,
+        "id": 724,
         "Name": "Carbink",
         "Pokedex_Number": 703,
         "Img_name": 703,
@@ -21883,7 +21883,7 @@
         "CP39": 1257
     },
     {
-        "Row": 725,
+        "id": 725,
         "Name": "Goomy",
         "Pokedex_Number": 704,
         "Img_name": 704,
@@ -21911,7 +21911,7 @@
         "CP39": 881
     },
     {
-        "Row": 726,
+        "id": 726,
         "Name": "Sliggoo",
         "Pokedex_Number": 705,
         "Img_name": 705,
@@ -21939,7 +21939,7 @@
         "CP39": 1952
     },
     {
-        "Row": 727,
+        "id": 727,
         "Name": "Goodra",
         "Pokedex_Number": 706,
         "Img_name": 706,
@@ -21968,7 +21968,7 @@
         "CP39": 3487
     },
     {
-        "Row": 728,
+        "id": 728,
         "Name": "Klefki",
         "Pokedex_Number": 707,
         "Img_name": 707,
@@ -21998,7 +21998,7 @@
         "CP39": 1713
     },
     {
-        "Row": 729,
+        "id": 729,
         "Name": "Phantump",
         "Pokedex_Number": 708,
         "Img_name": 708,
@@ -22028,7 +22028,7 @@
         "CP39": 960
     },
     {
-        "Row": 730,
+        "id": 730,
         "Name": "Trevenant",
         "Pokedex_Number": 709,
         "Img_name": 709,
@@ -22058,7 +22058,7 @@
         "CP39": 2372
     },
     {
-        "Row": 731,
+        "id": 731,
         "Name": "Pumpkaboo",
         "Pokedex_Number": 710,
         "Img_name": 710,
@@ -22088,7 +22088,7 @@
         "CP39": 1068
     },
     {
-        "Row": 732,
+        "id": 732,
         "Name": "Gourgeist",
         "Pokedex_Number": 711,
         "Img_name": 711,
@@ -22119,7 +22119,7 @@
         "CP39": 2231
     },
     {
-        "Row": 733,
+        "id": 733,
         "Name": "Bergmite",
         "Pokedex_Number": 712,
         "Img_name": 712,
@@ -22147,7 +22147,7 @@
         "CP39": 1142
     },
     {
-        "Row": 734,
+        "id": 734,
         "Name": "Avalugg",
         "Pokedex_Number": 713,
         "Img_name": 713,
@@ -22176,7 +22176,7 @@
         "CP39": 3316
     },
     {
-        "Row": 735,
+        "id": 735,
         "Name": "Noibat",
         "Pokedex_Number": 714,
         "Img_name": 714,
@@ -22205,7 +22205,7 @@
         "CP39": 560
     },
     {
-        "Row": 736,
+        "id": 736,
         "Name": "Noivern",
         "Pokedex_Number": 715,
         "Img_name": 715,
@@ -22235,7 +22235,7 @@
         "CP39": 2539
     },
     {
-        "Row": 737,
+        "id": 737,
         "Name": "Xerneas",
         "Pokedex_Number": 716,
         "Img_name": 716,
@@ -22264,7 +22264,7 @@
         "CP39": 4317
     },
     {
-        "Row": 738,
+        "id": 738,
         "Name": "Yveltal",
         "Pokedex_Number": 717,
         "Img_name": 717,
@@ -22295,7 +22295,7 @@
         "CP39": 4317
     },
     {
-        "Row": 739,
+        "id": 739,
         "Name": "Zygarde",
         "Pokedex_Number": 718,
         "Img_name": 718,
@@ -22326,7 +22326,7 @@
         "CP39": 3289
     },
     {
-        "Row": 740,
+        "id": 740,
         "Name": "Diancie",
         "Pokedex_Number": 719,
         "Img_name": 719,
@@ -22357,7 +22357,7 @@
         "CP39": 2344
     },
     {
-        "Row": 741,
+        "id": 741,
         "Name": "Hoopa",
         "Pokedex_Number": 720,
         "Img_name": 720,
@@ -22388,7 +22388,7 @@
         "CP39": 3935
     },
     {
-        "Row": 742,
+        "id": 742,
         "Name": "Volcanion",
         "Pokedex_Number": 721,
         "Img_name": 721,
@@ -22419,8 +22419,8 @@
         "CP39": 3410
     },
     {
-        "Row": 743,
-        "Name": "Rowlet",
+        "id": 743,
+        "Name": "idlet",
         "Pokedex_Number": 722,
         "Img_name": 722,
         "Generation": 7,
@@ -22449,7 +22449,7 @@
         "CP39": 957
     },
     {
-        "Row": 744,
+        "id": 744,
         "Name": "Dartrix",
         "Pokedex_Number": 723,
         "Img_name": 723,
@@ -22479,7 +22479,7 @@
         "CP39": 1583
     },
     {
-        "Row": 745,
+        "id": 745,
         "Name": "Decidueye",
         "Pokedex_Number": 724,
         "Img_name": 724,
@@ -22510,7 +22510,7 @@
         "CP39": 2606
     },
     {
-        "Row": 746,
+        "id": 746,
         "Name": "Litten",
         "Pokedex_Number": 725,
         "Img_name": 725,
@@ -22538,7 +22538,7 @@
         "CP39": 874
     },
     {
-        "Row": 747,
+        "id": 747,
         "Name": "Torracat",
         "Pokedex_Number": 726,
         "Img_name": 726,
@@ -22566,7 +22566,7 @@
         "CP39": 1522
     },
     {
-        "Row": 748,
+        "id": 748,
         "Name": "Incineroar",
         "Pokedex_Number": 727,
         "Img_name": 727,
@@ -22597,7 +22597,7 @@
         "CP39": 2782
     },
     {
-        "Row": 749,
+        "id": 749,
         "Name": "Popplio",
         "Pokedex_Number": 728,
         "Img_name": 728,
@@ -22625,7 +22625,7 @@
         "CP39": 972
     },
     {
-        "Row": 750,
+        "id": 750,
         "Name": "Brionne",
         "Pokedex_Number": 729,
         "Img_name": 729,
@@ -22653,7 +22653,7 @@
         "CP39": 1686
     },
     {
-        "Row": 751,
+        "id": 751,
         "Name": "Primarina",
         "Pokedex_Number": 730,
         "Img_name": 730,
@@ -22684,7 +22684,7 @@
         "CP39": 3050
     },
     {
-        "Row": 752,
+        "id": 752,
         "Name": "Pikipek",
         "Pokedex_Number": 731,
         "Img_name": 731,
@@ -22714,7 +22714,7 @@
         "CP39": 737
     },
     {
-        "Row": 753,
+        "id": 753,
         "Name": "Trumbeak",
         "Pokedex_Number": 732,
         "Img_name": 732,
@@ -22744,7 +22744,7 @@
         "CP39": 1284
     },
     {
-        "Row": 754,
+        "id": 754,
         "Name": "Toucannon",
         "Pokedex_Number": 733,
         "Img_name": 733,
@@ -22774,7 +22774,7 @@
         "CP39": 2449
     },
     {
-        "Row": 755,
+        "id": 755,
         "Name": "Yungoos",
         "Pokedex_Number": 734,
         "Img_name": 734,
@@ -22802,7 +22802,7 @@
         "CP39": 748
     },
     {
-        "Row": 756,
+        "id": 756,
         "Name": "Gumshoos",
         "Pokedex_Number": 735,
         "Img_name": 735,
@@ -22830,7 +22830,7 @@
         "CP39": 2011
     },
     {
-        "Row": 757,
+        "id": 757,
         "Name": "Grubbin",
         "Pokedex_Number": 736,
         "Img_name": 736,
@@ -22858,7 +22858,7 @@
         "CP39": 835
     },
     {
-        "Row": 758,
+        "id": 758,
         "Name": "Charjabug",
         "Pokedex_Number": 737,
         "Img_name": 737,
@@ -22887,7 +22887,7 @@
         "CP39": 1525
     },
     {
-        "Row": 759,
+        "id": 759,
         "Name": "Vikavolt",
         "Pokedex_Number": 738,
         "Img_name": 738,
@@ -22917,7 +22917,7 @@
         "CP39": 2888
     },
     {
-        "Row": 760,
+        "id": 760,
         "Name": "Crabrawler",
         "Pokedex_Number": 739,
         "Img_name": 739,
@@ -22945,7 +22945,7 @@
         "CP39": 1180
     },
     {
-        "Row": 761,
+        "id": 761,
         "Name": "Crabominable",
         "Pokedex_Number": 740,
         "Img_name": 740,
@@ -22976,7 +22976,7 @@
         "CP39": 2743
     },
     {
-        "Row": 762,
+        "id": 762,
         "Name": "Oricorio",
         "Pokedex_Number": 741,
         "Img_name": 741,
@@ -23006,7 +23006,7 @@
         "CP39": 2110
     },
     {
-        "Row": 763,
+        "id": 763,
         "Name": "Cutiefly",
         "Pokedex_Number": 742,
         "Img_name": 742,
@@ -23036,7 +23036,7 @@
         "CP39": 734
     },
     {
-        "Row": 764,
+        "id": 764,
         "Name": "Ribombee",
         "Pokedex_Number": 743,
         "Img_name": 743,
@@ -23066,7 +23066,7 @@
         "CP39": 1968
     },
     {
-        "Row": 765,
+        "id": 765,
         "Name": "Rockruff",
         "Pokedex_Number": 744,
         "Img_name": 744,
@@ -23094,7 +23094,7 @@
         "CP39": 803
     },
     {
-        "Row": 766,
+        "id": 766,
         "Name": "Lycanroc",
         "Pokedex_Number": 745,
         "Img_name": 745,
@@ -23122,7 +23122,7 @@
         "CP39": 2422
     },
     {
-        "Row": 767,
+        "id": 767,
         "Name": "Wishiwashi",
         "Pokedex_Number": 746,
         "Img_name": 746,
@@ -23150,7 +23150,7 @@
         "CP39": 300
     },
     {
-        "Row": 768,
+        "id": 768,
         "Name": "Mareanie",
         "Pokedex_Number": 747,
         "Img_name": 747,
@@ -23180,7 +23180,7 @@
         "CP39": 850
     },
     {
-        "Row": 769,
+        "id": 769,
         "Name": "Toxapex",
         "Pokedex_Number": 748,
         "Img_name": 748,
@@ -23210,7 +23210,7 @@
         "CP39": 1457
     },
     {
-        "Row": 770,
+        "id": 770,
         "Name": "Mudbray",
         "Pokedex_Number": 749,
         "Img_name": 749,
@@ -23238,7 +23238,7 @@
         "CP39": 1741
     },
     {
-        "Row": 771,
+        "id": 771,
         "Name": "Mudsdale",
         "Pokedex_Number": 750,
         "Img_name": 750,
@@ -23267,7 +23267,7 @@
         "CP39": 2886
     },
     {
-        "Row": 772,
+        "id": 772,
         "Name": "Dewpider",
         "Pokedex_Number": 751,
         "Img_name": 751,
@@ -23296,7 +23296,7 @@
         "CP39": 606
     },
     {
-        "Row": 773,
+        "id": 773,
         "Name": "Araquanid",
         "Pokedex_Number": 752,
         "Img_name": 752,
@@ -23325,7 +23325,7 @@
         "CP39": 1693
     },
     {
-        "Row": 774,
+        "id": 774,
         "Name": "Fomantis",
         "Pokedex_Number": 753,
         "Img_name": 753,
@@ -23353,7 +23353,7 @@
         "CP39": 613
     },
     {
-        "Row": 775,
+        "id": 775,
         "Name": "Lurantis",
         "Pokedex_Number": 754,
         "Img_name": 754,
@@ -23381,7 +23381,7 @@
         "CP39": 2152
     },
     {
-        "Row": 776,
+        "id": 776,
         "Name": "Morelull",
         "Pokedex_Number": 755,
         "Img_name": 755,
@@ -23411,7 +23411,7 @@
         "CP39": 882
     },
     {
-        "Row": 777,
+        "id": 777,
         "Name": "Shiinotic",
         "Pokedex_Number": 756,
         "Img_name": 756,
@@ -23441,7 +23441,7 @@
         "CP39": 1675
     },
     {
-        "Row": 778,
+        "id": 778,
         "Name": "Salandit",
         "Pokedex_Number": 757,
         "Img_name": 757,
@@ -23471,7 +23471,7 @@
         "CP39": 954
     },
     {
-        "Row": 779,
+        "id": 779,
         "Name": "Salazzle",
         "Pokedex_Number": 758,
         "Img_name": 758,
@@ -23501,7 +23501,7 @@
         "CP39": 2213
     },
     {
-        "Row": 780,
+        "id": 780,
         "Name": "Stufful",
         "Pokedex_Number": 759,
         "Img_name": 759,
@@ -23531,7 +23531,7 @@
         "CP39": 1213
     },
     {
-        "Row": 781,
+        "id": 781,
         "Name": "Bewear",
         "Pokedex_Number": 760,
         "Img_name": 760,
@@ -23562,7 +23562,7 @@
         "CP39": 3043
     },
     {
-        "Row": 782,
+        "id": 782,
         "Name": "Bounsweet",
         "Pokedex_Number": 761,
         "Img_name": 761,
@@ -23590,7 +23590,7 @@
         "CP39": 393
     },
     {
-        "Row": 783,
+        "id": 783,
         "Name": "Steenee",
         "Pokedex_Number": 762,
         "Img_name": 762,
@@ -23618,7 +23618,7 @@
         "CP39": 652
     },
     {
-        "Row": 784,
+        "id": 784,
         "Name": "Tsareena",
         "Pokedex_Number": 763,
         "Img_name": 763,
@@ -23647,7 +23647,7 @@
         "CP39": 2666
     },
     {
-        "Row": 785,
+        "id": 785,
         "Name": "Comfey",
         "Pokedex_Number": 764,
         "Img_name": 764,
@@ -23675,7 +23675,7 @@
         "CP39": 1860
     },
     {
-        "Row": 786,
+        "id": 786,
         "Name": "Oranguru",
         "Pokedex_Number": 765,
         "Img_name": 765,
@@ -23706,7 +23706,7 @@
         "CP39": 2344
     },
     {
-        "Row": 787,
+        "id": 787,
         "Name": "Passimian",
         "Pokedex_Number": 766,
         "Img_name": 766,
@@ -23735,7 +23735,7 @@
         "CP39": 2949
     },
     {
-        "Row": 788,
+        "id": 788,
         "Name": "Wimpod",
         "Pokedex_Number": 767,
         "Img_name": 767,
@@ -23764,7 +23764,7 @@
         "CP39": 394
     },
     {
-        "Row": 789,
+        "id": 789,
         "Name": "Golisopod",
         "Pokedex_Number": 768,
         "Img_name": 768,
@@ -23794,7 +23794,7 @@
         "CP39": 2993
     },
     {
-        "Row": 790,
+        "id": 790,
         "Name": "Sandygast",
         "Pokedex_Number": 769,
         "Img_name": 769,
@@ -23824,7 +23824,7 @@
         "CP39": 1130
     },
     {
-        "Row": 791,
+        "id": 791,
         "Name": "Palossand",
         "Pokedex_Number": 770,
         "Img_name": 770,
@@ -23855,7 +23855,7 @@
         "CP39": 2336
     },
     {
-        "Row": 792,
+        "id": 792,
         "Name": "Pyukumuku",
         "Pokedex_Number": 771,
         "Img_name": 771,
@@ -23883,7 +23883,7 @@
         "CP39": 1191
     },
     {
-        "Row": 793,
+        "id": 793,
         "Name": "Type: Null",
         "Pokedex_Number": 772,
         "Img_name": 772,
@@ -23912,7 +23912,7 @@
         "CP39": 2474
     },
     {
-        "Row": 794,
+        "id": 794,
         "Name": "Silvally",
         "Pokedex_Number": 773,
         "Img_name": 773,
@@ -23941,7 +23941,7 @@
         "CP39": 2740
     },
     {
-        "Row": 795,
+        "id": 795,
         "Name": "Minior",
         "Pokedex_Number": 774,
         "Img_name": 774,
@@ -23971,7 +23971,7 @@
         "CP39": 1354
     },
     {
-        "Row": 796,
+        "id": 796,
         "Name": "Komala",
         "Pokedex_Number": 775,
         "Img_name": 775,
@@ -23999,7 +23999,7 @@
         "CP39": 2385
     },
     {
-        "Row": 797,
+        "id": 797,
         "Name": "Turtonator",
         "Pokedex_Number": 776,
         "Img_name": 776,
@@ -24029,7 +24029,7 @@
         "CP39": 2048
     },
     {
-        "Row": 798,
+        "id": 798,
         "Name": "Togedemaru",
         "Pokedex_Number": 777,
         "Img_name": 777,
@@ -24059,7 +24059,7 @@
         "CP39": 1952
     },
     {
-        "Row": 799,
+        "id": 799,
         "Name": "Mimikyu",
         "Pokedex_Number": 778,
         "Img_name": 778,
@@ -24089,7 +24089,7 @@
         "CP39": 1995
     },
     {
-        "Row": 800,
+        "id": 800,
         "Name": "Bruxish",
         "Pokedex_Number": 779,
         "Img_name": 779,
@@ -24119,7 +24119,7 @@
         "CP39": 2133
     },
     {
-        "Row": 801,
+        "id": 801,
         "Name": "Drampa",
         "Pokedex_Number": 780,
         "Img_name": 780,
@@ -24150,7 +24150,7 @@
         "CP39": 2671
     },
     {
-        "Row": 802,
+        "id": 802,
         "Name": "Dhelmise",
         "Pokedex_Number": 781,
         "Img_name": 781,
@@ -24181,7 +24181,7 @@
         "CP39": 2681
     },
     {
-        "Row": 803,
+        "id": 803,
         "Name": "Jangmo-O",
         "Pokedex_Number": 782,
         "Img_name": 782,
@@ -24209,7 +24209,7 @@
         "CP39": 851
     },
     {
-        "Row": 804,
+        "id": 804,
         "Name": "Hakamo-O",
         "Pokedex_Number": 783,
         "Img_name": 783,
@@ -24239,7 +24239,7 @@
         "CP39": 1506
     },
     {
-        "Row": 805,
+        "id": 805,
         "Name": "Kommo-O",
         "Pokedex_Number": 784,
         "Img_name": 784,
@@ -24270,7 +24270,7 @@
         "CP39": 3051
     },
     {
-        "Row": 806,
+        "id": 806,
         "Name": "Tapu Koko",
         "Pokedex_Number": 785,
         "Img_name": 785,
@@ -24301,7 +24301,7 @@
         "CP39": 2879
     },
     {
-        "Row": 807,
+        "id": 807,
         "Name": "Tapu Lele",
         "Pokedex_Number": 786,
         "Img_name": 786,
@@ -24332,7 +24332,7 @@
         "CP39": 3280
     },
     {
-        "Row": 808,
+        "id": 808,
         "Name": "Tapu Bulu",
         "Pokedex_Number": 787,
         "Img_name": 787,
@@ -24363,7 +24363,7 @@
         "CP39": 3134
     },
     {
-        "Row": 809,
+        "id": 809,
         "Name": "Tapu Fini",
         "Pokedex_Number": 788,
         "Img_name": 788,
@@ -24394,7 +24394,7 @@
         "CP39": 2597
     },
     {
-        "Row": 810,
+        "id": 810,
         "Name": "Cosmog",
         "Pokedex_Number": 789,
         "Img_name": 789,
@@ -24422,7 +24422,7 @@
         "CP39": 362
     },
     {
-        "Row": 811,
+        "id": 811,
         "Name": "Cosmoem",
         "Pokedex_Number": 790,
         "Img_name": 790,
@@ -24450,7 +24450,7 @@
         "CP39": 684
     },
     {
-        "Row": 812,
+        "id": 812,
         "Name": "Solgaleo",
         "Pokedex_Number": 791,
         "Img_name": 791,
@@ -24481,7 +24481,7 @@
         "CP39": 4722
     },
     {
-        "Row": 813,
+        "id": 813,
         "Name": "Lunala",
         "Pokedex_Number": 792,
         "Img_name": 792,
@@ -24512,7 +24512,7 @@
         "CP39": 4722
     },
     {
-        "Row": 814,
+        "id": 814,
         "Name": "Nihilego",
         "Pokedex_Number": 793,
         "Img_name": 793,
@@ -24543,7 +24543,7 @@
         "CP39": 4069
     },
     {
-        "Row": 815,
+        "id": 815,
         "Name": "Buzzwole",
         "Pokedex_Number": 794,
         "Img_name": 794,
@@ -24574,7 +24574,7 @@
         "CP39": 4225
     },
     {
-        "Row": 816,
+        "id": 816,
         "Name": "Pheromosa",
         "Pokedex_Number": 795,
         "Img_name": 795,
@@ -24605,7 +24605,7 @@
         "CP39": 2553
     },
     {
-        "Row": 817,
+        "id": 817,
         "Name": "Xurkitree",
         "Pokedex_Number": 796,
         "Img_name": 796,
@@ -24634,7 +24634,7 @@
         "CP39": 3603
     },
     {
-        "Row": 818,
+        "id": 818,
         "Name": "Celesteela",
         "Pokedex_Number": 797,
         "Img_name": 797,
@@ -24665,7 +24665,7 @@
         "CP39": 2897
     },
     {
-        "Row": 819,
+        "id": 819,
         "Name": "Kartana",
         "Pokedex_Number": 798,
         "Img_name": 798,
@@ -24696,7 +24696,7 @@
         "CP39": 4300
     },
     {
-        "Row": 820,
+        "id": 820,
         "Name": "Guzzlord",
         "Pokedex_Number": 799,
         "Img_name": 799,
@@ -24727,7 +24727,7 @@
         "CP39": 2865
     },
     {
-        "Row": 821,
+        "id": 821,
         "Name": "Necrozma",
         "Pokedex_Number": 800,
         "Img_name": 800,
@@ -24756,7 +24756,7 @@
         "CP39": 3479
     },
     {
-        "Row": 822,
+        "id": 822,
         "Name": "Magearna",
         "Pokedex_Number": 801,
         "Img_name": 801,
