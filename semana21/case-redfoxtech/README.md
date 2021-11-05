@@ -15,7 +15,7 @@ Ou
 
 Teste a API através do link:
 
-- https://rafansilva-case-redfoxtech.herokuapp.com/pokemon
+- https://rafansilva-desafio-pokemon-go.herokuapp.com/pokemon
 
 ## Documentação da API
 
