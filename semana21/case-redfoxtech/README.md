@@ -1,8 +1,21 @@
-# Case - RedFoxTech
+# Case - RedFoxTech - API Pokemon
+
+Esse projeto é uma API simples que consume dados sobre Pokemon's de maneira prática, rápida e automatizada. Possui listagens, busca, paginação e filtros.
 
 ## Installation
 
+```
+npm install
+```
+
 Para facilitar a inserção de dados, rode `npm run migrations` dentro da pasta onde está o package.json.
+É necessario ter um banco de dados já configurado.
+
+Ou
+
+Teste a API através do link:
+
+- https://rafansilva-case-redfoxtech.herokuapp.com/pokemon
 
 ## Documentação da API
 
