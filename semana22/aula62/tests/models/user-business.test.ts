@@ -36,7 +36,7 @@ describe("PerformPurchase", () => {
             balance: 10
         };
 
-        expect(new UserBusiness().performPurchase(user, 50)).not.toBeDefined();
+        expect(new UserBusiness().performPurchase(user, 50)).toBeFalsy();
     });
 });
 
