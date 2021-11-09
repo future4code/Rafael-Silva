@@ -1,74 +1,72 @@
 import UserBusiness from '../src/business/UserBusiness';
 import Character from '../src/models/Character';
+import characterMock from './mocks/characterMock';
 
 
 describe("Validating Characters", () => {
     test("Should return false if the character name is empty", () => {
-        const character: Character = {
-            name: "",
-            life: 100,
-            defense: 10,
-            strength: 90
+        const validateCharacter: Character = {
+            ...characterMock,
+            name: ""
         };
 
+        const result = new UserBusiness().validateCharacter(validateCharacter);
 
-        expect(new UserBusiness().validateCharacter(character)).toBe(false);
+        expect(result).toBe(false);
     });
 
     test("Should return false if the character life is 0", () => {
-        const character: Character = {
-            name: "Test",
-            life: 0,
-            defense: 10,
-            strength: 90
+        const validateCharacter: Character = {
+            ...characterMock,
+            life: 0
         };
 
+        const result = new UserBusiness().validateCharacter(validateCharacter);
 
-        expect(new UserBusiness().validateCharacter(character)).toBe(false);
+        expect(result).toBe(false);
     });
 
     test("Should return false if the character defense is 0", () => {
-        const character: Character = {
-            name: "Test",
-            life: 100,
-            defense: 0,
-            strength: 90
+        const validateCharacter: Character = {
+            ...characterMock,
+            defense: 0
         };
 
-        expect(new UserBusiness().validateCharacter(character)).toBe(false);
+        const result = new UserBusiness().validateCharacter(validateCharacter);
+
+        expect(result).toBe(false);
     });
 
     test("Should return false if the character strength is 0", () => {
-        const character: Character = {
-            name: "Test",
-            life: 100,
-            defense: 10,
+        const validateCharacter: Character = {
+            ...characterMock,
             strength: 0
         };
 
-        expect(new UserBusiness().validateCharacter(character)).toBe(false);
+        const result = new UserBusiness().validateCharacter(validateCharacter);
+
+        expect(result).toBe(false);
     });
 
     test("Should return false if the character is invalid", () => {
-        const character: Character = {
-            name: "Test",
+        const validateCharacter: Character = {
+            ...characterMock,
             life: -100,
             defense: -10,
             strength: -90
         };
 
-        expect(new UserBusiness().validateCharacter(character)).toBe(false);
+        const result = new UserBusiness().validateCharacter(validateCharacter);
+
+        expect(result).toBe(false);
     });
 
     test("Should return true if the character is valid", () => {
-        const character: Character = {
-            name: "Test",
-            life: 100,
-            defense: 10,
-            strength: 90
-        };
+        const validateCharacter: Character = { ...characterMock };
 
-        expect(new UserBusiness().validateCharacter(character)).toBe(true);
+        const result = new UserBusiness().validateCharacter(validateCharacter);
+
+
+        expect(result).toBe(true);
     });
-
 });

@@ -14,4 +14,23 @@ export default class UserBusiness {
 
         return true;
     }
+
+
+    calculateAttack(character: Character, target: Character, validator: (input: Character) => boolean): Character {
+
+        if(validator(character) && validator(target)) {
+            const { strength } = character;
+            const { defense } = target;
+
+            const damage = strength - defense;
+
+            if (damage > 0) {
+                target.life -= damage;
+            }  
+
+            return target;
+        } 
+            throw new Error('Invalid character');
+        
+    }
 }
