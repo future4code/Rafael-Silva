@@ -48,4 +48,17 @@ describe("Validating Characters", () => {
 
         expect(new UserBusiness().validateCharacter(character)).toBe(false);
     });
+
+    test("Should return false if the character is invalid", () => {
+        const character: Character = {
+            name: "Test",
+            life: -100,
+            defense: -10,
+            strength: -90
+        };
+
+        expect(new UserBusiness().validateCharacter(character)).toBe(false);
+    });
+
+
 });
