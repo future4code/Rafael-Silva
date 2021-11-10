@@ -2,16 +2,16 @@
 import ErrorMessage from '../errors/ErrorMessage';
 import UserModel, { USER_ROLES } from '../models/UserModel';
 import { isEmail, passwdLength } from '../utils/helpers';
-import Auth from '../services/TokenGenerator';
+import TokenManager from '../services/TokenManager';
 import IdGenerator from '../services/IdGenerator';
-import HashGenerator from '../services/HashManager';
+import HashManager from '../services/HashManager';
 import UserData from '../data/UserData';
 
 export class UserBusiness {
     constructor(
         private idGenerator: IdGenerator,
-        private hashGenerator: HashGenerator,
-        private tokenGenerator: Auth,
+        private hashManager: HashManager,
+        private tokenManager: TokenManager,
         private userData: UserData
     ) { }
 
@@ -55,13 +55,13 @@ export class UserBusiness {
             id,
             name,
             email,
-            this.hashGenerator.generateHash(password),
+            this.hashManager.generateHash(password),
             role,
         );
 
         const result = await this.userData.create(newUser);
 
-        const token = this.tokenGenerator.generate({ id, role });
+        const token = this.tokenManager.generate({ id, role });
 
         if (result === false) {
             throw new ErrorMessage(

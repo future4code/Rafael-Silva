@@ -9,7 +9,7 @@ export interface AuthInterfaceData {
 }
 
 
-export default class TokenGenerator {
+export default class TokenManager {
     private static expiresIn = '1200';
 
 
@@ -21,7 +21,7 @@ export default class TokenGenerator {
             },
             process.env.JWT_KEY as string,
             {
-                expiresIn: TokenGenerator.expiresIn
+                expiresIn: TokenManager.expiresIn
             }
         );
 
