@@ -5,7 +5,7 @@ export enum USER_ROLES {
     ADMIN = "ADMIN",
 }
 
-export default class User {
+export default class UserModel {
     constructor(
         private id: string,
         private name: string,
