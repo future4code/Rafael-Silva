@@ -3,9 +3,15 @@ import { userAdminMock, userNormalMock } from "./userMock";
 
 export class UserDatabaseMock {
     // eslint-disable-next-line @typescript-eslint/no-empty-function
-    public async createUser(user: UserModel): Promise<void> {}
+    public async create(user: UserModel): Promise<boolean> {
+        if (user.getEmail()) {
+            return true;
+        }
 
-    public async getUserByEmail(email: string): Promise<UserModel | undefined> {
+        return false;
+    }
+
+    public async findByEmail(email: string): Promise<UserModel | undefined> {
         switch (email) {
             case "user1@gmail.com":
                 return userNormalMock;
@@ -17,7 +23,7 @@ export class UserDatabaseMock {
     }
 
 
-    public async getUserById(id: string): Promise<UserModel | undefined> {
+    public async findById(id: string): Promise<UserModel | undefined> {
         switch (id) {
             case "id_user_1":
                 return userNormalMock;
@@ -28,8 +34,14 @@ export class UserDatabaseMock {
         }
     }
 
-    public async getAllUsers(): Promise<UserModel[]> {
+
+    async findAll(): Promise<UserModel[] | boolean> {
         return [userNormalMock, userAdminMock];
+    }
+
+
+    async delete(id: string): Promise<boolean> {
+        return true;
     }
 
 }

@@ -23,24 +23,24 @@ export class UserBusiness {
             throw new ErrorMessage(422, "Todos os campos são obrigatórios");
         }
 
-        if (!role) {
-            role = USER_ROLES.NORMAL;
-        }
-
         if (!isEmail(email)) {
             throw new ErrorMessage(422, "'email' Inválido.");
         }
 
-        if (passwdLength(password)) {
+        if (!passwdLength(password)) {
             throw new ErrorMessage(
-                400,
+                406,
                 "É necessário um 'password' entre 8 e 40 caracteres."
             );
         }
 
+        if (!role) {
+            role = USER_ROLES.NORMAL;
+        }
+
         role = role.toUpperCase();
         if (!(role in USER_ROLES)) {
-            throw new ErrorMessage(400, "'role' Inválido. É possível criar somente users 'ADMIN' e 'NORMAL'.");
+            throw new ErrorMessage(406, "'role' Inválido. É possível criar somente users 'ADMIN' e 'NORMAL'.");
         }
 
         const user = await this.userData.findByEmail(email);

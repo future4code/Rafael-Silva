@@ -7,10 +7,10 @@ import { format } from 'date-fns';
  * ####################
  */
 
-export const isEmail = (emailAdress: string): boolean => {
+export const isEmail = (emailAddress: string): boolean => {
     const regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
-    if (emailAdress.match(regexEmail)) {
+    if (emailAddress.match(regexEmail)) {
         return true;
     }
 
@@ -19,13 +19,13 @@ export const isEmail = (emailAdress: string): boolean => {
 
 export const passwdLength = (password: string): boolean => {
     if (
-        password.toString().length < Number(process.env.PASSWD_MIN) ||
-        password.toString().length > Number(process.env.PASSWD_MAX)
+        password.length < Number(process.env.PASSWD_MIN) ||
+        password.length > Number(process.env.PASSWD_MAX)
     ) {
-        return false;
+        return true;
     }
 
-    return true;
+    return false;
 };
 
 /**
