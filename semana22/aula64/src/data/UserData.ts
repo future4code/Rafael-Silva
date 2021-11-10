@@ -1,9 +1,8 @@
-import { UserInterface } from '../models/interfaces/UserInterface';
 import UserModel from '../models/UserModel';
 import Database from './Database';
 
 export default class UserData extends Database {
-    async findAll(): Promise<UserInterface[] | boolean> {
+    async findAll(): Promise<UserModel[] | boolean> {
         try {
             const result = await Database.connection.select('*').from('aula58_users');
 
@@ -17,7 +16,7 @@ export default class UserData extends Database {
         }
     }
 
-    async findById(id: string): Promise<UserInterface | boolean> {
+    async findById(id: string): Promise<UserModel | boolean> {
         try {
             const result = await Database.connection.select('*').from('aula58_users').where({ id });
 
@@ -32,7 +31,7 @@ export default class UserData extends Database {
         }
     }
 
-    async findByEmail(email: string): Promise<UserInterface | boolean> {
+    async findByEmail(email: string): Promise<UserModel | boolean> {
         try {
             const result = await Database.connection.select('*').from('aula58_users').where({ email });
 
