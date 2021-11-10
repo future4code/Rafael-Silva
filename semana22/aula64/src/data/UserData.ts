@@ -1,8 +1,8 @@
 import { UserInterface } from '../models/interfaces/UserInterface';
 import Database from './Database';
 
-export class UserData extends Database {
-    public static async findAll(): Promise<UserInterface[] | boolean> {
+export default class UserData extends Database {
+    public async findAll(): Promise<UserInterface[] | boolean> {
         try {
             const result = await Database.connection.select('*').from('aula58_users');
 
@@ -16,7 +16,7 @@ export class UserData extends Database {
         }
     }
 
-    public static async findById(id: string): Promise<UserInterface | boolean> {
+    public async findById(id: string): Promise<UserInterface | boolean> {
         try {
             const result = await Database.connection.select('*').from('aula58_users').where({ id });
 
@@ -31,7 +31,7 @@ export class UserData extends Database {
         }
     }
 
-    public static async findByEmail(email: string): Promise<UserInterface | boolean> {
+    public async findByEmail(email: string): Promise<UserInterface | boolean> {
         try {
             const result = await Database.connection.select('*').from('aula58_users').where({ email });
 
@@ -46,7 +46,7 @@ export class UserData extends Database {
         }
     }
 
-    public static async create(user: UserInterface): Promise<boolean> {
+    public async create(user: UserInterface): Promise<boolean> {
         try {
             await Database.connection('aula58_users').insert({
                 id: user.id,
@@ -63,7 +63,7 @@ export class UserData extends Database {
         }
     }
 
-    public static async delete(id: string): Promise<boolean> {
+    public async delete(id: string): Promise<boolean> {
         try {
             await Database.connection('aula58_users').where({ id }).del();
 
