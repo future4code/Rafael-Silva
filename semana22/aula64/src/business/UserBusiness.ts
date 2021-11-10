@@ -1,5 +1,5 @@
 import { UserData } from '../data/UserData';
-import Auth from '../services/Auth';
+import Auth from '../services/TokenGenerator';
 import { isEmail, uuid, passwd, isPasswd } from '../utils/helpers';
 import ErrorMessage from '../error/ErrorMessage';
 import AuthInterface, { USER_ROLES } from '../models/interfaces/AuthInterface';

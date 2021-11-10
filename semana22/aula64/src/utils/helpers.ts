@@ -1,9 +1,5 @@
 import { format } from 'date-fns';
-import { v4 } from 'uuid';
-import dotenv from 'dotenv';
-import * as bcrypt from 'bcryptjs';
 
-dotenv.config();
 
 /**
  * ####################
@@ -21,31 +17,6 @@ export const isEmail = (emailAdress: string): boolean => {
     return false;
 };
 
-export const isPasswd = (password: string, hash: string): boolean => {
-    if (
-        password.toString().length < Number(process.env.PASSWD_MIN) ||
-        password.toString().length > Number(process.env.PASSWD_MAX)
-    ) {
-        return false;
-    }
-
-    return bcrypt.compareSync(password, hash);
-};
-
-
-/**
- * ####################
- * ###   PASSWORD   ###
- * ####################
- */
-
-export const passwd = (password: string): string => {
-    const rounds = Number(process.env.BCRYPT_COST);
-    const salt = bcrypt.genSaltSync(rounds);
-    const hash = bcrypt.hashSync(password, salt);
-
-    return hash;
-};
 
 /**
  * ################
@@ -59,7 +30,6 @@ export const dateFmt = (date?: string, formatStr = 'dd/MM/yyyy'): string => {
     }
     return format(new Date(date), formatStr);
 };
-
 
 
 export const dateFmtYmd = (date: string, formatStr = 'yyyy-MM-dd'): string => {
@@ -77,5 +47,3 @@ export const dateFmtYmd = (date: string, formatStr = 'yyyy-MM-dd'): string => {
  * ###   MISC   ###
  * ################
  */
-
-export const uuid = (): string => v4();
