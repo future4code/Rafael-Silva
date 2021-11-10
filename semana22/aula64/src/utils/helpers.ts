@@ -17,6 +17,16 @@ export const isEmail = (emailAdress: string): boolean => {
     return false;
 };
 
+export const passwdLength = (password: string): boolean => {
+    if (
+        password.toString().length < Number(process.env.PASSWD_MIN) ||
+        password.toString().length > Number(process.env.PASSWD_MAX)
+    ) {
+        return false;
+    }
+
+    return true;
+};
 
 /**
  * ################
