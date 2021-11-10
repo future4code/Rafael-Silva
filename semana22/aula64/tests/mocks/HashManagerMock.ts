@@ -1,4 +1,4 @@
-export class HashManageMock {
+export class HashManagerMock {
     generateHash(password: string): string {
         return password;
     }
