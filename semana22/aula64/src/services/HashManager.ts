@@ -3,7 +3,7 @@ import * as bcrypt from 'bcryptjs';
 
 dotenv.config();
 
-export default class HashGenerator {
+export default class HashManager {
     generateHash(password: string): string {
         const rounds = Number(process.env.BCRYPT_COST);
         const salt = bcrypt.genSaltSync(rounds);
