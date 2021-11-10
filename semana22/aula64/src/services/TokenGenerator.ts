@@ -3,14 +3,9 @@ import { JwtPayload, sign, verify } from 'jsonwebtoken';
 
 dotenv.config();
 
-export enum USER_ROLES {
-    ADMIN = 'ADMIN',
-    NORMAL = 'NORMAL',
-}
-
 export interface AuthInterfaceData {
     id: string;
-    role: USER_ROLES;
+    role: string;
 }
 
 

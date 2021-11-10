@@ -1,9 +1,6 @@
 import { UserData } from '../data/UserData';
 import Auth from '../services/TokenGenerator';
-import { isEmail, uuid, passwd, isPasswd } from '../utils/helpers';
-import ErrorMessage from '../error/ErrorMessage';
-import AuthInterface, { USER_ROLES } from '../models/interfaces/AuthInterface';
-import { UserInterface } from '../models/interfaces/UserInterface';
+import ErrorMessage from '../errors/ErrorMessage';
 
 export class UserBusiness {
 
@@ -12,7 +9,7 @@ export class UserBusiness {
         let { role } = input;
 
         if (!name || !email || !password) {
-            throw new ErrorMessage("Todos os campos são obrigatórios", 400);
+            throw new ErrorMessage(400, "Todos os campos são obrigatórios");
         }
 
         if (!role) {
