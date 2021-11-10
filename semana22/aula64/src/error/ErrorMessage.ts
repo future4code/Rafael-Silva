@@ -1,8 +1,8 @@
 export default class ErrorMessage extends Error {
-    private statusCode: number;
-
-    constructor(message: string | undefined, statusCode = 400) {
+    constructor(
+        private statusCode: number = 400,
+        message: string
+    ) {
         super(message);
-        this.statusCode = statusCode;
     }
 }
