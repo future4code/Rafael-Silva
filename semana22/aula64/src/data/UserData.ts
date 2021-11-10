@@ -1,8 +1,9 @@
 import { UserInterface } from '../models/interfaces/UserInterface';
+import UserModel from '../models/UserModel';
 import Database from './Database';
 
 export default class UserData extends Database {
-    public async findAll(): Promise<UserInterface[] | boolean> {
+    async findAll(): Promise<UserInterface[] | boolean> {
         try {
             const result = await Database.connection.select('*').from('aula58_users');
 
@@ -16,7 +17,7 @@ export default class UserData extends Database {
         }
     }
 
-    public async findById(id: string): Promise<UserInterface | boolean> {
+    async findById(id: string): Promise<UserInterface | boolean> {
         try {
             const result = await Database.connection.select('*').from('aula58_users').where({ id });
 
@@ -31,7 +32,7 @@ export default class UserData extends Database {
         }
     }
 
-    public async findByEmail(email: string): Promise<UserInterface | boolean> {
+    async findByEmail(email: string): Promise<UserInterface | boolean> {
         try {
             const result = await Database.connection.select('*').from('aula58_users').where({ email });
 
@@ -46,14 +47,14 @@ export default class UserData extends Database {
         }
     }
 
-    public async create(user: UserInterface): Promise<boolean> {
+    async create(user: UserModel): Promise<boolean> {
         try {
             await Database.connection('aula58_users').insert({
-                id: user.id,
-                name: user.name,
-                email: user.email,
-                password: user.password,
-                role: user.role
+                id: user.getId(),
+                name: user.getName(),
+                email: user.getEmail(),
+                password: user.getPassword(),
+                role: user.getRole(),
             });
 
             return true;
@@ -63,7 +64,7 @@ export default class UserData extends Database {
         }
     }
 
-    public async delete(id: string): Promise<boolean> {
+    async delete(id: string): Promise<boolean> {
         try {
             await Database.connection('aula58_users').where({ id }).del();
 
