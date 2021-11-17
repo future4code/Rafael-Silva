@@ -1,7 +1,6 @@
-import { UserInterface } from '../models/interfaces/UserInterface';
 import Database from './Database';
 
-export class UserData extends Database{
+export default class UserData extends Database{
     public static async findAll(): Promise<UserInterface[] | boolean> {
         try {
             const result = await Database.connection.select('*').from('aula58_users');

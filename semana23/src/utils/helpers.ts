@@ -1,9 +1,5 @@
 import { format } from 'date-fns';
-import { v4 } from 'uuid';
-import dotenv from 'dotenv';
-import * as bcrypt from 'bcryptjs';
 
-dotenv.config();
 
 /**
  * ####################
@@ -11,40 +7,25 @@ dotenv.config();
  * ####################
  */
 
-export const isEmail = (emailAdress: string): boolean => {
+export const isEmail = (emailAddress: string): boolean => {
     const regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
-    if (emailAdress.match(regexEmail)) {
+    if (emailAddress.match(regexEmail)) {
         return true;
     }
 
     return false;
 };
 
-export const isPasswd = (password: string, hash: string): boolean => {
+export const passwdLength = (password: string): boolean => {
     if (
-        password.toString().length < Number(process.env.PASSWD_MIN) ||
-        password.toString().length > Number(process.env.PASSWD_MAX)
+        password.length < Number(process.env.PASSWD_MIN) ||
+        password.length > Number(process.env.PASSWD_MAX)
     ) {
-        return false;
+        return true;
     }
 
-    return bcrypt.compareSync(password, hash);
-};
-
-
-/**
- * ####################
- * ###   PASSWORD   ###
- * ####################
- */
-
-export const passwd = (password: string): string => {
-    const rounds = Number(process.env.BCRYPT_COST);
-    const salt = bcrypt.genSaltSync(rounds);
-    const hash = bcrypt.hashSync(password, salt);
-
-    return hash;
+    return false;
 };
 
 /**
@@ -59,7 +40,6 @@ export const dateFmt = (date?: string, formatStr = 'dd/MM/yyyy'): string => {
     }
     return format(new Date(date), formatStr);
 };
-
 
 
 export const dateFmtYmd = (date: string, formatStr = 'yyyy-MM-dd'): string => {
@@ -77,5 +57,3 @@ export const dateFmtYmd = (date: string, formatStr = 'yyyy-MM-dd'): string => {
  * ###   MISC   ###
  * ################
  */
-
-export const uuid = (): string => v4();
