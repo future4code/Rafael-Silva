@@ -13,7 +13,8 @@ export class CreateBusiness {
     ) { }
 
     public competitionBusiness = async (input: CreateCompetitionDTORequest): Promise<object> => {
-        const { competition, athlete, value, unit, modalities} = input;
+        const { competition, athlete, value, unit } = input;
+        const { modalities } = input;
 
         if (!competition || !athlete || !value) {
             throw new ErrorMessage("Todos os campos são obrigatórios", 422);
@@ -23,9 +24,12 @@ export class CreateBusiness {
             throw new ErrorMessage("Unidade de medida inválida. Aceito somente 'METROS' ou 'SEGUNDOS'", 422);
         }
 
-        if (!(modalities in ModalitiesInterface)){
-            throw new ErrorMessage("Modalidade inválida. Aceito somente 'Lançamento de Dardo' ou '100m rasos'", 422);
-        }
+        // console.log(modalities);
+
+        // modalities = modalities.toString()
+        // if (!(modalities in ModalitiesInterface)){
+        //     throw new ErrorMessage("Modalidade inválida. Aceito somente 'Lançamento de Dardo' ou '100m rasos'", 422);
+        // }
 
         const id = this.idGenerator.generate();
 
