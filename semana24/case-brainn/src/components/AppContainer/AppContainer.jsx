@@ -3,6 +3,8 @@ import {
     Right,
     Container,
     Wrapper,
+    Curve,
+    Background,
 } from './AppContainer.styles';
 
 const AppContainer = (props) => {
@@ -11,7 +13,10 @@ const AppContainer = (props) => {
     return (
         <Wrapper>
             <Container>
-                <Left>{left}</Left>
+                <Background>
+                    <Left>{left}</Left>
+                    <Curve />
+                </Background>
                 <Right>{right}</Right>
             </Container>
         </Wrapper>
